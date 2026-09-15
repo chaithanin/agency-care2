@@ -1,0 +1,17 @@
+{
+  "name": "gtg-chat-inbox",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Prototype โมดูล Chat Inbox + Agency Care Integration API (ทดสอบในเครื่อง ไม่ต้องติดตั้ง dependency)",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning src/server.js",
+    "seed": "node --disable-warning=ExperimentalWarning scripts/seed.js",
+    "reset": "node --disable-warning=ExperimentalWarning scripts/seed.js --reset",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js",
+    "demo": "node --disable-warning=ExperimentalWarning scripts/demo.js",
+    "receiver": "node --disable-warning=ExperimentalWarning scripts/agency-care-receiver.js",
+    "simulate": "node --disable-warning=ExperimentalWarning scripts/simulate-line.js"
+  }
+}

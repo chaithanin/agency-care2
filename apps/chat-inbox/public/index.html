@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GTG Chat Inbox</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>&#128172;</text></svg>">
+<style>
+  :root{
+    --bg:#F5F8F7;--surface:#fff;--line:#D5DFDC;--ink:#152420;--muted:#5C6E69;
+    --accent:#0E7C6B;--accent-ink:#fff;--in:#EEF3F1;--out:#0E7C6B;--warn:#B45309;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0F1614;--surface:#151E1B;--line:#26352F;--ink:#E6EEEB;--muted:#98ABA5;
+    --accent:#3FC1A7;--accent-ink:#0B1512;--in:#1C2825;--out:#2A6B5E;--warn:#F0A64A;
+    color-scheme:dark;}}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 "IBM Plex Sans Thai",system-ui,-apple-system,"Segoe UI",sans-serif}
+  header{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:var(--surface)}
+  header h1{font-size:1rem;margin:0;font-weight:600;letter-spacing:.02em}
+  header .sp{flex:1}
+  select,input,button,textarea{font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+  button{cursor:pointer}
+  button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+  .layout{display:grid;grid-template-columns:320px 1fr 300px;height:calc(100dvh - 58px)}
+  .col{overflow-y:auto;border-right:1px solid var(--line)}
+  .col:last-child{border-right:none}
+  .tabs{display:flex;gap:4px;padding:10px;position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .tabs button{padding:5px 10px;font-size:.85rem;border-radius:999px}
+  .tabs button[aria-selected=true]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .conv{padding:12px 14px;border-bottom:1px solid var(--line);cursor:pointer}
+  .conv:hover{background:var(--in)}
+  .conv[aria-current=true]{background:var(--in);border-left:3px solid var(--accent);padding-left:11px}
+  .conv .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+  .conv b{font-weight:600}
+  .conv .meta{font-size:.78rem;color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+  .conv .snippet{font-size:.85rem;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .thread{display:flex;flex-direction:column;height:100%}
+  .thread .head{padding:12px 16px;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:center;flex-wrap:wrap;background:var(--surface)}
+  .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+  .bubble{max-width:min(560px,80%);padding:9px 13px;border-radius:14px;white-space:pre-wrap;word-break:break-word}
+  .bubble.in{background:var(--in);align-self:flex-start;border-bottom-left-radius:4px}
+  .bubble.out{background:var(--out);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+  .bubble .who{display:block;font-size:.72rem;opacity:.75;margin-bottom:2px}
+  .composer{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:var(--surface)}
+  .composer textarea{flex:1;resize:vertical;min-height:44px;max-height:160px}
+  .panel{padding:16px}
+  .panel h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:20px 0 8px}
+  .panel h2:first-child{margin-top:0}
+  .kv{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;padding:4px 0;border-bottom:1px dashed var(--line)}
+  .kv span:first-child{color:var(--muted)}
+  .tag{display:inline-block;background:var(--in);border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.8rem;margin:0 4px 4px 0}
+  .empty{color:var(--muted);padding:40px 16px;text-align:center}
+  .badge{font-size:.72rem;background:var(--in);border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--muted)}
+  .badge.warn{color:var(--warn);border-color:var(--warn)}
+  #toast{position:fixed;left:50%;transform:translateX(-50%);bottom:20px;background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:.85rem;opacity:0;transition:opacity .2s}
+  #toast.show{opacity:1}
+  @media (max-width:900px){.layout{grid-template-columns:1fr;height:auto}.col{border-right:none;border-bottom:1px solid var(--line);max-height:60dvh}}
+</style>
+</head>
+<body>
+<header>
+  <h1>GTG Chat Inbox <span class="badge" id="live">กำลังเชื่อมต่อ…</span></h1>
+  <div class="sp"></div>
+  <label for="user" style="color:var(--muted);font-size:.85rem">เข้าใช้งานเป็น</label>
+  <select id="user"></select>
+</header>
+
+<div class="layout">
+  <div class="col">
+    <div class="tabs" id="tabs"></div>
+    <div id="list"><div class="empty">กำลังโหลด…</div></div>
+  </div>
+
+  <div class="col thread">
+    <div class="head" id="threadHead"><span class="empty" style="padding:0">เลือกบทสนทนาทางซ้าย</span></div>
+    <div class="msgs" id="msgs"></div>
+    <form class="composer" id="composer" hidden>
+      <textarea id="text" placeholder="พิมพ์ข้อความ… (Enter ส่ง / Shift+Enter ขึ้นบรรทัดใหม่)"></textarea>
+      <button class="primary" type="submit">ส่ง</button>
+    </form>
+  </div>
+
+  <div class="col panel" id="panel"><div class="empty" style="padding:0">ข้อมูลผู้ติดต่อ</div></div>
+</div>
+<div id="toast"></div>
+
+<script type="module">
+const $ = (id) => document.getElementById(id);
+const state = { userId: null, filter: 'all', conversationId: null, users: [], stages: [] };
+
+function toast(msg){ const t=$('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2200); }
+
+async function api(method, url, body){
+  const res = await fetch(url, {
+    method,
+    headers: { 'content-type':'application/json', ...(state.userId ? {'x-dev-user': String(state.userId)} : {}) },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const json = await res.json().catch(()=>null);
+  if(!res.ok) throw new Error(json?.error?.message || `HTTP ${res.status}`);
+  return json;
+}
+
+const el = (tag, props={}, children=[]) => {
+  const node = Object.assign(document.createElement(tag), props);
+  for (const c of [].concat(children)) node.append(c);
+  return node;
+};
+const fmtTime = (s) => (s ? String(s).slice(5,16) : '');
+
+const TABS = [
+  ['all','ทั้งหมด','open'], ['unassigned','ยังไม่มีคนรับ','unassigned'],
+  ['assigned','มอบหมายแล้ว','assigned'], ['mine','ของฉัน',null], ['closed','ปิดแล้ว',null],
+];
+
+async function boot(){
+  const me = await api('GET','/internal/me');
+  state.users = me.users; state.stages = me.stages;
+  const sel = $('user');
+  sel.append(el('option',{value:'',textContent:'— ไม่ระบุ —'}));
+  for(const u of me.users) sel.append(el('option',{value:String(u.id),textContent:`${u.name} · ${u.role}`}));
+  sel.value = localStorage.getItem('gtg.user') || (me.users[0]?.id ?? '');
+  state.userId = sel.value || null;
+  sel.onchange = () => { state.userId = sel.value || null; localStorage.setItem('gtg.user', sel.value); refresh(); };
+
+  const tabs = $('tabs');
+  for(const [key,label] of TABS){
+    tabs.append(el('button',{textContent:label, onclick:()=>{ state.filter=key; refresh(); }, id:`tab-${key}`}));
+  }
+  await refresh();
+  connectSse();
+}
+
+async function refresh(){
+  const status = state.filter === 'closed' ? 'closed' : 'open';
+  const filter = ['unassigned','assigned','mine'].includes(state.filter) ? state.filter : 'all';
+  const { data, counters } = await api('GET', `/internal/conversations?status=${status}&filter=${filter}`);
+
+  for(const [key,label] of TABS){
+    const n = key==='unassigned'?counters.unassigned : key==='assigned'?counters.assigned : key==='closed'?counters.closed : key==='all'?counters.open : null;
+    const btn = $(`tab-${key}`);
+    btn.textContent = n===null ? label : `${label} ${n}`;
+    btn.setAttribute('aria-selected', String(state.filter===key));
+  }
+
+  const list = $('list');
+  list.replaceChildren();
+  if(!data.length){ list.append(el('div',{className:'empty',textContent:'ไม่มีบทสนทนาในแท็บนี้'})); return; }
+
+  for(const c of data){
+    const row = el('div',{className:'conv', onclick:()=>openConversation(c.id)});
+    row.setAttribute('aria-current', String(state.conversationId===c.id));
+    row.append(
+      el('div',{className:'top'},[ el('b',{textContent:c.display_name}), el('span',{className:'badge',textContent:fmtTime(c.last_message_at)}) ]),
+      el('div',{className:'snippet',textContent:`${c.last_direction==='out'?'คุณ: ':''}${c.last_text ?? ''}`}),
+      el('div',{className:'meta'},[
+        el('span',{textContent:c.provider}),
+        el('span',{textContent:c.lifecycle_stage}),
+        el('span',{className: c.assignee_name ? 'badge' : 'badge warn', textContent: c.assignee_name || 'ยังไม่มีคนรับ'}),
+      ]),
+    );
+    list.append(row);
+  }
+}
+
+async function openConversation(id){
+  state.conversationId = id;
+  const { conversation, messages, contact } = await api('GET', `/internal/conversations/${id}`);
+
+  const head = $('threadHead');
+  head.replaceChildren(
+    el('b',{textContent:contact.displayName}),
+    el('span',{className:'badge',textContent:conversation.provider}),
+    el('span',{className:'badge',textContent:conversation.status}),
+    el('span',{style:'flex:1'}),
+  );
+  const assignSel = el('select',{title:'มอบหมายให้'});
+  assignSel.append(el('option',{value:'',textContent:'ยังไม่มีคนรับ'}));
+  for(const u of state.users.filter(u=>u.role==='agent'||u.role==='admin')){
+    assignSel.append(el('option',{value:String(u.id),textContent:u.name}));
+  }
+  assignSel.value = conversation.assignee_user_id ? String(conversation.assignee_user_id) : '';
+  assignSel.onchange = async () => {
+    await api('POST', `/internal/conversations/${id}/assign`, { userId: assignSel.value ? Number(assignSel.value) : null });
+    toast('มอบหมายแล้ว'); refresh();
+  };
+  head.append(assignSel, el('button',{
+    textContent: conversation.status==='open' ? 'ปิดเคส' : 'เปิดใหม่',
+    onclick: async () => {
+      await api('POST', `/internal/conversations/${id}/status`, { status: conversation.status==='open'?'closed':'open' });
+      toast('อัปเดตสถานะแล้ว'); refresh(); openConversation(id);
+    }}));
+
+  const box = $('msgs');
+  box.replaceChildren();
+  for(const m of messages){
+    const who = m.direction==='in' ? contact.displayName : (m.sender_name || (m.source==='automation'?'ระบบอัตโนมัติ':m.source==='api'?'Agency Care':'ระบบ'));
+    box.append(el('div',{className:`bubble ${m.direction}`},[
+      el('span',{className:'who',textContent:`${who} · ${fmtTime(m.created_at)}`}),
+      document.createTextNode(m.text),
+    ]));
+  }
+  box.scrollTop = box.scrollHeight;
+  $('composer').hidden = conversation.status !== 'open';
+  renderPanel(contact);
+  refresh();
+}
+
+function renderPanel(contact){
+  const p = $('panel');
+  p.replaceChildren(el('h2',{textContent:'ผู้ติดต่อ'}));
+  for(const [k,v] of [['ชื่อ',contact.displayName],['ภาษา',contact.language],['โทร',contact.phone||'—'],['อีเมล',contact.email||'—']]){
+    p.append(el('div',{className:'kv'},[el('span',{textContent:k}),el('span',{textContent:v})]));
+  }
+
+  p.append(el('h2',{textContent:'Lifecycle stage'}));
+  const stageSel = el('select');
+  for(const s of state.stages) stageSel.append(el('option',{value:s,textContent:s}));
+  stageSel.value = contact.lifecycleStage;
+  stageSel.onchange = async () => {
+    await api('POST', `/internal/contacts/${contact.id}/lifecycle`, { stage: stageSel.value });
+    toast('เปลี่ยน stage แล้ว — ส่ง webhook ให้ Agency Care ด้วย');
+    refresh();
+  };
+  p.append(stageSel);
+
+  p.append(el('h2',{textContent:'แท็ก'}));
+  const tags = el('div');
+  for(const t of contact.tags) tags.append(el('span',{className:'tag',textContent:t}));
+  p.append(tags);
+  const tagForm = el('form',{style:'display:flex;gap:6px;margin-top:6px'});
+  const tagInput = el('input',{placeholder:'เพิ่มแท็ก',style:'flex:1;min-width:0'});
+  tagForm.append(tagInput, el('button',{type:'submit',textContent:'+'}));
+  tagForm.onsubmit = async (e) => {
+    e.preventDefault();
+    if(!tagInput.value.trim()) return;
+    await api('POST', `/internal/contacts/${contact.id}/tags`, { name: tagInput.value });
+    tagInput.value=''; openConversation(state.conversationId);
+  };
+  p.append(tagForm);
+
+  p.append(el('h2',{textContent:'ข้อมูลเพิ่มเติม'}));
+  for(const f of contact.customFields){
+    const row = el('div',{className:'kv'},[el('span',{textContent:f.label})]);
+    let input;
+    if(f.type === 'select' && f.options?.length){
+      input = el('select',{style:'width:150px'});
+      input.append(el('option',{value:'',textContent:'—'}));
+      for(const opt of f.options) input.append(el('option',{value:opt,textContent:opt}));
+      input.value = f.value ?? '';
+    } else {
+      input = el('input',{type: f.type === 'number' ? 'number' : f.type === 'date' ? 'date' : 'text', value:f.value ?? '', style:'width:130px'});
+    }
+    input.onchange = async () => {
+      await api('POST', `/internal/contacts/${contact.id}/fields`, { key:f.key, value:input.value });
+      toast('บันทึกแล้ว');
+    };
+    row.append(input);
+    p.append(row);
+  }
+}
+
+$('composer').onsubmit = async (e) => {
+  e.preventDefault();
+  const ta = $('text');
+  const text = ta.value.trim();
+  if(!text || !state.conversationId) return;
+  try{
+    await api('POST', `/internal/conversations/${state.conversationId}/reply`, { text });
+    ta.value='';
+    openConversation(state.conversationId);
+  }catch(err){ toast(err.message); }
+};
+$('text').addEventListener('keydown', (e)=>{
+  if(e.key==='Enter' && !e.shiftKey){ e.preventDefault(); $('composer').requestSubmit(); }
+});
+
+function connectSse(){
+  const es = new EventSource('/internal/events');
+  es.addEventListener('ready', ()=>{ $('live').textContent='เชื่อมต่อแล้ว'; });
+  for(const ev of ['message.received','message.sent','conversation.created','conversation.assigned','conversation.status_changed','contact.lifecycle_changed']){
+    es.addEventListener(ev, (e)=>{
+      const data = JSON.parse(e.data);
+      refresh();
+      if(data.conversationId && data.conversationId===state.conversationId) openConversation(state.conversationId);
+      if(ev==='message.received') toast('มีข้อความใหม่');
+    });
+  }
+  es.onerror = ()=>{ $('live').textContent='หลุดการเชื่อมต่อ — กำลังต่อใหม่'; };
+}
+
+boot().catch((err)=>{ document.body.prepend(el('pre',{textContent:'เริ่มต้นไม่สำเร็จ: '+err.message})); });
+</script>
+</body>
+</html>
