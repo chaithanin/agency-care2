@@ -32,7 +32,7 @@ broadcast = page(rail("megaphone") + f'''
         {card(label("แคมเปญ") + '<div style="height:12px"></div>'
           + f'<div style="display:flex;gap:12px">{field("ชื่อแคมเปญ (เห็นเฉพาะภายใน)", "เชิญชมพูลวิลล่าวิวทะเล เสาร์ 20 ก.ย.")}{field("ช่องทางที่ส่ง", "LINE", 180)}</div>')}
         {card(label("ผู้รับ") + '<div style="height:12px"></div>' + recipients + '<div style="height:14px"></div>'
-          + f'<div style="display:flex;align-items:center;gap:14px;background:{T["card"]};border:1px solid rgba(124,111,240,0.28);border-radius:12px;padding:13px 16px">'
+          + f'<div style="display:flex;align-items:center;gap:14px;background:{T["card"]};border:1px solid rgba(59,130,246,0.35);border-radius:12px;padding:13px 16px">'
           + f'<span style="font-weight:800;font-size:24px;color:{T["accentLight"]};font-variant-numeric:tabular-nums">1,240</span>'
           + f'<span style="font-size:12.5px;color:{T["muted"]};line-height:1.65">คนที่ตรงเงื่อนไข · ในนี้ 96 คนไม่ได้คุยกับเราใน 24 ชม. ที่ผ่านมา<br>ระบบจะสลับไปใช้เทมเพลตที่อนุมัติแล้วให้อัตโนมัติ</span></div>')}
         {card(label("ข้อความ") + '<div style="height:12px"></div>'
@@ -99,11 +99,10 @@ def event_chip(name, on):
           f'<span style="width:15px;height:15px;flex:none;border-radius:5px;border:1px solid rgba(255,255,255,0.22)"></span>'
     col = T['ink'] if on else T['muted']
     return (f'<span style="display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 12px;border-radius:9px;'
-            f'border:1px solid {"rgba(124,111,240,0.35)" if on else "rgba(255,255,255,0.10)"};'
-            f'background:{"rgba(124,111,240,0.12)" if on else "transparent"};color:{col};font-family:{MONO};font-size:11.5px">{box}{name}</span>')
+            f'border:1px solid {"rgba(59,130,246,0.4)" if on else "rgba(255,255,255,0.10)"};'
+            f'background:{"rgba(59,130,246,0.14)" if on else "transparent"};color:{col};font-family:{MONO};font-size:11.5px">{box}{name}</span>')
 
-DELIVERIES = [("contact.lifecycle_changed","200","09:21:04","สำเร็จ","ok"),
-              ("contact.lifecycle_changed","504","08:52:11","หมดเวลา","danger")]
+DELIVERIES = [("contact.lifecycle_changed","504","08:52:11","หมดเวลา","danger")]
 del_rows = "".join(
   f'<div style="display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid {T["cardBorder"]};font-size:12.5px">'
   f'<span style="flex:1;min-width:0">{mono(ev,11.5)}</span>'
@@ -140,14 +139,14 @@ integrations = page(rail("settings") + f'''
     {topbar('<span style="color:' + T['muted'] + '">Settings ›</span> Integrations',
             btn("เอกสาร API","ghost","link") + '<div style="width:10px"></div>' + btn("ออก API key ใหม่","primary","key"),
             "กุญแจและ webhook ที่ Agency Care ใช้คุยกับโมดูลแชท")}
-    <div style="flex:1;display:flex;min-height:0;padding:6px 28px 20px;gap:16px">
+    <div style="flex:1;display:flex;min-height:0;padding:2px 24px 14px;gap:14px">
       {subnav("Integrations")}
-      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:12px">
-        <div style="display:flex;align-items:flex-start;gap:12px;background:{T['card']};border:1px solid rgba(124,111,240,0.35);border-radius:16px;padding:14px 16px">
+      <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;align-items:flex-start;gap:12px;background:{T['card']};border:1px solid rgba(59,130,246,0.4);border-radius:16px;padding:14px 16px">
           <span style="color:{T['accentLight']};flex:none;margin-top:1px">{ic("key",18)}</span>
           <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:7px">
             <span style="font-size:13px;font-weight:700">คีย์ใหม่ของ Agency Care (production)</span>
-            <div style="display:flex;align-items:center;gap:10px;background:rgba(0,0,0,0.28);border:1px solid rgba(124,111,240,0.3);border-radius:10px;padding:9px 12px">
+            <div style="display:flex;align-items:center;gap:10px;background:rgba(0,0,0,0.28);border:1px solid rgba(59,130,246,0.35);border-radius:10px;padding:9px 12px">
               {mono("gtg_7f3a91c4e08b25da6c1f47b930ee5a02", 12)}<div style="flex:1"></div>
               <span style="color:{T['accentLight']};font-size:12.5px">คัดลอก</span>
             </div>
@@ -157,7 +156,7 @@ integrations = page(rail("settings") + f'''
 
         {card(f'<div style="display:flex;align-items:center;gap:12px">{label("API keys")}<div style="flex:1"></div>'
           + f'<span style="font-size:12px;color:{T["muted"]}">จำกัด 120 ครั้ง/นาที ต่อคีย์</span></div>'
-          + '<div style="height:12px"></div>' + key_head + key_rows, 16)}
+          + '<div style="height:10px"></div>' + key_head + key_rows, 14)}
 
         {card(f'{label("Webhook ขาออก")}<div style="height:12px"></div>'
           + f'<div style="display:flex;gap:12px">{field("ปลายทาง", "https://agency-care.gtg.co.th/hooks/gtg-chat")}{field("Secret", "whsec_••••••9f21", 168, True)}</div>'
@@ -165,7 +164,7 @@ integrations = page(rail("settings") + f'''
           + f'<div style="display:flex;flex-wrap:wrap;gap:8px">{event_chip("contact.lifecycle_changed",True)}{event_chip("conversation.created",True)}{event_chip("message.received",False)}</div>'
           + '<div style="height:12px"></div>'
           + f'<div style="display:flex;align-items:center;gap:10px">{btn("ส่ง event ทดสอบ","ghost","send",32)}{btn("หมุน secret ใหม่","ghost",None,32)}'
-          + f'<div style="flex:1"></div><span style="font-size:12px;color:{T["muted"]}">7 วันล่าสุด: สำเร็จ 1,241 · ล้มเหลว 3</span></div>', 16)}
+          + f'<div style="flex:1"></div><span style="font-size:12px;color:{T["muted"]}">7 วันล่าสุด: สำเร็จ 1,241 · ล้มเหลว 3</span></div>', 14)}
 
         {card(f'<div style="display:flex;align-items:center;gap:12px">{label("บันทึกการส่ง")}<div style="flex:1"></div>'
           + f'<span style="font-size:12.5px;color:{T["accentLight"]}">ดูทั้งหมด</span></div><div style="height:10px"></div>' + del_rows, 16)}
@@ -173,7 +172,7 @@ integrations = page(rail("settings") + f'''
 
       <div style="width:296px;flex:none;display:flex;flex-direction:column;gap:14px">
         {card(f'{label("เรียกใช้จาก Agency Care")}<div style="height:12px"></div>'
-          + f'<div style="background:#0d0b17;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:13px;'
+          + f'<div style="background:#080C16;border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:13px;'
           + f'font-family:{MONO};font-size:11px;line-height:1.85;overflow:hidden">{code_html}</div>'
           + f'<div style="height:10px"></div><span style="font-size:12px;color:{T["muted"]};line-height:1.7">ฝั่งรับต้องเทียบลายเซ็นแบบ timing-safe และปฏิเสธ timestamp ที่เก่ากว่า 5 นาที</span>', 16)}
         {card(f'{label("Endpoint ที่เปิดให้")}<div style="height:10px"></div>' + ep_rows, 16)}

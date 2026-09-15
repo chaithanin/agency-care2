@@ -71,7 +71,7 @@ for kind, time, text in MMSGS:
                   f'<div style="background:{T["surface"]};border:1px solid {T["line"]};border-radius:14px 14px 14px 4px;padding:10px 13px;font-size:14px;line-height:1.6">{text}</div>'
                   f'<span style="font-size:10.5px;color:{T["muted"]}">{time} น.</span></div>')
     else:
-        bgc = "rgba(124,111,240,0.30)" if kind == "auto" else BTN_GRAD
+        bgc = "rgba(59,130,246,0.28)" if kind == "auto" else BTN_GRAD
         who = "ระบบอัตโนมัติ · " if kind == "auto" else ""
         mm.append(f'<div style="align-self:flex-end;max-width:280px;display:flex;flex-direction:column;gap:3px;align-items:flex-end">'
                   f'<div style="background:{bgc};color:#fff;border-radius:14px 14px 4px 14px;padding:10px 13px;font-size:14px;line-height:1.6">{text}</div>'

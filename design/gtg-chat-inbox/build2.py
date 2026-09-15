@@ -33,7 +33,6 @@ PEOPLE = [
   ("CW","Chen Wei","Facebook","New Lead","muted","seaview","—","—","เมื่อวาน",False),
   ("นภ","คุณนภัส ก.","LINE","New Lead","muted","pricing","Marina Golden Bay","Nok","เมื่อวาน",False),
   ("JD","James Doyle","WhatsApp","Customer","accent","investment","Copacabana","Ploy","2 วันก่อน",False),
-  ("อร","คุณอรทัย พ.","LINE","Lost","muted","pricing","—","Nok","5 วันก่อน",False),
 ]
 prows = []
 for ini, name, ch, stage, tone, tags, project, owner, seen, sel in PEOPLE:
@@ -128,9 +127,9 @@ detail = f'''<div style="width:1440px;height:900px;display:flex;background:{PAGE
   {rail("users")}
   <div style="flex:1;display:flex;flex-direction:column;min-width:0">
     {topbar('<span style="color:' + T['muted'] + '">Contacts ›</span> คุณสมชาย ส.', btn("เปิดบทสนทนา","ghost","inbox") + btn("แก้ไข","primary","plus"))}
-    <div style="padding:20px 24px;display:flex;flex-direction:column;gap:18px;overflow:hidden">
-      <div style="display:flex;align-items:center;gap:18px;background:{T['surface']};border:1px solid {T['line']};border-radius:12px;padding:18px 20px">
-        {avatar("สม",56)}
+    <div style="padding:8px 24px 16px;display:flex;flex-direction:column;gap:14px;overflow:hidden">
+      <div style="display:flex;align-items:center;gap:18px;background:{T['surface']};border:1px solid {T['line']};border-radius:16px;padding:14px 18px">
+        {avatar("สม",52)}
         <div style="display:flex;flex-direction:column;gap:5px">
           <span style="font-family:{DISPLAY};font-weight:600;font-size:19px">คุณสมชาย ส.</span>
           <div style="display:flex;align-items:center;gap:10px">{chan("LINE")}{pill("Hot Lead","accent")}{pill("เจ้าของ: Ploy","muted")}</div>

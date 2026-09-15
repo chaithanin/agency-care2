@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 exec(open('gen.py', encoding='utf-8').read())
 
-S1 = "#7c6ff0"   # ชุดสี categorical ที่ผ่าน validator (teal ใกล้แบรนด์ แต่ chroma พอ)
-S2 = "#b8800f"
-S3 = "#2f9fd0"
+S1 = "#3B82F6"   # ชุดสี categorical ที่ผ่าน validator (teal ใกล้แบรนด์ แต่ chroma พอ)
+S2 = "#D97706"
+S3 = "#0E9F8E"
 GRID = "rgba(255,255,255,0.08)"
-AXIS = "#7f7d9c"
+AXIS = "#94A3B8"
 
 # ── KPI tiles ───────────────────────────────────────────────────────────
 def tile(title, value, unit, delta, good=True, sub=""):
@@ -32,7 +32,7 @@ tiles = "".join([
 DAYS = ["2 ก.ย.","3","4","5","6","7","8","9","10","11","12","13","14","15"]
 OPENED = [18,22,19,26,31,24,12,9,27,29,33,28,15,11]
 CLOSED = [15,20,21,24,28,26,14,11,24,31,30,26,18,13]
-PW, PH, PX, PY = 628, 196, 34, 14
+PW, PH, PX, PY = 616, 196, 34, 14
 YMAX = 36
 step = PW / len(DAYS)
 bw = 17
@@ -54,7 +54,7 @@ xlabels = "".join(
 # tooltip ที่วันจันทร์ 12 ก.ย. (index 10)
 tip_x = PX + 10 * step + step / 2
 tooltip = (f'<g><line x1="{tip_x:.1f}" y1="{PY}" x2="{tip_x:.1f}" y2="{PY + PH}" stroke="{AXIS}" stroke-width="1" stroke-dasharray="3 3"/>'
-  f'<rect x="{tip_x - 74:.1f}" y="{PY - 6}" width="148" height="62" rx="9" fill="#241f3a"/>'
+  f'<rect x="{tip_x - 74:.1f}" y="{PY - 6}" width="148" height="62" rx="9" fill="#0B1220"/>'
   f'<text x="{tip_x - 60:.1f}" y="{PY + 12}" font-size="11" fill="{T["muted"]}" font-family="{BODY}">12 ก.ย. 2569</text>'
   f'<circle cx="{tip_x - 62:.1f}" cy="{PY + 26}" r="4" fill="{S1}"/>'
   f'<text x="{tip_x - 52:.1f}" y="{PY + 30}" font-size="11.5" fill="#fff" font-family="{BODY}">เปิดใหม่</text>'
@@ -68,11 +68,11 @@ def legend(items):
       f'<span style="display:inline-flex;align-items:center;gap:7px;font-size:12px;color:{T["muted"]}">'
       f'<span style="width:10px;height:10px;border-radius:3px;background:{c}"></span>{n}</span>' for n, c in items) + '</div>')
 
-trend_chart = (f'<svg width="688" height="250" viewBox="0 0 688 250" role="img">'
+trend_chart = (f'<svg width="676" height="250" viewBox="0 0 676 250" role="img">'
   f'{"".join(grid)}{"".join(bars)}{xlabels}{tooltip}</svg>')
 
 # ── Lifecycle funnel ────────────────────────────────────────────────────
-FUNNEL = [("New Lead",612,"#3f3a6b"),("Hot Lead",281,"#5b4fd6"),("Payment",74,"#7c6ff0"),("Customer",291,"#9d93f5")]
+FUNNEL = [("New Lead",612,"#1E3A8A"),("Hot Lead",281,"#2563EB"),("Payment",74,"#3B82F6"),("Customer",291,"#60A5FA")]
 fmax = max(v for _, v, _ in FUNNEL)
 funnel_rows = "".join(
   f'<div style="display:flex;align-items:center;gap:12px">'
@@ -112,7 +112,7 @@ dashboard = f'''<div style="width:1440px;height:900px;display:flex;background:{P
       <div style="display:flex;gap:14px">{tiles}</div>
 
       <div style="display:flex;gap:14px;align-items:stretch">
-        <div style="width:718px;flex:none;background:{T['surface']};border:1px solid {T['line']};border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:12px">
+        <div style="width:706px;flex:none;background:{T['surface']};border:1px solid {T['line']};border-radius:12px;padding:18px 20px;display:flex;flex-direction:column;gap:12px">
           <div style="display:flex;align-items:center;gap:14px">
             <span style="font-family:{DISPLAY};font-weight:600;font-size:14.5px">บทสนทนาเปิดใหม่และปิด · 14 วันล่าสุด</span>
             <div style="flex:1"></div>{legend([("เปิดใหม่",S1),("ปิดแล้ว",S2)])}

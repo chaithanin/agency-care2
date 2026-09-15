@@ -1,21 +1,118 @@
 {
   "artboards": [
-    { "file": "Login.dc.html", "x": 0, "y": 0, "w": 1440, "h": 900, "title": "Login" },
-    { "file": "Main.dc.html", "x": 1560, "y": 0, "w": 1440, "h": 900, "title": "Chat Inbox" },
-    { "file": "Dashboard.dc.html", "x": 3120, "y": 0, "w": 1440, "h": 900, "title": "Chat Insight (Dashboard)" },
-    { "file": "Contacts.dc.html", "x": 0, "y": 1080, "w": 1440, "h": 900, "title": "Chat Contacts" },
-    { "file": "ContactDetail.dc.html", "x": 1560, "y": 1080, "w": 1440, "h": 900, "title": "Contact detail" },
-    { "file": "Automations.dc.html", "x": 3120, "y": 1080, "w": 1440, "h": 900, "title": "Chat Automations" },
-    { "file": "Broadcast.dc.html", "x": 0, "y": 2160, "w": 1440, "h": 900, "title": "Chat Broadcast" },
-    { "file": "SettingsChannels.dc.html", "x": 1560, "y": 2160, "w": 1440, "h": 900, "title": "Settings › ช่องทาง" },
-    { "file": "SettingsIntegrations.dc.html", "x": 3120, "y": 2160, "w": 1440, "h": 900, "title": "Settings › Integrations (Agency Care API)" },
-    { "file": "MobileInbox.dc.html", "x": 0, "y": 3240, "w": 390, "h": 844, "title": "Mobile · Inbox" },
-    { "file": "MobileChat.dc.html", "x": 510, "y": 3240, "w": 390, "h": 844, "title": "Mobile · บทสนทนา" }
+    {
+      "file": "Login.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "Login"
+    },
+    {
+      "file": "Main.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "Chat Inbox"
+    },
+    {
+      "file": "Dashboard.dc.html",
+      "x": 3120,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "Chat Insight (Dashboard)"
+    },
+    {
+      "file": "Contacts.dc.html",
+      "x": 0,
+      "y": 1080,
+      "w": 1440,
+      "h": 900,
+      "title": "Chat Contacts"
+    },
+    {
+      "file": "ContactDetail.dc.html",
+      "x": 1560,
+      "y": 1080,
+      "w": 1440,
+      "h": 900,
+      "title": "Contact detail"
+    },
+    {
+      "file": "Automations.dc.html",
+      "x": 3120,
+      "y": 1080,
+      "w": 1440,
+      "h": 900,
+      "title": "Chat Automations"
+    },
+    {
+      "file": "Broadcast.dc.html",
+      "x": 0,
+      "y": 2160,
+      "w": 1440,
+      "h": 900,
+      "title": "Chat Broadcast"
+    },
+    {
+      "file": "SettingsChannels.dc.html",
+      "x": 1560,
+      "y": 2160,
+      "w": 1440,
+      "h": 900,
+      "title": "Settings › ช่องทาง"
+    },
+    {
+      "file": "SettingsIntegrations.dc.html",
+      "x": 3120,
+      "y": 2160,
+      "w": 1440,
+      "h": 900,
+      "title": "Settings › Integrations (Agency Care API)"
+    },
+    {
+      "file": "MobileInbox.dc.html",
+      "x": 0,
+      "y": 3240,
+      "w": 390,
+      "h": 844,
+      "title": "Mobile · Inbox"
+    },
+    {
+      "file": "MobileChat.dc.html",
+      "x": 510,
+      "y": 3240,
+      "w": 390,
+      "h": 844,
+      "title": "Mobile · บทสนทนา"
+    }
   ],
   "annotations": [
-    { "id": "note-scope", "x": 0, "y": -220, "w": 700, "text": "GTG Chat — โมดูลแชทใน Agency Care\n\nสีและส่วนประกอบลอกจาก web/src/theme.ts ของ agency-care จริง: primary #7c6ff0, การ์ด rgba(26,23,43,.66), ขอบ rgba(255,255,255,.06), drawer 252px สีพื้น #100e1c, ฟอนต์ Sarabun\n\nไอคอนวาดเป็น SVG แทน MUI Rounded icons ชั่วคราว" },
-    { "id": "note-api", "x": 3120, "y": 2050, "w": 620, "text": "หน้านี้คือจุดเชื่อมกับ Agency Care: API key + webhook contact.lifecycle_changed ตรงกับที่ทำไว้จริงใน apps/chat-inbox" },
-    { "id": "note-mobile", "x": 990, "y": 3240, "w": 420, "text": "มือถือ: ไม่วาด status bar หรือคีย์บอร์ดปลอม ปุ่มทุกตัวสูงอย่างน้อย 44px" }
+    {
+      "id": "note-scope",
+      "x": 0,
+      "y": -220,
+      "w": 700,
+      "text": "GTG Chat — โมดูลแชทใน Agency Care\n\nสีและส่วนประกอบลอกจาก web/src/theme/ThemeContext.tsx (โหมดมืด) ของ agency-care จริง:\nprimary #3B82F6, พื้น linear-gradient(135deg,#0F172A,#111827,#1F2937), การ์ด #111827 ขอบ #374151,\ndrawer 264px, ปุ่มทรงแคปซูล, การ์ดมุม 20px, อินพุตมุม 12px\n\nไอคอนวาดเป็น SVG แทน MUI Rounded icons ชั่วคราว"
+    },
+    {
+      "id": "note-api",
+      "x": 3120,
+      "y": 2050,
+      "w": 620,
+      "text": "หน้านี้คือจุดเชื่อมกับ Agency Care: API key + webhook contact.lifecycle_changed ตรงกับที่ทำไว้จริงใน apps/chat-inbox"
+    },
+    {
+      "id": "note-mobile",
+      "x": 990,
+      "y": 3240,
+      "w": 420,
+      "text": "มือถือ: ไม่วาด status bar หรือคีย์บอร์ดปลอม ปุ่มทุกตัวสูงอย่างน้อย 44px"
+    }
   ],
-  "launch": { "view": "canvas" }
+  "launch": {
+    "view": "canvas"
+  }
 }

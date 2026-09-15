@@ -6,8 +6,6 @@ RULES = [
   ("ทักทายข้อความแรกตามภาษา","ข้อความแรกของบทสนทนา","เปิด","1,284 ครั้ง",True),
   ("มอบหมายเซลส์แบบวนรอบ","บทสนทนาใหม่","เปิด","1,284 ครั้ง",False),
   ("แท็กจากคีย์เวิร์ด","ทุกข้อความเข้า","เปิด","3,902 ครั้ง",False),
-  ("เตือน admin เมื่อไม่มีคนตอบ 15 นาที","ตั้งเวลา","เปิด","34 ครั้ง",False),
-  ("ปิดเคสอัตโนมัติหลังเงียบ 7 วัน","ตั้งเวลา","ปิดอยู่","—",False),
 ]
 rule_rows = []
 for name, trig, status, runs, active in RULES:
@@ -18,7 +16,7 @@ for name, trig, status, runs, active in RULES:
     rule_rows.append(
       f'<div style="display:flex;gap:11px;align-items:flex-start;padding:13px 16px;border-bottom:1px solid {T["line"]};'
       f'background:{T["inb"] if active else T["surface"]};border-left:3px solid {T["accent"] if active else "transparent"}">'
-      f'<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:5px">'
+      f'<div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:3px">'
       f'<span style="font-weight:600;font-size:13.5px;line-height:1.45">{name}</span>'
       f'<div style="display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:11.5px;color:{T["muted"]}">'
       f'{ic("bolt",13)}{trig}<span style="color:{T["line"]}">·</span>{runs}</div></div>{knob}</div>')
@@ -26,8 +24,8 @@ for name, trig, status, runs, active in RULES:
 def node(kind, title, body, tone="accent"):
     kinds = {"trigger":("TRIGGER","bolt"), "condition":("CONDITION","filter"), "action":("ACTION","send")}
     tag, icon_name = kinds[kind]
-    return (f'<div style="background:{T["surface"]};border:1px solid {T["line"]};border-radius:12px;padding:14px 16px;'
-            f'display:flex;flex-direction:column;gap:10px;width:452px">'
+    return (f'<div style="background:{T["surface"]};border:1px solid {T["line"]};border-radius:12px;padding:12px 14px;'
+            f'display:flex;flex-direction:column;gap:8px;width:408px">'
             f'<div style="display:flex;align-items:center;gap:10px">'
             f'<span style="width:28px;height:28px;border-radius:8px;background:{T["card"]};color:{T["accentLight"]};'
             f'display:flex;align-items:center;justify-content:center">{ic(icon_name,15)}</span>'
@@ -37,21 +35,20 @@ def node(kind, title, body, tone="accent"):
             f'{body}</div>')
 
 def connector():
-    return (f'<div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:452px">'
-            f'<span style="width:1px;height:11px;background:{T["line"]}"></span>'
-            f'<span style="width:22px;height:22px;border-radius:50%;border:1px dashed {T["line"]};color:{T["muted"]};'
+    return (f'<div style="display:flex;flex-direction:column;align-items:center;gap:3px;width:408px">'
+            f'<span style="width:1px;height:7px;background:{T["line"]}"></span>'
+            f'<span style="width:20px;height:20px;border-radius:50%;border:1px dashed {T["line"]};color:{T["muted"]};'
             f'background:{T["surface"]};display:flex;align-items:center;justify-content:center">{ic("plus",12)}</span>'
-            f'<span style="width:1px;height:11px;background:{T["line"]}"></span></div>')
+            f'<span style="width:1px;height:7px;background:{T["line"]}"></span></div>')
 
-trigger_body = (f'<div style="display:flex;align-items:center;gap:10px">{select("บทสนทนาใหม่",210)}{select("ทุกช่องทาง",160)}</div>'
-                f'<span style="font-size:12.5px;color:{T["muted"]};line-height:1.6">ทำงานเมื่อมีข้อความแรกของบทสนทนาเข้ามา — ข้อความถัดไปในบทสนทนาเดิมจะไม่ทำซ้ำ</span>')
-cond_body = (f'<div style="display:flex;align-items:center;gap:10px">{select("ภาษาที่ตรวจพบ",170)}{select("เท่ากับ",110)}{select("ไทย",110)}</div>'
+trigger_body = (f'<div style="display:flex;align-items:center;gap:10px">{select("บทสนทนาใหม่",202)}{select("ทุกช่องทาง",156)}</div>'
+                f'<span style="font-size:12px;color:{T["dim"]}">ทำงานครั้งเดียวต่อบทสนทนา</span>')
+cond_body = (f'<div style="display:flex;align-items:center;gap:10px">{select("ภาษาที่ตรวจพบ",164)}{select("เท่ากับ",104)}{select("ไทย",104)}</div>'
              f'<div style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:{T["accentLight"]}">{ic("plus",14)}เพิ่มเงื่อนไข</div>')
-act1_body = (f'<div style="border:1px solid {T["line"]};border-radius:9px;padding:11px 13px;font-size:13px;line-height:1.7;background:{T["bg"]}">'
+act1_body = (f'<div style="border:1px solid {T["line"]};border-radius:9px;padding:11px 13px;font-size:12.5px;line-height:1.6;background:{T["bg"]}">'
              f'สวัสดีค่ะ ขอบคุณที่ติดต่อ GTG ทีมงานกำลังตรวจสอบและจะตอบกลับโดยเร็วที่สุดค่ะ</div>'
-             f'<div style="display:flex;align-items:center;gap:10px;font-size:12px;color:{T["muted"]}">'
-             f'ข้อความตามภาษา: <span style="color:{T["ink"]}">ไทย</span> · อังกฤษ · รัสเซีย</div>')
-act2_body = (f'<div style="display:flex;align-items:center;gap:10px">{select("มอบหมายแบบวนรอบ",196)}{select("ทีม Sales (3 คน)",178)}</div>'
+             f'<div style="font-size:12px;color:{T["dim"]}">ข้อความตามภาษา: ไทย · อังกฤษ · รัสเซีย</div>')
+act2_body = (f'<div style="display:flex;align-items:center;gap:10px">{select("มอบหมายแบบวนรอบ",190)}{select("ทีม Sales (3 คน)",172)}</div>'
              f'<span style="font-size:12px;color:{T["muted"]}">เลือกคนที่ถือเคสเปิดอยู่น้อยที่สุด</span>')
 
 RUNS = [
@@ -78,12 +75,11 @@ automations = f'''<div style="width:1440px;height:900px;display:flex;background:
           {search_box("ค้นหากฎ", 200)}<span style="font-size:12px;color:{T['muted']}">5 กฎ</span>
         </div>
         {"".join(rule_rows)}
-        <div style="padding:14px 16px;font-size:12px;color:{T['muted']};line-height:1.7">กฎทำงานจากบนลงล่าง<br>ลากเพื่อสลับลำดับได้</div>
       </div>
 
       <div style="flex:1;min-width:0;overflow:hidden;display:flex">
-        <div style="flex:1;padding:14px 18px;display:flex;flex-direction:column;gap:0;align-items:center;overflow:hidden">
-          <div style="width:452px;display:flex;align-items:center;gap:10px;margin-bottom:12px">
+        <div style="flex:1;padding:10px 16px;display:flex;flex-direction:column;gap:0;align-items:center;overflow:hidden">
+          <div style="width:408px;display:flex;align-items:center;gap:10px;margin-bottom:2px">
             <span style="font-family:{DISPLAY};font-weight:600;font-size:16px">ทักทายข้อความแรกตามภาษา</span>
             {pill("เปิดใช้งาน","accent")}
             <div style="flex:1"></div>{btn("ทดสอบกฎ","ghost","bolt",30)}{btn("บันทึก","primary",None,30)}

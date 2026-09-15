@@ -10,7 +10,7 @@ bullets = "".join(
             "ต่อกับ Agency Care ผ่าน API และ webhook"])
 
 login = f'''<div style="width:1440px;height:900px;display:flex;background:{PAGE_BG};background-repeat:no-repeat;font-family:{BODY};color:{T['ink']}">
-  <div style="width:560px;flex:none;background:linear-gradient(160deg,#1a1533 0%,#231b45 45%,#3b2f77 100%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:56px 56px 48px">
+  <div style="width:560px;flex:none;background:linear-gradient(160deg,#0B1220 0%,#12233F 45%,#1E3A8A 100%);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:56px 56px 48px">
     <div style="display:flex;align-items:center;gap:12px">
       <div style="width:40px;height:40px;border-radius:12px;background:#fff;color:{T['accentLight']};display:flex;align-items:center;justify-content:center;font-family:{DISPLAY};font-weight:700;font-size:17px">G</div>
       <span style="font-family:{DISPLAY};font-weight:600;font-size:17px;letter-spacing:.01em">GTG Chat</span>
@@ -64,7 +64,6 @@ CONVS = [
   ("ИВ","Иван Волков","Facebook","Здравствуйте, интересует вилла с бассейном","08:57","New Lead","muted",None,False),
   ("ธน","คุณธนากร ว.","WhatsApp","โอนเงินจองแล้วครับ ส่งสลิปให้ทางนี้","08:40","Payment","accent","Ploy",False),
   ("MT","Mya Thu","LINE","ขอดูห้องตัวอย่างวันเสาร์ได้ไหมคะ","เมื่อวาน","Hot Lead","accent","Nok",False),
-  ("CW","Chen Wei","Facebook","请问还有海景公寓吗","เมื่อวาน","New Lead","muted",None,False),
 ]
 rows = []
 for ini, name, ch, snippet, time, stage, tone, who, active in CONVS:
@@ -97,7 +96,7 @@ for kind, who, time, text in MSGS:
           f'<span style="font-size:11px;color:{T["muted"]}">{who} · {time}</span>'
           f'<div style="background:{T["inb"]};border-radius:14px 14px 14px 4px;padding:10px 14px;font-size:14px;line-height:1.65">{text}</div></div>')
     else:
-        bgc = "rgba(124,111,240,0.30)" if kind == "auto" else BTN_GRAD
+        bgc = "rgba(59,130,246,0.28)" if kind == "auto" else BTN_GRAD
         tagtxt = "ระบบอัตโนมัติ" if kind == "auto" else who
         msgs.append(
           f'<div style="align-self:flex-end;max-width:560px;display:flex;flex-direction:column;gap:3px;align-items:flex-end">'

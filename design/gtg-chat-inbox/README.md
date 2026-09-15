@@ -18,16 +18,18 @@ Design canvas: https://claude.ai/artifact/3HMeXnFFLv6niuxhtYRFXr
 
 ## ค่าที่ลอกมาจากโปรเจกต์จริง
 
-จาก `agency-care/web/src/theme.ts` และ `components/Layout.tsx`
+จาก `agency-care/web/src/theme/ThemeContext.tsx` (โหมดมืด) และ `components/Layout.tsx`
+บน branch `feat/crm-modules-jul-2026` ซึ่งเป็นโค้ดของเว็บที่ใช้งานอยู่จริง
 
-- primary `#7c6ff0` (light `#9d93f5`, dark `#5b4fd6`), พื้นหลัง `#0a0913` + radial gradient
-- การ์ด `rgba(26,23,43,0.66)` ขอบ `rgba(255,255,255,0.06)` มุม 16px
-- ปุ่ม primary `linear-gradient(135deg,#8b7ff5,#6a5be0)` เงา `0 8px 22px -8px rgba(124,111,240,0.7)` มุม 12px
-- ตัวอักษร `#ECEBF5` / รอง `#9B99B8` ฟอนต์ Sarabun
-- Drawer 252px พื้น `#100e1c` เมนู active `linear-gradient(90deg, rgba(124,111,240,0.30), rgba(124,111,240,0.04))`
+- primary `#3B82F6` (light `#60A5FA`, dark `#1E40AF`), success `#22C55E`, warning `#FBBF24`, error `#EF4444`
+- พื้นหลัง `linear-gradient(135deg, #0F172A 0%, #111827 60%, #1F2937 100%)`
+- Drawer `#111827` ขอบขวา `#374151` กว้าง 264px · AppBar `#1F2937`
+- การ์ด `#111827` ขอบ `#374151` มุม 20px · ปุ่มทรงแคปซูล (radius 999) ตัวหนา 600
+- อินพุตมุม 12px · เมนูมุม 14px · ชิปทรงแคปซูล
+- ตัวอักษร `#F1F5F9` / รอง `#CBD5E1` ฟอนต์ `SF Pro Display` → fallback `IBM Plex Sans Thai`
 
-สีกราฟใน Dashboard ใช้ `#7c6ff0 / #b8800f / #2f9fd0` ซึ่งผ่านการตรวจ contrast และการแยกสีสำหรับตาบอดสี
-บนพื้นหลังมืดจริงของแอป
+สีกราฟใน Dashboard ใช้ `#3B82F6 / #D97706 / #0E9F8E` ซึ่งผ่านการตรวจคอนทราสต์และการแยกสี
+สำหรับตาบอดสีบนพื้นหลัง `#111827` ของแอปจริง
 
 ## แก้ไขและ deploy ใหม่
 

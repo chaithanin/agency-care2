@@ -1,41 +1,49 @@
 # -*- coding: utf-8 -*-
-"""โทเคนและชิ้นส่วน UI — ลอกค่าจริงจาก agency-care/web/src/theme.ts + components/Layout.tsx"""
+"""โทเคนและชิ้นส่วน UI — ลอกค่าจริงจาก agency-care/web/src/theme/ThemeContext.tsx (โหมดมืด)"""
 import io, os
 
 T = dict(
-    bg="#0a0913",                      # palette.background.default
-    sidebar="#100e1c",                 # Drawer PaperProps.background
-    surface="rgba(26, 23, 43, 0.66)",  # palette.background.paper
-    surfaceSolid="#171429",
-    line="rgba(255,255,255,0.07)",     # palette.divider
-    cardBorder="rgba(255,255,255,0.06)",
-    ink="#ECEBF5",                     # text.primary
-    muted="#9B99B8",                   # text.secondary
-    accent="#7c6ff0",                  # primary.main
-    accentLight="#9d93f5",             # primary.light
-    accentDark="#5b4fd6",              # primary.dark
+    bg="#0F172A",                    # ต้นทางของ gradient พื้นหลัง
+    sidebar="#111827",               # MuiDrawer paper
+    topbar="#1F2937",                # MuiAppBar
+    surface="#111827",               # การ์ด
+    surfaceSolid="#111827",
+    line="#374151",                  # palette.divider
+    cardBorder="#374151",
+    ink="#F1F5F9",                   # text.primary
+    muted="#CBD5E1",                 # text.secondary
+    dim="#94A3B8",
+    accent="#3B82F6",                # primary.main
+    accentLight="#60A5FA",           # primary.light
+    accentDark="#1E40AF",            # primary.dark
     accentInk="#FFFFFF",
-    card="rgba(124,111,240,0.16)",     # primary tint (chip พื้นหลัง)
-    inb="rgba(255,255,255,0.04)",      # แถวที่เลือก / hover
-    warn="#fbbf24",                    # warning.main
-    danger="#f87171",                  # error.main
-    ok="#34d399",                      # success.main
-    info="#60a5fa",
+    card="rgba(59,130,246,0.16)",    # ทินต์สีหลัก (ชิป/เมนูที่เลือก)
+    inb="rgba(255,255,255,0.04)",
+    warn="#FBBF24",                  # warning.main
+    danger="#EF4444",                # error.main
+    ok="#22C55E",                    # success.main
+    info="#38BDF8",
 )
-# body background จาก MuiCssBaseline
-PAGE_BG = ("radial-gradient(1100px 700px at 82% -12%, rgba(91,79,214,0.28) 0%, rgba(91,79,214,0) 55%),"
-           "radial-gradient(900px 600px at -10% 110%, rgba(79,195,247,0.10) 0%, rgba(79,195,247,0) 55%),"
-           "linear-gradient(180deg, #0b0a17 0%, #08070f 100%)")
-BTN_GRAD = "linear-gradient(135deg, #8b7ff5 0%, #6a5be0 100%)"
-BTN_SHADOW = "0 8px 22px -8px rgba(124,111,240,0.7)"
-NAV_ACTIVE = "linear-gradient(90deg, rgba(124,111,240,0.30), rgba(124,111,240,0.04))"
+PAGE_BG = "linear-gradient(135deg, #0F172A 0%, #111827 60%, #1F2937 100%)"
+BTN_GRAD = T["accent"]                       # ปุ่ม contained เป็นสีทึบ ไม่มี gradient
+BTN_SHADOW = "none"
+NAV_ACTIVE = "rgba(59,130,246,0.16)"
+R_CARD = 20          # MuiPaper rounded
+R_BTN = 999          # MuiButton — ปุ่มทรงแคปซูล
+R_INPUT = 12         # MuiOutlinedInput
+R_NAV = 14           # MuiListItemButton
 
-BODY = "'Sarabun','Inter','Roboto','Helvetica',sans-serif"
+BODY = "'SF Pro Display',-apple-system,'Segoe UI','IBM Plex Sans Thai',Roboto,Helvetica,Arial,sans-serif"
 DISPLAY = BODY
 MONO = "'IBM Plex Mono',ui-monospace,monospace"
-DRAWER = 252
+DRAWER = 264
 
 ICONS = {
+ "home": '<path d="M4 11.2 12 4.5l8 6.7"/><path d="M6.2 10v9.5h11.6V10"/><path d="M10 19.5v-5.2h4v5.2"/>',
+ "grid": '<rect x="4" y="4" width="7" height="7" rx="1.6"/><rect x="13" y="4" width="7" height="7" rx="1.6"/><rect x="4" y="13" width="7" height="7" rx="1.6"/><rect x="13" y="13" width="7" height="7" rx="1.6"/>',
+ "bell": '<path d="M6.5 10a5.5 5.5 0 0 1 11 0c0 4 1.4 5.4 1.4 5.4H5.1S6.5 14 6.5 10z"/><path d="M10.2 18.6a2 2 0 0 0 3.6 0"/>',
+ "moon": '<path d="M20 13.4A8 8 0 1 1 10.6 4a6.6 6.6 0 0 0 9.4 9.4z"/>',
+ "swap": '<path d="M4 8.5h13l-3.2-3.2"/><path d="M20 15.5H7l3.2 3.2"/>',
  "inbox": '<path d="M4 13h4l1.6 2.6h4.8L16 13h4"/><path d="M5.6 5h12.8l2.1 7.2V19H3.5v-6.8z"/>',
  "users": '<circle cx="9.5" cy="8" r="3.2"/><path d="M3.5 19.5c0-3.3 2.7-5.6 6-5.6s6 2.3 6 5.6"/><path d="M16.5 5.4a3.1 3.1 0 0 1 0 5.4"/><path d="M18.2 13.9c1.6.7 2.3 2.2 2.3 4.4"/>',
  "bolt": '<path d="M13.2 3.5 6 13.6h5l-.9 6.9 7.6-10.4h-5.2z"/>',
@@ -81,11 +89,11 @@ def head(title):
 <body>
 <x-dc>
 <helmet>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
   <style>
     body {{ margin: 0; font-family: {BODY}; color: {T['ink']}; -webkit-font-smoothing: antialiased; }}
     a {{ color: {T['accentLight']}; text-decoration: none; }}
-    a:hover {{ color: #c0b9fb; }}
+    a:hover {{ color: #93C5FD; }}
   </style>
 </helmet>'''
 
@@ -94,93 +102,128 @@ TAIL = '''</x-dc>
 </html>
 '''
 
-# เมนูจริงของ Agency Care (ตัดมาเท่าที่พอในความสูง 900px) + กลุ่มใหม่ของโมดูลแชท
-NAV_TOP = [("chart","Dashboard"),("store","Agency"),("person","New Agency Acquisition"),
-           ("calendar","Assignments"),("walk","Site Visit")]
-NAV_CHAT = [("inbox","Chat Inbox","3"),("users","Chat Contacts",None),("bolt","Chat Automations",None),
-            ("megaphone","Chat Broadcast",None),("chart","Chat Insight",None)]
-NAV_BOTTOM = [("doc","Documents"),("settings","Settings")]
+# เมนูจริงของ Agency Care แบ่งเป็นกลุ่มตามหน้าเว็บ + กลุ่มใหม่ของโมดูลแชท
+NAV_GROUPS = [
+    ("OVERVIEW", [("home", "Home", None), ("chart", "Dashboard", None),
+                  ("doc", "Company News", None), ("tag", "Promotion", None)]),
+    ("CHAT", [("inbox", "Chat Inbox", "3"), ("users", "Chat Contacts", None),
+              ("bolt", "Chat Automations", None), ("megaphone", "Chat Broadcast", None),
+              ("chart", "Chat Insight", None)]),
+    ("AGENCIES", [("store", "Agency List", None), ("grid", "Agency Matrix", None)]),
+]
 
 def _nav_item(icon_name, text, active=False, badge=None):
-    col = "#fff" if active else T['muted']
-    icol = T['accentLight'] if active else "inherit"
+    col = T['accentLight'] if active else T['muted']
     bg = NAV_ACTIVE if active else "transparent"
     weight = 700 if active else 500
-    badge_html = (f'<span style="min-width:20px;height:20px;border-radius:9px;background:{T["danger"]};color:#1a1020;'
+    badge_html = (f'<span style="min-width:22px;height:20px;border-radius:999px;background:{T["danger"]};color:#fff;'
                   f'font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;padding:0 6px">{badge}</span>') if badge else ""
-    return (f'<div style="display:flex;align-items:center;gap:0;height:38px;padding:0 10px;margin-bottom:4px;'
-            f'border-radius:12px;background:{bg};color:{col}">'
-            f'<span style="width:36px;flex:none;display:flex;align-items:center;color:{icol}">{ic(icon_name,19)}</span>'
-            f'<span style="flex:1;font-size:14px;font-weight:{weight};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{text}</span>'
+    return (f'<div style="display:flex;align-items:center;gap:0;height:42px;padding:0 12px;margin-bottom:2px;'
+            f'border-radius:{R_NAV}px;background:{bg};color:{col}">'
+            f'<span style="width:34px;flex:none;display:flex;align-items:center">{ic(icon_name,20)}</span>'
+            f'<span style="flex:1;font-size:14.5px;font-weight:{weight};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{text}</span>'
             f'{badge_html}</div>')
 
-def _nav_label(text):
-    return (f'<div style="padding:12px 12px 6px;font-size:10.5px;font-weight:700;letter-spacing:.14em;'
-            f'color:rgba(155,153,184,0.7)">{text}</div>')
+def _group_label(text):
+    return (f'<div style="display:flex;align-items:center;gap:8px;padding:14px 12px 6px;font-size:11px;font-weight:700;'
+            f'letter-spacing:.12em;color:{T["dim"]}">{text}<span style="flex:1"></span>{ic("chevdown",15)}</div>')
 
 def rail(active):
-    """Sidebar 252px ตาม Layout.tsx — active คือคีย์ไอคอนของเมนูแชท"""
-    top = "".join(_nav_item(i, t) for i, t in NAV_TOP)
-    chat = "".join(_nav_item(i, t, active=(i == active), badge=b) for i, t, b in NAV_CHAT)
-    bottom = "".join(_nav_item(i, t, active=(i == "settings" and active == "settings")) for i, t in NAV_BOTTOM)
+    """Sidebar ตาม Layout จริง: การ์ดโลโก้ด้านบน เมนูแบ่งกลุ่ม การ์ดผู้ใช้ด้านล่าง"""
+    groups = "".join(
+        _group_label(label) + "".join(_nav_item(i, t, active=(i == active), badge=b) for i, t, b in items)
+        for label, items in NAV_GROUPS)
     return (
-      f'<div style="width:{DRAWER}px;flex:none;background:{T["sidebar"]};border-right:1px solid {T["cardBorder"]};'
-      f'display:flex;flex-direction:column;padding:12px;overflow:hidden">'
-      f'<div style="display:flex;align-items:center;gap:12px;padding:12px 8px;margin-bottom:8px">'
-      f'<span style="width:42px;height:42px;flex:none;border-radius:50%;background:linear-gradient(135deg,#8b7ff5,#5b4fd6);'
-      f'box-shadow:0 10px 24px -8px rgba(124,111,240,0.7);display:flex;align-items:center;justify-content:center">{ic("hub",23,1.8,"#fff")}</span>'
-      f'<span style="display:flex;flex-direction:column;line-height:1">'
-      f'<span style="font-weight:800;font-size:18px;line-height:1">AGENCY</span>'
-      f'<span style="color:{T["accentLight"]};font-weight:800;font-size:12px;letter-spacing:3px">CARE</span></span></div>'
-      f'<div style="flex:1;overflow:hidden;padding:0 4px">{top}{_nav_label("CHAT")}{chat}'
-      f'<div style="height:1px;background:{T["line"]};margin:10px 6px"></div>{bottom}</div>'
-      f'<div style="display:flex;align-items:center;gap:12px;padding:10px;border-radius:24px;background:rgba(255,255,255,0.04)">'
-      f'<span style="width:38px;height:38px;flex:none;border-radius:50%;background:{T["accentDark"]};color:#fff;'
+      f'<div style="width:{DRAWER}px;flex:none;background:{T["sidebar"]};border-right:1px solid {T["line"]};'
+      f'display:flex;flex-direction:column;padding:16px 12px;overflow:hidden">'
+      # การ์ดโลโก้
+      f'<div style="background:#080C16;border:1px solid rgba(255,255,255,0.06);border-radius:{R_CARD}px;'
+      f'padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:10px">'
+      f'<svg width="56" height="56" viewBox="0 0 56 56" fill="none">'
+      f'<defs><linearGradient id="acg" x1="0" y1="0" x2="1" y2="1">'
+      f'<stop offset="0%" stop-color="#22D3EE"/><stop offset="55%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#34D399"/>'
+      f'</linearGradient></defs>'
+      f'<path d="M8 44 24 10l16 34" stroke="url(#acg)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>'
+      f'<path d="M15 33h18" stroke="url(#acg)" stroke-width="5" stroke-linecap="round"/>'
+      f'<path d="M50 20a15 15 0 1 0 0 18" stroke="url(#acg)" stroke-width="5" stroke-linecap="round" fill="none"/>'
+      f'<path d="m40 30 4 4 8-9" stroke="#34D399" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>'
+      f'<span style="font-size:16px;font-weight:700;letter-spacing:.01em">Agency Care</span>'
+      f'<span style="font-size:8.5px;letter-spacing:.24em;color:{T["dim"]}">CONNECT · VISIT · GROW</span></div>'
+      f'<div style="flex:1;overflow:hidden">{groups}</div>'
+      # การ์ดผู้ใช้
+      f'<div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,0.04)">'
+      f'<span style="width:38px;height:38px;flex:none;border-radius:50%;background:{T["accent"]};color:#fff;'
       f'display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700">PL</span>'
       f'<span style="flex:1;display:flex;flex-direction:column;min-width:0">'
-      f'<span style="font-size:13.5px;font-weight:700">Ploy Srisai</span>'
-      f'<span style="font-size:11.5px;color:{T["muted"]}">Agency Care</span></span>'
-      f'<span style="color:{T["muted"]}">{ic("dots",17)}</span></div>'
+      f'<span style="font-size:14px;font-weight:700">Ploy Srisai</span>'
+      f'<span style="font-size:12px;color:{T["dim"]}">Agency Care</span></span></div>'
+      f'<div style="display:flex;align-items:center;gap:10px;padding:12px 14px 2px;font-size:12px;'
+      f'letter-spacing:.14em;color:{T["dim"]};font-weight:700">LOGOUT</div>'
       f'</div>')
 
 def topbar(title, right="", subtitle=""):
-    sub = f'<span style="font-size:13px;color:{T["muted"]}">{subtitle}</span>' if subtitle else ""
-    return (f'<div style="flex:none;display:flex;align-items:center;gap:12px;padding:24px 28px 12px">'
-            f'<div style="display:flex;flex-direction:column;gap:2px;min-width:0">'
-            f'<span style="font-size:22px;font-weight:800;letter-spacing:-0.3px;line-height:1.15">{title}</span>{sub}</div>'
-            f'<div style="flex:1"></div>{right}</div>')
+    """แถบบนของแอป (คำทักทาย + เครื่องมือ) แล้วต่อด้วยหัวข้อของหน้าในเนื้อหา"""
+    sub = f'<span style="font-size:13px;color:{T["dim"]}">{subtitle}</span>' if subtitle else ""
+    tool = lambda inner, extra="": (
+        f'<span style="width:36px;height:36px;border-radius:50%;border:1px solid {T["line"]};color:{T["muted"]};'
+        f'display:flex;align-items:center;justify-content:center;position:relative;{extra}">{inner}</span>')
+    bell = (f'<span style="position:relative;display:flex">{ic("bell",18)}'
+            f'<span style="position:absolute;top:-7px;right:-9px;min-width:18px;height:18px;border-radius:999px;'
+            f'background:{T["danger"]};color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;'
+            f'justify-content:center;padding:0 4px">86</span></span>')
+    return (
+      # แถบแอป
+      f'<div style="flex:none;height:64px;display:flex;align-items:center;gap:10px;padding:0 24px;'
+      f'background:{T["topbar"]};border-bottom:1px solid {T["line"]}">'
+      f'<div style="display:flex;flex-direction:column;gap:1px">'
+      f'<span style="font-size:19px;font-weight:700;letter-spacing:-0.01em">Good afternoon, Ploy 👋</span>'
+      f'<span style="font-size:12.5px;color:{T["dim"]}">Tuesday, September 15</span></div>'
+      f'<div style="flex:1"></div>'
+      f'<span style="display:flex;align-items:center;gap:7px;height:34px;padding:0 14px;border-radius:999px;'
+      f'border:1px solid {T["line"]};color:{T["muted"]};font-size:12.5px;font-weight:600">{ic("swap",15)}Manager</span>'
+      f'<span style="display:flex;align-items:center;gap:6px;height:34px;padding:0 12px;border-radius:999px;'
+      f'border:1px solid {T["line"]};color:{T["muted"]};font-size:12.5px;font-weight:600">EN English{ic("chevdown",14)}</span>'
+      f'{tool(ic("search",18))}{tool(ic("moon",18))}{tool(bell)}'
+      f'<span style="width:36px;height:36px;border-radius:50%;background:{T["accent"]};color:#fff;display:flex;'
+      f'align-items:center;justify-content:center;font-size:13px;font-weight:700">PL</span>'
+      f'</div>'
+      # หัวข้อของหน้า
+      f'<div style="flex:none;display:flex;align-items:center;gap:12px;padding:20px 24px 12px">'
+      f'<div style="display:flex;flex-direction:column;gap:2px;min-width:0">'
+      f'<span style="font-size:21px;font-weight:700;letter-spacing:-0.01em;line-height:1.2">{title}</span>{sub}</div>'
+      f'<div style="flex:1"></div>{right}</div>')
 
 def search_box(placeholder="ค้นหา", width=240):
-    return (f'<div style="display:flex;align-items:center;gap:8px;width:{width}px;height:38px;padding:0 12px;'
-            f'border:1px solid rgba(255,255,255,0.14);border-radius:12px;background:rgba(255,255,255,0.03);color:{T["muted"]}">'
+    return (f'<div style="display:flex;align-items:center;gap:8px;width:{width}px;height:38px;padding:0 13px;'
+            f'border:1px solid {T["line"]};border-radius:{R_INPUT}px;background:rgba(255,255,255,0.03);color:{T["dim"]}">'
             f'{ic("search",16)}<span style="font-size:13px">{placeholder}</span></div>')
 
-def btn(label, kind="ghost", icon=None, size=36):
+def btn(label, kind="ghost", icon=None, size=38):
     if kind == "primary":
-        style = f'background:{BTN_GRAD};color:#fff;box-shadow:{BTN_SHADOW};border:none;font-weight:600'
+        style = f'background:{T["accent"]};color:#fff;border:none;font-weight:600'
     elif kind == "danger":
-        style = f'background:transparent;color:{T["danger"]};border:1px solid rgba(248,113,113,0.4);font-weight:600'
+        style = f'background:transparent;color:{T["danger"]};border:1px solid rgba(239,68,68,0.45);font-weight:600'
     else:
-        style = f'background:transparent;color:{T["muted"]};border:1px solid rgba(255,255,255,0.08);font-weight:600'
+        style = f'background:transparent;color:{T["muted"]};border:1px solid {T["line"]};font-weight:600'
     inner = (ic(icon,16) if icon else "") + f'<span>{label}</span>'
-    return (f'<div style="display:flex;align-items:center;gap:7px;height:{size}px;padding:0 14px;border-radius:12px;'
-            f'font-size:13px;white-space:nowrap;{style}">{inner}</div>')
+    return (f'<div style="display:flex;align-items:center;gap:8px;height:{size}px;padding:0 18px;border-radius:{R_BTN}px;'
+            f'font-size:13.5px;white-space:nowrap;{style}">{inner}</div>')
 
 def icon_btn(icon_name, text=None):
-    t = f'<span style="font-size:11.5px;font-weight:700">{text}</span>' if text else ""
-    return (f'<div style="display:flex;align-items:center;gap:5px;height:36px;padding:0 12px;border-radius:40px;'
-            f'border:1px solid rgba(255,255,255,0.08);color:{T["muted"]}">{ic(icon_name,17)}{t}</div>')
+    t = f'<span style="font-size:12px;font-weight:700">{text}</span>' if text else ""
+    return (f'<div style="display:flex;align-items:center;gap:6px;height:36px;padding:0 13px;border-radius:999px;'
+            f'border:1px solid {T["line"]};color:{T["muted"]}">{ic(icon_name,17)}{t}</div>')
 
 def pill(text, tone="muted"):
     tones = {
-      "muted": ("rgba(255,255,255,0.06)", T['muted'], "rgba(255,255,255,0.10)"),
-      "accent": ("rgba(124,111,240,0.18)", T['accentLight'], "rgba(124,111,240,0.35)"),
-      "warn": ("rgba(251,191,36,0.14)", T['warn'], "rgba(251,191,36,0.32)"),
-      "danger": ("rgba(248,113,113,0.14)", T['danger'], "rgba(248,113,113,0.32)"),
-      "ok": ("rgba(52,211,153,0.14)", T['ok'], "rgba(52,211,153,0.32)"),
+      "muted": ("rgba(255,255,255,0.06)", T['muted'], "rgba(255,255,255,0.12)"),
+      "accent": ("rgba(59,130,246,0.18)", T['accentLight'], "rgba(59,130,246,0.38)"),
+      "warn": ("rgba(251,191,36,0.16)", T['warn'], "rgba(251,191,36,0.35)"),
+      "danger": ("rgba(239,68,68,0.16)", T['danger'], "rgba(239,68,68,0.35)"),
+      "ok": ("rgba(34,197,94,0.16)", T['ok'], "rgba(34,197,94,0.35)"),
     }
     bgc, fg, bd = tones[tone]
-    return (f'<span style="display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:9px;'
+    return (f'<span style="display:inline-flex;align-items:center;height:23px;padding:0 10px;border-radius:999px;'
             f'background:{bgc};color:{fg};border:1px solid {bd};font-size:11.5px;font-weight:600;white-space:nowrap">{text}</span>')
 
 def dot(color, size=8):
@@ -189,34 +232,34 @@ def dot(color, size=8):
 CHAN = {"LINE":"#06C755","Facebook":"#1877F2","WhatsApp":"#25D366","Instagram":"#C13584"}
 
 def chan(name):
-    return (f'<span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:{T["muted"]}">'
+    return (f'<span style="display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:{T["dim"]}">'
             f'{dot(CHAN[name])}{name}</span>')
 
 def avatar(initials, size=36, bg=None, fg=None):
-    return (f'<div style="width:{size}px;height:{size}px;flex:none;border-radius:50%;background:{bg or T["accentDark"]};'
+    return (f'<div style="width:{size}px;height:{size}px;flex:none;border-radius:50%;background:{bg or T["accent"]};'
             f'color:{fg or "#fff"};display:flex;align-items:center;justify-content:center;'
             f'font-weight:700;font-size:{max(11,int(size*0.34))}px">{initials}</div>')
 
 def label(text):
-    return (f'<div style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:{T["muted"]}">{text}</div>')
+    return (f'<div style="font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:{T["dim"]}">{text}</div>')
 
 def card(inner, pad=18, extra=""):
-    return (f'<div style="background:{T["surface"]};border:1px solid {T["cardBorder"]};border-radius:16px;'
+    return (f'<div style="background:{T["surface"]};border:1px solid {T["cardBorder"]};border-radius:{R_CARD}px;'
             f'padding:{pad}px;{extra}">{inner}</div>')
 
 def select(value, width=150):
     return (f'<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;width:{width}px;'
-            f'height:38px;padding:0 12px;border:1px solid rgba(255,255,255,0.14);border-radius:12px;'
-            f'background:rgba(255,255,255,0.03);font-size:13px">{value}<span style="color:{T["muted"]}">{ic("chevdown",14)}</span></div>')
+            f'height:38px;padding:0 13px;border:1px solid {T["line"]};border-radius:{R_INPUT}px;'
+            f'background:rgba(255,255,255,0.03);font-size:13px">{value}<span style="color:{T["dim"]}">{ic("chevdown",14)}</span></div>')
 
 def field(lbl, value, width=None, mono=False, placeholder=False):
     w = f'width:{width}px;' if width else 'flex:1;'
     fam = f'font-family:{MONO};' if mono else ''
-    col = T['muted'] if placeholder else T['ink']
+    col = T['dim'] if placeholder else T['ink']
     return (f'<div style="display:flex;flex-direction:column;gap:6px;{w}">'
-            f'<span style="font-size:12px;color:{T["muted"]}">{lbl}</span>'
-            f'<div style="height:40px;display:flex;align-items:center;padding:0 12px;border:1px solid rgba(255,255,255,0.14);'
-            f'border-radius:12px;background:rgba(255,255,255,0.03);font-size:13.5px;{fam}color:{col}">{value}</div></div>')
+            f'<span style="font-size:12px;color:{T["dim"]}">{lbl}</span>'
+            f'<div style="height:42px;display:flex;align-items:center;padding:0 13px;border:1px solid {T["line"]};'
+            f'border-radius:{R_INPUT}px;background:rgba(255,255,255,0.03);font-size:13.5px;{fam}color:{col}">{value}</div></div>')
 
 def page(inner, w=1440, h=900):
     return (f'<div style="width:{w}px;height:{h}px;display:flex;background:{PAGE_BG};background-repeat:no-repeat;'

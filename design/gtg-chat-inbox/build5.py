@@ -49,9 +49,6 @@ channels_screen = f'''<div style="width:1440px;height:900px;display:flex;backgro
         {channel_card("WhatsApp Cloud API", CHAN["WhatsApp"], "ยังไม่เชื่อมต่อ", "muted",
           [("เบอร์ที่จะใช้","ยังไม่ได้ตั้งค่า"),("ต้องมีก่อน","Meta Business verification และเทมเพลตที่อนุมัติแล้ว")],
           btn("เชื่อมต่อ","primary","plus",30))}
-        {channel_card("Instagram DM", CHAN["Instagram"], "ยังไม่เชื่อมต่อ", "muted",
-          [("ใช้ Meta app เดิมร่วมกับ Messenger ได้","ต้องผ่าน App Review ของ Messenger ก่อน")],
-          btn("เชื่อมต่อ","ghost","plus",30))}
       </div>
     </div>
   </div>
