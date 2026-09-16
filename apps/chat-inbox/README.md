@@ -157,3 +157,16 @@ public/index.html          หน้า Inbox 3 คอลัมน์ (vanilla J
 - คิวงาน (BullMQ/Redis) สำหรับ webhook ที่ล้มเหลว — ตอนนี้ยิงครั้งเดียว ไม่ retry
 - rate limit แบบแชร์ข้ามหลาย instance (ตอนนี้นับในหน่วยความจำของ process เดียว)
 - HTTPS + โดเมนจริง และ log ที่ไม่บันทึกข้อความลูกค้าทั้งก้อนลง stdout
+
+## เชื่อมต่อ respond.io
+
+ดึงผู้ติดต่อ ข้อความ และข้อมูล workspace จาก respond.io เข้ามาใช้
+
+```bash
+npm run respondio:check              # ตรวจว่า token ใช้ได้
+npm run respondio:pull -- --max 20   # ลองดึง 20 คนแรก
+npm run respondio:pull -- --map      # ดึงทั้งหมดแล้วแปลงเข้าตาราง contacts
+```
+
+ต้องตั้ง `RESPONDIO_API_TOKEN` ใน `.env` ก่อน — วิธีทำและรายละเอียดทั้งหมดอยู่ใน
+[`docs/RESPOND_IO.md`](../../docs/RESPOND_IO.md)

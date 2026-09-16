@@ -171,3 +171,113 @@ CREATE TABLE IF NOT EXISTS automation_runs (
   result          TEXT NOT NULL,
   created_at      TEXT NOT NULL DEFAULT (datetime('now'))
 );
+
+-- ============================================================
+-- respond.io — ตารางกระจกเงา เก็บข้อมูลดิบที่ดึงมาแบบไม่แปลง
+-- แยกจากตารางหลักโดยตั้งใจ การ pull จึงไม่มีทางทำข้อมูลของระบบเสีย
+-- การแปลงเข้าตารางหลักทำแยกขั้นตอน (src/integrations/respondio/map.js)
+-- ============================================================
+
+CREATE TABLE IF NOT EXISTS respondio_contacts (
+  id            INTEGER PRIMARY KEY,          -- id จาก respond.io
+  first_name    TEXT,
+  last_name     TEXT,
+  phone         TEXT,
+  email         TEXT,
+  language      TEXT,
+  country_code  TEXT,
+  profile_pic   TEXT,
+  lifecycle     TEXT,
+  status        TEXT,                          -- open / close
+  assignee_id   INTEGER,
+  assignee_name TEXT,
+  tags_json     TEXT NOT NULL DEFAULT '[]',
+  fields_json   TEXT NOT NULL DEFAULT '[]',    -- custom_fields ดิบ
+  created_at    INTEGER,                       -- epoch จาก respond.io
+  synced_at     TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_rio_contacts_phone ON respondio_contacts(phone);
+CREATE INDEX IF NOT EXISTS idx_rio_contacts_email ON respondio_contacts(email);
+
+CREATE TABLE IF NOT EXISTS respondio_contact_channels (
+  id                        INTEGER PRIMARY KEY,
+  contact_id                INTEGER NOT NULL REFERENCES respondio_contacts(id) ON DELETE CASCADE,
+  name                      TEXT,
+  source                    TEXT,              -- line / whatsapp / facebook / ...
+  meta_json                 TEXT,
+  last_message_time         INTEGER,
+  last_incoming_message_time INTEGER,
+  created_at                INTEGER,
+  synced_at                 TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_rio_cc_contact ON respondio_contact_channels(contact_id);
+
+CREATE TABLE IF NOT EXISTS respondio_messages (
+  id           INTEGER PRIMARY KEY,
+  contact_id   INTEGER NOT NULL REFERENCES respondio_contacts(id) ON DELETE CASCADE,
+  channel_id   INTEGER,
+  traffic      TEXT,                            -- incoming / outgoing
+  type         TEXT,                            -- text / attachment / email / ...
+  text         TEXT,
+  payload_json TEXT,                            -- ตัวข้อความดิบทั้งก้อน
+  status       TEXT,                            -- สถานะล่าสุด: sent / delivered / read / failed
+  timestamp    INTEGER,
+  synced_at    TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_rio_msg_contact ON respondio_messages(contact_id, timestamp DESC);
+
+CREATE TABLE IF NOT EXISTS respondio_users (
+  id         INTEGER PRIMARY KEY,
+  first_name TEXT,
+  last_name  TEXT,
+  email      TEXT,
+  synced_at  TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS respondio_channels (
+  id        INTEGER PRIMARY KEY,
+  name      TEXT,
+  source    TEXT,
+  meta_json TEXT,
+  synced_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS respondio_custom_fields (
+  id         INTEGER PRIMARY KEY,
+  name       TEXT,
+  type       TEXT,
+  meta_json  TEXT,
+  synced_at  TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS respondio_tags (
+  name      TEXT PRIMARY KEY,
+  synced_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS respondio_closing_notes (
+  id         INTEGER PRIMARY KEY,
+  name       TEXT,
+  meta_json  TEXT,
+  synced_at  TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- จับคู่ contact ของ respond.io กับ contact ในระบบ
+CREATE TABLE IF NOT EXISTS respondio_contact_links (
+  respondio_contact_id INTEGER PRIMARY KEY REFERENCES respondio_contacts(id) ON DELETE CASCADE,
+  contact_id           INTEGER NOT NULL REFERENCES contacts(id) ON DELETE CASCADE,
+  matched_by           TEXT NOT NULL,          -- phone / email / created
+  linked_at            TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS idx_rio_link_contact ON respondio_contact_links(contact_id);
+
+-- บันทึกการ sync แต่ละรอบ ไว้ดูย้อนหลังและทำ incremental
+CREATE TABLE IF NOT EXISTS respondio_sync_runs (
+  id          INTEGER PRIMARY KEY AUTOINCREMENT,
+  resource    TEXT NOT NULL,
+  started_at  TEXT NOT NULL DEFAULT (datetime('now')),
+  finished_at TEXT,
+  ok          INTEGER NOT NULL DEFAULT 0,
+  fetched     INTEGER NOT NULL DEFAULT 0,
+  error       TEXT
+);

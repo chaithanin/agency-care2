@@ -32,6 +32,20 @@ export const config = {
     // dryRun = ไม่ยิงออก LINE จริง ใช้ตอนทดสอบในเครื่อง
     dryRun: (process.env.LINE_DRY_RUN || 'true') === 'true',
   },
+  respondio: {
+    // token สร้างที่ respond.io → Settings → Integrations → Developer API → Add Access Token
+    // ห้าม commit ค่านี้ ใส่ใน .env หรือ environment เท่านั้น
+    apiToken: process.env.RESPONDIO_API_TOKEN || '',
+    apiBase: process.env.RESPONDIO_API_BASE || 'https://api.respond.io/v2',
+    timeoutMs: Number(process.env.RESPONDIO_TIMEOUT_MS || 20000),
+    maxRetries: Number(process.env.RESPONDIO_MAX_RETRIES || 4),
+    // จำนวนแถวต่อหนึ่งหน้า — respond.io จำกัดไว้ที่ 100
+    pageSize: Number(process.env.RESPONDIO_PAGE_SIZE || 100),
+    // timezone ที่ใช้กับ POST /contact/list
+    timezone: process.env.RESPONDIO_TIMEZONE || 'Asia/Bangkok',
+    // ดึงข้อความย้อนหลังกี่ข้อความต่อ contact ตอน sync
+    messagesPerContact: Number(process.env.RESPONDIO_MESSAGES_PER_CONTACT || 50),
+  },
   // ผู้ใช้ปลอมสำหรับ prototype — ของจริงต้องต่อ Auth.js ตาม roadmap สัปดาห์ 4-6
   devUserHeader: 'x-dev-user',
   webhookTimeoutMs: Number(process.env.WEBHOOK_TIMEOUT_MS || 5000),
