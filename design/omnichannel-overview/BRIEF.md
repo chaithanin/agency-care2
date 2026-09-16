@@ -195,15 +195,45 @@ Seller เห็นได้เฉพาะแถวของตัวเอง�
 
 ## ต้องมีก่อนเริ่ม
 
-โมดูลนี้พึ่งของสองอย่างที่ต้องมีก่อน
+| ของ | สถานะ |
+| --- | --- |
+| respond.io API token | **มีแล้ว** ในโปรเจกต์หลัก |
+| ตัวเชื่อม respond.io | มีต้นแบบให้ยกไปใช้ — `apps/chat-inbox/src/integrations/respondio/` |
+| ตัวคำนวณสถิติ | มีต้นแบบให้ยกไปใช้ — `apps/chat-inbox/src/integrations/respondio/stats.js` |
+| โมดูล LINE Contacts | **ยังต้องทำก่อน** — `design/line-broadcast/BRIEF.md` |
 
-1. **ตัวเชื่อม respond.io** — ต้นแบบอยู่ที่ `apps/chat-inbox/src/integrations/respondio/`
-   ในรีโป agency-care2 (client, sync, map ทดสอบผ่านแล้ว 14 เคส)
-2. **โมดูล LINE Contacts** — ตาราง `line_contacts` และ `line_contact_roles`
-   ใช้แยก Customer / Agency / Sales ดูคำสั่งที่ `design/line-broadcast/BRIEF.md`
+### ต้นแบบที่ยกไปใช้ได้เลย
 
-**ถ้ายังไม่มีสองอย่างนี้ ทำหน้านี้ไม่ได้** — Audience, Customer vs Agency และ
-Team Performance จะไม่มีข้อมูล ให้ทำสองงานนั้นก่อน
+อยู่ที่รีโป `chaithanin/agency-care2` branch `claude/agency-care-test-project-zo163o`
+
+| ไฟล์ | ทำอะไร | ทดสอบแล้ว |
+| --- | --- | --- |
+| `respondio/client.js` | Bearer token · cursor pagination · retry 429 ตาม `Retry-After` · เลิกทันทีเมื่อ 401 | 14 เคส |
+| `respondio/sync.js` | ดึงลงตารางกระจกเงา บันทึกทุกรอบที่ sync แม้ตอนพัง | 14 เคส |
+| `respondio/map.js` | จับคู่ contact กับผู้ติดต่อในระบบด้วยเบอร์ 9 หลักท้าย แล้วอีเมล | 14 เคส |
+| `respondio/stats.js` | **คำนวณตัวเลขทุกตัวของหน้านี้จากข้อมูลในเครื่อง** | 8 เคส |
+
+`stats.js` คือตัวที่ตรงกับงานนี้ที่สุด — มี `audience()`, `channels()`,
+`responseTimes()`, `trend()`, `gaps()` และ `overview()` เขียนเป็น JavaScript ธรรมดา
+แปลงเป็น TypeScript + Prisma ได้ตรง ๆ
+
+ตรรกะที่ทดสอบผ่านแล้วและควรลอกไป
+
+- **First response นับจากข้อความแรกที่รอ ไม่ใช่ข้อความล่าสุด** —
+  ลูกค้าพิมพ์ติดกันสามบรรทัด ต้องนับจากบรรทัดแรก ไม่ใช่บรรทัดที่สาม
+- **เก็บผลรวมกับจำนวน ไม่ใช่ค่าเฉลี่ยสำเร็จรูป** — รวมข้ามวันแล้วยังถูก
+- **นับคนที่ถามแล้วยังไม่มีใครตอบแยกต่างหาก** — ไม่ใช่ปล่อยให้หายไปจากค่าเฉลี่ย
+- **ผลลัพธ์ไม่มีชื่อ เบอร์ หรืออีเมลติดออกมาเลย** มีเทสต์คุมข้อนี้ไว้
+
+### สิ่งที่ยังขาด
+
+โมดูล **LINE Contacts** (ตาราง `line_contacts` และ `line_contact_roles`)
+ใช้แยก Customer / Agency / Sales
+
+**ถ้ายังไม่มี** ให้ทำหน้านี้ได้ในส่วนที่ไม่ต้องใช้ type ก่อน —
+KPI, Channels, Response Time, Trend, Lead Journey, Project Interest, Broadcast
+ใช้ได้หมด ส่วน **Audience, Customer vs Agency และ Team Performance**
+ให้แสดงว่า "รอโมดูล LINE Contacts" แทนที่จะแสดงศูนย์
 
 ---
 
@@ -256,9 +286,34 @@ gcloud run services update-traffic agency-care --region asia-east2 --to-latest
 3. ผลการตรวจทั้งหมดข้างบน รวมเวลาโหลดหน้า ใส่ไว้ในเนื้อ PR
 4. **อย่าเพิ่ง deploy** รอให้เจ้าของงานสั่ง
 
+## ขั้นแรกที่ควรทำ — ดูข้อมูลจริงก่อนออกแบบตาราง
+
+ก่อนเขียน schema ให้ดึงข้อมูลจริงมาดูก่อนว่าหน้าตาเป็นยังไง
+workspace ตั้งชื่อ lifecycle ว่าอะไร มีช่องทางอะไรต่อไว้แล้วบ้าง
+
+```bash
+# ในต้นแบบ — ใส่ RESPONDIO_API_TOKEN ใน .env ก่อน
+cd apps/chat-inbox
+npm run respondio:check              # token ใช้ได้ไหม เห็นอะไรบ้าง
+npm run respondio:pull -- --max 200  # ดึงมา 200 คนแรก
+npm run respondio:stats              # ตัวเลขจริงของหน้านี้ทั้งหมด
+npm run respondio:stats -- --json    # เอา JSON ไปใช้ต่อ
+```
+
+`respondio:stats` จะบอกสามอย่างที่ตัดสินใจไม่ได้ถ้าไม่เห็นข้อมูลจริง
+
+1. **lifecycle ที่ workspace ใช้จริงชื่ออะไร** — กระทบการแม็ปเข้า Lead Journey
+2. **ช่องทางไหนต่อเข้า respond.io แล้วบ้าง** — ช่องที่ยังไม่ต่อจะไม่มีข้อมูลเลย
+3. **มี contact กี่คนที่ไม่มีทั้งเบอร์และอีเมล** — กลุ่มนี้จับคู่กับ CRM ไม่ได้
+   จะไม่ปรากฏใน funnel ต้องรู้จำนวนก่อนจะได้ตัดสินใจว่าจะแสดงยังไง
+
+**อย่าเดาตัวเลขพวกนี้** ตัวเลขใน mockup เป็นตัวอย่างสมมติทั้งหมด
+
+---
+
 ## เรื่องที่ยังต้องถามเจ้าของงาน
 
-1. ช่องทางไหนต่อเข้า respond.io แล้วบ้าง — ถ้า Facebook หรือ Instagram ยังไม่ได้ต่อ
-   แถวนั้นในตารางจะว่าง ต้องตัดออกหรือแสดงว่า "ยังไม่ได้เชื่อม"
+1. ช่องทางที่ยังไม่ได้ต่อเข้า respond.io จะตัดแถวออก หรือแสดงว่า "ยังไม่ได้เชื่อม"
+   (รู้ได้เองว่ามีช่องทางไหนบ้างจาก `npm run respondio:stats`)
 2. เก็บข้อมูลสรุปย้อนหลังกี่เดือน — กระทบขนาดตารางและความเร็ว
 3. ให้ Seller เห็นภาพรวมทั้งบริษัทได้ไหม หรือเห็นเฉพาะของตัวเอง

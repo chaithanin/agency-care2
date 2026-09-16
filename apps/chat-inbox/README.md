@@ -166,6 +166,7 @@ public/index.html          หน้า Inbox 3 คอลัมน์ (vanilla J
 npm run respondio:check              # ตรวจว่า token ใช้ได้
 npm run respondio:pull -- --max 20   # ลองดึง 20 คนแรก
 npm run respondio:pull -- --map      # ดึงทั้งหมดแล้วแปลงเข้าตาราง contacts
+npm run respondio:stats              # สรุปตัวเลขจากข้อมูลที่ดึงมา
 ```
 
 ต้องตั้ง `RESPONDIO_API_TOKEN` ใน `.env` ก่อน — วิธีทำและรายละเอียดทั้งหมดอยู่ใน

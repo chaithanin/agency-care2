@@ -16,6 +16,7 @@
     "receiver": "node --disable-warning=ExperimentalWarning scripts/agency-care-receiver.js",
     "simulate": "node --disable-warning=ExperimentalWarning scripts/simulate-line.js",
     "respondio:check": "node --disable-warning=ExperimentalWarning scripts/respondio-check.js",
-    "respondio:pull": "node --disable-warning=ExperimentalWarning scripts/respondio-pull.js"
+    "respondio:pull": "node --disable-warning=ExperimentalWarning scripts/respondio-pull.js",
+    "respondio:stats": "node --disable-warning=ExperimentalWarning scripts/respondio-stats.js"
   }
 }
