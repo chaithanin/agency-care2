@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1560px;min-height:1560px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">Data Model &amp; Rules</h1>
+      <p class="cap mut" style="margin:0">โครงสร้างฐานข้อมูลและกฎที่ต้องบังคับฝั่ง server</p>
+    </div>
+    
+  </div>
+  <div class="row" style="gap:2px;border-bottom:1px solid #374151"><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">OVERVIEW</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#60A5FA;border-bottom:2px solid #3B82F6;font-weight:700">CONTACTS</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">SEND HISTORY</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">TEMPLATES</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">ANALYTICS</div></div>
+  <div class="row" style="gap:18px;align-items:flex-start">
+  <div class="col grow" style="gap:18px"><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">line_contacts — ตัวคน</h3></div>
+  <p class="cap mut" style="margin:0">หนึ่งแถวต่อหนึ่ง LINE User</p>
+  <div class="col" style="gap:0"><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">line_user_id</span><span class="cap" style="color:#CBD5E1">unique — ตัวระบุจาก LINE</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">display_name / picture_url</span><span class="cap" style="color:#CBD5E1">ดึงจาก getProfile() ที่มีอยู่แล้วใน line.service.ts</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">phone / email / language / nationality</span><span class="cap" style="color:#CBD5E1">เติมทีหลังตอนจัดบทบาทหรือผูกกับ CRM</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">project_interest</span><span class="cap" style="color:#CBD5E1">string[] — โครงการที่สนใจ</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">followed_at / unfollowed_at / last_interaction_at</span><span class="cap" style="color:#CBD5E1">จาก webhook</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">status</span><span class="cap" style="color:#CBD5E1">active | blocked | inactive — นับเฉพาะ active</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">tags</span><span class="cap" style="color:#CBD5E1">string[]</span></div></div>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">line_contact_roles — บทบาท</h3></div>
+  <p class="cap mut" style="margin:0">หนึ่งแถวต่อหนึ่งบทบาท คนหนึ่งมีได้หลายแถว</p>
+  <div class="col" style="gap:0"><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">line_contact_id</span><span class="cap" style="color:#CBD5E1">-> line_contacts (cascade)</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">contact_type</span><span class="cap" style="color:#CBD5E1">sales | customer | agency | partner | other</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">customer_lead_id</span><span class="cap" style="color:#CBD5E1">-> CustomerLead (เมื่อเป็น customer)</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">agency_id</span><span class="cap" style="color:#CBD5E1">-> Agency (เมื่อเป็น agency)</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">employee_id</span><span class="cap" style="color:#CBD5E1">-> Employee (เมื่อเป็น sales — บังคับ)</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">position</span><span class="cap" style="color:#CBD5E1">ตำแหน่งในเอเจนซี่ เช่น Owner, Sales Manager</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">assigned_seller_id</span><span class="cap" style="color:#CBD5E1">-> Employee</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">classified_by_id / classified_at</span><span class="cap" style="color:#CBD5E1">ใครจัดบทบาทนี้ เมื่อไหร่</span></div><div class="row" style="gap:12px;padding:5px 0;border-bottom:1px solid #374151"><span class="b2" style="width:210px;flex-shrink:0;font-weight:600;font-family:ui-monospace,monospace;font-size:13px">@@unique</span><span class="cap" style="color:#CBD5E1">(line_contact_id, contact_type)</span></div></div>
+</div></div>
+  <div class="col" style="gap:18px;width:430px;flex-shrink:0"><div class="card pad col" style="gap:12px;border-color:rgba(251,191,36,.35);
+     background:rgba(251,191,36,.07)">
+  <h3 class="sec" style="color:#FBBF24">Unclassified คือ "ไม่มีบทบาท"</h3>
+  <p class="b2" style="margin:0;color:#CBD5E1">ไม่ต้องมี contact_type ชื่อ unclassified —
+    contact ที่ยังไม่มีแถวใน line_contact_roles เลย คือ Unclassified โดยนิยาม</p>
+  <div class="fld" style="font-family:ui-monospace,monospace;font-size:12.5px;color:#CBD5E1;line-height:1.7">
+SELECT COUNT(*) FROM line_contacts c<br>
+WHERE c.status = 'active'<br>
+&nbsp;&nbsp;AND NOT EXISTS (SELECT 1 FROM line_contact_roles r<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WHERE r.line_contact_id = c.id);
+  </div>
+  <p class="cap mut" style="margin:0">หมดปัญหาสถานะกำกวมแบบ "มีบทบาท Customer แล้ว
+    แต่ยังเป็น unclassified อยู่"</p>
+</div>
+    <div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">กฎที่ห้ามทำผิด</h3></div>
+  
+  <div class="col" style="gap:0"><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">1</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">คนใหม่เข้า Unclassified เสมอ</span><span class="cap" style="color:#CBD5E1">follow event เข้ามา สร้างแถวใน line_contacts โดยไม่สร้าง role เลย ห้ามเดาจากชื่อหรือรูป ยกเว้น lineUserId ตรงกับ employee.lineUserId หรือ agency.lineUserId ที่ผูกไว้แล้ว</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">2</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">Sales มาจากฐานพนักงานเท่านั้น</span><span class="cap" style="color:#CBD5E1">role sales สร้างได้เฉพาะเมื่อ employee_id ไม่ว่าง คนนอกเลือกเองไม่ได้ ตรวจฝั่ง server</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">3</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">All ไม่รวม Unclassified</span><span class="cap" style="color:#CBD5E1">All = Sales + Customer + Agency จะรวม Unclassified ต้องติ๊กเพิ่ม และเฉพาะ Manager กับ Admin</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">4</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">ข้อความภายในห้ามหลุดออกนอก</span><span class="cap" style="color:#CBD5E1">type hr / it / training ส่งได้เฉพาะกลุ่ม Sales — ปฏิเสธที่ server ไม่ใช่แค่ซ่อนตัวเลือก</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">5</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">unfollow ห้ามลบข้อมูล</span><span class="cap" style="color:#CBD5E1">ตั้ง status = inactive และ unfollowed_at เก็บแถวไว้ ประวัติการส่งต้องยังอ้างถึงได้</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">6</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">Agency เก็บเป็นหลายคน</span><span class="cap" style="color:#CBD5E1">เอเจนซี่หนึ่งรายมีได้หลาย contact ทุกคนมี role agency ที่ชี้ agency_id เดียวกัน เก็บตำแหน่งใน position</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">7</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">คนซ้ำต้องได้ข้อความครั้งเดียว</span><span class="cap" style="color:#CBD5E1">query ที่ระดับ line_contacts ด้วย DISTINCT หรือ EXISTS เสมอ ห้าม query จาก roles แล้ววนส่ง และใส่ @@unique(broadcast_id, line_contact_id) เป็นตาข่ายกันพลาด</span></div></div><div class="row" style="gap:14px;padding:11px 0;border-bottom:1px solid #374151"><span style="width:26px;flex-shrink:0;font-weight:700;color:#60A5FA">8</span><div class="col grow" style="gap:3px"><span class="b2" style="font-weight:700">blocked และ inactive ไม่นับไม่ส่ง</span><span class="cap" style="color:#CBD5E1">ทุก counter และ audience นับเฉพาะ status = active แต่หน้า Preview ต้องบอกจำนวนที่ถูกตัดออกให้เห็น</span></div></div></div>
+</div></div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

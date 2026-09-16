@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1440px;min-height:900px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">LINE Broadcast Center</h1>
+      <p class="cap mut" style="margin:0">ประกาศและข้อความถึงทีมขาย ลูกค้า และเอเจนซี่ผ่าน LINE OA</p>
+    </div>
+    
+  </div>
+  <div class="row" style="gap:2px;border-bottom:1px solid #374151"><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">OVERVIEW</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#60A5FA;border-bottom:2px solid #3B82F6;font-weight:700">CONTACTS</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">SEND HISTORY</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">TEMPLATES</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">ANALYTICS</div></div>
+  <div class="card" style="padding:14px 18px">
+  <div class="row" style="gap:10px;flex-wrap:wrap">
+    <div class="row fld grow" style="gap:9px;padding:8px 14px;border-radius:999px;min-width:300px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.7" y2="16.7"></line></svg><span class="b2 mut">Search LINE name, phone, agency...</span>
+    </div>
+    <div class="row fld" style="gap:8px;padding:8px 12px;border-radius:999px;cursor:pointer"><span class="b2" style="color:#CBD5E1">All Types</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:8px;padding:8px 12px;border-radius:999px;cursor:pointer"><span class="b2" style="color:#CBD5E1">Status</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:8px;padding:8px 12px;border-radius:999px;cursor:pointer"><span class="b2" style="color:#CBD5E1">Project</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:8px;padding:8px 12px;border-radius:999px;cursor:pointer"><span class="b2" style="color:#CBD5E1">Agency</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:8px;padding:8px 12px;border-radius:999px;cursor:pointer"><span class="b2" style="color:#CBD5E1">Assigned Seller</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+  </div>
+</div><div class="card pad row" style="gap:12px;border-color:rgba(59,130,246,.35);
+     background:rgba(59,130,246,.08)">
+  <span class="b2" style="color:#60A5FA;font-weight:700">3 selected</span>
+  <span class="grow"></span>
+  <button class="btn sm out">Change Type</button>
+  <button class="btn sm out">Add Tag</button>
+  <button class="btn sm">Send Message</button>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row"><h3 class="sec grow">LINE Contacts</h3>
+    <span class="cap mut">1,284 คน · แสดง 7 แถวแรก</span></div>
+  <table>
+    <thead><tr>
+      <th style="width:44px"></th><th style="width:230px">Profile</th>
+      <th style="width:210px">Type</th><th style="width:210px">Company / Project</th>
+      <th style="width:120px">Status</th><th style="width:140px">Followed Since</th>
+      <th>Last Activity</th>
+    </tr></thead>
+    <tbody><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">Anna K.</span>
+      <span class="cap mut">@annak_prop</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Agency</span></div></td>
+  <td style="color:#CBD5E1">ABC Property</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#22C55E;display:inline-block"></span><span class="b2" style="color:#22C55E">Active</span></span></td>
+  <td class="mut" style="font-size:13px">15 Sep 2026</td>
+  <td class="mut" style="font-size:13px">Yesterday</td>
+</tr><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">Somchai P.</span>
+      <span class="cap mut">@somchai.p</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Customer</span></div></td>
+  <td style="color:#CBD5E1">— · LOVE IT Wongamat</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#22C55E;display:inline-block"></span><span class="b2" style="color:#22C55E">Active</span></span></td>
+  <td class="mut" style="font-size:13px">16 Sep 2026</td>
+  <td class="mut" style="font-size:13px">Today</td>
+</tr><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">John M.</span>
+      <span class="cap mut">@johnm</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Sales</span></div></td>
+  <td style="color:#CBD5E1">Global Top Group</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#22C55E;display:inline-block"></span><span class="b2" style="color:#22C55E">Active</span></span></td>
+  <td class="mut" style="font-size:13px">10 Sep 2026</td>
+  <td class="mut" style="font-size:13px">Today</td>
+</tr><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">Chatchai P.</span>
+      <span class="cap mut">@chatchai</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Agency</span><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Customer</span></div></td>
+  <td style="color:#CBD5E1">ABC Property</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#22C55E;display:inline-block"></span><span class="b2" style="color:#22C55E">Active</span></span></td>
+  <td class="mut" style="font-size:13px">12 Sep 2026</td>
+  <td class="mut" style="font-size:13px">2 days ago</td>
+</tr><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">Peter T.</span>
+      <span class="cap mut">@peter_t</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Unclassified</span>&nbsp;<span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">⚠ Review</span></div></td>
+  <td style="color:#CBD5E1">—</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#38BDF8;display:inline-block"></span><span class="b2" style="color:#38BDF8">New</span></span></td>
+  <td class="mut" style="font-size:13px">16 Sep 2026</td>
+  <td class="mut" style="font-size:13px">—</td>
+</tr><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">Nadia R.</span>
+      <span class="cap mut">@nadia</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Unclassified</span>&nbsp;<span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">⚠ Review</span></div></td>
+  <td style="color:#CBD5E1">—</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#38BDF8;display:inline-block"></span><span class="b2" style="color:#38BDF8">New</span></span></td>
+  <td class="mut" style="font-size:13px">16 Sep 2026</td>
+  <td class="mut" style="font-size:13px">—</td>
+</tr><tr>
+  <td style="width:44px"><div style="width:18px;height:18px;border-radius:5px;
+      border:1.5px solid #374151"></div></td>
+  <td><div class="row" style="gap:10px">
+    <div style="width:34px;height:34px;border-radius:999px;background:#1F2937;
+         border:1px solid #374151;flex-shrink:0"></div>
+    <div class="col" style="gap:1px">
+      <span style="font-weight:600">Wichai S.</span>
+      <span class="cap mut">@wichai</span>
+    </div></div></td>
+  <td><div class="row" style="gap:6px;flex-wrap:wrap"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Customer</span></div></td>
+  <td style="color:#CBD5E1">—</td>
+  <td><span class="row" style="gap:6px"><span style="width:7px;height:7px;border-radius:999px;background:#EF4444;display:inline-block"></span><span class="b2" style="color:#EF4444">Blocked</span></span></td>
+  <td class="mut" style="font-size:13px">02 Aug 2026</td>
+  <td class="mut" style="font-size:13px">18 Aug 2026</td>
+</tr></tbody>
+  </table>
+  <p class="cap mut" style="margin:0">คนหนึ่งมีได้หลายบทบาท — Chatchai P. เป็นทั้งเจ้าของเอเจนซี่
+    และซื้อห้องเอง จึงขึ้นทั้ง Agency และ Customer</p>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

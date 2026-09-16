@@ -1,0 +1,110 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "Overview — audience counters"
+    },
+    {
+      "file": "Contacts.dc.html",
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "Contacts tab"
+    },
+    {
+      "file": "ContactDetail.dc.html",
+      "x": 3040,
+      "y": 0,
+      "w": 1240,
+      "h": 1080,
+      "title": "Contact detail — roles"
+    },
+    {
+      "file": "Step1Audience.dc.html",
+      "x": 0,
+      "y": 1220,
+      "w": 1240,
+      "h": 1080,
+      "title": "New Announcement 1 — Audience"
+    },
+    {
+      "file": "CustomSelection.dc.html",
+      "x": 1320,
+      "y": 1220,
+      "w": 1240,
+      "h": 1000,
+      "title": "New Announcement 1 — Custom Selection"
+    },
+    {
+      "file": "Step2Message.dc.html",
+      "x": 2640,
+      "y": 1220,
+      "w": 1240,
+      "h": 1000,
+      "title": "New Announcement 2 — Message"
+    },
+    {
+      "file": "Step3Preview.dc.html",
+      "x": 0,
+      "y": 2420,
+      "w": 1240,
+      "h": 1000,
+      "title": "New Announcement 3 — Preview"
+    },
+    {
+      "file": "Step4Send.dc.html",
+      "x": 1320,
+      "y": 2420,
+      "w": 1240,
+      "h": 940,
+      "title": "New Announcement 4 — Send / Schedule"
+    },
+    {
+      "file": "History.dc.html",
+      "x": 2640,
+      "y": 2420,
+      "w": 1240,
+      "h": 1080,
+      "title": "Send History"
+    },
+    {
+      "file": "DataModel.dc.html",
+      "x": 0,
+      "y": 3620,
+      "w": 1560,
+      "h": 1560,
+      "title": "Data Model & Rules"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-entry",
+      "x": 0,
+      "y": -170,
+      "w": 700,
+      "text": "LINE Broadcast Center — เพิ่มแท็บ CONTACTS และทำ New Announcement เป็น 4 ขั้น\nสี ขนาด และฟอนต์ลอกจากธีม dark ของ agency-care revision agency-care-00886-nus\nStatic mockups — ปุ่มกดไม่ทำงาน"
+    },
+    {
+      "id": "note-flow",
+      "x": 0,
+      "y": 1090,
+      "w": 620,
+      "text": "New Announcement 4 ขั้น\nเลือก Custom Selection ในขั้นที่ 1 จะเปิดหน้ากรองพร้อมนับผู้รับแบบ real-time"
+    },
+    {
+      "id": "note-model",
+      "x": 1680,
+      "y": 3620,
+      "w": 700,
+      "text": "คนหนึ่งเป็นได้หลายบทบาท จึงแยก line_contacts (ตัวคน) ออกจาก line_contact_roles (บทบาท)\nUnclassified = ไม่มีแถวใน roles เลย ไม่ต้องมี type ชื่อ unclassified\nคนที่มีสองบทบาทต้องได้ข้อความใบเดียว"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

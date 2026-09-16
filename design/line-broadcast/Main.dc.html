@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1440px;min-height:900px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">LINE Broadcast Center</h1>
+      <p class="cap mut" style="margin:0">ประกาศและข้อความถึงทีมขาย ลูกค้า และเอเจนซี่ผ่าน LINE OA</p>
+    </div>
+    <button class="btn out">Export contacts</button><button class="btn">+ New Announcement</button>
+  </div>
+  <div class="row" style="gap:2px;border-bottom:1px solid #374151"><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#60A5FA;border-bottom:2px solid #3B82F6;font-weight:700">OVERVIEW</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">CONTACTS</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">SEND HISTORY</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">TEMPLATES</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">ANALYTICS</div></div>
+  <div class="col" style="gap:10px">
+  <div class="row" style="gap:12px;flex-wrap:wrap">
+    <div class="col" style="background:#111827;border:1px solid #374151;border-radius:20px;
+     padding:16px 20px;gap:2px;min-width:160px;cursor:pointer">
+  <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">1,284</div>
+  <div class="cap" style="font-weight:600;letter-spacing:.04em">ALL CONTACTS</div>
+</div>
+    <div class="col" style="background:#111827;border:1px solid #374151;border-radius:20px;
+     padding:16px 20px;gap:2px;min-width:160px;cursor:pointer">
+  <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#38BDF8">42</div>
+  <div class="cap" style="font-weight:600;letter-spacing:.04em">SALES</div>
+</div>
+    <div class="col" style="background:#111827;border:1px solid #374151;border-radius:20px;
+     padding:16px 20px;gap:2px;min-width:160px;cursor:pointer">
+  <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#22C55E">873</div>
+  <div class="cap" style="font-weight:600;letter-spacing:.04em">CUSTOMERS</div>
+</div>
+    <div class="col" style="background:#111827;border:1px solid #374151;border-radius:20px;
+     padding:16px 20px;gap:2px;min-width:160px;cursor:pointer">
+  <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#A78BFA">291</div>
+  <div class="cap" style="font-weight:600;letter-spacing:.04em">AGENCIES</div>
+</div>
+    <div class="col" style="background:rgba(251,191,36,.07);border:1px solid #FBBF24;border-radius:20px;
+     padding:16px 20px;gap:2px;min-width:160px;cursor:pointer">
+  <div style="font-size:28px;font-weight:700;letter-spacing:-0.02em;color:#FBBF24">78</div>
+  <div class="cap" style="font-weight:600;letter-spacing:.04em">UNCLASSIFIED</div>
+</div>
+  </div>
+  <p class="cap mut" style="margin:0">นับเฉพาะผู้ติดตามที่ยัง active —
+    คนหนึ่งอาจอยู่ได้มากกว่าหนึ่งกลุ่ม ผลรวมรายกลุ่มจึงมากกว่า All Contacts ได้</p>
+</div>
+<div class="card pad row" style="gap:12px;border-color:rgba(251,191,36,.35);
+     background:rgba(251,191,36,.07)">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span class="b2 grow" style="color:#FBBF24;font-weight:600">
+    78 new followers need classification — ยังไม่รู้ว่าเป็นลูกค้า เอเจนซี่ หรือทีมขาย</span>
+  <button class="btn sm out">Review now</button>
+</div>
+<div class="row" style="gap:18px;align-items:stretch"><div class="card pad col grow" style="gap:10px">
+  <div class="row"><h3 class="sec grow">Recent Broadcasts</h3>
+    <button class="btn sm out">View all</button></div>
+  <div class="row" style="gap:14px;padding:13px 0;border-bottom:1px solid #374151">
+  <div class="col grow" style="gap:4px">
+    <div class="row" style="gap:10px">
+      <span class="b2" style="font-weight:700">MARINA SEPTEMBER UPDATE</span>
+      <span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Agencies</span>
+    </div>
+    <span class="cap mut">Recipients 284 · Delivered 278 · Failed 6 · Read 64%</span>
+  </div>
+  <div class="col" style="gap:2px;align-items:flex-end">
+    <span class="cap" style="color:#CBD5E1">SystemAdmin</span>
+    <span class="cap mut">16/09/2026 14:30</span>
+  </div>
+</div>
+  <div class="row" style="gap:14px;padding:13px 0;border-bottom:1px solid #374151">
+  <div class="col grow" style="gap:4px">
+    <div class="row" style="gap:10px">
+      <span class="b2" style="font-weight:700">LOVE IT Wongamat — new price list</span>
+      <span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Customers</span>
+    </div>
+    <span class="cap mut">Recipients 721 · Delivered 715 · Failed 6 · Read 51%</span>
+  </div>
+  <div class="col" style="gap:2px;align-items:flex-end">
+    <span class="cap" style="color:#CBD5E1">K. May</span>
+    <span class="cap mut">15/09/2026 09:12</span>
+  </div>
+</div>
+  <div class="row" style="gap:14px;padding:13px 0;border-bottom:1px solid #374151">
+  <div class="col grow" style="gap:4px">
+    <div class="row" style="gap:10px">
+      <span class="b2" style="font-weight:700">Weekly sales meeting moved to 10:00</span>
+      <span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Sales</span>
+    </div>
+    <span class="cap mut">Recipients 42 · Delivered 42 · Failed 0 · Read 93%</span>
+  </div>
+  <div class="col" style="gap:2px;align-items:flex-end">
+    <span class="cap" style="color:#CBD5E1">K. Warun</span>
+    <span class="cap mut">15/09/2026 08:00</span>
+  </div>
+</div>
+</div><div class="card pad col" style="gap:12px;width:330px;flex-shrink:0">
+  <h3 class="sec">LINE Message Quota</h3>
+  <div class="row" style="gap:10px;align-items:baseline">
+    <span style="font-size:26px;font-weight:700;color:#F1F5F9">7,312</span>
+    <span class="cap mut">เหลือจาก 10,000 ข้อความเดือนนี้</span>
+  </div>
+  <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:73%;height:100%;border-radius:4px;background:#3B82F6"></div></div>
+  <p class="cap mut" style="margin:0">ระบบเช็กโควตาก่อนส่งกลุ่มใหญ่ ถ้าไม่พอจะเตือนก่อน
+    ไม่ปล่อยให้ส่งแล้วพังกลางทาง</p>
+</div></div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

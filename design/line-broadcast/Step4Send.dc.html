@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1240px;min-height:940px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">New Announcement</h1>
+      <p class="cap mut" style="margin:0">ขั้นที่ 4 จาก 4 — ส่งหรือตั้งเวลา</p>
+    </div>
+    
+  </div>
+  <div class="row" style="gap:2px;border-bottom:1px solid #374151"><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#60A5FA;border-bottom:2px solid #3B82F6;font-weight:700">OVERVIEW</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">CONTACTS</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">SEND HISTORY</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">TEMPLATES</div><div style="padding:11px 18px;font-size:13px;letter-spacing:.04em;color:#6B7280;border-bottom:2px solid transparent;font-weight:600">ANALYTICS</div></div>
+  <div class="card pad row" style="align-items:center"><div class="row grow" style="gap:0"><div class="row" style="gap:9px"><div style="width:24px;height:24px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#CBD5E1;font-weight:500">Audience</span></div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 12px"></div></div><div class="row grow" style="gap:0"><div class="row" style="gap:9px"><div style="width:24px;height:24px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#CBD5E1;font-weight:500">Message</span></div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 12px"></div></div><div class="row grow" style="gap:0"><div class="row" style="gap:9px"><div style="width:24px;height:24px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#CBD5E1;font-weight:500">Preview</span></div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 12px"></div></div><div class="row grow" style="gap:0"><div class="row" style="gap:9px"><div style="width:24px;height:24px;border-radius:999px;background:#3B82F6;display:grid;place-items:center"><span style="font-size:11px;font-weight:700;color:#fff">4</span></div><span class="b2" style="color:#F1F5F9;font-weight:700">Send / Schedule</span></div></div></div>
+<div class="card pad row" style="gap:16px;flex-wrap:wrap">
+  <div class="col" style="gap:2px"><span class="cap mut">Audience</span>
+    <span class="b2" style="font-weight:700">Agencies</span></div>
+  <div style="width:1px;height:34px;background:#374151"></div>
+  <div class="col" style="gap:2px"><span class="cap mut">Recipients</span>
+    <span class="b2" style="font-weight:700">284</span></div>
+  <div style="width:1px;height:34px;background:#374151"></div>
+  <div class="col" style="gap:2px"><span class="cap mut">Title</span>
+    <span class="b2" style="font-weight:700">MARINA SEPTEMBER UPDATE</span></div>
+  <span class="grow"></span>
+  <button class="btn sm out">แก้ไข</button>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Send or Schedule</h3></div>
+  
+  <div class="col" style="gap:12px"><div class="col" style="gap:12px;border:1px solid #3B82F6;background:rgba(59,130,246,.08);border-radius:16px;padding:15px 17px">
+  <div class="row" style="gap:12px;align-items:center"><div style="width:19px;height:19px;border-radius:999px;border:2px solid #3B82F6;display:grid;place-items:center"><div style="width:9px;height:9px;border-radius:999px;background:#3B82F6"></div></div>
+    <div class="col grow" style="gap:2px">
+      <span class="b2" style="font-weight:700">Send Now</span>
+      <span class="cap mut">ส่งทันทีที่กดยืนยัน</span></div></div>
+  
+</div><div class="col" style="gap:12px;border:1px solid #374151;background:#1F2937;border-radius:16px;padding:15px 17px">
+  <div class="row" style="gap:12px;align-items:center"><div style="width:19px;height:19px;border-radius:999px;border:2px solid #374151"></div>
+    <div class="col grow" style="gap:2px">
+      <span class="b2" style="font-weight:700">Schedule</span>
+      <span class="cap mut">ตั้งเวลาส่งล่วงหน้า</span></div></div>
+  <div class="row" style="gap:14px">
+  <div class="col" style="gap:0;width:190px;flex-shrink:0">
+  <p class="lbl">Date</p>
+  <div class="fld">18 Sep 2026</div>
+</div>
+  <div class="col" style="gap:0;width:140px;flex-shrink:0">
+  <p class="lbl">Time</p>
+  <div class="fld">09:00</div>
+</div>
+  <div class="col" style="gap:0;width:230px;flex-shrink:0">
+  <p class="lbl">Timezone</p>
+  <div class="fld">Asia/Bangkok (GMT+7)</div>
+</div>
+  <div class="col grow"></div>
+</div>
+</div></div>
+</div>
+<div class="card pad row" style="gap:12px;border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.07)">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg>
+  <span class="b2 grow" style="color:#22C55E">ระบบจะบันทึกรายชื่อผู้รับทั้ง 284 คนไว้ตอนส่ง —
+    ย้อนดูได้เสมอว่าครั้งนี้ส่งหาใครบ้าง แม้บทบาทของเขาจะเปลี่ยนไปในอนาคต</span>
+</div>
+<div class="row" style="gap:10px;justify-content:flex-end">
+  <button class="btn out">Back</button>
+  <button class="btn out">Save as draft</button>
+  <button class="btn">Send to 284 recipients</button>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>
