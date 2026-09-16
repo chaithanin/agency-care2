@@ -1,0 +1,102 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1180,
+      "title": "Dashboard — Onboarding list"
+    },
+    {
+      "file": "Detail.dc.html",
+      "x": 0,
+      "y": 1300,
+      "w": 1240,
+      "h": 1400,
+      "title": "Detail — Phase 1a Background"
+    },
+    {
+      "file": "Phase1Docs.dc.html",
+      "x": 1320,
+      "y": 1300,
+      "w": 1240,
+      "h": 2080,
+      "title": "Phase 1b — Documents · Bank · Contacts · Online"
+    },
+    {
+      "file": "Phase2.dc.html",
+      "x": 2640,
+      "y": 1300,
+      "w": 1240,
+      "h": 1240,
+      "title": "Phase 2 — Communication Setup"
+    },
+    {
+      "file": "Phase3.dc.html",
+      "x": 0,
+      "y": 3500,
+      "w": 1240,
+      "h": 1620,
+      "title": "Phase 3 — System Entry & Report"
+    },
+    {
+      "file": "Phase4.dc.html",
+      "x": 1320,
+      "y": 3500,
+      "w": 1240,
+      "h": 1240,
+      "title": "Phase 4 — First Communication Package"
+    },
+    {
+      "file": "Phase5.dc.html",
+      "x": 2640,
+      "y": 3500,
+      "w": 1240,
+      "h": 1400,
+      "title": "Phase 5 — Agreement"
+    },
+    {
+      "file": "Phase6.dc.html",
+      "x": 0,
+      "y": 5240,
+      "w": 1240,
+      "h": 1780,
+      "title": "Phase 6 — Post-Onboarding & Agency Visit"
+    },
+    {
+      "file": "Phase7.dc.html",
+      "x": 1320,
+      "y": 5240,
+      "w": 1240,
+      "h": 1800,
+      "title": "Phase 7 — Relationship & Completion"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-entry",
+      "x": 0,
+      "y": -150,
+      "w": 620,
+      "text": "Agency Onboarding — redesign of the existing Onboarding page.\nColours, radii, type and controls lifted from the live dark theme (ThemeContext.tsx, revision agency-care-00886-nus).\nStatic mockups: nothing here is wired up."
+    },
+    {
+      "id": "note-detail",
+      "x": 0,
+      "y": 1150,
+      "w": 560,
+      "text": "Detail view — the 7-phase stepper stays fixed at the top of every phase.\nEach artboard below is one phase's panel."
+    },
+    {
+      "id": "note-rules",
+      "x": 1320,
+      "y": 7100,
+      "w": 620,
+      "text": "Two rules the mockup makes visible:\n· Personal bank account forces the Authorization Letter to mandatory (Phase 1b)\n· Complete Onboarding stays disabled until every mandatory item is verified (Phase 7)"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

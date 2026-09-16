@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1240px;min-height:1800px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="card pad col" style="gap:18px">
+  <div class="row" style="gap:14px;align-items:flex-start">
+    <div class="col grow" style="gap:6px">
+      <div class="row" style="gap:12px">
+        <h1 class="h5">ABC Property Pattaya</h1>
+        <span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">IN PROGRESS</span>
+      </div>
+      <div class="row" style="gap:22px;flex-wrap:wrap">
+        <span class="cap"><span class="mut">Agency ID</span> &nbsp;AG-00238</span>
+        <span class="cap"><span class="mut">Assigned Seller</span> &nbsp;K. Somchai</span>
+        <span class="cap"><span class="mut">Owner</span> &nbsp;Mr. Chatchai P.</span>
+        <span class="cap"><span class="mut">Created</span> &nbsp;15 Sep 2026</span>
+        <span class="cap"><span class="mut">Last Updated</span> &nbsp;16 Sep 2026, 10:42</span>
+      </div>
+    </div>
+    <button class="btn out">View Agency</button>
+    <button class="btn">Save Progress</button>
+  </div>
+
+  <div class="col" style="gap:7px">
+    <div class="row">
+      <span class="sec">Overall Onboarding Progress</span>
+      <span class="grow"></span>
+      <span class="b2" style="font-weight:700;color:#60A5FA">94%</span>
+    </div>
+    <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:94%;height:100%;border-radius:4px;background:#3B82F6"></div></div>
+    <span class="cap mut">18 / 39 required items completed · 2 mandatory items outstanding</span>
+  </div>
+</div>
+  <div class="card pad"><div class="row" style="align-items:flex-start"><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">01</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">Pre-Onboarding</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">02</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">Communication</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">03</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">System Entry</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">04</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">First Communication</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">05</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">Agreement</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">06</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">Post-Onboarding</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#3B82F6;box-shadow:0 0 0 4px rgba(59,130,246,.22);display:grid;place-items:center"><div style="width:8px;height:8px;border-radius:999px;background:#fff"></div></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#F1F5F9">07</span>
+      <span style="font-size:12px;font-weight:700;color:#F1F5F9;text-align:center;text-wrap:pretty">Relationship</span>
+    </div>
+  </div>
+</div></div></div>
+  <div class="row" style="gap:12px">
+  <h2 class="h6 grow">Phase 7 — Relationship Maintenance</h2>
+  <span class="cap mut">September 2026</span>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Relationship Schedule</h3><span class="cap mut">Auto-generated after onboarding completes</span>
+  </div>
+  <p class="cap mut" style="margin:0">Targets follow the standing rule: 2 agency visits and 4 calls per month, materials weekly.</p>
+  <table>
+  <thead><tr><th>Activity</th><th style="width:100px">Target</th>
+    <th style="width:120px">Completed</th><th style="width:190px">Progress</th></tr></thead>
+  <tbody><tr><td style="font-weight:600">Agency Visit</td><td>2</td><td style="font-weight:700">1</td><td><div style="width:150px"><div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:50%;height:100%;border-radius:4px;background:#FBBF24"></div></div></div></td></tr><tr><td style="font-weight:600">Agency Call</td><td>4</td><td style="font-weight:700">3</td><td><div style="width:150px"><div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:75%;height:100%;border-radius:4px;background:#FBBF24"></div></div></div></td></tr><tr><td style="font-weight:600">Material Update</td><td>4</td><td style="font-weight:700">4</td><td><div style="width:150px"><div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:100%;height:100%;border-radius:4px;background:#22C55E"></div></div></div></td></tr><tr><td style="font-weight:600">Customer Viewing Support</td><td>—</td><td style="font-weight:700">2</td><td><span class="cap mut">no target</span></td></tr></tbody></table>
+<div class="row" style="gap:10px;background:rgba(251,191,36,.10);
+     border:1px solid rgba(251,191,36,.35);border-radius:14px;padding:11px 14px">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span class="b2" style="color:#FBBF24;font-weight:600">Agency Visit: 1 visit remaining this month</span>
+  <span class="grow"></span>
+  <button class="btn sm out">Create task</button>
+</div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Add Agency Activity</h3>
+  </div>
+  
+  <div class="col" style="gap:14px">
+  <div class="col" style="gap:0">
+    <p class="lbl">Activity Type</p>
+    <div class="row" style="gap:8px;flex-wrap:wrap"><span class="chip" style="border:1px solid #374151;color:#6B7280">Meeting</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Call</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Visit</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Customer Feedback</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Opportunity</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Agency Request</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Issue</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Closing Result</span></div>
+  </div>
+  <div class="col" style="gap:0"><p class="lbl">Notes</p>
+    <div class="fld" style="min-height:64px;color:#CBD5E1">Dropped off new brochures and reviewed
+      the September availability list with the sales team.</div></div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Related Customer</p>
+  <div class="fld">Mr. Ivan K.</div>
+</div>
+    <div class="col" style="gap:0;width:210px;flex-shrink:0">
+  <p class="lbl">Opportunity Value</p>
+  <div class="fld">฿ 5,400,000</div>
+</div>
+    <div class="col" style="gap:0;width:180px;flex-shrink:0">
+  <p class="lbl">Next Follow-up</p>
+  <div class="fld">23 Sep 2026</div>
+</div>
+  </div>
+  <div class="row" style="gap:12px">
+    <button class="btn sm out"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg> &nbsp;Attachment</button>
+    <span class="grow"></span>
+    <button class="btn sm">Add Activity</button>
+  </div>
+</div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Completion</h3><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">2 required items remaining</span>
+  </div>
+  
+  <div class="col" style="gap:16px">
+  <div class="row" style="gap:20px;align-items:center">
+    <div class="col" style="gap:2px">
+      <div style="font-size:36px;font-weight:700;letter-spacing:-0.02em;color:#FBBF24">94%</div>
+      <div class="cap mut">Onboarding readiness</div>
+    </div>
+    <div class="col grow" style="gap:8px">
+      <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:94%;height:100%;border-radius:4px;background:#FBBF24"></div></div>
+      <span class="cap mut">2 required items remaining before this agency can be completed</span>
+    </div>
+  </div>
+  <div class="col" style="gap:8px">
+    <div class="row" style="gap:10px;background:rgba(239,68,68,.10);
+         border:1px solid rgba(239,68,68,.32);border-radius:14px;padding:10px 14px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle></svg><span class="b2" style="color:#EF4444;font-weight:600">Owner Passport</span>
+      <span class="grow"></span><button class="btn sm out">Upload</button></div>
+    <div class="row" style="gap:10px;background:rgba(239,68,68,.10);
+         border:1px solid rgba(239,68,68,.32);border-radius:14px;padding:10px 14px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle></svg><span class="b2" style="color:#EF4444;font-weight:600">Signed Agreement</span>
+      <span class="grow"></span><button class="btn sm out">Upload</button></div>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="row" style="gap:14px">
+    <button class="btn" style="background:#1F2937;color:#6B7280;cursor:not-allowed">Complete Onboarding</button>
+    <span class="cap mut" style="max-width:420px">Stays disabled until every mandatory item is
+      verified — completion is calculated, never set by hand.</span>
+  </div>
+</div>
+</div>
+<div class="card pad row" style="gap:14px;border-color:rgba(34,197,94,.35);background:rgba(34,197,94,.07)">
+  <div style="width:34px;height:34px;border-radius:999px;background:#22C55E;display:grid;place-items:center;flex-shrink:0">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:700;color:#22C55E">Agency Successfully Onboarded</span>
+    <span class="cap mut">Completed 18 Sep 2026 · Onboarded by K. Somchai · Assigned Seller K. Somchai
+      — agency moves to Relationship Maintenance automatically</span>
+  </div>
+  <span class="cap mut" style="font-style:italic">preview of the completed state</span>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

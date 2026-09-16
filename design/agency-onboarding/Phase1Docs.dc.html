@@ -1,0 +1,259 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1240px;min-height:2080px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="card pad col" style="gap:18px">
+  <div class="row" style="gap:14px;align-items:flex-start">
+    <div class="col grow" style="gap:6px">
+      <div class="row" style="gap:12px">
+        <h1 class="h5">ABC Property Pattaya</h1>
+        <span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">NEW</span>
+      </div>
+      <div class="row" style="gap:22px;flex-wrap:wrap">
+        <span class="cap"><span class="mut">Agency ID</span> &nbsp;AG-00238</span>
+        <span class="cap"><span class="mut">Assigned Seller</span> &nbsp;K. Somchai</span>
+        <span class="cap"><span class="mut">Owner</span> &nbsp;Mr. Chatchai P.</span>
+        <span class="cap"><span class="mut">Created</span> &nbsp;15 Sep 2026</span>
+        <span class="cap"><span class="mut">Last Updated</span> &nbsp;16 Sep 2026, 10:42</span>
+      </div>
+    </div>
+    <button class="btn out">View Agency</button>
+    <button class="btn">Save Progress</button>
+  </div>
+
+  <div class="col" style="gap:7px">
+    <div class="row">
+      <span class="sec">Overall Onboarding Progress</span>
+      <span class="grow"></span>
+      <span class="b2" style="font-weight:700;color:#60A5FA">8%</span>
+    </div>
+    <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:8%;height:100%;border-radius:4px;background:#3B82F6"></div></div>
+    <span class="cap mut">18 / 39 required items completed · 2 mandatory items outstanding</span>
+  </div>
+</div>
+  <div class="card pad"><div class="row" style="align-items:flex-start"><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#3B82F6;box-shadow:0 0 0 4px rgba(59,130,246,.22);display:grid;place-items:center"><div style="width:8px;height:8px;border-radius:999px;background:#fff"></div></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#F1F5F9">01</span>
+      <span style="font-size:12px;font-weight:700;color:#F1F5F9;text-align:center;text-wrap:pretty">Pre-Onboarding</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">02</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">Communication</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">03</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">System Entry</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">04</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">First Communication</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">05</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">Agreement</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">06</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">Post-Onboarding</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">07</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">Relationship</span>
+    </div>
+  </div>
+</div></div></div>
+  <div class="row" style="gap:12px">
+  <h2 class="h6 grow">Phase 1 — Pre-Onboarding</h2>
+  <span class="cap mut">Section 2 of 2 · Documents, Bank, Contacts &amp; Online</span>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Document Verification</h3><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">2 outstanding</span>
+  </div>
+  
+  <table>
+  <thead><tr><th>Document</th><th style="width:150px">Status</th>
+    <th style="width:120px">File</th><th style="width:170px">Verified by</th></tr></thead>
+  <tbody><tr>
+  <td style="font-weight:600">Company Registration / DBD</td>
+  <td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.15)">Verified</span></td>
+  <td><button class="btn sm out">View</button></td>
+  <td class="mut" style="font-size:13px">Agency Support</td>
+</tr><tr>
+  <td style="font-weight:600">Owner ID / Passport</td>
+  <td><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Missing</span></td>
+  <td><button class="btn sm out">Upload</button></td>
+  <td class="mut" style="font-size:13px">—</td>
+</tr><tr>
+  <td style="font-weight:600">Business Card</td>
+  <td><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Optional</span></td>
+  <td><button class="btn sm out">Upload</button></td>
+  <td class="mut" style="font-size:13px">—</td>
+</tr><tr>
+  <td style="font-weight:600">Bank Book</td>
+  <td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.15)">Verified</span></td>
+  <td><button class="btn sm out">View</button></td>
+  <td class="mut" style="font-size:13px">Admin</td>
+</tr><tr>
+  <td style="font-weight:600">Commission Authorization</td>
+  <td><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Under Review</span></td>
+  <td><button class="btn sm out">View</button></td>
+  <td class="mut" style="font-size:13px">Agency Support</td>
+</tr></tbody>
+</table>
+<div class="row" style="gap:10px;justify-content:center;border:1.5px dashed #374151;
+     border-radius:16px;padding:22px">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg>
+  <span class="b2 mut">Drag &amp; drop PDF / JPG / PNG here, or <a href="#">browse files</a></span>
+</div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Bank Information</h3>
+  </div>
+  
+  <div class="col" style="gap:14px">
+  <div class="col" style="gap:0">
+    <p class="lbl">Bank Account Type</p>
+    <div class="row" style="gap:8px">
+      <span class="chip" style="border:1px solid #374151;color:#6B7280">Company Account</span>
+      <span class="chip" style="background:rgba(167,139,250,.16);color:#A78BFA">Owner Personal Account</span>
+    </div>
+  </div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Bank</p>
+  <div class="fld">Kasikorn Bank</div>
+</div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Account Name</p>
+  <div class="fld">Mr. Chatchai Pongsakorn</div>
+</div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Account Number</p>
+  <div class="fld">012-3-45678-9</div>
+</div>
+  </div>
+  <div class="col" style="gap:10px;background:rgba(167,139,250,.08);
+       border:1px solid rgba(167,139,250,.35);border-radius:16px;padding:14px 16px">
+    <div class="row" style="gap:9px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+      <span class="b2" style="font-weight:600;color:#A78BFA">
+        Personal account selected — Authorization Letter is now mandatory</span>
+    </div>
+    <p class="cap mut" style="margin:0">Commission may only be paid into an owner's personal
+      account with a signed letter authorising it.</p>
+    <div class="row" style="gap:10px">
+      <button class="btn sm out">Upload signed authorization letter</button>
+      <span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Missing</span>
+    </div>
+  </div>
+</div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Contacts</h3>
+  </div>
+  
+  <table>
+  <thead><tr><th>Name</th><th style="width:110px">Role</th><th style="width:170px">Phone</th>
+    <th>Email</th><th style="width:80px">Primary</th></tr></thead>
+  <tbody><tr><td style="font-weight:600">Mr. Chatchai P.</td><td class="mut">Owner</td><td>+66 81 234 5678</td><td>chatchai@abcprop.co.th</td><td><div style="width:19px;height:19px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div></td></tr><tr><td style="font-weight:600">Ms. Bua S.</td><td class="mut">Sales</td><td>+66 92 111 2233</td><td>bua@abcprop.co.th</td><td><div style="width:19px;height:19px;border-radius:999px;border:1.5px solid #374151"></div></td></tr><tr><td style="font-weight:600">Mr. Chai R.</td><td class="mut">Sales</td><td>+66 88 555 7788</td><td>chai@abcprop.co.th</td><td><div style="width:19px;height:19px;border-radius:999px;border:1.5px solid #374151"></div></td></tr></tbody>
+</table>
+<div><button class="btn sm out"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> &nbsp;Add Contact</button></div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Social &amp; Online Presence</h3>
+  </div>
+  
+  <div class="col" style="gap:0"><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">Website</span>
+  <span class="b2 grow" style="color:#CBD5E1">abcproperty-pattaya.com</span><button class="btn sm out"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg> &nbsp;Open Link</button></div><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">Facebook</span>
+  <span class="b2 grow" style="color:#CBD5E1">fb.com/abcpropertypattaya</span><button class="btn sm out"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg> &nbsp;Open Link</button></div><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">Instagram</span>
+  <span class="b2 grow" style="color:#CBD5E1">@abcproperty.pattaya</span><button class="btn sm out"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg> &nbsp;Open Link</button></div><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">TikTok</span>
+  <span class="b2 grow" style="color:#CBD5E1"><span class="mut">—</span></span><span class="cap mut">Not provided</span></div><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">YouTube</span>
+  <span class="b2 grow" style="color:#CBD5E1"><span class="mut">—</span></span><span class="cap mut">Not provided</span></div><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">LINE Official</span>
+  <span class="b2 grow" style="color:#CBD5E1">@abcprop</span><button class="btn sm out"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg> &nbsp;Open Link</button></div><div class="row" style="gap:14px;padding:9px 0;border-bottom:1px solid #374151">
+  <span class="b2" style="width:190px;flex-shrink:0;font-weight:600">Google Business Profile</span>
+  <span class="b2 grow" style="color:#CBD5E1"><span class="mut">—</span></span><span class="cap mut">Not provided</span></div></div>
+</div>
+<div class="row" style="gap:10px;justify-content:flex-end">
+  <button class="btn out">Back</button>
+  <button class="btn">Continue to Phase 2</button>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

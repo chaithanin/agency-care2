@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1240px;min-height:1400px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="card pad col" style="gap:18px">
+  <div class="row" style="gap:14px;align-items:flex-start">
+    <div class="col grow" style="gap:6px">
+      <div class="row" style="gap:12px">
+        <h1 class="h5">ABC Property Pattaya</h1>
+        <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">NEED ATTENTION</span>
+      </div>
+      <div class="row" style="gap:22px;flex-wrap:wrap">
+        <span class="cap"><span class="mut">Agency ID</span> &nbsp;AG-00238</span>
+        <span class="cap"><span class="mut">Assigned Seller</span> &nbsp;K. Somchai</span>
+        <span class="cap"><span class="mut">Owner</span> &nbsp;Mr. Chatchai P.</span>
+        <span class="cap"><span class="mut">Created</span> &nbsp;15 Sep 2026</span>
+        <span class="cap"><span class="mut">Last Updated</span> &nbsp;16 Sep 2026, 10:42</span>
+      </div>
+    </div>
+    <button class="btn out">View Agency</button>
+    <button class="btn">Save Progress</button>
+  </div>
+
+  <div class="col" style="gap:7px">
+    <div class="row">
+      <span class="sec">Overall Onboarding Progress</span>
+      <span class="grow"></span>
+      <span class="b2" style="font-weight:700;color:#60A5FA">71%</span>
+    </div>
+    <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:71%;height:100%;border-radius:4px;background:#3B82F6"></div></div>
+    <span class="cap mut">18 / 39 required items completed · 2 mandatory items outstanding</span>
+  </div>
+</div>
+  <div class="card pad"><div class="row" style="align-items:flex-start"><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">01</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">Pre-Onboarding</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">02</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">Communication</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">03</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">System Entry</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#22C55E;display:grid;place-items:center"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#CBD5E1">04</span>
+      <span style="font-size:12px;font-weight:500;color:#CBD5E1;text-align:center;text-wrap:pretty">First Communication</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#22C55E;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;background:#3B82F6;box-shadow:0 0 0 4px rgba(59,130,246,.22);display:grid;place-items:center"><div style="width:8px;height:8px;border-radius:999px;background:#fff"></div></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#F1F5F9">05</span>
+      <span style="font-size:12px;font-weight:700;color:#F1F5F9;text-align:center;text-wrap:pretty">Agreement</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">06</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">Post-Onboarding</span>
+    </div>
+  </div><div style="flex-grow:1;height:1.5px;background:#374151;margin:0 10px"></div>
+</div><div class="row grow" style="gap:0">
+  <div class="col" style="gap:7px;align-items:center;min-width:104px">
+    <div style="width:26px;height:26px;border-radius:999px;border:1.5px solid #374151"></div>
+    <div class="col" style="gap:0;align-items:center">
+      <span style="font-size:11px;font-weight:700;letter-spacing:.08em;color:#6B7280">07</span>
+      <span style="font-size:12px;font-weight:500;color:#6B7280;text-align:center;text-wrap:pretty">Relationship</span>
+    </div>
+  </div>
+</div></div></div>
+  <div class="row" style="gap:12px">
+  <h2 class="h6 grow">Phase 5 — Agreement &amp; Formal Setup</h2>
+  <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">NEED ATTENTION</span>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Agreement Status</h3>
+  </div>
+  
+  <div class="row" style="gap:10px;flex-wrap:wrap"><div class="row" style="gap:10px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.15);border:1px solid #22C55E">Not Started</span><span style="color:#6B7280;font-size:15px">→</span></div><div class="row" style="gap:10px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.15);border:1px solid #22C55E">Sent to Agency Support</span><span style="color:#6B7280;font-size:15px">→</span></div><div class="row" style="gap:10px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.15);border:1px solid #22C55E">Preparing Agreement</span><span style="color:#6B7280;font-size:15px">→</span></div><div class="row" style="gap:10px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15);border:1px solid #FBBF24">Waiting Signature</span><span style="color:#6B7280;font-size:15px">→</span></div><div class="row" style="gap:10px"><span class="chip" style="color:#6B7280;background:transparent;border:1px solid #374151">Signed</span></div></div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Agreement Checklist</h3><span class="cap mut">7 / 10</span>
+  </div>
+  
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px"><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Agency Support informed</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Documents sent to Agency Support</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Agreement prepared</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Second meeting completed</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Agreement reviewed</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Agreement signed</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Special Promotion signed</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Sales Plan discussed</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Monthly Goal defined</span></div><div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Agreement uploaded to Venio</span></div></div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Signed Agency Agreement</h3>
+  </div>
+  <p class="cap mut" style="margin:0">Verified by and verified at are recorded on every status change and kept in the audit log.</p>
+  <div class="col" style="gap:12px">
+  <div class="row" style="gap:10px;justify-content:center;border:1.5px dashed #374151;
+       border-radius:16px;padding:20px">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg>
+    <span class="b2 mut">Upload signed Agency Agreement (PDF)</span>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(251,191,36,.10);
+       border:1px solid rgba(251,191,36,.35);border-radius:14px;padding:11px 14px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg>
+    <span class="b2" style="color:#FBBF24;font-weight:600">Waiting signature — 4 days</span>
+    <span class="grow"></span>
+    <button class="btn sm out">Send reminder</button>
+  </div>
+</div>
+</div>
+<div class="row" style="gap:10px;justify-content:flex-end">
+  <button class="btn out">Back</button>
+  <button class="btn">Continue to Phase 6</button>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>
