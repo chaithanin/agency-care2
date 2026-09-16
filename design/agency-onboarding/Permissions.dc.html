@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1240px;min-height:1120px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="col" style="gap:3px">
+    <h1 class="h5">Onboarding — Roles &amp; Permissions</h1>
+    <p class="cap mut" style="margin:0">ใครทำอะไรได้บ้างในแต่ละส่วนของ onboarding</p>
+  </div>
+  <div class="card pad col" style="gap:16px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Onboarding Permission Matrix</h3>
+    <span class="cap mut">ตรวจสิทธิ์ฝั่ง server ทุกครั้ง ไม่พึ่ง frontend</span>
+  </div>
+  <table>
+    <thead><tr>
+      <th style="width:260px">Area</th>
+      <th style="text-align:center;width:118px">System Admin</th><th style="text-align:center;width:118px">Manager</th><th style="text-align:center;width:118px">Agency Support</th><th style="text-align:center;width:118px">Assigned Seller</th><th style="text-align:center;width:118px">Marketing</th><th style="text-align:center;width:118px">Project Manager</th>
+    </tr></thead>
+    <tbody><tr><td style="font-weight:600">Onboarding list &amp; reassign</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr><tr><td style="font-weight:600">Agency Background (Phase 1)</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td></tr><tr><td style="font-weight:600">Document Verification&nbsp;<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg></td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Verify</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr><tr><td style="font-weight:600">Bank Information&nbsp;<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg></td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Verify</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr><tr><td style="font-weight:600">Communication Setup (Phase 2)</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr><tr><td style="font-weight:600">Venio CRM Setup (Phase 3)</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr><tr><td style="font-weight:600">Agency Report &amp; Tasks</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td></tr><tr><td style="font-weight:600">Marketing Package (Phase 4)</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td></tr><tr><td style="font-weight:600">Agreement (Phase 5)&nbsp;<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg></td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Verify</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr><tr><td style="font-weight:600">Sales Materials (Phase 6)</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td></tr><tr><td style="font-weight:600">Agency Visit</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td></tr><tr><td style="font-weight:600">Activities &amp; Relationship</td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td><td style="text-align:center"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span></td></tr><tr><td style="font-weight:600">Complete Onboarding&nbsp;<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg></td><td style="text-align:center"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span></td><td style="text-align:center"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td><td style="text-align:center"><span class="mut" style="font-size:15px">—</span></td></tr></tbody>
+  </table>
+  <div class="row" style="gap:22px;flex-wrap:wrap"><div class="row" style="gap:7px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Full</span><span class="cap mut">ทำได้ทุกอย่าง รวมลบและย้อนสถานะ</span></div><div class="row" style="gap:7px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Edit</span><span class="cap mut">แก้ไขและบันทึกได้</span></div><div class="row" style="gap:7px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Verify</span><span class="cap mut">ยืนยัน/อนุมัติได้ แต่แก้เนื้อหาไม่ได้</span></div><div class="row" style="gap:7px"><span class="chip" style="color:#CBD5E1;background:rgba(203,213,225,.10)">View</span><span class="cap mut">ดูอย่างเดียว</span></div></div>
+  <div class="row" style="gap:9px;background:rgba(251,191,36,.10);
+       border:1px solid rgba(251,191,36,.35);border-radius:14px;padding:11px 14px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+    <span class="b2" style="color:#FBBF24;font-weight:600">
+      แถวที่มีเครื่องหมายนี้ต้องบันทึก Verified By, Verified At และ audit log ทุกครั้งที่เปลี่ยน</span>
+  </div>
+</div><div class="card pad col" style="gap:12px">
+  <h3 class="sec">กติกาที่ตารางนี้บังคับ</h3>
+  <div class="col" style="gap:9px">
+    <div class="row" style="gap:10px"><span style="color:#60A5FA;font-weight:700">1</span>
+      <span class="b2" style="color:#CBD5E1">Bank Information แก้ได้เฉพาะ System Admin — Agency Support
+        ยืนยันได้แต่แก้เลขบัญชีไม่ได้ กันแก้ปลายทางการจ่ายเงิน</span></div>
+    <div class="row" style="gap:10px"><span style="color:#60A5FA;font-weight:700">2</span>
+      <span class="b2" style="color:#CBD5E1">คนที่อัปโหลดเอกสารกับคนที่กด Verified ต้องไม่ใช่คนเดียวกัน —
+        Assigned Seller อัปได้ แต่ยืนยันเองไม่ได้</span></div>
+    <div class="row" style="gap:10px"><span style="color:#60A5FA;font-weight:700">3</span>
+      <span class="b2" style="color:#CBD5E1">Complete Onboarding กดได้เฉพาะ Manager ขึ้นไป และกดได้ต่อเมื่อ
+        รายการบังคับครบแล้วเท่านั้น</span></div>
+    <div class="row" style="gap:10px"><span style="color:#60A5FA;font-weight:700">4</span>
+      <span class="b2" style="color:#CBD5E1">ตัดสินสิทธิ์จาก activeRole (role ที่ผู้ใช้สลับอยู่)
+        ไม่ใช่ role ในโปรไฟล์ — ตรงกับที่โมดูลอื่นในระบบทำอยู่</span></div>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

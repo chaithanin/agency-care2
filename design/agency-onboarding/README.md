@@ -20,6 +20,8 @@ Design canvas: https://claude.ai/artifact/PnXe4coE7J9wNhB25UP9f6
 | `Phase5.dc.html` | Phase 5 — Agreement approval flow + checklist |
 | `Phase6.dc.html` | Phase 6 — Sales Materials + Agency Visit |
 | `Phase7.dc.html` | Phase 7 — Relationship Schedule + Activity + Completion |
+| `Permissions.dc.html` | ตารางสิทธิ์ 13 พื้นที่ × 6 role |
+| `AuditLog.dc.html` | Audit log + การ์ด Verified By / Verified At |
 
 ## สถานะหลัก
 
@@ -64,8 +66,20 @@ python3 build_dashboard.py && python3 build_p1.py && python3 build_p23.py \
 `tokens.py` เก็บสีและสไตล์ · `shell.py` เก็บ header กับ stepper 7 เฟส
 ที่ทุกหน้ารายละเอียดใช้ร่วมกัน · `canvas.json` คุมตำแหน่งบนผืนผ้าใบ
 
+## สิทธิ์และร่องรอย
+
+`Permissions.dc.html` กำหนดสิทธิ์ 13 พื้นที่ × 6 role ด้วย 5 ระดับ
+(Full / Edit / Verify / View / ไม่มีสิทธิ์) กติกาที่ตารางบังคับ:
+
+1. **Bank Information** แก้ได้เฉพาะ System Admin — Agency Support ยืนยันได้แต่แก้เลขบัญชีไม่ได้
+2. **คนอัปโหลดเอกสารกับคนกด Verified ต้องคนละคน** — Seller อัปได้ แต่ยืนยันเองไม่ได้
+3. **Complete Onboarding** กดได้เฉพาะ Manager ขึ้นไป และต่อเมื่อรายการบังคับครบ
+4. ตัดสินสิทธิ์จาก `activeRole` ไม่ใช่ role ในโปรไฟล์ — ตรงกับโมดูลอื่นในระบบ
+
+สี่จุดที่ต้องเก็บ Verified By / Verified At และ audit log เสมอ:
+Document Verification · Bank Information · Agreement · Complete Onboarding
+
 ## ยังไม่ได้ทำ
 
-- ตารางสิทธิ์ตาม role 6 ตัว (System Admin / Manager / Agency Support /
-  Assigned Seller / Marketing / Project Manager)
-- หน้า Audit log ของ Agreement, Bank Information และ Document ที่ verified แล้ว
+- ยังไม่ได้นิยามว่ารายการไหนใน 39 ข้อเป็น mandatory บ้าง (mockup สมมติไว้ก่อน)
+- ยังไม่ได้ออกแบบว่าสถานะ `Waiting Agency` ตั้งเองหรือให้ระบบตั้งอัตโนมัติ

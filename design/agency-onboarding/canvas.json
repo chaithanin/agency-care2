@@ -71,6 +71,22 @@
       "w": 1240,
       "h": 1800,
       "title": "Phase 7 — Relationship & Completion"
+    },
+    {
+      "file": "Permissions.dc.html",
+      "x": 0,
+      "y": 7160,
+      "w": 1240,
+      "h": 1120,
+      "title": "Roles & Permissions"
+    },
+    {
+      "file": "AuditLog.dc.html",
+      "x": 1320,
+      "y": 7160,
+      "w": 1480,
+      "h": 1160,
+      "title": "Audit Log"
     }
   ],
   "annotations": [
@@ -90,10 +106,17 @@
     },
     {
       "id": "note-rules",
-      "x": 1320,
-      "y": 7100,
+      "x": 2640,
+      "y": 5240,
       "w": 620,
       "text": "Two rules the mockup makes visible:\n· Personal bank account forces the Authorization Letter to mandatory (Phase 1b)\n· Complete Onboarding stays disabled until every mandatory item is verified (Phase 7)"
+    },
+    {
+      "id": "note-governance",
+      "x": 0,
+      "y": 7020,
+      "w": 660,
+      "text": "Governance — ใครทำอะไรได้ และร่องรอยที่ต้องเก็บ\nBank Information, Document Verification, Agreement และ Complete Onboarding เป็นสี่จุดที่ต้องมี Verified By / Verified At และ audit log เสมอ"
     }
   ],
   "launch": {
