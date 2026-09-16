@@ -34,7 +34,9 @@ def stepper(active):
 </div>""")
     return f'<div class="row" style="align-items:flex-start">{"".join(cells)}</div>'
 
-def header(pct=46, status="IN PROGRESS"):
+def header(pct=46, status="IN PROGRESS", done=18, total=39, outstanding=2):
+    out_txt = ("all mandatory items verified" if outstanding == 0
+               else f"{outstanding} mandatory item{'' if outstanding == 1 else 's'} outstanding")
     return f"""<div class="card pad col" style="gap:18px">
   <div class="row" style="gap:14px;align-items:flex-start">
     <div class="col grow" style="gap:6px">
@@ -61,13 +63,13 @@ def header(pct=46, status="IN PROGRESS"):
       <span class="b2" style="font-weight:700;color:{PRIMARY_L}">{pct}%</span>
     </div>
     {bar(pct)}
-    <span class="cap mut">18 / 39 required items completed · 2 mandatory items outstanding</span>
+    <span class="cap mut">{done} / {total} required items completed · {out_txt}</span>
   </div>
 </div>"""
 
-def detail_page(active, body, h, pct=46, status="IN PROGRESS"):
+def detail_page(active, body, h, pct=46, status="IN PROGRESS", done=18, total=39, outstanding=2):
     inner = f"""<div class="col" style="padding:26px 30px;gap:18px">
-  {header(pct, status)}
+  {header(pct, status, done, total, outstanding)}
   <div class="card pad">{stepper(active)}</div>
   {body}
 </div>"""

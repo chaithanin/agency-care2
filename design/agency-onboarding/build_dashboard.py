@@ -99,7 +99,7 @@ CARDS = [
                 "System Entry & Digital Setup", 46, 18, 39,
                 "Today 10:42", "Upload Owner Passport"),
     agency_card("Ocean Property", "AG-00241", "NEED ATTENTION", "K. Anna", 5,
-                "Agreement & Formal Setup", 71, 28, 39,
+                "Agreement & Formal Setup", 72, 28, 39,
                 "12 Sep 2026, 16:20", "Chase signed agreement",
                 alert="Agreement pending signature — 4 days"),
     agency_card("Siam Estate Bangkok", "AG-00244", "NEW", "K. Warun", 1,

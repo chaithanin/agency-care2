@@ -63,7 +63,7 @@ body = f"""<div class="row" style="gap:12px">
   <button class="btn out">Back</button>
   <button class="btn">Continue to Phase 7</button>
 </div>"""
-open("Phase6.dc.html","w").write(detail_page(6, body, 1780, pct=88, status="IN PROGRESS"))
+open("Phase6.dc.html","w").write(detail_page(6, body, 1780, pct=87, status="IN PROGRESS", done=34, total=39, outstanding=2))
 print("Phase6.dc.html")
 
 # ── Phase 7 — Relationship Maintenance ───────────────────────
@@ -121,11 +121,11 @@ activity_body = f"""<div class="col" style="gap:14px">
 ready_body = f"""<div class="col" style="gap:16px">
   <div class="row" style="gap:20px;align-items:center">
     <div class="col" style="gap:2px">
-      <div style="font-size:36px;font-weight:700;letter-spacing:-0.02em;color:{WARNING}">94%</div>
+      <div style="font-size:36px;font-weight:700;letter-spacing:-0.02em;color:{WARNING}">95%</div>
       <div class="cap mut">Onboarding readiness</div>
     </div>
     <div class="col grow" style="gap:8px">
-      {bar(94, WARNING)}
+      {bar(95, WARNING)}
       <span class="cap mut">2 required items remaining before this agency can be completed</span>
     </div>
   </div>
@@ -166,5 +166,5 @@ body7 = f"""<div class="row" style="gap:12px">
   </div>
   <span class="cap mut" style="font-style:italic">preview of the completed state</span>
 </div>"""
-open("Phase7.dc.html","w").write(detail_page(7, body7, 1800, pct=94, status="IN PROGRESS"))
+open("Phase7.dc.html","w").write(detail_page(7, body7, 1800, pct=95, status="IN PROGRESS", done=37, total=39, outstanding=2))
 print("Phase7.dc.html")

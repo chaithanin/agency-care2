@@ -54,7 +54,7 @@ body = f"""<div class="row" style="gap:12px">
   <button class="btn">Continue to Documents</button>
 </div>"""
 
-open("Detail.dc.html","w").write(detail_page(1, body, 1400, pct=8, status="NEW"))
+open("Detail.dc.html","w").write(detail_page(1, body, 1400, pct=8, status="NEW", done=3, total=39, outstanding=9))
 print("Detail.dc.html")
 
 # ── Phase 1b — Documents / Bank / Contacts / Social ──────────
@@ -166,5 +166,5 @@ body2 = f"""<div class="row" style="gap:12px">
   <button class="btn">Continue to Phase 2</button>
 </div>"""
 
-open("Phase1Docs.dc.html","w").write(detail_page(1, body2, 2080, pct=8, status="NEW"))
+open("Phase1Docs.dc.html","w").write(detail_page(1, body2, 2080, pct=13, status="NEW", done=5, total=39, outstanding=7))
 print("Phase1Docs.dc.html")
