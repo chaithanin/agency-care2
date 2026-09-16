@@ -2,6 +2,8 @@
 
 Design canvas: https://claude.ai/artifact/PnXe4coE7J9wNhB25UP9f6
 
+คำสั่งสำหรับตัวหลัก: [`BRIEF.md`](./BRIEF.md) — copy ทั้งไฟล์ไปวางได้เลย
+
 ออกแบบใหม่แทนหน้า Onboarding เดิมของ Agency Care ซึ่งเป็นตารางเปล่า ๆ
 (`New Agency Onboarding — 0 open / 0 completed`) + drawer เช็กบ็อกซ์
 
