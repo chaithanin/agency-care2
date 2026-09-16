@@ -1,0 +1,63 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1760,
+      "h": 1240,
+      "title": "Omnichannel Overview — บนสุด"
+    },
+    {
+      "file": "Funnel.dc.html",
+      "x": 1840,
+      "y": 0,
+      "w": 1560,
+      "h": 960,
+      "title": "Lead Journey & Project Interest"
+    },
+    {
+      "file": "Performance.dc.html",
+      "x": 0,
+      "y": 1360,
+      "w": 1560,
+      "h": 1180,
+      "title": "Performance"
+    },
+    {
+      "file": "Attention.dc.html",
+      "x": 1640,
+      "y": 1360,
+      "w": 1400,
+      "h": 1100,
+      "title": "Needs Your Attention"
+    },
+    {
+      "file": "DataSources.dc.html",
+      "x": 0,
+      "y": 2660,
+      "w": 1400,
+      "h": 1500,
+      "title": "Data Sources & Architecture"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "note-entry",
+      "x": 0,
+      "y": -190,
+      "w": 760,
+      "text": "Omnichannel Overview — แท็บใหม่ในหน้า /reports\nrespond.io เป็นแหล่งข้อมูล · Agency Care เป็นหน้าสรุปให้ผู้บริหาร\nสีของกราฟตรวจด้วย validator ของ dataviz แล้วบนพื้นการ์ดจริง #111827 ผ่านทุกข้อ\nStatic mockups — ตัวเลขทั้งหมดเป็นตัวอย่างสมมติ"
+    },
+    {
+      "id": "note-sources",
+      "x": 1520,
+      "y": 2660,
+      "w": 720,
+      "text": "อ่านแผ่นนี้ก่อนเขียนโค้ด\nห้ามเรียก respond.io สดตอนเปิดหน้า — Avg. First Response ต้องไล่ข้อความของ contact หมื่นกว่าคน\nต้อง mirror แล้วสรุปล่วงหน้าเป็นตารางรายวัน หน้า dashboard อ่านจากตารางสรุปอย่างเดียว"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

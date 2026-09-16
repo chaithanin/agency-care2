@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1560px;min-height:1180px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:6px;flex-wrap:wrap"><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">CRM 360°</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">Reports</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">KPI</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;background:rgba(59,130,246,.16);border:1px solid #3B82F6;color:#60A5FA;font-weight:700">Omnichannel Overview</div></div>
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">Omnichannel Overview — Performance</h1>
+      <p class="cap mut" style="margin:0">ทีมตอบเร็วแค่ไหน ดูแลสองฝั่งสมดุลไหม และ broadcast ได้ผลเท่าไร</p>
+    </div>
+  </div>
+  <div class="row" style="gap:18px;align-items:flex-start"><div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Conversation Performance</h3></div>
+  
+  <div class="row" style="gap:26px;flex-wrap:wrap">
+    <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">386</span><span class="cap mut">Opened</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#0ca30c">352</span><span class="cap mut">Resolved</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">34</span><span class="cap mut">Open</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#d03b3b">12</span><span class="cap mut">Overdue</span></div>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="row" style="gap:26px;flex-wrap:wrap">
+    <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">3m 24s</span><span class="cap mut">Avg. First Response</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">5m 42s</span><span class="cap mut">Avg. Response</span></div>
+    <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">1h 18m</span><span class="cap mut">Avg. Resolution</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">91%</span><span class="cap mut">Resolution Rate</span></div>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="col" style="gap:9px"><span class="sec">SLA</span><div class="row" style="gap:14px;align-items:center">
+  <span class="b2" style="width:120px;flex-shrink:0;color:#CBD5E1">Within 5 min</span>
+  <div style="width:230px;flex-shrink:0;height:12px;background:#1F2937;border-radius:4px">
+    <div style="width:78%;height:12px;background:#0ca30c;border-radius:4px"></div></div>
+  <span class="b2" style="font-weight:700">78%</span>
+</div><div class="row" style="gap:14px;align-items:center">
+  <span class="b2" style="width:120px;flex-shrink:0;color:#CBD5E1">Within 15 min</span>
+  <div style="width:230px;flex-shrink:0;height:12px;background:#1F2937;border-radius:4px">
+    <div style="width:92%;height:12px;background:#0ca30c;border-radius:4px"></div></div>
+  <span class="b2" style="font-weight:700">92%</span>
+</div><div class="row" style="gap:14px;align-items:center">
+  <span class="b2" style="width:120px;flex-shrink:0;color:#CBD5E1">Over 30 min</span>
+  <div style="width:230px;flex-shrink:0;height:12px;background:#1F2937;border-radius:4px">
+    <div style="width:8%;height:12px;background:#ec835a;border-radius:4px"></div></div>
+  <span class="b2" style="font-weight:700">8%</span>
+</div></div>
+</div><div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Customer vs Agency</h3></div>
+  <p class="cap mut" style="margin:0">ดูว่าทีมดูแลลูกค้าตรงกับเครือข่ายเอเจนซี่ได้สมดุลแค่ไหน</p>
+  <table><thead><tr><th>Metric</th>
+    <th style="text-align:right;width:110px"><span class="row" style="gap:7px;justify-content:flex-end">
+      <span style="width:11px;height:11px;border-radius:3px;background:#3987e5"></span>Customer</span></th>
+    <th style="text-align:right;width:110px"><span class="row" style="gap:7px;justify-content:flex-end">
+      <span style="width:11px;height:11px;border-radius:3px;background:#d95926"></span>Agency</span></th>
+  </tr></thead><tbody><tr><td style="color:#CBD5E1">Active Contacts</td><td style="text-align:right;font-weight:700">3,824</td><td style="text-align:right;font-weight:700">986</td></tr><tr><td style="color:#CBD5E1">Conversations</td><td style="text-align:right;font-weight:700">412</td><td style="text-align:right;font-weight:700">184</td></tr><tr><td style="color:#CBD5E1">New This Month</td><td style="text-align:right;font-weight:700">264</td><td style="text-align:right;font-weight:700">38</td></tr><tr><td style="color:#CBD5E1">Avg. Response</td><td style="text-align:right;font-weight:700">3m 16s</td><td style="text-align:right;font-weight:700">4m 02s</td></tr><tr><td style="color:#CBD5E1">Active last 30d</td><td style="text-align:right;font-weight:700">78%</td><td style="text-align:right;font-weight:700">66%</td></tr></tbody></table>
+</div></div>
+<div class="row" style="gap:18px;align-items:flex-start"><div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Broadcast Performance</h3><button class="btn sm out">View All Broadcasts</button></div>
+  
+  <div class="row" style="gap:26px;flex-wrap:wrap">
+    <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">24</span><span class="cap mut">Campaigns</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">8,486</span><span class="cap mut">Sent</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#0ca30c">8,271</span><span class="cap mut">Delivered</span></div>
+    <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">6,384</span><span class="cap mut">Read</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">76%</span><span class="cap mut">Read Rate</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#d03b3b">215</span><span class="cap mut">Failed</span></div>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="col" style="gap:9px"><span class="sec">Read rate by audience</span><div class="row" style="gap:14px;align-items:center">
+  <span class="b2" style="width:200px;flex-shrink:0;color:#CBD5E1">Customer</span>
+  <div style="width:210px;flex-shrink:0;height:14px;background:#1F2937;border-radius:4px">
+    <div style="width:72%;height:14px;background:#3987e5;border-radius:4px"></div>
+  </div>
+  <span class="b2" style="font-weight:700;width:52px">72%</span>
+  <span class="cap mut">read rate</span>
+</div><div class="row" style="gap:14px;align-items:center">
+  <span class="b2" style="width:200px;flex-shrink:0;color:#CBD5E1">Agency</span>
+  <div style="width:210px;flex-shrink:0;height:14px;background:#1F2937;border-radius:4px">
+    <div style="width:84%;height:14px;background:#d95926;border-radius:4px"></div>
+  </div>
+  <span class="b2" style="font-weight:700;width:52px">84%</span>
+  <span class="cap mut">read rate</span>
+</div><div class="row" style="gap:14px;align-items:center">
+  <span class="b2" style="width:200px;flex-shrink:0;color:#CBD5E1">Sales</span>
+  <div style="width:210px;flex-shrink:0;height:14px;background:#1F2937;border-radius:4px">
+    <div style="width:96%;height:14px;background:#199e70;border-radius:4px"></div>
+  </div>
+  <span class="b2" style="font-weight:700;width:52px">96%</span>
+  <span class="cap mut">read rate</span>
+</div>
+    <div class="row" style="gap:18px;flex-wrap:wrap"><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#3987e5;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Customer</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#d95926;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Agency</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#199e70;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Sales</span></div></div></div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="col" style="gap:0"><span class="sec" style="padding-bottom:4px">Recent campaigns</span><div class="row" style="gap:12px;padding:8px 0;border-bottom:1px solid #374151"><span class="b2 grow" style="color:#CBD5E1">LOVE IT September Promotion</span><span class="cap mut">76% read</span></div><div class="row" style="gap:12px;padding:8px 0;border-bottom:1px solid #374151"><span class="b2 grow" style="color:#CBD5E1">MGB Final Pre-Sale</span><span class="cap mut">81% read</span></div><div class="row" style="gap:12px;padding:8px 0;border-bottom:1px solid #374151"><span class="b2 grow" style="color:#CBD5E1">Harmonia Construction Update</span><span class="cap mut">69% read</span></div></div>
+</div><div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Team Performance</h3><div class="row" style="gap:6px">
+    <span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">All</span>
+    <span class="chip" style="border:1px solid #374151;color:#6B7280">Customer Team</span>
+    <span class="chip" style="border:1px solid #374151;color:#6B7280">Agency Team</span>
+  </div></div>
+  <p class="cap mut" style="margin:0">เรียงตามภาระงาน ไม่ใช่การจัดอันดับแข่งกัน — สีบอกเวลาตอบที่เริ่มช้า</p>
+  <table><thead><tr><th>Sales / Staff</th>
+    <th style="text-align:right">Assigned</th><th style="text-align:right">Conversations</th>
+    <th style="text-align:right">First Response</th><th style="text-align:right">Resolved</th>
+    <th style="text-align:right">Open</th></tr></thead><tbody><tr><td style="font-weight:600">K. May</td><td style="text-align:right">128</td><td style="text-align:right">72</td><td style="text-align:right;color:#0ca30c;font-weight:600">2m 18s</td><td style="text-align:right">68</td><td style="text-align:right;font-weight:600">4</td></tr><tr><td style="font-weight:600">K. Anna</td><td style="text-align:right">104</td><td style="text-align:right">61</td><td style="text-align:right;color:#0ca30c;font-weight:600">3m 02s</td><td style="text-align:right">55</td><td style="text-align:right;font-weight:600">6</td></tr><tr><td style="font-weight:600">K. John</td><td style="text-align:right">96</td><td style="text-align:right">48</td><td style="text-align:right;color:#fab219;font-weight:600">4m 26s</td><td style="text-align:right">39</td><td style="text-align:right;font-weight:600">9</td></tr><tr><td style="font-weight:600">K. Nira</td><td style="text-align:right">88</td><td style="text-align:right">44</td><td style="text-align:right;color:#ec835a;font-weight:600">5m 51s</td><td style="text-align:right">31</td><td style="text-align:right;font-weight:600">13</td></tr></tbody></table>
+</div></div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

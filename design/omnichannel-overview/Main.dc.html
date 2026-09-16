@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1760px;min-height:1240px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:6px;flex-wrap:wrap"><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">CRM 360°</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">Reports</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">KPI</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;background:rgba(59,130,246,.16);border:1px solid #3B82F6;color:#60A5FA;font-weight:700">Omnichannel Overview</div></div>
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">Omnichannel Overview</h1>
+      <p class="cap mut" style="margin:0">respond.io เป็นแหล่งข้อมูล · Agency Care สรุปให้ผู้บริหารดูในหน้าเดียว</p>
+    </div>
+  </div>
+  <div class="card" style="padding:14px 18px">
+  <div class="row" style="gap:12px;flex-wrap:wrap;align-items:center">
+    <div class="row" style="gap:3px;background:#1F2937;border:1px solid #374151;border-radius:999px;padding:3px"><div style="padding:6px 15px;border-radius:999px;font-size:13px;color:#CBD5E1;font-weight:600">Today</div><div style="padding:6px 15px;border-radius:999px;font-size:13px;background:#3B82F6;color:#fff;font-weight:700">7 Days</div><div style="padding:6px 15px;border-radius:999px;font-size:13px;color:#CBD5E1;font-weight:600">This Month</div><div style="padding:6px 15px;border-radius:999px;font-size:13px;color:#CBD5E1;font-weight:600">Custom</div></div>
+    <div class="row fld" style="gap:8px;padding:7px 12px;border-radius:999px">
+      <span class="b2">All Channels</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+    <div class="row fld" style="gap:8px;padding:7px 12px;border-radius:999px">
+      <span class="b2">All Projects</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+    <div class="row fld" style="gap:8px;padding:7px 12px;border-radius:999px">
+      <span class="b2">All Contact Types</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+    <div class="row fld" style="gap:8px;padding:7px 12px;border-radius:999px">
+      <span class="b2">All Sales</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+    <span class="grow"></span>
+    <button class="btn sm out">Refresh</button>
+    <button class="btn sm out">Export Report</button>
+  </div>
+  <p class="cap mut" style="margin:10px 0 0">ตัวกรองชุดนี้ใช้กับทุกกล่องในหน้าพร้อมกัน ·
+    ข้อมูล ณ 16 Sep 2026 15:04 · ซิงก์จาก respond.io ล่าสุด 4 นาทีที่แล้ว</p>
+</div>
+<div class="row" style="gap:12px;flex-wrap:wrap">
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">Total Contacts</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">12,486</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">New Contacts</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">+386</span><span class="cap" style="color:#0ca30c;font-weight:700">▲ 18%</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">Active Conversations</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">142</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">New Leads</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">264</span><span class="cap" style="color:#0ca30c;font-weight:700">▲ 9%</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">Avg. First Response</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">3m 24s</span><span class="cap" style="color:#d03b3b;font-weight:700">▼ 12s</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">Resolution Rate</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">91%</span><span class="cap" style="color:#0ca30c;font-weight:700">▲ 2%</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">Broadcast Read Rate</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">76%</span>
+  </div>
+</div>
+  <div class="col" style="background:#111827;border:1px solid #374151;border-radius:18px;
+     padding:15px 18px;gap:3px;flex-grow:1;min-width:158px">
+  <span class="cap mut" style="font-weight:600;letter-spacing:.03em">Reservations / Closed</span>
+  <div class="row" style="gap:8px;align-items:baseline">
+    <span style="font-size:24px;font-weight:700;letter-spacing:-0.02em">18 / 32</span>
+  </div>
+</div>
+</div>
+<div class="row" style="gap:18px;align-items:stretch"><div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Audience</h3><span class="cap mut">กดตัวเลขเพื่อดูรายชื่อ</span></div>
+  
+  <div class="row" style="gap:22px;align-items:center">
+    <svg width="168" height="168" viewBox="0 0 168 168"><circle cx="84.0" cy="84.0" r="71.0" fill="none" stroke="#1F2937" stroke-width="26"></circle><circle cx="84.0" cy="84.0" r="71.0" fill="none" stroke="#3987e5" stroke-width="26" stroke-dasharray="206.78 239.33" stroke-dashoffset="-0.00" transform="rotate(-90 84.0 84.0)"></circle><circle cx="84.0" cy="84.0" r="71.0" fill="none" stroke="#d95926" stroke-width="26" stroke-dasharray="75.18 370.93" stroke-dashoffset="-208.78" transform="rotate(-90 84.0 84.0)"></circle><circle cx="84.0" cy="84.0" r="71.0" fill="none" stroke="#199e70" stroke-width="26" stroke-dasharray="1.12 444.98" stroke-dashoffset="-285.95" transform="rotate(-90 84.0 84.0)"></circle><circle cx="84.0" cy="84.0" r="71.0" fill="none" stroke="#c98500" stroke-width="26" stroke-dasharray="12.28 433.83" stroke-dashoffset="-289.08" transform="rotate(-90 84.0 84.0)"></circle></svg>
+    <div class="col grow" style="gap:0">
+      <div class="col" style="gap:1px;padding-bottom:10px;border-bottom:1px solid #374151">
+        <span style="font-size:26px;font-weight:700;letter-spacing:-0.02em">12,486</span>
+        <span class="cap mut">Total Contacts</span>
+      </div>
+      <div class="col" style="gap:0;padding-top:6px"><div class="row" style="gap:12px;align-items:center;padding:6px 0;cursor:pointer"><span style="width:11px;height:11px;border-radius:3px;background:#3987e5;flex-shrink:0"></span><span class="b2 grow" style="color:#CBD5E1">Customer</span><span class="b2" style="font-weight:700;width:64px;text-align:right">5,842</span><span class="cap mut" style="width:52px;text-align:right">46.8%</span></div><div class="row" style="gap:12px;align-items:center;padding:6px 0;cursor:pointer"><span style="width:11px;height:11px;border-radius:3px;background:#d95926;flex-shrink:0"></span><span class="b2 grow" style="color:#CBD5E1">Agency</span><span class="b2" style="font-weight:700;width:64px;text-align:right">2,164</span><span class="cap mut" style="width:52px;text-align:right">17.3%</span></div><div class="row" style="gap:12px;align-items:center;padding:6px 0;cursor:pointer"><span style="width:11px;height:11px;border-radius:3px;background:#199e70;flex-shrink:0"></span><span class="b2 grow" style="color:#CBD5E1">Sales</span><span class="b2" style="font-weight:700;width:64px;text-align:right">86</span><span class="cap mut" style="width:52px;text-align:right">0.7%</span></div><div class="row" style="gap:12px;align-items:center;padding:6px 0;cursor:pointer"><span style="width:11px;height:11px;border-radius:3px;background:#c98500;flex-shrink:0"></span><span class="b2 grow" style="color:#CBD5E1">Unclassified</span><span class="b2" style="font-weight:700;width:64px;text-align:right">394</span><span class="cap mut" style="width:52px;text-align:right">3.2%</span></div></div>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(250,178,25,.10);border:1px solid rgba(250,178,25,.35);
+       border-radius:14px;padding:10px 14px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fab219" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+    <span class="b2" style="color:#fab219;font-weight:600">394 unclassified — ยังไม่รู้ว่าเป็นใคร</span>
+    <span class="grow"></span><span class="cap mut">New today +48</span>
+  </div>
+</div><div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Omnichannel Performance</h3></div>
+  <p class="cap mut" style="margin:0">Monitor = ตอบช้ากว่าเกณฑ์ 5 นาที ยังไม่ถึงขั้นวิกฤต</p>
+  <div class="row" style="gap:24px;align-items:flex-start">
+    <div class="col" style="gap:10px;flex-shrink:0">
+      <span class="cap mut" style="font-weight:600">Conversations by channel</span>
+      <svg width="150" height="150" viewBox="0 0 150 150"><circle cx="75.0" cy="75.0" r="63.0" fill="none" stroke="#1F2937" stroke-width="24"></circle><circle cx="75.0" cy="75.0" r="63.0" fill="none" stroke="#3987e5" stroke-width="24" stroke-dasharray="219.67 176.17" stroke-dashoffset="-0.00" transform="rotate(-90 75.0 75.0)"></circle><circle cx="75.0" cy="75.0" r="63.0" fill="none" stroke="#d95926" stroke-width="24" stroke-dasharray="85.08 310.76" stroke-dashoffset="-221.67" transform="rotate(-90 75.0 75.0)"></circle><circle cx="75.0" cy="75.0" r="63.0" fill="none" stroke="#199e70" stroke-width="24" stroke-dasharray="49.46 346.38" stroke-dashoffset="-308.76" transform="rotate(-90 75.0 75.0)"></circle><circle cx="75.0" cy="75.0" r="63.0" fill="none" stroke="#c98500" stroke-width="24" stroke-dasharray="21.75 374.09" stroke-dashoffset="-360.22" transform="rotate(-90 75.0 75.0)"></circle><circle cx="75.0" cy="75.0" r="63.0" fill="none" stroke="#d55181" stroke-width="24" stroke-dasharray="9.88 385.97" stroke-dashoffset="-383.97" transform="rotate(-90 75.0 75.0)"></circle></svg>
+    </div>
+    <div class="grow">
+      <table><thead><tr>
+        <th>Channel</th><th style="text-align:right">Contacts</th>
+        <th style="text-align:right">Conversations</th><th style="text-align:right">New Leads</th>
+        <th style="text-align:right">Avg Response</th><th style="width:110px">Status</th>
+      </tr></thead><tbody><tr>
+  <td><div class="row" style="gap:9px"><span style="width:11px;height:11px;border-radius:3px;
+      background:#3987e5;flex-shrink:0"></span><span style="font-weight:600">LINE</span></div></td>
+  <td style="text-align:right">5,842</td><td style="text-align:right">486</td>
+  <td style="text-align:right;font-weight:600">192</td><td style="text-align:right">2m 48s</td>
+  <td><span class="chip" style="color:#0ca30c;background:rgba(12,163,12,.16)">Healthy</span></td>
+</tr><tr>
+  <td><div class="row" style="gap:9px"><span style="width:11px;height:11px;border-radius:3px;
+      background:#d95926;flex-shrink:0"></span><span style="font-weight:600">Facebook</span></div></td>
+  <td style="text-align:right">2,947</td><td style="text-align:right">281</td>
+  <td style="text-align:right;font-weight:600">84</td><td style="text-align:right">4m 12s</td>
+  <td><span class="chip" style="color:#0ca30c;background:rgba(12,163,12,.16)">Healthy</span></td>
+</tr><tr>
+  <td><div class="row" style="gap:9px"><span style="width:11px;height:11px;border-radius:3px;
+      background:#199e70;flex-shrink:0"></span><span style="font-weight:600">Instagram</span></div></td>
+  <td style="text-align:right">1,866</td><td style="text-align:right">194</td>
+  <td style="text-align:right;font-weight:600">62</td><td style="text-align:right">3m 51s</td>
+  <td><span class="chip" style="color:#0ca30c;background:rgba(12,163,12,.16)">Healthy</span></td>
+</tr><tr>
+  <td><div class="row" style="gap:9px"><span style="width:11px;height:11px;border-radius:3px;
+      background:#c98500;flex-shrink:0"></span><span style="font-weight:600">WhatsApp</span></div></td>
+  <td style="text-align:right">931</td><td style="text-align:right">86</td>
+  <td style="text-align:right;font-weight:600">28</td><td style="text-align:right">5m 16s</td>
+  <td><span class="chip" style="color:#fab219;background:rgba(250,178,25,.15)">Monitor</span></td>
+</tr><tr>
+  <td><div class="row" style="gap:9px"><span style="width:11px;height:11px;border-radius:3px;
+      background:#d55181;flex-shrink:0"></span><span style="font-weight:600">Website</span></div></td>
+  <td style="text-align:right">486</td><td style="text-align:right">43</td>
+  <td style="text-align:right;font-weight:600">21</td><td style="text-align:right">2m 19s</td>
+  <td><span class="chip" style="color:#0ca30c;background:rgba(12,163,12,.16)">Healthy</span></td>
+</tr></tbody></table>
+    </div>
+  </div>
+  <div class="row" style="gap:18px;flex-wrap:wrap"><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#3987e5;display:inline-block"></span><span class="cap" style="color:#CBD5E1">LINE</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#d95926;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Facebook</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#199e70;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Instagram</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#c98500;display:inline-block"></span><span class="cap" style="color:#CBD5E1">WhatsApp</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#d55181;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Website</span></div></div>
+</div></div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Contact &amp; Conversation Trend</h3><div class="row" style="gap:3px;background:#1F2937;border:1px solid #374151;border-radius:999px;padding:3px"><div style="padding:6px 15px;border-radius:999px;font-size:13px;background:#3B82F6;color:#fff;font-weight:700">Daily</div><div style="padding:6px 15px;border-radius:999px;font-size:13px;color:#CBD5E1;font-weight:600">Weekly</div><div style="padding:6px 15px;border-radius:999px;font-size:13px;color:#CBD5E1;font-weight:600">Monthly</div></div></div>
+  
+  <svg width="980" height="230" viewBox="0 0 980 230"><line x1="44" y1="12.0" x2="968" y2="12.0" stroke="#2A3441" stroke-width="1"></line><line x1="44" y1="60.0" x2="968" y2="60.0" stroke="#2A3441" stroke-width="1"></line><line x1="44" y1="108.0" x2="968" y2="108.0" stroke="#2A3441" stroke-width="1"></line><line x1="44" y1="156.0" x2="968" y2="156.0" stroke="#2A3441" stroke-width="1"></line><line x1="44" y1="204.0" x2="968" y2="204.0" stroke="#2A3441" stroke-width="1"></line><text x="35" y="16.0" text-anchor="end" font-size="11" fill="#6B7280">96</text><text x="35" y="64.0" text-anchor="end" font-size="11" fill="#6B7280">72</text><text x="35" y="112.0" text-anchor="end" font-size="11" fill="#6B7280">48</text><text x="35" y="160.0" text-anchor="end" font-size="11" fill="#6B7280">24</text><text x="35" y="208.0" text-anchor="end" font-size="11" fill="#6B7280">0</text><text x="44.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">10 Sep</text><text x="198.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">11</text><text x="352.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">12</text><text x="506.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">13</text><text x="660.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">14</text><text x="814.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">15</text><text x="968.0" y="224" text-anchor="middle" font-size="11" fill="#6B7280">16</text><path d="M44.0 120.0 L198.0 88.0 L352.0 102.0 L506.0 56.0 L660.0 72.0 L814.0 28.0 L968.0 12.0" fill="none" stroke="#3987e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="968.0" cy="12.0" r="4.5" fill="#3987e5" stroke="#111827" stroke-width="2"></circle><path d="M44.0 128.0 L198.0 116.0 L352.0 122.0 L506.0 86.0 L660.0 100.0 L814.0 62.0 L968.0 48.0" fill="none" stroke="#d95926" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="968.0" cy="48.0" r="4.5" fill="#d95926" stroke="#111827" stroke-width="2"></circle><path d="M44.0 142.0 L198.0 124.0 L352.0 130.0 L506.0 100.0 L660.0 108.0 L814.0 76.0 L968.0 60.0" fill="none" stroke="#199e70" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="968.0" cy="60.0" r="4.5" fill="#199e70" stroke="#111827" stroke-width="2"></circle></svg>
+  <div class="row" style="gap:18px;flex-wrap:wrap"><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#3987e5;display:inline-block"></span><span class="cap" style="color:#CBD5E1">New Contacts</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#d95926;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Conversations</span></div><div class="row" style="gap:7px"><span style="width:11px;height:11px;border-radius:3px;background:#199e70;display:inline-block"></span><span class="cap" style="color:#CBD5E1">Resolved Conversations</span></div></div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

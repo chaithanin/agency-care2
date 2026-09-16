@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1400px;min-height:1100px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:6px;flex-wrap:wrap"><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">CRM 360°</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">Reports</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;border:1px solid #374151;color:#CBD5E1;font-weight:600">KPI</div><div style="padding:6px 18px;border-radius:999px;font-size:13px;background:rgba(59,130,246,.16);border:1px solid #3B82F6;color:#60A5FA;font-weight:700">Omnichannel Overview</div></div>
+  <div class="row" style="gap:12px">
+    <div class="col grow" style="gap:3px">
+      <h1 class="h5">Omnichannel Overview — Needs Your Attention</h1>
+      <p class="cap mut" style="margin:0">ตอนนี้มีอะไรที่ต้องเข้าไปจัดการทันที</p>
+    </div>
+  </div>
+  <div class="card pad col" style="gap:12px;border-color:rgba(250,178,25,.35)">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow" style="color:#fab219">⚠ Needs Your Attention</h3>
+    <span class="cap mut">7 เรื่อง · กดแต่ละแถวเพื่อไปทำงานต่อได้ทันที</span>
+  </div>
+  <div class="col" style="gap:0"><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fab219" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#fab219">394</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">Unclassified contacts</span>
+    <span class="cap mut">มีคน follow เข้ามาแล้วยังไม่ได้ระบุว่าเป็นใคร</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ LINE Contacts › Unclassified</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d03b3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#d03b3b">42</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">New leads without assigned seller</span>
+    <span class="cap mut">lead เข้ามาแล้วยังไม่มีคนดูแล</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ Lead Registration › Unassigned</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d03b3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#d03b3b">18</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">Conversations waiting > 30 min</span>
+    <span class="cap mut">ลูกค้าถามแล้วยังไม่มีใครตอบ</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ Conversations › Overdue</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec835a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#ec835a">12</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">Failed broadcasts</span>
+    <span class="cap mut">ส่งไม่สำเร็จ ส่วนใหญ่เพราะผู้รับบล็อก OA</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ Broadcast › Send History</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ec835a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#ec835a">34</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">Agencies inactive > 30 days</span>
+    <span class="cap mut">เอเจนซี่ที่เงียบหายไปเกินหนึ่งเดือน</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ Agency List › Inactive</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fab219" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#fab219">21</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">Leads waiting for follow-up</span>
+    <span class="cap mut">เลยวันนัดติดตามแล้วยังไม่ได้ทำ</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ Follow-up Board</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div><div class="row" style="gap:16px;align-items:center;padding:13px 0;
+     border-bottom:1px solid #374151;cursor:pointer">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d03b3b" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span style="font-size:20px;font-weight:700;width:52px;flex-shrink:0;color:#d03b3b">8</span>
+  <div class="col grow" style="gap:2px">
+    <span class="b2" style="font-weight:600">Customers requested viewing but no appointment</span>
+    <span class="cap mut">ขอดูห้องแล้วยังไม่มีนัด</span>
+  </div>
+  <span class="cap" style="color:#CBD5E1">ไปที่ Appointments › Requested</span>
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M15 3h6v6"></path><path d="M10 14 21 3"></path><path d="M18 13v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h7"></path></svg>
+</div></div>
+  <p class="cap mut" style="margin:0">นี่คือจุดที่ทำให้หน้านี้เป็นเครื่องมือบริหาร ไม่ใช่แค่รายงาน —
+    ทุกแถวพาไปยังหน้าที่แก้ปัญหานั้นได้จริง ไม่ใช่แค่บอกตัวเลข</p>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">ตัวอย่าง drill-down — กด "18 Conversations waiting &gt; 30 min"</h3>
+  </div>
+  <table>
+    <thead><tr><th>Contact</th><th style="width:130px">Channel</th>
+      <th style="width:150px">Assigned</th><th style="width:130px">Waiting</th>
+      <th style="width:190px">Last message</th></tr></thead>
+    <tbody>
+      <tr><td style="font-weight:600">Somchai P.</td>
+        <td><span class="row" style="gap:8px"><span style="width:10px;height:10px;border-radius:3px;
+          background:#3987e5"></span>LINE</span></td>
+        <td class="mut">K. May</td>
+        <td style="color:#d03b3b;font-weight:700">1h 42m</td>
+        <td class="mut" style="font-size:13px">"ห้องนี้ยังว่างไหมครับ"</td></tr>
+      <tr><td style="font-weight:600">Anna K.</td>
+        <td><span class="row" style="gap:8px"><span style="width:10px;height:10px;border-radius:3px;
+          background:#d95926"></span>Facebook</span></td>
+        <td class="mut">— ยังไม่มีคนดูแล</td>
+        <td style="color:#d03b3b;font-weight:700">58m</td>
+        <td class="mut" style="font-size:13px">"ขอ price list Marina ครับ"</td></tr>
+      <tr><td style="font-weight:600">Nadia R.</td>
+        <td><span class="row" style="gap:8px"><span style="width:10px;height:10px;border-radius:3px;
+          background:#199e70"></span>Instagram</span></td>
+        <td class="mut">K. John</td>
+        <td style="color:#ec835a;font-weight:700">36m</td>
+        <td class="mut" style="font-size:13px">"Is the pool view available?"</td></tr>
+    </tbody>
+  </table>
+  <div class="row" style="gap:10px">
+    <button class="btn sm out">Assign seller</button>
+    <button class="btn sm">Open conversation</button>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>
