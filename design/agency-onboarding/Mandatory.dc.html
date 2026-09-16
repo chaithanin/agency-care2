@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1240px;min-height:1980px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="col" style="gap:3px">
+    <h1 class="h5">Onboarding — Mandatory Items &amp; Status Rules</h1>
+    <p class="cap mut" style="margin:0">อะไรบ้างที่ต้องครบก่อนกด Complete Onboarding · 34 ข้อเสมอ + 7 ข้อตามเงื่อนไข</p>
+  </div>
+  <div class="card pad col" style="gap:16px">
+  <div class="row" style="gap:28px;align-items:center;flex-wrap:wrap">
+    <div class="col" style="gap:2px">
+      <div style="font-size:32px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">34</div>
+      <div class="cap mut">รายการที่บังคับเสมอ</div></div>
+    <div style="width:1px;height:46px;background:#374151"></div>
+    <div class="col" style="gap:2px">
+      <div style="font-size:32px;font-weight:700;letter-spacing:-0.02em;color:#FBBF24">7</div>
+      <div class="cap mut">รายการที่ขึ้นกับเงื่อนไข</div></div>
+    <div style="width:1px;height:46px;background:#374151"></div>
+    <div class="col grow" style="gap:4px">
+      <div class="b2" style="font-weight:700">ตัวหารไม่คงที่ — คำนวณต่อเอเจนซี่</div>
+      <div class="cap mut">อย่างน้อย 34 · มากสุด 41 ข้อ
+        แล้วแต่ว่าเป็น New Agency, ประเภทออฟฟิศ, ความสัมพันธ์เดิม และประเภทบัญชีธนาคาร</div>
+    </div>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px">
+    <div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+         border-radius:16px;padding:14px 16px">
+      <span class="b2" style="font-weight:700">ABC Property Pattaya</span>
+      <span class="cap mut">มีประวัติขาย · Physical Office · มีความสัมพันธ์เดิม · บัญชีส่วนตัวเจ้าของ</span>
+      <span class="b2" style="color:#60A5FA;font-weight:700">รวม 41 ข้อ</span>
+    </div>
+    <div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+         border-radius:16px;padding:14px 16px">
+      <span class="b2" style="font-weight:700">Siam Estate Bangkok</span>
+      <span class="cap mut">New Agency · Non-Physical Office · ไม่มีความสัมพันธ์เดิม · บัญชีบริษัท</span>
+      <span class="b2" style="color:#60A5FA;font-weight:700">รวม 34 ข้อ</span>
+    </div>
+  </div>
+</div><div class="card pad col" style="gap:14px">
+  <h3 class="sec">สถานะ Waiting Agency — ระบบตั้งให้เอง</h3>
+  <div class="row" style="gap:14px;flex-wrap:wrap;align-items:center">
+    <span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">In Progress</span>
+    <span class="cap mut">ส่งของให้เอเจนซี่แล้ว เงียบครบ</span>
+    <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">3 วัน</span>
+    <span style="color:#6B7280">→</span>
+    <span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Waiting Agency</span>
+  </div>
+  <div class="col" style="gap:9px">
+    <div class="row" style="gap:10px"><span style="color:#A78BFA;font-weight:700">·</span>
+      <span class="b2" style="color:#CBD5E1">นับจากเวลาที่ทีมเราทำรายการล่าสุดในเฟสนั้น
+        (ส่ง package, ส่งสัญญา, ขอเอกสาร) ไม่ได้นับจากวันที่สร้าง onboarding</span></div>
+    <div class="row" style="gap:10px"><span style="color:#A78BFA;font-weight:700">·</span>
+      <span class="b2" style="color:#CBD5E1">พอเอเจนซี่ตอบกลับหรือมีรายการใหม่เกิดขึ้น
+        สถานะกลับเป็น In Progress เองและนับใหม่</span></div>
+    <div class="row" style="gap:10px"><span style="color:#A78BFA;font-weight:700">·</span>
+      <span class="b2" style="color:#CBD5E1">ครบ 3 วันแล้วยังเงียบต่ออีก 4 วัน (รวม 7 วัน)
+        ขึ้นเป็น Need Attention และเข้ากล่อง Needs Your Attention หน้าแรก</span></div>
+    <div class="row" style="gap:10px"><span style="color:#A78BFA;font-weight:700">·</span>
+      <span class="b2" style="color:#CBD5E1">ผู้ใช้ตั้ง Waiting Agency เองไม่ได้ —
+        เป็นสถานะที่ระบบคำนวณ เหมือนกับเปอร์เซ็นต์ความคืบหน้า</span></div>
+  </div>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">A. Agency Profile</h3>
+    <span class="cap mut">10 เสมอ + 6 มีเงื่อนไข</span></div>
+  <p class="cap mut" style="margin:0">ใช้กฎเดิม missingAgencyProfile() ฝั่ง API ไม่สร้างรายการใหม่</p>
+  <table><tbody><tr><td style="font-weight:600">Agency Name</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Owner / Contact Person</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Phone</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Email</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Office Type</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Province</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Zone</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Agency Photo — อย่างน้อย 1 รูป</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Number of Sales Agents</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Existing Project / Relationship</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Last Sale Date</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะเมื่อไม่ได้ติ๊ก New Agency</span></td></tr><tr><td style="font-weight:600">Last Units Sold</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะเมื่อไม่ได้ติ๊ก New Agency</span></td></tr><tr><td style="font-weight:600">Total Units Sold</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะเมื่อไม่ได้ติ๊ก New Agency</span></td></tr><tr><td style="font-weight:600">Address</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะ Physical Office และ Booth</span></td></tr><tr><td style="font-weight:600">Google Map Link (lat/lng)</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะ Physical Office และ Booth</span></td></tr><tr><td style="font-weight:600">รายละเอียดความสัมพันธ์อย่างน้อย 1 รายการ</td><td style="width:150px"><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">กฎเดิม</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะเมื่อเลือก Have</span></td></tr></tbody></table>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">B. Documents &amp; Bank</h3>
+    <span class="cap mut">5 เสมอ + 1 มีเงื่อนไข</span></div>
+  <p class="cap mut" style="margin:0">ของใหม่ — onboarding เป็นตัวบังคับให้เอกสารครบและถูกยืนยัน</p>
+  <table><tbody><tr><td style="font-weight:600">Company Registration / DBD — Verified</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Owner ID / Passport — Verified</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Bank Book — Verified</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Commission Authorization — Verified</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Bank Account Type + เลขบัญชี</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Authorization Letter</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap" style="color:#FBBF24">เฉพาะเมื่อเลือก Owner Personal Account</span></td></tr></tbody></table>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">C. Communication (Phase 2)</h3>
+    <span class="cap mut">5 เสมอ</span></div>
+  
+  <table><tbody><tr><td style="font-weight:600">สร้าง LINE Group แล้ว</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Agency Owner และทีมขายอยู่ในกลุ่ม</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">ทีมภายในอยู่ในกลุ่มครบ</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Assign Seller แล้ว</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">Seller อ่าน Agency Background แล้ว</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr></tbody></table>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">D. System Entry (Phase 3)</h3>
+    <span class="cap mut">4 เสมอ</span></div>
+  
+  <table><tbody><tr><td style="font-weight:600">บันทึก Venio Agency ID</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">ลงทะเบียน agency ใน Venio</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">อัปโหลดเอกสารเข้า Venio</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">กรอก Initial Agency Report ครบ</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr></tbody></table>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">E. First Communication (Phase 4)</h3>
+    <span class="cap mut">3 เสมอ</span></div>
+  
+  <table><tbody><tr><td style="font-weight:600">ส่ง Welcome Communication</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">ส่ง Marketing Package</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">บันทึกวันที่ส่งและช่องทาง</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr></tbody></table>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">F. Agreement (Phase 5)</h3>
+    <span class="cap mut">5 เสมอ</span></div>
+  
+  <table><tbody><tr><td style="font-weight:600">ส่งเอกสารให้ Agency Support</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">เตรียมสัญญาแล้ว</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">ประชุมครั้งที่สองเสร็จ</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">เซ็นสัญญาและอัปโหลดแล้ว</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">ตกลง Sales Plan และ Monthly Goal</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr></tbody></table>
+</div><div class="card pad col" style="gap:12px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">G. Post-Onboarding (Phase 6)</h3>
+    <span class="cap mut">2 เสมอ</span></div>
+  
+  <table><tbody><tr><td style="font-weight:600">ส่ง Sales Materials ให้แล้ว</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr><tr><td style="font-weight:600">บันทึก Agency Visit ครั้งแรก</td><td style="width:150px"><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">ของ onboarding</span></td><td style="width:330px"><span class="cap mut">บังคับเสมอ</span></td></tr></tbody></table>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -63,7 +63,7 @@ body = f"""<div class="row" style="gap:12px">
   <button class="btn out">Back</button>
   <button class="btn">Continue to Phase 7</button>
 </div>"""
-open("Phase6.dc.html","w").write(detail_page(6, body, 1780, pct=87, status="IN PROGRESS", done=34, total=39, outstanding=2))
+open("Phase6.dc.html","w").write(detail_page(6, body, 1780, pct=83, status="IN PROGRESS", done=34, total=41, outstanding=4))
 print("Phase6.dc.html")
 
 # ── Phase 7 — Relationship Maintenance ───────────────────────
@@ -166,5 +166,5 @@ body7 = f"""<div class="row" style="gap:12px">
   </div>
   <span class="cap mut" style="font-style:italic">preview of the completed state</span>
 </div>"""
-open("Phase7.dc.html","w").write(detail_page(7, body7, 1800, pct=95, status="IN PROGRESS", done=37, total=39, outstanding=2))
+open("Phase7.dc.html","w").write(detail_page(7, body7, 1800, pct=95, status="IN PROGRESS", done=39, total=41, outstanding=2))
 print("Phase7.dc.html")

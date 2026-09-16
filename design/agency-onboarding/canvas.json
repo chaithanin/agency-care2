@@ -87,6 +87,14 @@
       "w": 1480,
       "h": 1160,
       "title": "Audit Log"
+    },
+    {
+      "file": "Mandatory.dc.html",
+      "x": 2880,
+      "y": 7160,
+      "w": 1240,
+      "h": 1980,
+      "title": "Mandatory Items & Status Rules"
     }
   ],
   "annotations": [
@@ -115,8 +123,8 @@
       "id": "note-governance",
       "x": 0,
       "y": 7020,
-      "w": 660,
-      "text": "Governance — ใครทำอะไรได้ และร่องรอยที่ต้องเก็บ\nBank Information, Document Verification, Agreement และ Complete Onboarding เป็นสี่จุดที่ต้องมี Verified By / Verified At และ audit log เสมอ"
+      "w": 760,
+      "text": "Governance — ใครทำอะไรได้ ร่องรอยที่ต้องเก็บ และนิยามของ \"ครบ\"\nรายการบังคับ 34 ข้อเสมอ + 7 ข้อตามเงื่อนไข ใช้กฎเดิม missingAgencyProfile() ของระบบเป็นฐาน ตัวหารของ progress จึงไม่คงที่ คำนวณต่อเอเจนซี่"
     }
   ],
   "launch": {

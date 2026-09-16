@@ -54,7 +54,7 @@ body = f"""<div class="row" style="gap:12px">
   <button class="btn out">Back</button>
   <button class="btn">Continue to Phase 3</button>
 </div>"""
-open("Phase2.dc.html","w").write(detail_page(2, body, 1240, pct=31, status="IN PROGRESS", done=12, total=39, outstanding=5))
+open("Phase2.dc.html","w").write(detail_page(2, body, 1240, pct=29, status="IN PROGRESS", done=12, total=41, outstanding=7))
 print("Phase2.dc.html")
 
 # ── Phase 3 — System Entry & Digital Setup ───────────────────
@@ -121,5 +121,5 @@ body3 = f"""<div class="row" style="gap:12px">
   <button class="btn out">Back</button>
   <button class="btn">Continue to Phase 4</button>
 </div>"""
-open("Phase3.dc.html","w").write(detail_page(3, body3, 1620, pct=46, status="IN PROGRESS", done=18, total=39, outstanding=2))
+open("Phase3.dc.html","w").write(detail_page(3, body3, 1620, pct=44, status="IN PROGRESS", done=18, total=41, outstanding=4))
 print("Phase3.dc.html")

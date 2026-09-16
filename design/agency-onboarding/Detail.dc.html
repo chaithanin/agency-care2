@@ -64,10 +64,10 @@
     <div class="row">
       <span class="sec">Overall Onboarding Progress</span>
       <span class="grow"></span>
-      <span class="b2" style="font-weight:700;color:#60A5FA">8%</span>
+      <span class="b2" style="font-weight:700;color:#60A5FA">7%</span>
     </div>
-    <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:8%;height:100%;border-radius:4px;background:#3B82F6"></div></div>
-    <span class="cap mut">3 / 39 required items completed · 9 mandatory items outstanding</span>
+    <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:7%;height:100%;border-radius:4px;background:#3B82F6"></div></div>
+    <span class="cap mut">3 / 41 required items completed · 11 mandatory items outstanding</span>
   </div>
 </div>
   <div class="card pad"><div class="row" style="align-items:flex-start"><div class="row grow" style="gap:0">
@@ -129,84 +129,198 @@
 </div></div></div>
   <div class="row" style="gap:12px">
   <h2 class="h6 grow">Phase 1 — Pre-Onboarding</h2>
-  <span class="cap mut">Section 1 of 2 · Background &amp; Profile</span>
+  <span class="cap mut">Section 1 of 2 · Agency Profile</span>
+</div>
+<div class="card pad row" style="gap:12px;border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.07)">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+  <span class="b2 grow" style="color:#A78BFA">ส่วนนี้คือฟิลด์เดียวกับฟอร์ม Add Agency ที่ใช้อยู่จริง
+    เงื่อนไขบังคับมาจาก <b>missingAgencyProfile()</b> ฝั่ง API — onboarding เรียกใช้กฎชุดเดิม
+    ไม่สร้างรายการซ้ำ</span>
+  <button class="btn sm out">Open in Agency form</button>
 </div>
 <div class="card pad col" style="gap:14px">
   <div class="row" style="gap:12px">
-    <h3 class="sec grow">Agency Background</h3><span class="cap mut">Required</span>
+    <h3 class="sec grow">Section 1 — General</h3><span class="cap mut">4 ข้อบังคับ</span>
   </div>
   
   <div class="col" style="gap:14px">
   <div class="row" style="gap:14px">
-    <div class="col" style="gap:0;flex-grow:1;min-width:0">
-  <p class="lbl">Agency Full Name — English</p>
-  <div class="fld">ABC Property Pattaya Co., Ltd.</div>
+    <div class="col" style="gap:0;width:150px;flex-shrink:0">
+  <p class="lbl">Agency Code</p>
+  <div class="fld">AG-00238</div>
 </div>
     <div class="col" style="gap:0;flex-grow:1;min-width:0">
-  <p class="lbl">Agency Full Name — Thai</p>
-  <div class="fld">บริษัท เอบีซี พร็อพเพอร์ตี้ พัทยา จำกัด</div>
+  <p class="lbl">Agency Name<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">ABC Property Pattaya Co., Ltd.</div>
+</div>
+    <div class="col" style="gap:0;width:250px;flex-shrink:0">
+  <p class="lbl">Contact Person<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">Mr. Chatchai Pongsakorn</div>
 </div>
   </div>
   <div class="row" style="gap:14px">
-    <div class="col" style="gap:0;flex-grow:1;min-width:0">
-  <p class="lbl">Full Address</p>
-  <div class="fld">199/12 Moo 9, Nong Prue, Bang Lamung, Chonburi 20150</div>
+    <div class="col" style="gap:0;width:210px;flex-shrink:0">
+  <p class="lbl">Phone<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">+66 81 234 5678</div>
+</div>
+    <div class="col" style="gap:0;width:260px;flex-shrink:0">
+  <p class="lbl">Email<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">chatchai@abcprop.co.th</div>
 </div>
     <div class="col" style="gap:0;flex-grow:1;min-width:0">
-  <p class="lbl">Owner Full Name</p>
-  <div class="fld">Mr. Chatchai Pongsakorn</div>
+  <p class="lbl">Website</p>
+  <div class="fld">abcproperty-pattaya.com</div>
 </div>
-  </div>
-  <div class="col" style="gap:0">
-    <p class="lbl">Company History / Background</p>
-    <div class="fld" style="min-height:74px;color:#CBD5E1">Founded 2018 in Pattaya. Focused on
-      foreign buyers from Europe and CIS. 6 full-time agents, office on Second Road.</div>
+    <div class="col" style="gap:0;width:190px;flex-shrink:0">
+  <p class="lbl">Tax ID / National ID</p>
+  <div class="fld">0205561012345</div>
+</div>
   </div>
   <div class="row" style="gap:14px">
-    <div class="col" style="gap:0;flex-grow:1;min-width:0">
-  <p class="lbl">Units Sold / Rented for GTG</p>
-  <div class="fld">14</div>
+    <div class="col" style="gap:0;width:190px;flex-shrink:0">
+  <p class="lbl">WhatsApp</p>
+  <div class="fld">+66 81 234 5678</div>
+</div>
+    <div class="col" style="gap:0;width:170px;flex-shrink:0">
+  <p class="lbl">LINE ID</p>
+  <div class="fld">@abcprop</div>
+</div>
+    <div class="col" style="gap:0;width:170px;flex-shrink:0">
+  <p class="lbl">LINE OA</p>
+  <div class="fld">@abcprop-oa</div>
 </div>
     <div class="col" style="gap:0;flex-grow:1;min-width:0">
-  <p class="lbl">Number of Agents</p>
-  <div class="fld">6</div>
+  <p class="lbl">Preferred channel</p>
+  <div class="fld">LINE</div>
 </div>
-    <div class="col" style="gap:0;flex-grow:1">
-      <p class="lbl">Agency Size</p>
-      <div class="row" style="gap:8px">
-        <span class="chip" style="border:1px solid #374151;color:#6B7280">Small</span>
-        <span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Medium</span>
-        <span class="chip" style="border:1px solid #374151;color:#6B7280">Large</span>
-      </div>
-    </div>
+    <div class="col" style="gap:0;width:150px;flex-shrink:0">
+  <p class="lbl">Status</p>
+  <div class="fld">Active</div>
+</div>
   </div>
 </div>
 </div>
 <div class="card pad col" style="gap:14px">
   <div class="row" style="gap:12px">
-    <h3 class="sec grow">Market Focus &amp; Channels</h3>
+    <h3 class="sec grow">Section 3 — Sales Performance</h3><span class="cap mut">3 ข้อ · มีเงื่อนไข</span>
   </div>
   
-  <div class="col" style="gap:16px">
-  <div class="col" style="gap:0">
-  <p class="lbl">Market Focus</p>
-  <div class="row" style="gap:8px;flex-wrap:wrap"><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Buyer</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Investor</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Foreign Market</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Rental</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Thai Market</span></div>
+  <div class="col" style="gap:14px">
+  <div class="row" style="gap:20px;flex-wrap:wrap">
+    <div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">New Agency (no sales history yet)</span></div>
+    <div class="row" style="gap:10px;padding:5px 0"><div style="width:19px;height:19px;border-radius:6px;background:#22C55E;display:grid;place-items:center;flex-shrink:0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#0F172A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg></div><span class="b2" style="color:#F1F5F9">Do They Sell Our Projects?</span></div>
+  </div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;width:200px;flex-shrink:0">
+  <p class="lbl">Last Sale Date<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">28 Aug 2026</div>
 </div>
-  <div class="col" style="gap:0">
-  <p class="lbl">Nationality / Market</p>
-  <div class="row" style="gap:8px;flex-wrap:wrap"><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Russian</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">German</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">British</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Chinese</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Indian</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Thai</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Other</span></div>
+    <div class="col" style="gap:0;width:180px;flex-shrink:0">
+  <p class="lbl">Last Units Sold<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">3</div>
 </div>
-  <div class="col" style="gap:0">
-  <p class="lbl">Business Channel</p>
-  <div class="row" style="gap:8px;flex-wrap:wrap"><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Online</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Offline</span><span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Exhibition</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Booth</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Freelancer</span><span class="chip" style="border:1px solid #374151;color:#6B7280">Others</span></div>
+    <div class="col" style="gap:0;width:180px;flex-shrink:0">
+  <p class="lbl">Total Units Sold<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">14</div>
 </div>
-  <div style="height:1px;background:#374151"></div>
-  <div class="row" style="gap:16px">
-    <span class="b2 grow">Has the agency seen or known our projects before?</span>
-    <div class="row" style="gap:8px">
-      <span class="chip" style="background:rgba(34,197,94,.15);color:#22C55E">Yes</span>
-      <span class="chip" style="border:1px solid #374151;color:#6B7280">No</span>
+    <div class="col grow"></div>
+  </div>
+  <p class="cap mut" style="margin:0">ติ๊ก New Agency แล้วสามช่องนี้เลิกบังคับทันที
+    ตามกฎเดิมของระบบ — ตัวหารของ progress จะลดลง 3 ข้อ</p>
+</div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Section 4 — Office Information</h3><span class="cap mut">5 ข้อบังคับ + 2 ตามประเภทออฟฟิศ</span>
+  </div>
+  
+  <div class="col" style="gap:14px">
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;width:320px;flex-shrink:0">
+      <p class="lbl">Office Type<span style="color:#EF4444">&nbsp;*</span></p>
+      <div class="row" style="gap:8px">
+        <span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Physical Office</span>
+        <span class="chip" style="border:1px solid #374151;color:#6B7280">Booth</span>
+        <span class="chip" style="border:1px solid #374151;color:#6B7280">Non-Physical</span>
+      </div>
     </div>
+    <div class="col" style="gap:0;width:200px;flex-shrink:0">
+  <p class="lbl">Province<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">Chonburi</div>
+</div>
+    <div class="col" style="gap:0;width:200px;flex-shrink:0">
+  <p class="lbl">Zone<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">Pattaya</div>
+</div>
+    <div class="col" style="gap:0;width:200px;flex-shrink:0">
+  <p class="lbl">Number of Sales Agents<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">6</div>
+</div>
+  </div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Address<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">199/12 Moo 9, Nong Prue, Bang Lamung, Chonburi 20150</div>
+</div>
+    <div class="col" style="gap:0;width:280px;flex-shrink:0">
+  <p class="lbl">Google Map Link<span style="color:#EF4444">&nbsp;*</span></p>
+  <div class="fld" style="">maps.app.goo.gl/x8Kq2</div>
+</div>
+  </div>
+  <div class="col" style="gap:0">
+    <p class="lbl">Agency Photo — อย่างน้อย 1 รูป<span style="color:#EF4444">&nbsp;*</span></p>
+    <div class="row" style="gap:10px">
+      <div style="width:78px;height:78px;border-radius:12px;background:#1F2937;border:1px solid #374151"></div>
+      <div style="width:78px;height:78px;border-radius:12px;border:1.5px dashed #374151;
+           display:grid;place-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></div>
+    </div>
+  </div>
+  <p class="cap mut" style="margin:0">เลือก Non-Physical Office แล้ว Address และ Google Map Link
+    เลิกบังคับ — ตัวหารลดลง 2 ข้อ</p>
+</div>
+</div>
+<div class="card pad col" style="gap:14px">
+  <div class="row" style="gap:12px">
+    <h3 class="sec grow">Section 6 — Existing Relationship</h3><span class="cap mut">1 ข้อบังคับ + 1 ตามคำตอบ</span>
+  </div>
+  
+  <div class="col" style="gap:14px">
+  <div class="col" style="gap:0">
+    <p class="lbl">Existing Project / Relationship<span style="color:#EF4444">&nbsp;*</span></p>
+    <div class="row" style="gap:8px">
+      <span class="chip" style="background:rgba(34,197,94,.15);color:#22C55E">Have</span>
+      <span class="chip" style="border:1px solid #374151;color:#6B7280">No Have</span>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);
+       border:1px solid rgba(34,197,94,.30);border-radius:14px;padding:10px 14px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg>
+    <span class="b2" style="color:#22C55E;font-weight:600">
+      เลือก Have แล้วต้องมีช่องทางอย่างน้อย 1 รายการ — กรอกแล้ว 4 รายการ</span>
+  </div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Facebook</p>
+  <div class="fld">fb.com/abcpropertypattaya</div>
+</div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Instagram</p>
+  <div class="fld">@abcproperty.pattaya</div>
+</div>
+  </div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">TikTok</p>
+  <div class="fld"><span class="mut">—</span></div>
+</div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">LinkedIn</p>
+  <div class="fld"><span class="mut">—</span></div>
+</div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0">
+  <p class="lbl">Other Social</p>
+  <div class="fld">LINE OA @abcprop</div>
+</div>
   </div>
 </div>
 </div>

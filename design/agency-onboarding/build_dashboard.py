@@ -96,18 +96,19 @@ def filter_pill(label, value=None):
 
 CARDS = [
     agency_card("ABC Property Pattaya", "AG-00238", "IN PROGRESS", "K. Somchai", 3,
-                "System Entry & Digital Setup", 46, 18, 39,
+                "System Entry & Digital Setup", 44, 18, 41,
                 "Today 10:42", "Upload Owner Passport"),
     agency_card("Ocean Property", "AG-00241", "NEED ATTENTION", "K. Anna", 5,
-                "Agreement & Formal Setup", 72, 28, 39,
+                "Agreement & Formal Setup", 68, 28, 41,
                 "12 Sep 2026, 16:20", "Chase signed agreement",
                 alert="Agreement pending signature — 4 days"),
     agency_card("Siam Estate Bangkok", "AG-00244", "NEW", "K. Warun", 1,
-                "Pre-Onboarding", 8, 3, 39,
+                "Pre-Onboarding", 9, 3, 34,
                 "16 Sep 2026, 09:05", "Collect agency background form"),
     agency_card("Bright Living Phuket", "AG-00230", "WAITING AGENCY", "K. Nira", 4,
-                "First Communication Package", 62, 24, 39,
-                "15 Sep 2026, 14:10", "Waiting agency to confirm materials received"),
+                "First Communication Package", 59, 24, 41,
+                "12 Sep 2026, 14:10", "Waiting agency to confirm materials received",
+                alert="เงียบมา 4 วัน — ระบบตั้ง Waiting Agency ให้เองเมื่อครบ 3 วัน"),
 ]
 
 inner = f"""<div class="row" style="align-items:stretch;min-height:1180px">

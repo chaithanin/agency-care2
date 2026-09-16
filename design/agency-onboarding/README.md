@@ -22,6 +22,7 @@ Design canvas: https://claude.ai/artifact/PnXe4coE7J9wNhB25UP9f6
 | `Phase7.dc.html` | Phase 7 — Relationship Schedule + Activity + Completion |
 | `Permissions.dc.html` | ตารางสิทธิ์ 13 พื้นที่ × 6 role |
 | `AuditLog.dc.html` | Audit log + การ์ด Verified By / Verified At |
+| `Mandatory.dc.html` | นิยามรายการบังคับ + กฎสถานะ Waiting Agency |
 
 ## สถานะหลัก
 
@@ -79,7 +80,40 @@ python3 build_dashboard.py && python3 build_p1.py && python3 build_p23.py \
 สี่จุดที่ต้องเก็บ Verified By / Verified At และ audit log เสมอ:
 Document Verification · Bank Information · Agreement · Complete Onboarding
 
+## รายการบังคับ — ใช้กฎเดิมของระบบ ไม่สร้างซ้ำ
+
+ระบบมีกฎ mandatory ของ agency อยู่แล้ว และ**ใช้ร่วมกันสองที่**
+
+| ไฟล์ | บทบาท |
+| --- | --- |
+| `api/src/agency/agency-profile.util.ts` → `missingAgencyProfile()` | ฝั่ง server — ตัวจริง |
+| `web/src/components/AddAgencyDialog.tsx` → `missingProfile()` | ฝั่งหน้าเว็บ ต้องตรงกับข้างบน |
+
+**Onboarding ต้องเรียกใช้ `missingAgencyProfile()` ไม่ใช่เขียนรายการใหม่ขึ้นมาซ้อน**
+ไม่งั้นจะมีนิยามคำว่า "ข้อมูลครบ" สองชุดที่ค่อย ๆ เพี้ยนออกจากกัน
+
+รวมทั้งหมด **34 ข้อบังคับเสมอ + 7 ข้อตามเงื่อนไข**
+
+| เงื่อนไข | ผลต่อตัวหาร |
+| --- | --- |
+| ติ๊ก New Agency | ลด 3 ข้อ (Last Sale Date, Last Units Sold, Total Units Sold) |
+| Office Type = Non-Physical | ลด 2 ข้อ (Address, Google Map Link) |
+| Existing Relationship = No Have | ลด 1 ข้อ (รายละเอียดความสัมพันธ์) |
+| บัญชีบริษัท ไม่ใช่บัญชีส่วนตัว | ลด 1 ข้อ (Authorization Letter) |
+
+**ตัวหารจึงไม่คงที่** อยู่ระหว่าง 34 ถึง 41 ข้อ คำนวณต่อเอเจนซี่ตอนโหลด
+
+## สถานะ Waiting Agency — ระบบตั้งให้เอง
+
+```
+In Progress ──(เงียบครบ 3 วัน)──> Waiting Agency ──(เงียบต่ออีก 4 วัน)──> Need Attention
+```
+
+- นับจากเวลาที่**ทีมเราทำรายการล่าสุด**ในเฟสนั้น ไม่ใช่วันที่สร้าง onboarding
+- เอเจนซี่ตอบกลับหรือมีรายการใหม่ → กลับเป็น In Progress และนับใหม่
+- ผู้ใช้ตั้งสถานะนี้เองไม่ได้ เป็นค่าที่ระบบคำนวณเหมือนเปอร์เซ็นต์ความคืบหน้า
+
 ## ยังไม่ได้ทำ
 
-- ยังไม่ได้นิยามว่ารายการไหนใน 39 ข้อเป็น mandatory บ้าง (mockup สมมติไว้ก่อน)
-- ยังไม่ได้ออกแบบว่าสถานะ `Waiting Agency` ตั้งเองหรือให้ระบบตั้งอัตโนมัติ
+- ยังไม่ได้ตัดสินว่า "ทีมเราทำรายการล่าสุด" นับจาก event ไหนบ้าง
+  (อัปโหลดเอกสาร, ส่งข้อความในกลุ่ม, เปลี่ยน checklist — ต้องเลือกให้ชัดก่อนเขียนโค้ด)

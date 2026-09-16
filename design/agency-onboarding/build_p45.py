@@ -39,7 +39,7 @@ body = f"""<div class="row" style="gap:12px">
   <button class="btn out">Back</button>
   <button class="btn">Continue to Phase 5</button>
 </div>"""
-open("Phase4.dc.html","w").write(detail_page(4, body, 1240, pct=62, status="WAITING AGENCY", done=24, total=39, outstanding=2))
+open("Phase4.dc.html","w").write(detail_page(4, body, 1240, pct=59, status="WAITING AGENCY", done=24, total=41, outstanding=4))
 print("Phase4.dc.html")
 
 # ── Phase 5 — Agreement & Formal Setup ───────────────────────
@@ -90,5 +90,5 @@ body5 = f"""<div class="row" style="gap:12px">
   <button class="btn out">Back</button>
   <button class="btn">Continue to Phase 6</button>
 </div>"""
-open("Phase5.dc.html","w").write(detail_page(5, body5, 1400, pct=72, status="NEED ATTENTION", done=28, total=39, outstanding=2))
+open("Phase5.dc.html","w").write(detail_page(5, body5, 1400, pct=68, status="NEED ATTENTION", done=28, total=41, outstanding=4))
 print("Phase5.dc.html")
