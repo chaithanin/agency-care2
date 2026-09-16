@@ -120,28 +120,71 @@ summary = f"""<div class="card pad col" style="gap:16px">
   </div>
 </div>"""
 
-waiting = f"""<div class="card pad col" style="gap:14px">
+waiting = f"""<div class="card pad col" style="gap:16px">
   <h3 class="sec">สถานะ Waiting Agency — ระบบตั้งให้เอง</h3>
-  <div class="row" style="gap:14px;flex-wrap:wrap;align-items:center">
+
+  <div class="row" style="gap:12px;flex-wrap:wrap;align-items:center">
     <span class="chip" style="color:{PRIMARY_L};background:rgba(59,130,246,.16)">In Progress</span>
-    <span class="cap mut">ส่งของให้เอเจนซี่แล้ว เงียบครบ</span>
+    <span class="cap mut">เงียบครบ</span>
     <span class="chip" style="color:{WARNING};background:rgba(251,191,36,.15)">3 วัน</span>
     <span style="color:{TXT3}">→</span>
     <span class="chip" style="color:{SECOND};background:rgba(167,139,250,.16)">Waiting Agency</span>
+    <span class="cap mut">เงียบต่ออีก</span>
+    <span class="chip" style="color:{WARNING};background:rgba(251,191,36,.15)">4 วัน</span>
+    <span style="color:{TXT3}">→</span>
+    <span class="chip" style="color:{WARNING};background:rgba(251,191,36,.15)">Need Attention</span>
   </div>
+
+  <div style="height:1px;background:{DIVIDER}"></div>
+
+  <div class="row" style="gap:16px;align-items:flex-start">
+    <div class="col grow" style="gap:10px;background:rgba(34,197,94,.07);
+         border:1px solid rgba(34,197,94,.30);border-radius:16px;padding:14px 16px">
+      <div class="row" style="gap:9px">{icon(I_CHECK,16,SUCCESS)}
+        <span class="b2" style="font-weight:700;color:{SUCCESS}">เหตุการณ์ที่รีเซ็ตตัวนับ</span></div>
+      <div class="col" style="gap:6px">
+        <span class="b2" style="color:{TXT2}">· อัปโหลดเอกสารเข้า onboarding</span>
+        <span class="b2" style="color:{TXT2}">· ติ๊กหรือปลดติ๊ก checklist ข้อใดก็ได้</span>
+      </div>
+      <span class="cap mut">มีแค่สองอย่างนี้ — เพราะเป็นร่องรอยที่พิสูจน์ได้ว่างานเดินจริง</span>
+    </div>
+    <div class="col grow" style="gap:10px;background:rgba(107,114,128,.10);
+         border:1px solid {DIVIDER};border-radius:16px;padding:14px 16px">
+      <div class="row" style="gap:9px">{icon(I_CIRCLE,16,TXT3)}
+        <span class="b2" style="font-weight:700;color:{TXT2}">ไม่รีเซ็ตตัวนับ</span></div>
+      <div class="col" style="gap:6px">
+        <span class="b2 mut">· ข้อความในกลุ่ม LINE</span>
+        <span class="b2 mut">· เปิดดูหน้า onboarding</span>
+        <span class="b2 mut">· แก้โน้ตภายในหรือแก้ข้อความในฟอร์ม</span>
+        <span class="b2 mut">· เปลี่ยนผู้ดูแล</span>
+      </div>
+      <span class="cap mut">คุยกันเฉย ๆ ไม่นับว่าคืบหน้า</span>
+    </div>
+  </div>
+
   <div class="col" style="gap:9px">
     <div class="row" style="gap:10px"><span style="color:{SECOND};font-weight:700">·</span>
-      <span class="b2" style="color:{TXT2}">นับจากเวลาที่ทีมเราทำรายการล่าสุดในเฟสนั้น
-        (ส่ง package, ส่งสัญญา, ขอเอกสาร) ไม่ได้นับจากวันที่สร้าง onboarding</span></div>
+      <span class="b2" style="color:{TXT2}">นับจากเหตุการณ์ล่าสุดในสองอย่างนั้น
+        ไม่ได้นับจากวันที่สร้าง onboarding</span></div>
     <div class="row" style="gap:10px"><span style="color:{SECOND};font-weight:700">·</span>
-      <span class="b2" style="color:{TXT2}">พอเอเจนซี่ตอบกลับหรือมีรายการใหม่เกิดขึ้น
-        สถานะกลับเป็น In Progress เองและนับใหม่</span></div>
+      <span class="b2" style="color:{TXT2}">เอเจนซี่ส่งเอกสารมาแล้วทีมเราอัปเข้าระบบ
+        หรือติ๊ก checklist ให้ — ตัวนับรีเซ็ตและสถานะกลับเป็น In Progress เอง</span></div>
     <div class="row" style="gap:10px"><span style="color:{SECOND};font-weight:700">·</span>
-      <span class="b2" style="color:{TXT2}">ครบ 3 วันแล้วยังเงียบต่ออีก 4 วัน (รวม 7 วัน)
-        ขึ้นเป็น Need Attention และเข้ากล่อง Needs Your Attention หน้าแรก</span></div>
+      <span class="b2" style="color:{TXT2}">เอกสารที่ถูก Reject ก็นับว่าเป็นการอัปโหลด —
+        ตัวนับรีเซ็ต เพราะมีคนทำงานกับมันจริง</span></div>
     <div class="row" style="gap:10px"><span style="color:{SECOND};font-weight:700">·</span>
       <span class="b2" style="color:{TXT2}">ผู้ใช้ตั้ง Waiting Agency เองไม่ได้ —
         เป็นสถานะที่ระบบคำนวณ เหมือนกับเปอร์เซ็นต์ความคืบหน้า</span></div>
+    <div class="row" style="gap:10px"><span style="color:{SECOND};font-weight:700">·</span>
+      <span class="b2" style="color:{TXT2}">Completed แล้วหยุดนับ —
+        เอเจนซี่ย้ายไปอยู่ภายใต้กติกา Relationship Maintenance แทน</span></div>
+  </div>
+
+  <div class="row" style="gap:9px;background:rgba(59,130,246,.10);
+       border:1px solid rgba(59,130,246,.30);border-radius:14px;padding:11px 14px">
+    {icon(I_CLOCK,16,PRIMARY_L)}
+    <span class="b2" style="color:{PRIMARY_L};font-weight:600">
+      สองเหตุการณ์นี้อยู่ใน audit log อยู่แล้ว — ตัวนับอ่านจาก log ได้เลย ไม่ต้องเก็บฟิลด์เวลาเพิ่ม</span>
   </div>
 </div>"""
 
@@ -149,5 +192,5 @@ body = summary + waiting + "".join(grp(t, n, i) for t, n, i in GROUPS)
 open("Mandatory.dc.html","w").write(
     std_page("Onboarding — Mandatory Items &amp; Status Rules",
              f"อะไรบ้างที่ต้องครบก่อนกด Complete Onboarding · {base} ข้อเสมอ + {cond} ข้อตามเงื่อนไข",
-             body, 1240, 1980))
+             body, 1240, 2360))
 print(f"Mandatory.dc.html — base {base} · conditional {cond} · max {base+cond}")
