@@ -189,7 +189,12 @@ good #0ca30c · warning #fab219 · serious #ec835a · critical #d03b3b
 
 หน้านี้เป็นข้อมูลภาพรวมทั้งบริษัท **จำกัดเฉพาะ Admin กับ Manager**
 Seller เห็นได้เฉพาะแถวของตัวเองในตาราง Team Performance
-ตรวจฝั่ง server ตัดสินจาก `req.user.activeRole` ไม่ใช่ role ในโปรไฟล์
+ตรวจฝั่ง server
+
+⚠️ **ใช้ `user.role` ไม่ใช่ `user.activeRole`** — `api/src/common/current-user.decorator.ts`
+เขียนกำกับไว้เองว่า `role` = permanent role (for permission guards) และ
+`activeRole` = current active role (for data scoping)
+แอดมินมักทำงานโดยสลับเป็น sales อยู่ ถ้าตัดสินสิทธิ์จาก `activeRole` จะล็อกตัวเองออก
 
 ---
 

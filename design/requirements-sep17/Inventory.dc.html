@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1420px;min-height:1240px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">3 · Inventory — แยกสต็อกตามที่เก็บ</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">เปลี่ยนโครงสร้างเดิม</span></div>
+      <p class="cap mut" style="margin:0">Project → Location → Warehouse → Item · ของเดียวกันอยู่ได้หลายที่</p>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">ของเดิม PosmItem เก็บ stockQty ตัวเดียว = สต็อกรวม ต้องเปลี่ยนเป็นแยกตามที่เก็บ และห้ามลบ stockQty เดิมทิ้ง ให้คำนวณจากผลรวมแทน</span></div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Marina Brochure</h3><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Available</span></div>
+  <div class="row" style="gap:20px;align-items:flex-start">
+  <div class="col grow" style="gap:12px">
+    <div class="row" style="gap:14px">
+      <div class="col" style="gap:0;width:260px;flex-shrink:0"><p class="lbl">Item</p><div class="fld">Marina Brochure</div></div>
+      <div class="col" style="gap:0;width:230px;flex-shrink:0"><p class="lbl">Project</p><div class="fld">Marina Residence</div></div>
+      <div class="col" style="gap:0;width:160px;flex-shrink:0"><p class="lbl">Category</p><div class="fld">Printed</div></div>
+      <div class="col" style="gap:0;width:150px;flex-shrink:0"><p class="lbl">Minimum Stock</p><div class="fld">150</div></div>
+    </div>
+    <table><thead><tr><th>ที่เก็บ</th><th style="width:160px">ประเภท</th>
+      <th style="width:120px;text-align:right">คงเหลือ</th><th style="width:120px"></th>
+    </tr></thead><tbody><tr><td style="font-weight:600">Main Warehouse</td><td class="mut">Warehouse</td><td style="text-align:right;font-weight:700">500</td><td><button class="btn sm out">โอนย้าย</button></td></tr><tr><td style="font-weight:600">Marina Showroom</td><td class="mut">Showroom</td><td style="text-align:right;font-weight:700">100</td><td><button class="btn sm out">โอนย้าย</button></td></tr><tr><td style="font-weight:600">Sales Office</td><td class="mut">Sales Office</td><td style="text-align:right;font-weight:700">50</td><td><button class="btn sm out">โอนย้าย</button></td></tr>
+      <tr style="border-top:2px solid #374151"><td style="font-weight:700">รวมทุกที่</td><td></td>
+        <td style="text-align:right;font-weight:700;font-size:16px">650</td><td></td></tr>
+    </tbody></table>
+  </div>
+  <div class="col" style="gap:10px;width:300px;flex-shrink:0;background:#1F2937;
+       border:1px solid #374151;border-radius:16px;padding:16px 18px">
+    <h4 class="sec">โอนย้ายสต็อก</h4>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">จาก</p><div class="fld">Main Warehouse  ·  500</div></div>
+    <div style="text-align:center;color:#6B7280">↓</div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">ไป</p><div class="fld">Marina Showroom  ·  100</div></div>
+    <div class="col" style="gap:0;width:120px;flex-shrink:0"><p class="lbl">จำนวน</p><div class="fld">100</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">เหตุผล</p><div class="fld">เติมของหน้าโชว์รูม</div></div>
+    <button class="btn sm">บันทึกการโอน</button>
+    <p class="cap mut" style="margin:0">หลังโอน: Main 400 · Showroom 200</p>
+  </div>
+</div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">ประวัติทุกธุรกรรม</h3><span class="cap mut">Receive · Issue · Transfer · Adjustment · Distribution · Return</span></div>
+  <p class="cap mut" style="margin:0">ทุกการเปลี่ยนแปลงต้องมีแถวในนี้ ห้ามแก้ยอดตรง ๆ โดยไม่มีธุรกรรม</p><table><thead><tr><th style="width:150px">เวลา</th><th style="width:140px">ประเภท</th><th>ที่เก็บ</th><th style="width:170px">จำนวน</th><th style="width:130px">ผู้ทำ</th></tr></thead><tbody><tr><td class="mut" style="font-size:13px">17 Sep 14:20</td><td><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Transfer</span></td><td style="color:#CBD5E1">Main Warehouse → Marina Showroom</td><td style="font-weight:600">−100 / +100</td><td class="mut">K. Pim</td></tr><tr><td class="mut" style="font-size:13px">17 Sep 09:05</td><td><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Distribution</span></td><td style="color:#CBD5E1">Marina Showroom → ABC Property</td><td style="font-weight:600">−100</td><td class="mut">K. John</td></tr><tr><td class="mut" style="font-size:13px">16 Sep 16:40</td><td><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Receive</span></td><td style="color:#CBD5E1">Main Warehouse</td><td style="font-weight:600">+500</td><td class="mut">K. Pim</td></tr><tr><td class="mut" style="font-size:13px">15 Sep 11:12</td><td><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Adjustment</span></td><td style="color:#CBD5E1">Sales Office</td><td style="font-weight:600">−5  ของเสียหาย</td><td class="mut">K. May</td></tr><tr><td class="mut" style="font-size:13px">14 Sep 10:00</td><td><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Return</span></td><td style="color:#CBD5E1">ABC Property → Sales Office</td><td style="font-weight:600">+20</td><td class="mut">K. John</td></tr></tbody></table>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1420px;min-height:1560px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">7 · SOP / JD / Rules → Training &amp; Test</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">ของใหม่ + ต่อยอด</span></div>
+      <p class="cap mut" style="margin:0">จาก Knowledge Base อย่างเดียว เป็น ความรู้ + อบรม + วัดผล</p>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600">ตาราง TrainingRecord เดิมเป็นบันทึกการเข้าอบรม (ชื่อคอร์ส วันที่ ชั่วโมง ผู้เข้าร่วม) ไม่ใช่ระบบคอร์สที่มีข้อสอบ — ต้องเพิ่มตารางใหม่ Course · Question · Attempt และ<b>ห้ามแก้ TrainingRecord เดิม</b> เพราะมีข้อมูลอบรมย้อนหลังอยู่</span></div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">โครงสร้าง</h3></div>
+  <div class="row" style="gap:10px;flex-wrap:wrap;align-items:center">
+  <span class="chip" style="border:1px solid #374151;color:#CBD5E1">SOP / JD / Rules</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Training Course</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Learning Material</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">5 Questions</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Submit Test</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Score</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Pass / Fail</span><span style=color:#6B7280>→</span><span class="chip" style="border:1px solid #374151;color:#CBD5E1">Training Record</span>
+</div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Agency Visit SOP v2.0</h3><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Approved</span></div>
+  <div class="col" style="gap:14px">
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Course<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">Agency Visit SOP</div></div>
+    <div class="col" style="gap:0;width:120px;flex-shrink:0"><p class="lbl">Version</p><div class="fld">2.0</div></div>
+    <div class="col" style="gap:0;width:150px;flex-shrink:0"><p class="lbl">Passing Score<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">80%</div></div>
+    <div class="col" style="gap:0;width:150px;flex-shrink:0"><p class="lbl">มาจาก</p><div class="fld">SOP-014</div></div>
+  </div>
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;width:300px;flex-shrink:0"><p class="lbl">มอบหมายให้</p><div class="fld">Sales · Agency Support</div></div>
+    <div class="col" style="gap:0;width:190px;flex-shrink:0"><p class="lbl">กำหนดส่ง</p><div class="fld">30 Sep 2026</div></div>
+    <div class="col" style="gap:0;width:170px;flex-shrink:0"><p class="lbl">ลองได้กี่ครั้ง</p><div class="fld">ไม่จำกัด</div></div>
+    <div class="col grow"></div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">เนื้อหาอ่านได้จาก SOP, JD, Rules &amp; Regulation, Training Material และ 6-Step Process ที่มีอยู่แล้ว — Course คือการห่อเนื้อหาเดิมด้วยแบบทดสอบ ไม่ใช่เขียนเนื้อหาใหม่</span></div>
+</div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">คำถาม 5 ข้อ</h3><span class="cap mut">แสดง 2 ข้อแรก</span></div>
+  <div class="row" style="gap:24px;align-items:flex-start"><div class="col grow" style="gap:0"><div class="col" style="gap:8px;padding:12px 0;border-bottom:1px solid #374151"><span class="b2" style="font-weight:700">Question 1 — ก่อนไปเยี่ยมเอเจนซี่ ต้องทำอะไรก่อน</span><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:2px solid #22C55E;display:grid;place-items:center;flex-shrink:0"><div style=width:7px;height:7px;border-radius:999px;background:#22C55E></div></div><span class="b2" style="color:#F1F5F9">โทรนัดล่วงหน้าและบันทึกใน Activity Plan</span><span class=cap style=color:#22C55E;font-weight:700>เฉลย</span></div><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;display:grid;place-items:center;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">ไปถึงแล้วค่อยแจ้ง</span></div><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;display:grid;place-items:center;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">ส่งไลน์บอกวันก่อนไป</span></div><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;display:grid;place-items:center;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">ให้เอเจนซี่เป็นคนนัดมาเอง</span></div></div><div class="col" style="gap:8px;padding:12px 0;border-bottom:1px solid #374151"><span class="b2" style="font-weight:700">Question 2 — ใครเป็นผู้อนุมัติการเบิกของแจก</span><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;display:grid;place-items:center;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">หัวหน้าทีมขาย</span></div><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:2px solid #22C55E;display:grid;place-items:center;flex-shrink:0"><div style=width:7px;height:7px;border-radius:999px;background:#22C55E></div></div><span class="b2" style="color:#F1F5F9">Manager</span><span class=cap style=color:#22C55E;font-weight:700>เฉลย</span></div><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;display:grid;place-items:center;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Agency Support</span></div><div class="row" style="gap:10px;padding:4px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;display:grid;place-items:center;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">อนุมัติเองได้ถ้าไม่เกิน 5,000</span></div></div></div><div class="col" style="gap:14px;width:340px;flex-shrink:0;background:#1F2937;
+     border:1px solid #374151;border-radius:18px;padding:18px 20px">
+  <h4 class="sec">Training Result</h4>
+  <div class="col" style="gap:9px">
+    <div class="row"><span class="cap mut grow">Employee</span>
+      <span class="b2" style="font-weight:600">John Smith</span></div>
+    <div class="row"><span class="cap mut grow">Course</span>
+      <span class="b2" style="font-weight:600">Agency Visit SOP</span></div>
+    <div class="row"><span class="cap mut grow">Version</span>
+      <span class="b2">2.0</span></div>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="row" style="gap:20px;align-items:center">
+    <div class="col" style="gap:1px">
+      <span style="font-size:30px;font-weight:700;letter-spacing:-0.02em">4 / 5</span>
+      <span class="cap mut">คะแนน</span></div>
+    <div class="col" style="gap:1px">
+      <span style="font-size:30px;font-weight:700;color:#22C55E">80%</span>
+      <span class="cap mut">ผ่านเกณฑ์ 80%</span></div>
+    <span class="grow"></span><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">PASS</span>
+  </div>
+</div></div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">ประวัติการสอบ — John Smith</h3><span class="cap mut">เก็บทุกครั้งที่สอบ</span></div>
+  <p class="cap mut" style="margin:0">เก็บ Employee · Course · Version · วันเริ่ม · วันจบ · คะแนน · ผ่านไม่ผ่าน · จำนวนครั้ง · ครั้งล่าสุด · ใบรับรอง</p><table><thead><tr><th style="width:150px">ครั้งที่</th><th style="width:170px">วันที่</th><th style="width:130px">คะแนน</th><th style="width:130px">เปอร์เซ็นต์</th><th style="width:130px">ผล</th></tr></thead><tbody><tr><td style="font-weight:600">Attempt 1</td><td class="mut">12 Sep 2026</td><td>3 / 5</td><td style="font-weight:600">60%</td><td><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">FAIL</span></td></tr><tr><td style="font-weight:600">Attempt 2</td><td class="mut">17 Sep 2026</td><td>4 / 5</td><td style="font-weight:600">80%</td><td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">PASS</span></td></tr></tbody></table>
+</div>
+<div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">ผูกผลสอบกับ <b>เวอร์ชันของคอร์ส</b> เสมอ — แก้ SOP แล้วออกเวอร์ชันใหม่ ผลสอบเก่าต้องยังอ้างเวอร์ชันเดิมได้ ไม่งั้นจะตอบไม่ได้ว่าคนนี้สอบผ่านเนื้อหาชุดไหน</span></div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

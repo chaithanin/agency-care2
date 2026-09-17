@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1360px;min-height:1300px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">2 · Inventory Purchase Request</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">ต่อยอดของเดิม</span></div>
+      <p class="cap mut" style="margin:0">สต็อกถึงขั้นต่ำ → ขอซื้อ → Manager อนุมัติ → รับของ → เพิ่มสต็อก</p>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">ตาราง PurchaseRequest มีอยู่แล้วในระบบ พร้อม status ครบ draft · submitted · waiting_approval · approved · purchasing · ordered · received · completed รวมถึง PrItem, PrComment, PrActivity, PrAttachment และ approverId — งานนี้คือเชื่อมเข้ากับสต็อกและการแจ้งเตือน ไม่ใช่สร้างใหม่</span></div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">จุดเริ่ม</h3></div>
+  <div class="row" style="gap:12px;flex-wrap:wrap;align-items:center">
+  <span class="b2" style="color:#CBD5E1">สต็อกลดลง</span><span style="color:#6B7280">→</span>
+  <span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">ถึง Minimum Stock</span>
+  <span style="color:#6B7280">→</span>
+  <span class="b2" style="color:#CBD5E1">แจ้งเตือน</span><span style="color:#6B7280">→</span>
+  <span class="b2" style="color:#CBD5E1">สร้าง Purchase Request</span>
+</div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">PR-2026-0182</h3><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Pending Approval</span></div>
+  <div class="col" style="gap:14px">
+  <div class="row" style="gap:14px">
+    <div class="col" style="gap:0;width:190px;flex-shrink:0"><p class="lbl">PR Number</p><div class="fld">PR-2026-0182</div></div>
+    <div class="col" style="gap:0;width:220px;flex-shrink:0"><p class="lbl">Project</p><div class="fld">Marina Residence</div></div>
+    <div class="col" style="gap:0;width:170px;flex-shrink:0"><p class="lbl">ผู้ขอ</p><div class="fld">K. Pim</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">ผู้อนุมัติ</p><div class="fld">K. Warun (Manager)</div></div>
+  </div>
+  <table><thead><tr><th>รายการ</th><th style="width:150px">จำนวน</th>
+    <th style="width:150px">งบประมาณ</th><th style="width:210px">เข้าที่เก็บ</th>
+  </tr></thead><tbody><tr><td style="font-weight:600">Marina Brochure</td><td>500 ชิ้น</td><td>฿ 12,500</td><td class="mut">Main Warehouse</td></tr><tr><td style="font-weight:600">Marina Gift Set</td><td>200 ชุด</td><td>฿ 36,000</td><td class="mut">Marketing Warehouse</td></tr></tbody></table>
+  <div class="row" style="gap:10px">
+    <span class="grow"></span>
+    <span class="cap mut">รวม</span>
+    <span class="b2" style="font-weight:700">฿ 48,500</span>
+  </div>
+</div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">สถานะ</h3></div>
+  <p class="cap mut" style="margin:0">Manager เป็นผู้อนุมัติ — ตรวจสิทธิ์ฝั่ง server ไม่ใช่แค่ซ่อนปุ่ม</p><div class="row" style="gap:9px;flex-wrap:wrap;align-items:center"><div class="row" style="gap:9px"><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Draft</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Pending Approval</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Approved</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Ordered</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Received</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Completed</span></div></div>
+</div>
+<div class="col" style="gap:12px;background:rgba(239,68,68,.07);
+     border:1px solid rgba(239,68,68,.32);border-radius:16px;padding:15px 17px">
+  <div class="row" style="gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+    <span class="b2" style="font-weight:700;color:#EF4444">กรณีไม่อนุมัติ</span></div>
+  <div class="row" style="gap:9px;flex-wrap:wrap;align-items:center"><div class="row" style="gap:9px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Pending Approval</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Rejected</span></div></div>
+  <div class="col" style="gap:0">
+    <p class="lbl">เหตุผล (บังคับกรอก)</p>
+    <div class="fld" style="color:#CBD5E1">งบเดือนนี้เต็มแล้ว ขอเลื่อนไปต้นเดือนหน้า
+      และลดจำนวน brochure เหลือ 300</div>
+  </div>
+  <p class="cap mut" style="margin:0">ผู้ขอแก้แล้วส่งใหม่ได้ — PR เดิมไม่ถูกลบ
+    เก็บประวัติทุกครั้งที่ส่งว่าใครตีกลับเพราะอะไร</p>
+</div>
+<div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600">ตอนกด Received ต้องเพิ่มสต็อกเข้าที่เก็บที่ระบุไว้ในแต่ละรายการ และสร้างธุรกรรม Receive ให้อัตโนมัติ ห้ามให้คนมาแก้ยอดเอง</span></div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -335,8 +335,12 @@ By SystemAdmin · 16/09/2026 14:30
 
 ## สิทธิ์
 
-ตรวจฝั่ง server ทุก endpoint ตัดสินจาก `req.user.activeRole` (role ที่สลับอยู่)
-ไม่ใช่ role ในโปรไฟล์ — ตรงกับที่โมดูลอื่นในรีโปทำอยู่
+ตรวจสิทธิ์ฝั่ง server ทุก endpoint
+
+⚠️ **ใช้ `user.role` ไม่ใช่ `user.activeRole`** — `api/src/common/current-user.decorator.ts`
+เขียนกำกับไว้เองว่า `role` = permanent role (for permission guards) และ
+`activeRole` = current active role (for data scoping)
+แอดมินมักทำงานโดยสลับเป็น sales อยู่ ถ้าตัดสินสิทธิ์จาก `activeRole` จะล็อกตัวเองออก
 
 | การกระทำ | ใครทำได้ |
 | --- | --- |

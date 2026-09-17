@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1360px;min-height:1200px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">5 · Promotion Selling Quota — ผูกกับยูนิตจริง</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">ต่อยอดของเดิม</span></div>
+      <p class="cap mut" style="margin:0">โควตาคือรายชื่อยูนิต ไม่ใช่ตัวเลข</p>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">ตาราง Unit มีอยู่แล้ว พร้อมฟิลด์ status = available / reserved / booked / sold และผูกกับ project อยู่แล้ว — ใช้ของเดิม ห้ามสร้างตารางยูนิตใหม่</span></div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">Summer Campaign — Selling Quota</h3><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Approved</span></div>
+  <div class="row" style="gap:28px;flex-wrap:wrap;background:#1F2937;
+     border:1px solid #374151;border-radius:16px;padding:16px 20px">
+  <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#F1F5F9">20</span><span class="cap mut">Total Units</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#22C55E">8</span><span class="cap mut">Available</span></div><div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#FBBF24">4</span><span class="cap mut">Reserved</span></div>
+  <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#6B7280">8</span><span class="cap mut">Sold</span></div>
+  <div style="width:1px;height:44px;background:#374151"></div>
+  <div class="col" style="gap:1px"><span style="font-size:26px;font-weight:700;letter-spacing:-0.02em;color:#60A5FA">8</span><span class="cap mut">Remaining</span></div>
+</div>
+</div>
+<div class="card pad col grow" style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">ยูนิตในโควตา</h3><button class="btn sm out">+ เพิ่มยูนิต</button></div>
+  <p class="cap mut" style="margin:0">สถานะดึงจากตาราง Unit ตรง ๆ ไม่ใช่เก็บซ้ำในโปรโมชัน — ขายแล้วตัวเลขเปลี่ยนเอง</p><table><thead><tr><th style="width:40px"></th><th style="width:110px">Unit</th><th style="width:150px">สถานะ</th><th style="width:190px">แบบห้อง</th><th style="width:180px">ราคา</th><th>จองโดย</th></tr></thead><tbody><tr><td style="width:40px"><div style="width:17px;height:17px;border-radius:5px;border:1.5px solid #374151"></div></td><td style="font-weight:700">A101</td><td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Available</span></td><td class="mut">2BR · 68 sqm</td><td>฿ 6,480,000</td><td class="mut" style="font-size:13px">—</td></tr><tr><td style="width:40px"><div style="width:17px;height:17px;border-radius:5px;border:1.5px solid #374151"></div></td><td style="font-weight:700">A102</td><td><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Reserved</span></td><td class="mut">2BR · 68 sqm</td><td>฿ 6,480,000</td><td class="mut" style="font-size:13px">K. May · 15 Sep</td></tr><tr><td style="width:40px"><div style="width:17px;height:17px;border-radius:5px;border:1.5px solid #374151"></div></td><td style="font-weight:700">A103</td><td><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Sold</span></td><td class="mut">1BR · 42 sqm</td><td>฿ 4,200,000</td><td class="mut" style="font-size:13px">K. John · 12 Sep</td></tr><tr><td style="width:40px"><div style="width:17px;height:17px;border-radius:5px;border:1.5px solid #374151"></div></td><td style="font-weight:700">A104</td><td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Available</span></td><td class="mut">1BR · 42 sqm</td><td>฿ 4,200,000</td><td class="mut" style="font-size:13px">—</td></tr><tr><td style="width:40px"><div style="width:17px;height:17px;border-radius:5px;border:1.5px solid #374151"></div></td><td style="font-weight:700">A105</td><td><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Sold</span></td><td class="mut">2BR · 71 sqm</td><td>฿ 6,900,000</td><td class="mut" style="font-size:13px">K. May · 08 Sep</td></tr></tbody></table>
+</div>
+<div class="col" style="gap:12px;background:rgba(251,191,36,.08);
+     border:1px solid rgba(251,191,36,.35);border-radius:16px;padding:15px 17px">
+  <div class="row" style="gap:10px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+    <span class="b2" style="font-weight:700;color:#FBBF24">ย้ายยูนิตข้ามโปรโมชัน</span></div>
+  <div class="row" style="gap:14px;align-items:center;flex-wrap:wrap">
+    <span class="b2" style="font-weight:700">A101</span>
+    <span class="chip" style="border:1px solid #374151;color:#CBD5E1">Campaign A</span>
+    <span style="color:#6B7280">→</span>
+    <span class="chip" style="background:rgba(59,130,246,.16);color:#60A5FA">Campaign B</span>
+  </div>
+  <div class="col" style="gap:7px">
+    <div class="row" style="gap:10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg>
+      <span class="b2" style="color:#CBD5E1">ยูนิตยัง Available — ย้ายได้</span></div>
+    <div class="row" style="gap:10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+      <span class="b2" style="color:#CBD5E1">ถ้าเป็น Reserved หรือ Sold แล้ว
+        <b>ห้ามย้าย</b> เพราะลูกค้าตกลงเงื่อนไขของโปรโมชันเดิมไปแล้ว</span></div>
+    <div class="row" style="gap:10px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+      <span class="b2" style="color:#CBD5E1">ยูนิตหนึ่งอยู่ได้ทีละโปรโมชันเดียวในช่วงเวลาเดียวกัน</span></div>
+  </div>
+  <p class="cap mut" style="margin:0">ทุกการย้ายเก็บประวัติ ใครย้าย เมื่อไหร่ จากแคมเปญไหนไปไหน
+    และตอนนั้นยูนิตสถานะอะไร</p>
+</div>
+<div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">ห้ามเก็บโควตาเป็นตัวเลข เช่น 20 Units — ต้องผูกกับยูนิตจริงเป็นรายตัว ไม่งั้นตัวเลข Available กับ Sold จะไม่มีทางตรงกับความจริง</span></div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>
