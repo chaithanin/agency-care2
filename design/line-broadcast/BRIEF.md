@@ -352,6 +352,22 @@ By SystemAdmin · 16/09/2026 14:30
 
 ---
 
+---
+
+## กฎของโปรเจกต์ที่ต้องทำตาม
+
+**อ่าน [`design/PROJECT_RULES.md`](../PROJECT_RULES.md) ให้จบก่อนเขียนโค้ด** — สรุปจาก
+`CONTRIBUTING.md` และ `DEPLOYMENT.md` ของโปรเจกต์หลักเอง สรุปย่อ
+
+| กฎ | รายละเอียด |
+| --- | --- |
+| **UI เป็นอังกฤษล้วน** | ห้ามฮาร์ดโค้ดภาษาไทยลง UI หรือรายงาน — mockup ในโฟลเดอร์นี้เขียนไทยไว้เพื่อสื่อสารเท่านั้น ตอนทำจริงแปลงป้ายเป็นอังกฤษทั้งหมด |
+| **`user.role` ไม่ใช่ `activeRole`** | `CONTRIBUTING.md` ระบุตรง ๆ · `@Roles()` รับเฉพาะค่า enum · สิทธิ์ตามตำแหน่งใช้ `userGrants(...)` ใน service |
+| **`emitChange('<resource>')`** | ทุก mutation ที่มีหน้าจอดูข้อมูลนั้นอยู่ ต้องเรียก ไม่งั้นหน้าไม่รีเฟรช |
+| **schema + migration ขึ้นพร้อมกัน** | inline SQL ใน `applyPendingMigrations()` ถ้าขึ้นแค่ schema จะ 500 ทันที |
+| **ไฟล์ใช้ `StorageService`** | ห้ามเขียนลงดิสก์ใน production |
+| **ชื่อไฟล์ห้ามเป็นภาษาไทย** | ทำ Docker build พัง — ต้องอยู่ใน `.dockerignore` |
+
 ## ห้ามกระทบของเดิม
 
 - **เพิ่มบรรทัดใหม่เท่านั้น** ห้ามลบหรือแก้เมนู route หรือฟังก์ชันที่มีอยู่
@@ -368,10 +384,17 @@ By SystemAdmin · 16/09/2026 14:30
 
 ## ต้องผ่านก่อน push
 
+**อ่าน [`design/PROJECT_RULES.md`](../PROJECT_RULES.md) หัวข้อ "ตรวจ build" ก่อน**
+
+`nest build` ในเครื่องใช้ incremental cache แล้ว **มองไม่เห็น error** ที่ Docker build จะเจอ
+`.vite` ที่ค้างจะทำให้ได้ bundle เก่า — **ต้องล้าง cache ก่อนถึงจะเชื่อผลได้**
+
 ```bash
-cd api && npx prisma validate && npx tsc --noEmit
-cd ../web && npx tsc --noEmit && npx vite build
+cd api && npx prisma validate
+rm -rf api/dist api/tsconfig.tsbuildinfo && (cd api && npx nest build)
+rm -rf web/dist web/node_modules/.vite && (cd web && npx vite build)
 ```
+
 
 แล้ว **นับคำในไฟล์ที่ build ออกมา เพื่อพิสูจน์ว่าไม่มีเมนูเดิมหาย**
 
@@ -400,29 +423,44 @@ curl -X POST http://localhost:3000/api/line/webhook \
 
 ## เรื่อง deploy
 
-**ใช้ `.\deploy.ps1` ของ branch นี้เท่านั้น** อย่าประกอบคำสั่ง `gcloud run deploy` เอง —
-`--set-env-vars` และ `--set-secrets` เขียนทับตัวแปรทั้งชุด ตกตัวไหนตัวนั้นหลุด
-เคยเกิดกับ `GCS_PRIVATE_BUCKET` แล้วรูปที่อัปโหลดหายถาวร
+**อ่าน [`design/PROJECT_RULES.md`](../PROJECT_RULES.md) ให้จบก่อน deploy** —
+สรุปกฎจากเอกสารของโปรเจกต์หลักเอง
 
-โมดูลนี้ต้องมี secret สองตัว ตรวจว่ามีครบก่อน deploy
-
-```bash
-gcloud run services describe agency-care --region asia-east2 --format=json \
- | python3 -c "import sys,json
-c=json.load(sys.stdin)['spec']['template']['spec']['containers'][0]
-print([e['name'] for e in c.get('env',[]) if 'LINE' in e['name']])"
+```powershell
+.\deploy.ps1
 ```
 
-ต้องเห็น `LINE_CHANNEL_ACCESS_TOKEN` (ส่งข้อความ) และ `LINE_CHANNEL_SECRET`
-(ตรวจลายเซ็น webhook — ขาดตัวนี้ follow event จะถูกปฏิเสธหมด)
+สคริปต์ตรวจว่า secret ครบก่อน แล้ว deploy เป็น **canary ที่ 0% traffic**
 
-หลัง deploy ต้องสลับทราฟฟิกเอง
+1. **อุ่นเครื่องก่อน** ยิง `https://canary---agency-care-oohrdxzlwq-df.a.run.app/api/health`
+   ประมาณ 40 ครั้ง — migration รันเป็น background หลัง startup
+   revision ที่ 0% จะไม่มีวันรันถ้าไม่มีใครเรียก
+2. ยืนยันว่า migration รันแล้ว — หา `tables ready` ใน log
+3. ค่อยสลับทราฟฟิก **แบบปักหมุด revision**
 
 ```bash
-gcloud run services update-traffic agency-care --region asia-east2 --to-latest
+gcloud run services update-traffic agency-care --project gtg-crm-499607 \
+  --region asia-east2 --to-revisions <REV>=100 --remove-tags canary
 ```
 
----
+### 🚫 ห้ามใช้ `--to-latest`
+
+หัวไฟล์ `deploy.ps1` เขียนไว้เองว่า *"Never use `update-traffic --to-latest` —
+that is what let the wrong build take production."*
+เคยเกิดขึ้นจริงแล้วครั้งหนึ่ง เมนูในระบบจริงหายไป 8 ตัว
+
+### 🚫 อย่าประกอบคำสั่ง `gcloud run deploy` เอง
+
+`--set-env-vars` และ `--set-secrets` **เขียนทับตัวแปรทั้งชุด** ตกตัวไหนตัวนั้นหลุด
+เคยทำให้ `GCS_PRIVATE_BUCKET` หายและรูปที่อัปโหลดถูกทำลายถาวรมาแล้ว
+`deploy.ps1` มี preflight ตรวจ secret ก่อน ใช้ตัวนั้น
+
+แก้ตัวแปรทีละตัวใช้ `--update-env-vars` / `--update-secrets` (เติม ไม่ทับ)
+
+### instance ต้องเป็น min = max = 1
+
+`max=1` เพราะ socket.io ไม่มี Redis adapter · `min=1` เพราะงานตามเวลาเป็น `@Cron`
+ในโปรเซส ถ้า scale to zero รายงาน LINE จะไม่ยิงเลยโดยไม่มีใครรู้
 
 ## สิ่งที่ต้องส่งมอบ
 
