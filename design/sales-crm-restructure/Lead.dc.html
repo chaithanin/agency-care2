@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1560px;min-height:1900px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">1 · Lead Management</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Phase 1</span></div>
+      <p class="cap mut" style="margin:0">Pipeline view · lead detail · change status — funnel stage kept separate from sub status</p>
+    </div>
+  </div>
+  <div class="col" style="gap:16px">
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">LEADS — PIPELINE VIEW</h3><div class="row" style="gap:8px"><span class="chip" style="color:#F1F5F9;background:#1F2937">Pipeline</span><span class="chip" style="color:#6B7280">List</span><button class="btn sm">+ New Lead</button></div></div>
+  <p class="cap mut" style="margin:0">Holding and Reservation share one board column, but the split is still counted under the column heading and stays separable in every report.</p><div class="row" style="gap:9px;flex-wrap:wrap">
+  <div class="row fld" style="gap:8px;width:250px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.7" y2="16.7"></line></svg><span class="mut">Search lead / phone / unit</span></div>
+  <div class="row fld" style="gap:9px">Stage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Sub Status<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Project<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Sales Owner<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Agency<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Lead Source<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Next Follow-up<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div><div class="row" style="gap:16px;align-items:flex-start;overflow:hidden"><div class="col" style="gap:10px;width:232px;flex-shrink:0">
+  <div class="col" style="gap:2px">
+    <div class="row" style="gap:8px">
+      <span class="sec" style="color:#F1F5F9">NEW</span>
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">32</span>
+    </div>
+  </div>
+  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead A</span>
+  <span class="cap mut">Marina Golden Bay</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">Today</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  </div>
+</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead B</span>
+  <span class="cap mut">LOVEIT @ Pattaya</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">Today</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">May P.</span></div>
+  </div>
+</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead C</span>
+  <span class="cap mut">HARMONIA</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">1 day</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  </div>
+</div></div>
+</div><div class="col" style="gap:10px;width:232px;flex-shrink:0">
+  <div class="col" style="gap:2px">
+    <div class="row" style="gap:8px">
+      <span class="sec" style="color:#F1F5F9">CONTACTED</span>
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">18</span>
+    </div>
+  </div>
+  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead D</span>
+  <span class="cap mut">LOVEIT @ Pattaya</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">2 days</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">Sarah L.</span></div>
+  </div>
+</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead E</span>
+  <span class="cap mut">Marina Golden Bay</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">3 days</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">May P.</span></div>
+  </div>
+</div></div>
+</div><div class="col" style="gap:10px;width:232px;flex-shrink:0">
+  <div class="col" style="gap:2px">
+    <div class="row" style="gap:8px">
+      <span class="sec" style="color:#F1F5F9">VISIT</span>
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">12</span>
+    </div>
+  </div>
+  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead F</span>
+  <span class="cap mut">HARMONIA</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">18 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  </div>
+</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lead G</span>
+  <span class="cap mut">Marina Golden Bay</span>
+  
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">16 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">Sarah L.</span></div>
+  </div>
+</div></div>
+</div><div class="col" style="gap:10px;width:282px;flex-shrink:0">
+  <div class="col" style="gap:2px">
+    <div class="row" style="gap:8px">
+      <span class="sec" style="color:#F1F5F9">HOLDING / RESERVATION</span>
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">22</span>
+    </div><p class="cap mut" style="margin:0">Holding 14 · Reservation 8</p>
+  </div>
+  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">David Wong</span>
+  <span class="cap mut">Marina Golden Bay · A2508</span>
+  <div class="row" style="gap:6px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Reservation</span></div>
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">18 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  </div>
+</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Anna Petrova</span>
+  <span class="cap mut">HARMONIA · B1204</span>
+  <div class="row" style="gap:6px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding</span></div>
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">17 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">Sarah L.</span></div>
+  </div>
+</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">Lee Chen</span>
+  <span class="cap mut">Marina Golden Bay · C0902</span>
+  <div class="row" style="gap:6px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding</span></div>
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">15 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">May P.</span></div>
+  </div>
+</div></div>
+</div><div class="col" style="gap:10px;width:232px;flex-shrink:0">
+  <div class="col" style="gap:2px">
+    <div class="row" style="gap:8px">
+      <span class="sec" style="color:#F1F5F9">SOLD DEAL</span>
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">11</span>
+    </div><p class="cap mut" style="margin:0">Opens the Sold Deals page</p>
+  </div>
+  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+     border-radius:14px;padding:11px 13px">
+  <span class="b2" style="font-weight:600">SD-2026-000123</span>
+  <span class="cap mut">Marina Golden Bay · A2508</span>
+  <div class="row" style="gap:6px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Active</span></div>
+  <div class="row" style="gap:10px;justify-content:space-between">
+    <span class="cap mut">3.50M THB</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  </div>
+</div></div>
+</div></div><div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">A card carries only what is needed to decide quickly — customer, project, owner, lead age, next follow-up, sub status. Do not pack every field onto the card.</span></div>
+</div>
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">LEAD DETAIL</h3></div>
+  <p class="cap mut" style="margin:0">One timeline that reads end to end matters more than a long row of tabs.</p><div class="row" style="gap:14px;align-items:flex-start">
+  <div class="col grow" style="gap:4px">
+    <span class="cap mut">Sales &nbsp;›&nbsp; Leads &nbsp;›&nbsp; David Wong</span>
+    <div class="row" style="gap:11px"><h2 class="h5">David Wong</h2><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding / Reservation</span><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Reservation</span></div>
+    <span class="cap mut">Marina Golden Bay · A2508 · lead age 34 days</span>
+  </div>
+  <div class="row" style="gap:9px">
+    <button class="btn out sm">Change Status</button>
+    <button class="btn sm">Convert to Sold Deal</button>
+  </div>
+</div><div class="row" style="gap:20px;align-items:flex-start"><div class="col grow" style="gap:16px;min-width:0">
+  <div class="row" style="gap:26px;border-bottom:1px solid #374151"><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#F1F5F9;border-bottom:2px solid #3B82F6">Overview</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Activities</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Visits</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Documents</div></div>
+  <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">CUSTOMER</h4></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Phone</span><span class="b2">+66 81 234 5678</span></div><div class="col" style="gap:2px"><span class="cap mut">Email</span><span class="b2">david.w@example.com</span></div><div class="col" style="gap:2px"><span class="cap mut">Nationality</span><span class="b2">Singapore</span></div><div class="col" style="gap:2px"><span class="cap mut">Source</span><span class="b2">Agency</span></div></div></div>
+  <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">INTEREST</h4></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Project</span><span class="b2">Marina Golden Bay</span></div><div class="col" style="gap:2px"><span class="cap mut">Unit</span><span class="b2">A2508</span></div><div class="col" style="gap:2px"><span class="cap mut">Budget</span><span class="b2">3.0 – 3.8M THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Room Type</span><span class="b2">1 Bedroom · Sea View</span></div></div></div>
+  <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">SALES</h4></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Sales Owner</span><span class="b2">John Smith</span></div><div class="col" style="gap:2px"><span class="cap mut">Agency</span><span class="b2">ABC Property</span></div><div class="col" style="gap:2px"><span class="cap mut">Agent</span><span class="b2">John Tan</span></div><div class="col" style="gap:2px"><span class="cap mut">Lead Source</span><span class="b2">Agency</span></div></div></div>
+  <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">RESERVATION</h4></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Unit</span><span class="b2">A2508</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservation Date</span><span class="b2">18 Sep 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservation Amount</span><span class="b2">50,000 THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservation Expiry</span><span class="b2">02 Oct 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Payment Plan</span><span class="b2">Plan A – Standard</span></div><div class="col" style="gap:2px"><span class="cap mut">Quota</span><span class="b2">Foreign Quota</span></div></div></div>
+  <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">NEXT ACTION</h4><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">created as a task automatically</span></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Follow-up Date</span><span class="b2">24 Sep 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Assigned To</span><span class="b2">John Smith</span></div><div class="col" style="gap:2px"><span class="cap mut">Task</span><span class="b2">Confirm documents and book the signing</span></div></div></div>
+</div><div class="col" style="gap:14px;width:330px;flex-shrink:0">
+  <div class="card pad col" style="gap:14px">
+    <h4 class="sec">ACTIVITY TIMELINE</h4>
+    <div class="col" style="gap:16px"><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#22C55E;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">18 Sep · 14:30</span>
+    <span class="b2" style="font-weight:600">Reservation created</span><span class="cap mut">by John Smith · 50,000 THB</span>
+  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#A78BFA;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">17 Sep · 11:15</span>
+    <span class="b2" style="font-weight:600">Site visit</span><span class="cap mut">Marina Golden Bay · 3 photos</span>
+  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#3B82F6;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">15 Sep · 09:40</span>
+    <span class="b2" style="font-weight:600">WhatsApp contact</span><span class="cap mut">by John Smith</span>
+  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#FBBF24;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">14 Sep · 16:02</span>
+    <span class="b2" style="font-weight:600">Status changed</span><span class="cap mut">Visit → Holding / Reservation</span>
+  </div></div><div style="position:relative;padding-left:22px">
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#6B7280;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">14 Sep · 10:00</span>
+    <span class="b2" style="font-weight:600">Lead created</span><span class="cap mut">Source: ABC Property</span>
+  </div></div></div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">This timeline is a shared component reused on Lead, Sold Deal, Agency and Visit. It reads deal_timeline, which already exists — no new table.</span></div>
+</div></div>
+</div>
+  <div class="row" style="gap:16px;align-items:stretch">
+    <div class="col" style="gap:0;flex-shrink:0"><div class="card col" style="width:430px;gap:0;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.45)">
+  <div class="row pad" style="gap:12px;border-bottom:1px solid #374151;padding-bottom:14px">
+    <h3 class="h6 grow">Update Lead Status</h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
+  <div class="col pad" style="gap:14px">
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Funnel Stage</p><div class="fld">Holding / Reservation</div></div>
+  <div class="col" style="gap:0">
+    <p class="lbl">Sub Status<span style="color:#EF4444">&nbsp;*</span></p>
+    <div class="col" style="gap:0;background:#1F2937;border:1px solid #374151;border-radius:12px;padding:8px 12px">
+      <div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Holding</span><span class="cap mut">&nbsp;· no money down yet</span></div>
+      <div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:5px solid #3B82F6;background:#111827;flex-shrink:0"></div><span class="b2" style="color:#F1F5F9">Reservation</span><span class="cap mut">&nbsp;· reservation fee paid</span></div>
+    </div>
+  </div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Effective Date</p><div class="fld">18 Sep 2026</div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Remark</p><div class="fld"><span class="mut">Why the status changed</span></div></div>
+  <div class="col" style="gap:9px;background:rgba(251,191,36,.08);border:1px solid #FBBF2444;
+       border-radius:13px;padding:12px 14px">
+    <div class="row" style="gap:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
+      <span class="cap" style="color:#FBBF24;font-weight:700">Choosing Reservation makes these mandatory</span></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Unit<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">A2508</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reservation Date<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">18 Sep 2026</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reservation Amount</p><div class="fld">50,000</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reservation Expiry</p><div class="fld">02 Oct 2026</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Payment Plan</p><div class="fld">Plan A – Standard</div></div>
+  </div></div>
+  <div class="row pad" style="gap:10px;justify-content:flex-end;border-top:1px solid #374151;padding-top:14px">
+    <button class="btn out sm">Cancel</button><button class="btn sm">Update Status</button>
+  </div>
+</div></div>
+    <div class="card pad col grow" style="gap:14px">
+  <h3 class="sec">CONVERSION THAT MUST STILL BE MEASURABLE AFTER THE MERGE</h3>
+  <table><thead><tr><th style=width:230px>Path</th><th style=width:130px>Count</th><th style=width:90px>Rate</th></tr></thead><tbody><tr><td>Visit → Holding</td><td>41 → 14</td><td><b style="color:#60A5FA">34%</b></td></tr><tr><td>Holding → Reservation</td><td>14 → 8</td><td><b style="color:#22C55E">57%</b></td></tr><tr><td>Holding → Lost</td><td>14 → 4</td><td><b style="color:#EF4444">29%</b></td></tr><tr><td>Reservation → Sold</td><td>8 → 5</td><td><b style="color:#22C55E">62%</b></td></tr><tr><td>Reservation → Cancelled</td><td>8 → 1</td><td><b style="color:#EF4444">13%</b></td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">This is why the data must never be merged past the point of separation. The board may combine the columns; sub_status must stay on every row in the database.</span></div>
+  <div class="col" style="gap:7px">
+    <span class="cap mut">Fields required to produce this table</span>
+    <span class="b2" style="color:#CBD5E1">
+      <code>lead_status_history</code> holding old_stage · old_sub_status · new_stage · new_sub_status
+      · changed_at · changed_by · reason — <b>insert only, never update a past row</b></span>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1560px;min-height:1420px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">6 · Commission</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Phase 3</span></div>
+      <p class="cap mut" style="margin:0">Per-deal entries · a workflow with the states real operations need · approval rights · audit</p>
+    </div>
+  </div>
+  <div class="col" style="gap:16px">
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">COMMISSION ENTRIES — one deal can carry several</h3><button class="btn out sm">+ Add Entry</button></div>
+  <p class="cap mut" style="margin:0">Basis is stated per entry (Sale Price / Net Price / Agency Commission). This is the one question still open: what exactly Net Price is calculated from.</p><div class="row" style="gap:12px;flex-wrap:wrap"><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F1F5F9">175,000</span>
+          <span class="cap mut">Total Commission</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#22C55E">105,000</span>
+          <span class="cap mut">Approved</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#FBBF24">70,000</span>
+          <span class="cap mut">Pending</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#CBD5E1">0</span>
+          <span class="cap mut">Paid</span></div></div><table><thead><tr><th style=width:190px>Recipient</th><th style=width:130px>Type</th><th style=width:180px>Basis</th><th style=width:90px>Rate</th><th style=width:130px>Amount</th><th style=width:180px>Status</th></tr></thead><tbody><tr><td><b>ABC Property</b></td><td>Agency</td><td>Sale Price</td><td>3%</td><td><b>105,000</b></td><td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Approved</span></td></tr><tr><td><b>John Smith</b></td><td>Seller</td><td>Net Price</td><td>1%</td><td><b>35,000</b></td><td><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Pending Approval</span></td></tr><tr><td><b>Sarah Lee</b></td><td>Closer</td><td>Net Price</td><td>1%</td><td><b>35,000</b></td><td><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Pending Approval</span></td></tr><tr><td><b>John Tan</b></td><td>Agent</td><td>Agency Commission</td><td>20%</td><td><b>21,000</b></td><td><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">On Hold</span></td></tr></tbody></table><div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">Commission must never be a free-text field, and <code>bookings.commission_pct</code> must not carry on as the single value per deal. Keep the old column for compatibility; the real entries live here.</span></div>
+</div>
+  <div class="row" style="gap:16px;align-items:stretch"><div class="card pad col grow" style="gap:13px;min-width:0">
+  <h3 class="sec">WORKFLOW</h3>
+  <div class="row" style="gap:9px;flex-wrap:wrap;align-items:center"><div class="row" style="gap:9px"><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Calculated</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Pending Approval</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Approved</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Ready for Payment</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="border:1px solid #374151;color:#6B7280">Paid</span></div><div class="row" style="gap:9px;padding-left:14px;border-left:1px solid #374151"><span style="color:#6B7280">↘</span><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Rejected</span></div></div>
+  <div class="row" style="gap:9px;flex-wrap:wrap;align-items:center">
+    <span class="cap mut">Extra states real operations need</span>
+    <span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">On Hold</span><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Cancelled</span><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Rejected</span>
+  </div>
+  <div style="height:1px;background:#374151"></div>
+  <span class="cap mut">Where it starts</span>
+  <div class="row" style="gap:9px;flex-wrap:wrap;align-items:center"><div class="row" style="gap:9px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Sold Deal</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Payment In Progress</span><span style="color:#6B7280">→</span></div><div class="row" style="gap:9px"><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Calculated</span></div></div>
+  <span class="b2" style="color:#CBD5E1">Commission is calculated when the
+  <b style="color:#F1F5F9">payment condition is met</b>, not the moment the deal is created.
+  The threshold is config per project, never hard-coded.</span>
+</div><div class="card pad col" style="gap:12px;width:500px;flex-shrink:0">
+  <h3 class="sec">PERMISSIONS — checked on the server against user.role</h3>
+  <table><thead><tr><th style=width:190px>Role</th><th>Rights</th></tr></thead><tbody><tr><td>Sales</td><td>View only</td></tr><tr><td>Sales Manager</td><td>Review</td></tr><tr><td>Finance</td><td><span style="color:#22C55E">Approve / record payment</span></td></tr><tr><td>Admin</td><td>Override, with a mandatory reason</td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">Once approved, Sales cannot edit. Block it in the API, not by disabling a button.</span></div>
+  <div class="col" style="gap:7px">
+    <span class="cap mut">Every action writes all five to <code>audit_logs</code></span>
+    <div class="row" style="gap:7px;flex-wrap:wrap">
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">Who</span><span class="chip" style="color:#CBD5E1;background:#1F2937">When</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Old value</span><span class="chip" style="color:#CBD5E1;background:#1F2937">New value</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Reason</span>
+    </div>
+  </div>
+</div></div>
+  <div class="row" style="gap:16px;align-items:stretch"><div class="card pad col grow" style="gap:12px;min-width:0">
+  <h3 class="sec">AUDIT — uses the existing audit_logs table, nothing new</h3>
+  <div class="col" style="gap:16px"><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#FBBF24;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">18 Sep 2026 · 15:22</span>
+    <span class="b2" style="font-weight:600">Sarah Lee changed the sale price</span><span class="cap mut">3,450,000 → 3,500,000 · reason: customer upgraded unit</span>
+  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#3B82F6;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">18 Sep 2026 · 15:23</span>
+    <span class="b2" style="font-weight:600">System recalculated commission</span><span class="cap mut">ABC Property 103,500 → 105,000</span>
+  </div></div><div style="position:relative;padding-left:22px">
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#22C55E;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">18 Sep 2026 · 16:05</span>
+    <span class="b2" style="font-weight:600">Finance approved</span><span class="cap mut">ABC Property · 105,000 THB</span>
+  </div></div></div>
+  <div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600">Changing the sale price recalculates any commission still unapproved. Entries already approved must not change by themselves — issue an adjustment instead.</span></div>
+</div><div class="card pad col" style="gap:12px;width:480px;flex-shrink:0">
+  <h3 class="sec">ACCEPTANCE — the arithmetic must hold in every case</h3>
+  <table><thead><tr><th style=width:250px>Case</th><th>Required result</th></tr></thead><tbody><tr><td>basis 3,500,000 · rate 3%</td><td><b style="color:#22C55E">105,000</b></td></tr><tr><td>Due 500,000 · paid 300,000</td><td>Outstanding <b>200,000</b> · <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Partially Paid</span></td></tr><tr><td>Deal cancelled after commission approved</td><td>Issue a <span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Reversed</span> entry; never delete the original</td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">Agree the rounding before writing code: round to two decimals per entry, then sum — not sum then round.</span></div>
+</div></div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

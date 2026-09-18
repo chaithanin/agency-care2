@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1540px;min-height:1300px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">7 · Agency</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Phase 4</span></div>
+      <p class="cap mut" style="margin:0">A new agency page · computed Last Visit · no change to the existing data model</p>
+    </div>
+  </div>
+  <div class="col" style="gap:16px">
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">AGENCY DETAIL</h3></div>
+  <div class="row" style="gap:16px;align-items:flex-start">
+  <div class="col grow" style="gap:5px">
+    <span class="cap mut">Agency &nbsp;›&nbsp; Agencies &nbsp;›&nbsp; ABC Property</span>
+    <div class="row" style="gap:11px"><h2 class="h5">ABC PROPERTY</h2><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Active</span></div>
+    <span class="cap mut">Pattaya · Relationship Owner: Sarah Lee</span>
+  </div>
+  <button class="btn sm">+ Add Visit</button>
+</div>
+<div class="row" style="gap:12px;flex-wrap:wrap"><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F1F5F9">20</span>
+          <span class="cap mut">Agents</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#60A5FA">43</span>
+          <span class="cap mut">Leads</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#FBBF24">18</span>
+          <span class="cap mut">Reservations</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#22C55E">12</span>
+          <span class="cap mut">Sold Deals</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#A78BFA">9</span>
+          <span class="cap mut">Visits</span></div></div><div class="row" style="gap:22px;align-items:flex-start;margin-top:4px"><div class="col grow" style="gap:18px;min-width:0">
+  <div class="row" style="gap:26px;border-bottom:1px solid #374151"><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#F1F5F9;border-bottom:2px solid #3B82F6">Overview</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Agents</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Visits</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Leads</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Sold Deals</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Activity</div></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px 24px">
+    <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">AGENCY INFORMATION</h4></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Company</span><span class="b2">ABC Property</span></div><div class="col" style="gap:2px"><span class="cap mut">Primary Contact</span><span class="b2">John Tan</span></div><div class="col" style="gap:2px"><span class="cap mut">Phone</span><span class="b2">+66 38 123 456</span></div><div class="col" style="gap:2px"><span class="cap mut">Email</span><span class="b2">contact@abcproperty.co.th</span></div><div class="col" style="gap:2px"><span class="cap mut">Address</span><span class="b2">Pattaya Klang Rd.</span></div><div class="col" style="gap:2px"><span class="cap mut">Relationship Owner</span><span class="b2">Sarah Lee</span></div></div></div>
+    <div class="col" style="gap:10px">
+  <div class="row" style="gap:10px"><h4 class="sec grow">SALES PERFORMANCE</h4></div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Leads</span><span class="b2">43</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservations</span><span class="b2">18</span></div><div class="col" style="gap:2px"><span class="cap mut">Sold Deals</span><span class="b2">12</span></div><div class="col" style="gap:2px"><span class="cap mut">Conversion</span><span class="b2">28%</span></div></div></div>
+  </div>
+  <div class="col" style="gap:9px;background:#1F2937;border:1px solid #22C55E44;
+     border-radius:14px;padding:13px 15px">
+  <div class="row" style="gap:9px">
+    <span class="sec grow" style="color:#22C55E">LAST VISIT</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+    <span class="cap" style="color:#22C55E">computed · not editable</span>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Date</span><span class="b2">17 Sep 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Visited by</span><span class="b2">John Smith</span></div><div class="col" style="gap:2px"><span class="cap mut">Discussed</span><span class="b2">Marina Golden Bay promotion</span></div><div class="col" style="gap:2px"><span class="cap mut">Agency feedback</span><span class="b2">Clients interested in sea view units</span></div><div class="col" style="gap:2px"><span class="cap mut">Next action</span><span class="b2">Send the latest price list</span></div><div class="col" style="gap:2px"><span class="cap mut">Follow-up</span><span class="b2">24 Sep 2026</span></div></div>
+  <span class="cap mut">Last Visit = MAX(office_visits.visit_at, visit_checkins.checkin_at) —
+  there must be no field to type it into.</span>
+</div>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">No separate tabs for Site Visit Report, Visit Summary or Follow-up. All of it reads from the same visit records.</span></div>
+</div><div class="col" style="gap:14px;width:320px;flex-shrink:0">
+  <div class="card pad col" style="gap:12px">
+    <h4 class="sec">ACTIVITY</h4>
+    <div class="col" style="gap:16px"><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#A78BFA;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">17 Sep</span>
+    <span class="b2" style="font-weight:600">Agency visit</span><span class="cap mut">by John Smith · 3 photos</span>
+  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#22C55E;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">12 Sep</span>
+    <span class="b2" style="font-weight:600">Sold deal created</span><span class="cap mut">SD-2026-000118 · 2.9M</span>
+  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#3B82F6;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">05 Sep</span>
+    <span class="b2" style="font-weight:600">Leads assigned</span><span class="cap mut">5 new leads</span>
+  </div></div><div style="position:relative;padding-left:22px">
+  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
+       background:#A78BFA;border:2px solid #111827"></div>
+  <div class="col" style="gap:1px">
+    <span class="cap mut">28 Aug</span>
+    <span class="b2" style="font-weight:600">Agency visit</span><span class="cap mut">by Sarah Lee</span>
+  </div></div></div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">The existing <code>agencies</code> and <code>agency_staff</code> tables are complete. This phase reorganises the page; it does not change the data model.</span></div>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

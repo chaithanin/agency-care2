@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1620px;min-height:1700px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">8 · Visit</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Phase 4</span></div>
+      <p class="cap mut" style="margin:0">One visit record · fields that follow the type · photo lightbox · extending office_visits</p>
+    </div>
+  </div>
+  <div class="col" style="gap:16px">
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">VISITS — one record set for the whole system</h3><button class="btn sm">+ Add Visit</button></div>
+  <p class="cap mut" style="margin:0">This reads office_visits as its primary source and folds in planned visits from visit_plans. visit_plans keeps behaving exactly as before — nothing merged, nothing moved.</p><div class="row" style="gap:9px;flex-wrap:wrap"><div class="row fld" style="gap:8px;width:230px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.7" y2="16.7"></line></svg><span class="mut">Search agency / customer / project</span></div><div class="row fld" style="gap:9px">Visit Type<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Sales Person<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Agency<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Project<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Date range<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div></div><table><thead><tr><th style=width:140px>Date</th><th style=width:160px>Type</th><th style=width:150px>Visited by</th><th style=width:170px>Agency</th><th style=width:200px>Project</th><th style=width:130px>Photos</th></tr></thead><tbody><tr><td>17 Sep 2026</td><td><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Agency Visit</span></td><td>John Smith</td><td>ABC Property</td><td>Marina Golden Bay</td><td><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">3 photos</span></td></tr><tr><td>16 Sep 2026</td><td><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Site Visit</span></td><td>Sarah Lee</td><td>—</td><td>HARMONIA</td><td><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">5 photos</span></td></tr><tr><td>15 Sep 2026</td><td><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Customer Visit</span></td><td>May P.</td><td>XYZ Realty</td><td>Marina Golden Bay</td><td><span class="chip" style="color:#6B7280;background:#1F2937">no photos</span></td></tr></tbody></table><div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">Site Visit Report and Visit Summary Report become <b>preset filtered views</b> of this table. Both old routes keep working — they are not deleted.</span></div>
+</div>
+  <div class="row" style="gap:16px;align-items:flex-start">
+    <div class="col" style="gap:0;flex-shrink:0"><div class="card col" style="width:450px;gap:0;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.45)">
+  <div class="row pad" style="gap:12px;border-bottom:1px solid #374151;padding-bottom:14px">
+    <h3 class="h6 grow">Add Visit</h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
+  <div class="col pad" style="gap:14px">
+  <div class="col" style="gap:0">
+    <p class="lbl">Visit Type<span style="color:#EF4444">&nbsp;*</span></p>
+    <div class="col" style="gap:0;background:#1F2937;border:1px solid #374151;border-radius:12px;padding:8px 12px">
+      <div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:5px solid #3B82F6;background:#111827;flex-shrink:0"></div><span class="b2" style="color:#F1F5F9">Agency Visit</span></div><div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Site Visit</span></div><div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Customer Visit</span></div><div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Other</span></div>
+    </div>
+  </div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Date & Time<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">18 Sep 2026 14:00</div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Sales Person<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">John Smith</div></div>
+  <div class="col" style="gap:9px;background:rgba(59,130,246,.08);border:1px solid #3B82F644;
+       border-radius:13px;padding:12px 14px">
+    <span class="cap" style="color:#60A5FA;font-weight:700">
+      Agency Visit reveals only these two</span>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Agency<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">ABC Property</div></div>
+    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Agent</p><div class="fld">John Tan</div></div>
+  </div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Discussion Topic<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">Marina Golden Bay promotion</div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Discussion Details</p><div class="fld"><span class="mut"></span></div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Agency / Customer Feedback</p><div class="fld"><span class="mut"></span></div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Next Action</p><div class="fld"><span class="mut"></span></div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Follow-up Date</p><div class="fld">24 Sep 2026</div></div>
+  <div class="row" style="gap:10px">
+    <div class="row grow" style="gap:9px;background:#1F2937;border:1px dashed #374151;
+         border-radius:13px;padding:11px 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+      <span class="b2 grow" style="color:#CBD5E1">+ Add Photos</span></div>
+    <div class="row grow" style="gap:9px;background:#1F2937;border:1px dashed #374151;
+         border-radius:13px;padding:11px 13px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg>
+      <span class="b2 grow" style="color:#CBD5E1">+ Add File</span></div>
+  </div></div>
+  <div class="row pad" style="gap:10px;justify-content:flex-end;border-top:1px solid #374151;padding-top:14px">
+    <button class="btn out sm">Cancel</button><button class="btn sm">Save Visit</button>
+  </div>
+</div></div>
+    <div class="col grow" style="gap:16px;min-width:0"><div class="card pad col grow" style="gap:12px;min-width:0">
+  <h3 class="sec">FIELDS FOLLOW THE TYPE — not every field, all the time</h3>
+  <table><thead><tr><th style=width:170px>Type</th><th style=width:260px>Required</th><th>Hidden</th></tr></thead><tbody><tr><td>Agency Visit</td><td>Agency</td><td>Customer · Unit</td></tr><tr><td>Site Visit</td><td>Customer · Project</td><td>Agent</td></tr><tr><td>Customer Visit</td><td>Customer</td><td>Unit</td></tr><tr><td>Other</td><td>Discussion topic</td><td>Agency · Customer · Project</td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">Progressive disclosure keeps the cognitive load down — but a hidden field must also be cleared, not merely hidden.</span></div>
+  <div style="height:1px;background:#374151"></div>
+  <h3 class="sec">EXTENDING office_visits — new columns only</h3>
+  <table><thead><tr><th style=width:220px>New column</th><th>Why</th></tr></thead><tbody><tr><td><code>visit_type</code></td><td>Separates Agency / Site / Customer / Other (today there is only purpose)</td></tr><tr><td><code>project_id</code></td><td>Today only interested_projects exists, which means something else</td></tr><tr><td><code>unit_no</code></td><td>A site visit needs the unit that was shown</td></tr><tr><td><code>agency_staff_id</code></td><td>Identifies the agent who was met</td></tr><tr><td><code>feedback</code></td><td>There is a result field, but it does not separate the other side's view</td></tr><tr><td><code>booking_id</code></td><td>Links the visit to a deal</td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">photos, discussionTopics, nextAction, nextVisitDate and soft delete already exist. Nothing to add there.</span></div>
+</div></div>
+  </div>
+  <div class="row" style="gap:16px;align-items:flex-start">
+    <div class="card col" style="width:430px;flex-shrink:0;gap:0;overflow:hidden;
+     box-shadow:0 24px 64px rgba(0,0,0,.45)">
+  <div class="row pad" style="gap:12px;border-bottom:1px solid #374151;padding-bottom:13px">
+    <h3 class="h6 grow">Site Visit Photos</h3>
+    <span class="cap mut">2 / 5</span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
+  <div class="row" style="gap:12px;align-items:center;padding:16px 18px">
+    <div style="width:34px;height:34px;border-radius:999px;border:1px solid #374151;
+         display:grid;place-items:center;flex-shrink:0;transform:rotate(180deg)"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+    <div class="grow" style="height:210px;border-radius:14px;background:#1F2937;
+         border:1px solid #374151;display:grid;place-items:center"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg></div>
+    <div style="width:34px;height:34px;border-radius:999px;border:1px solid #374151;
+         display:grid;place-items:center;flex-shrink:0"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+  </div>
+  <div class="row" style="gap:8px;padding:0 18px 12px">
+    <div style="width:52px;height:38px;border-radius:9px;background:#1F2937;border:1px solid #374151"></div><div style="width:52px;height:38px;border-radius:9px;background:#1F2937;border:2px solid #3B82F6"></div><div style="width:52px;height:38px;border-radius:9px;background:#1F2937;border:1px solid #374151"></div><div style="width:52px;height:38px;border-radius:9px;background:#1F2937;border:1px solid #374151"></div><div style="width:52px;height:38px;border-radius:9px;background:#1F2937;border:1px solid #374151"></div>
+  </div>
+  <div class="col pad" style="gap:10px;border-top:1px solid #374151;padding-top:13px">
+    <div class="col" style="gap:2px">
+      <span class="b2">Marina Golden Bay showroom</span>
+      <span class="cap mut">18 Sep 2026 · 14:33 · by John Smith</span>
+    </div>
+    <div class="row" style="gap:9px;flex-wrap:wrap">
+      <span class="chip" style="color:#CBD5E1;background:#1F2937">← → to move</span><span class="chip" style="color:#CBD5E1;background:#1F2937">ESC to close</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Zoom</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Swipe on mobile</span>
+    </div>
+    <button class="btn out sm" style="align-self:flex-start">Download</button>
+  </div>
+</div>
+    <div class="card pad col grow" style="gap:12px;min-width:0">
+      <h3 class="sec">PHOTO AND ATTACHMENT ACCESS</h3>
+      <table><thead><tr><th style=width:170px>Topic</th><th>Rule</th></tr></thead><tbody><tr><td>Storage</td><td>Private bucket through <code>StorageService.savePrivate()</code> only</td></tr><tr><td>URLs</td><td>Short-lived signed URLs. Never a permanent directly-reachable URL.</td></tr><tr><td>Download button</td><td>Shown by permission and checked on the server, not merely hidden</td></tr><tr><td>File names</td><td>ASCII only — non-ASCII names have broken the Cloud Run build before</td></tr></tbody></table>
+      <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">If GCS_PRIVATE_BUCKET is missing from a revision, the service writes files to the container disk and they are destroyed for good on the next deploy. This already happened to Photo Evidence. Check the variable before every traffic switch.</span></div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

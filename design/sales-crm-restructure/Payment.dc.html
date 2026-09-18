@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1620px;min-height:1760px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">5 · Payment</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Phase 2</span></div>
+      <p class="cap mut" style="margin:0">Payment plan master + snapshot · schedule · recording a payment · reminders as tasks</p>
+    </div>
+  </div>
+  <div class="col" style="gap:16px">
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">PAYMENT SUMMARY</h3></div>
+  <div class="col" style="gap:13px">
+  <div class="row" style="gap:12px;flex-wrap:wrap"><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F1F5F9">3,500,000</span>
+          <span class="cap mut">Total Contract Value</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#22C55E">650,000</span>
+          <span class="cap mut">Paid</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#FBBF24">2,850,000</span>
+          <span class="cap mut">Outstanding</span></div><div class="col" style="gap:2px;padding:12px 18px;background:#1F2937;
+          border:1px solid #374151;border-radius:14px;min-width:132px">
+          <span style="font-size:20px;font-weight:700;letter-spacing:-.02em;color:#EF4444">200,000</span>
+          <span class="cap mut">Overdue</span></div></div>
+  <div class="row" style="gap:12px"><div class="grow"><div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:19%;height:100%;border-radius:4px;background:#22C55E"></div></div></div><span class="cap mut" style="white-space:nowrap">19% of contract value</span></div>
+</div>
+</div>
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">PAYMENT SCHEDULE</h3><button class="btn sm">Record Payment</button></div>
+  <p class="cap mut" style="margin:0">Every row's status is computed from what was actually paid against what is due and when. Never store it as a column for someone to change.</p><table><thead><tr><th style=width:180px>Payment</th><th style=width:150px>Due Date</th><th style=width:150px>Amount</th><th style=width:150px>Paid</th><th style=width:150px>Status</th></tr></thead><tbody><tr><td><b>Booking</b></td><td>18 Sep 2026</td><td>50,000</td><td>50,000</td><td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Paid</span></td></tr><tr><td><b>Contract</b></td><td>20 Sep 2026</td><td>100,000</td><td>100,000</td><td><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Paid</span></td></tr><tr><td><b>Down Payment</b></td><td>30 Sep 2026</td><td>500,000</td><td>300,000</td><td><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Partial</span></td></tr><tr><td><b>Installment #1</b></td><td>30 Oct 2026</td><td>100,000</td><td>—</td><td><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Upcoming</span></td></tr><tr><td><b>Installment #2</b></td><td>30 Nov 2026</td><td>100,000</td><td>—</td><td><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Upcoming</span></td></tr><tr><td><b>Transfer</b></td><td>30 Jun 2027</td><td>2,650,000</td><td>—</td><td><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Future</span></td></tr></tbody></table><div class="row" style="gap:9px;flex-wrap:wrap;padding-top:4px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Paid</span><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Partial</span><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Pending</span><span class="chip" style="color:#38BDF8;background:rgba(56,189,248,.14)">Upcoming</span><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Overdue</span><span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Cancelled</span><span class="chip" style="color:#6B7280;background:rgba(107,114,128,.18)">Refunded</span></div><div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">The requirement calls this Deposit Tracking, but the deposit must not be a separate one-off record — it is one row in this table, exactly like Booking, Contract, Installment and Transfer.</span></div>
+</div>
+  <div class="row" style="gap:16px;align-items:flex-start">
+    <div class="col" style="gap:0;flex-shrink:0"><div class="card col" style="width:430px;gap:0;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.45)">
+  <div class="row pad" style="gap:12px;border-bottom:1px solid #374151;padding-bottom:14px">
+    <h3 class="h6 grow">Record Payment</h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  </div>
+  <div class="col pad" style="gap:14px">
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Payment Item</span><span class="b2">Down Payment</span></div><div class="col" style="gap:2px"><span class="cap mut">Required</span><span class="b2">500,000 THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Paid to Date</span><span class="b2">300,000 THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Outstanding</span><span class="b2">200,000 THB</span></div></div>
+  <div style="height:1px;background:#374151"></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">New Payment (THB)<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">200,000</div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Payment Date<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">18 Sep 2026</div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Payment Method</p><div class="fld">Bank Transfer</div></div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reference No.</p><div class="fld"><span class="mut">Transfer reference</span></div></div>
+  <div class="row" style="gap:10px;background:#1F2937;border:1px dashed #374151;
+       border-radius:13px;padding:11px 14px">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 16V4"></path><path d="m7 9 5-5 5 5"></path><path d="M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"></path></svg><span class="b2 grow" style="color:#CBD5E1">Receipt</span>
+    <button class="btn out sm">Upload</button>
+  </div>
+  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Remark</p><div class="fld"><span class="mut"></span></div></div>
+  <div class="col" style="gap:6px;background:rgba(239,68,68,.07);border:1px solid #EF444444;
+       border-radius:13px;padding:11px 13px">
+    <span class="cap" style="color:#EF4444;font-weight:700">Validate all of these on the server</span>
+    <div class="row" style="gap:7px"><span style="color:#EF4444">·</span><span class="cap" style="color:#CBD5E1">The new payment must be greater than zero</span></div><div class="row" style="gap:7px"><span style="color:#EF4444">·</span><span class="cap" style="color:#CBD5E1">The total must not exceed the amount due, unless overpayment is enabled</span></div><div class="row" style="gap:7px"><span style="color:#EF4444">·</span><span class="cap" style="color:#CBD5E1">The payment date must not be in the future</span></div><div class="row" style="gap:7px"><span style="color:#EF4444">·</span><span class="cap" style="color:#CBD5E1">The receipt goes to the private bucket through savePrivate() only</span></div>
+  </div></div>
+  <div class="row pad" style="gap:10px;justify-content:flex-end;border-top:1px solid #374151;padding-top:14px">
+    <button class="btn out sm">Cancel</button><button class="btn sm">Save Payment</button>
+  </div>
+</div></div>
+    <div class="col grow" style="gap:16px;min-width:0"><div class="card pad col grow" style="gap:12px;min-width:0">
+  <h3 class="sec">PAYMENT PLAN MASTER → SNAPSHOT</h3>
+  <div class="row" style="gap:14px;align-items:stretch">
+    <div class="col" style="gap:7px;flex:1;min-width:0;background:#1F2937;border:1px solid #374151;
+         border-radius:13px;padding:12px 14px">
+      <span class="b2" style="font-weight:700">payment_plan_masters</span>
+      <span class="cap mut">Per project · marketing edits it freely</span>
+      <span class="cap" style="color:#CBD5E1">Plan A · Booking 50,000 · Contract 100,000 …</span>
+    </div>
+    <div class="col" style="justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></div>
+    <div class="col" style="gap:7px;flex:1;min-width:0;background:#1F2937;border:1px solid #22C55E55;
+         border-radius:13px;padding:12px 14px">
+      <span class="b2" style="font-weight:700">deal_payment_plan_snapshots</span>
+      <span class="cap mut">Copied when the deal is created · never editable again</span>
+      <span class="cap" style="color:#CBD5E1">SD-2026-000123 · Booking 50,000 · Contract 100,000 …</span>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">A deal must never reference the master plan live and nothing else. When marketing edits the master in six months, an existing customer's contract must not follow it.</span></div>
+  <span class="cap mut">The existing <code>projects.payment_plan</code> free text stays exactly as it is,
+  as reference. Nothing to delete, nothing to move.</span>
+</div></div>
+  </div>
+  <div class="row" style="gap:16px;align-items:stretch">
+    <div class="card pad col grow" style="gap:12px;min-width:0">
+      <h3 class="sec">NEW TABLES FOR THIS PHASE — nothing existing is touched</h3>
+      <table><thead><tr><th style=width:290px>Table</th><th style=width:250px>Purpose</th><th>Constraint</th></tr></thead><tbody><tr><td><code>payment_plan_masters</code></td><td>Payment plan per project</td><td>Keyed to project_id</td></tr><tr><td><code>payment_plan_master_items</code></td><td>Milestones in a plan</td><td>Order + due-date formula</td></tr><tr><td><code>deal_payment_plan_snapshots</code></td><td>The plan as it stood when the deal was created</td><td>Write once, never edit</td></tr><tr><td><code>deal_payment_schedules</code></td><td>Milestones on a deal</td><td>unique(deal_id, seq)</td></tr><tr><td><code>deal_payment_transactions</code></td><td>Each individual payment</td><td>Insert only, never update a total</td></tr></tbody></table>
+      <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">The paid amount is the sum of the transactions. Never UPDATE a total directly, and never hard-delete — reverse it with a new row marked Reversed.</span></div>
+    </div>
+    <div class="card pad col" style="gap:12px;width:480px;flex-shrink:0">
+  <h3 class="sec">PAYMENT REMINDERS — CREATED AS TASKS, NOT A SEPARATE BOARD</h3>
+  <div class="row" style="gap:9px;flex-wrap:wrap">
+    <span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">7 days before</span><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">3 days before</span><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">On due date</span><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">Overdue +1 day</span>
+  </div>
+  <div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
+       border-radius:13px;padding:12px 14px">
+    <span class="b2" style="font-weight:700">Follow-up payment</span>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Customer</span><span class="b2">David Wong</span></div><div class="col" style="gap:2px"><span class="cap mut">Outstanding</span><span class="b2">200,000 THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Assigned</span><span class="b2">Sales Support</span></div><div class="col" style="gap:2px"><span class="cap mut">Due</span><span class="b2">30 Sep 2026</span></div></div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">This uses the existing <code>tasks</code> table, which already carries dealId, assigneeIds, dueDate and recurring. That is why the Follow-up Board can be removed without losing any capability.</span></div>
+  <div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600">A reminder must never fire twice. Enforce it with a unique key in the database (schedule row + reminder kind + date), not with a check in code.</span></div>
+</div>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>

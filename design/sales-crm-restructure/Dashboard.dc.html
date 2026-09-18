@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"SF Pro Display",-apple-system,"Segoe UI","Roboto","Helvetica","Arial",sans-serif;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);color:#F1F5F9;
+       -webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:#60A5FA;text-decoration:none} a:hover{color:#3B82F6}
+  .card{background:#111827;border:1px solid #374151;border-radius:20px}
+  .pad{padding:20px 24px}
+  .row{display:flex;align-items:center}
+  .col{display:flex;flex-direction:column}
+  .grow{flex-grow:1}
+  .h5{font-size:24px;font-weight:700;letter-spacing:-0.01em;margin:0}
+  .h6{font-size:20px;font-weight:600;margin:0}
+  .sec{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#CBD5E1;margin:0}
+  .b2{font-size:14px;line-height:1.43;margin:0}
+  .cap{font-size:12px;line-height:1.66;color:#CBD5E1;margin:0}
+  .mut{color:#6B7280}
+  .btn{border-radius:999px;border:0;padding:7px 18px;font-family:inherit;font-size:14px;
+        font-weight:600;cursor:pointer;background:#3B82F6;color:#fff}
+  .btn.out{background:transparent;border:1px solid #374151;color:#CBD5E1}
+  .btn.sm{padding:5px 14px;font-size:13px}
+  .chip{display:inline-flex;align-items:center;gap:5px;height:24px;padding:0 10px;
+         border-radius:999px;font-size:12px;font-weight:600;line-height:1}
+  .fld{background:#1F2937;border:1px solid #374151;border-radius:12px;
+        padding:9px 12px;font-size:14px;color:#F1F5F9}
+  .lbl{font-size:12px;font-weight:600;color:#CBD5E1;margin:0 0 6px}
+  input.fld,select.fld,textarea.fld{font-family:inherit;width:100%;outline:none}
+  table{width:100%;border-collapse:collapse}
+  th{text-align:left;font-size:12px;font-weight:700;color:#CBD5E1;padding:10px 12px;
+      border-bottom:1px solid #374151;letter-spacing:.02em}
+  td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
+</style>
+</helmet>
+<div style="width:1620px;min-height:1620px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div class="col" style="padding:26px 30px;gap:18px">
+  <div class="row" style="gap:12px;align-items:flex-start">
+    <div class="col grow" style="gap:3px">
+      <div class="row" style="gap:10px"><h1 class="h5">9 · Dashboard · Permissions · Design System</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">All phases</span></div>
+      <p class="cap mut" style="margin:0">Numbers you can click · a matrix mapped onto the real roles · the shared page structure and components</p>
+    </div>
+  </div>
+  <div class="col" style="gap:16px">
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">DASHBOARD — it must answer operational questions, not just look good</h3></div>
+  <p class="cap mut" style="margin:0">Every number here must lead to the real records. If it cannot be clicked, it does not belong on this page.</p><div class="row" style="gap:16px;align-items:stretch"><div class="card pad col grow" style="gap:11px;min-width:0">
+      <h3 class="sec" style="color:#60A5FA">SALES FUNNEL</h3><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">New</span>
+        <span style="font-size:17px;font-weight:700;color:#F1F5F9">124</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Contacted</span>
+        <span style="font-size:17px;font-weight:700;color:#F1F5F9">83</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Visit</span>
+        <span style="font-size:17px;font-weight:700;color:#F1F5F9">41</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Holding / Reservation</span>
+        <span style="font-size:17px;font-weight:700;color:#FBBF24">22</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Sold Deal</span>
+        <span style="font-size:17px;font-weight:700;color:#22C55E">11</span></div><span class="cap mut">Clicking a number must open the filtered list — not a chart you cannot click</span></div><div class="card pad col grow" style="gap:11px;min-width:0">
+      <h3 class="sec" style="color:#EF4444">PAYMENT ATTENTION</h3><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Overdue deals</span>
+        <span style="font-size:17px;font-weight:700;color:#EF4444">7</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Amount overdue</span>
+        <span style="font-size:17px;font-weight:700;color:#EF4444">1.8M THB</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Due this week</span>
+        <span style="font-size:17px;font-weight:700;color:#FBBF24">12</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Awaiting payment entry</span>
+        <span style="font-size:17px;font-weight:700;color:#FBBF24">3</span></div><span class="cap mut">Read from the payment schedule, never a figure someone types in</span></div><div class="card pad col grow" style="gap:11px;min-width:0">
+      <h3 class="sec" style="color:#A78BFA">AGENCY FOLLOW-UP</h3><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">No visit in over 30 days</span>
+        <span style="font-size:17px;font-weight:700;color:#FBBF24">28</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Follow-up due today</span>
+        <span style="font-size:17px;font-weight:700;color:#60A5FA">6</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">New agency leads</span>
+        <span style="font-size:17px;font-weight:700;color:#22C55E">14</span></div><span class="cap mut">Uses the computed Last Visit</span></div></div><div class="row" style="gap:16px;align-items:stretch"><div class="card pad col grow" style="gap:11px;min-width:0">
+      <h3 class="sec" style="color:#22C55E">CONVERSION</h3><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Visit → Holding</span>
+        <span style="font-size:17px;font-weight:700;color:#60A5FA">34%</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Holding → Reservation</span>
+        <span style="font-size:17px;font-weight:700;color:#22C55E">57%</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Reservation → Sold</span>
+        <span style="font-size:17px;font-weight:700;color:#22C55E">62%</span></div><div class="row" style="gap:12px;padding:7px 0;border-bottom:1px solid #374151">
+        <span class="b2 grow" style="color:#CBD5E1">Holding → Lost</span>
+        <span style="font-size:17px;font-weight:700;color:#EF4444">29%</span></div><span class="cap mut">Still splits by sub status even though the board merged the columns</span></div><div class="card pad col" style="gap:11px;width:330px;flex-shrink:0">
+  <h3 class="sec" style="color:#FBBF24">HOLDING / RESERVATION SPLIT</h3>
+  <div class="row" style="gap:14px;align-items:flex-end">
+    <div class="col grow" style="gap:6px">
+      <div class="row" style="gap:9px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding</span>
+        <span class="grow"></span><span style="font-size:19px;font-weight:700">14</span></div>
+      <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:64%;height:100%;border-radius:4px;background:#FBBF24"></div></div>
+    </div>
+  </div>
+  <div class="row" style="gap:14px;align-items:flex-end">
+    <div class="col grow" style="gap:6px">
+      <div class="row" style="gap:9px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Reservation</span>
+        <span class="grow"></span><span style="font-size:19px;font-weight:700">8</span></div>
+      <div style="height:8px;border-radius:4px;background:#1F2937;overflow:hidden"><div style="width:36%;height:100%;border-radius:4px;background:#22C55E"></div></div>
+    </div>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">The board shows one column while the reports still split cleanly — because sub_status is on every row in the database.</span></div>
+</div></div>
+</div>
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">PERMISSION MATRIX</h3></div>
+  <table><thead><tr><th style=width:190px>Action</th><th style=width:110px>Sales</th><th style=width:110px>Manager</th><th style=width:110px>Support</th><th style=width:110px>Finance</th><th style=width:110px>Agency Support</th><th style=width:110px>Management</th><th style=width:110px>Admin</th></tr></thead><tbody><tr><td><b>Lead</b></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Change sub status</b></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Create sold deal</b></td><td><span style="color:#FBBF24;font-weight:600">Request</span></td><td><span style="color:#22C55E;font-weight:600">Approve</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Edit sale price</b></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Record payment</b></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Commission</b></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#FBBF24;font-weight:600">Review</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#22C55E;font-weight:600">Approve</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Visit</b></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Agency</b></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#22C55E;font-weight:600">Edit</span></td><td><span style="color:#CBD5E1;font-weight:600">View</span></td><td><span style="color:#A78BFA;font-weight:600">Override</span></td></tr><tr><td><b>Delete deal / financial record</b></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td><td><span style="color:#EF4444;font-weight:600">No</span></td></tr></tbody></table><div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">The last row is No for everyone. Financial records use Void, Cancelled or Reversed instead of deletion, always.</span></div><div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600">The real roles in the system are manager · super_admin · admin · closer · sales · hr · marketing · staff · read_only · agency_user. The seven above must be mapped onto that set — <b>no new values in the enum</b> — and permissions are checked with <code>user.role</code>, not <code>activeRole</code>.</span></div>
+</div>
+  <div class="row" style="gap:16px;align-items:stretch"><div class="card pad col" style="gap:12px;width:500px;flex-shrink:0">
+  <h3 class="sec">THE DETAIL PAGE STRUCTURE EVERY ENTITY SHARES</h3>
+  <div class="col" style="gap:8px">
+    <div style="background:#1F2937;border:1px solid #374151;border-radius:11px;padding:9px 12px;height:34px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#6B7280">Breadcrumb</span></div>
+    <div style="background:#1F2937;border:1px solid #60A5FA;border-radius:11px;padding:9px 12px;height:40px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#60A5FA">Page Title &nbsp;·&nbsp; Primary Action</span></div>
+    <div style="background:#1F2937;border:1px solid #22C55E;border-radius:11px;padding:9px 12px;height:44px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#22C55E">Summary / KPI</span></div>
+    <div style="background:#1F2937;border:1px solid #FBBF24;border-radius:11px;padding:9px 12px;height:36px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#FBBF24">Primary Navigation (at most 5 tabs)</span></div>
+    <div class="row" style="gap:8px">
+      <div class="grow"><div style="background:#1F2937;border:1px solid #374151;border-radius:11px;padding:9px 12px;height:130px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#6B7280">Main Content</span></div></div>
+      <div style="width:150px;flex-shrink:0"><div style="background:#1F2937;border:1px solid #A78BFA;border-radius:11px;padding:9px 12px;height:130px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#A78BFA">Context Panel</span></div></div>
+    </div>
+    <div style="background:#1F2937;border:1px dashed #A78BFA;border-radius:11px;padding:9px 12px;height:40px;display:flex;align-items:center;justify-content:center"><span class="cap" style="color:#A78BFA">Activity Timeline</span></div>
+  </div>
+  <div class="row" style="gap:9px;flex-wrap:wrap">
+    <span class="chip" style="color:#CBD5E1;background:#1F2937">Desktop-first 1440px</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Sidebar 240</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Right panel 320–360</span><span class="chip" style="color:#CBD5E1;background:#1F2937">Spacing 4/8/12/16/24/32</span>
+  </div>
+</div><div class="card pad col grow" style="gap:12px;min-width:0">
+  <h3 class="sec">COMPONENTS REUSED ACROSS THE SYSTEM — built once</h3>
+  <table><thead><tr><th style=width:200px>Component</th><th style=width:300px>Used on</th><th>Already exists?</th></tr></thead><tbody><tr><td>Activity Timeline</td><td>Lead · Sold Deal · Agency · Visit · Customer</td><td><span style="color:#22C55E">Yes — deal_timeline</span></td></tr><tr><td>Status Badge</td><td>Everywhere</td><td><span style="color:#22C55E">Yes — deal_stages carries colours</span></td></tr><tr><td>Task Pill</td><td>Lead · Deal · Payment · Agency</td><td><span style="color:#22C55E">Yes — tasks</span></td></tr><tr><td>Photo Pill + Lightbox</td><td>Visit</td><td><span style="color:#FBBF24">Photos yes, lightbox no</span></td></tr><tr><td>Financial Summary</td><td>Sold Deal · Payment · Commission</td><td><span style="color:#EF4444">No — new</span></td></tr><tr><td>Filter Bar</td><td>Every list page</td><td><span style="color:#22C55E">Yes</span></td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">Colour alone never carries meaning. Every status needs a label beside it, so it reads the same for someone who is colour blind.</span></div>
+  <div style="height:1px;background:#374151"></div>
+  <h3 class="sec">FILTERS EVERY LIST PAGE ACTUALLY NEEDS</h3>
+  <table><thead><tr><th style=width:130px>Page</th><th>Filters</th></tr></thead><tbody><tr><td>Leads</td><td>Stage · Sub Status · Project · Sales Owner · Agency · Lead Source · Created · Next Follow-up</td></tr><tr><td>Sold Deals</td><td>Project · Unit · Customer · Seller · Closer · Agency · Deal Status · Payment Status · Contract · Transfer</td></tr><tr><td>Agencies</td><td>Sales Owner · Last Visit · Sold Deals · Active / Inactive</td></tr><tr><td>Visits</td><td>Visit Type · Sales Person · Agency · Project · Date range</td></tr></tbody></table>
+</div></div>
+</div>
+</div>
+</div>
+</x-dc>
+</body>
+</html>
