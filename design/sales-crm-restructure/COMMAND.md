@@ -8,6 +8,9 @@ Everything below is against repo `chaithanin/agency-care2`, branch
 
 Design canvas, 10 sheets: https://claude.ai/artifact/SNAd42xy9r3icnxvxFfHhf
 
+If the session cannot see that repo, [`FETCH.md`](./FETCH.md) has three tested ways to pull the
+folder — the sparse clone is about 1 MB.
+
 ---
 
 ## Step 0 — paste this first

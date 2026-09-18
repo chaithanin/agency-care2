@@ -2,6 +2,8 @@
 
 Design canvas: https://claude.ai/artifact/SNAd42xy9r3icnxvxFfHhf
 
+How to fetch these files into another project: [`FETCH.md`](./FETCH.md)
+
 Message to hand the main project: [`COMMAND.md`](./COMMAND.md) — paste one phase at a time.
 
 The full requirement: [`BRIEF.md`](./BRIEF.md)
