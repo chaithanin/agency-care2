@@ -65,18 +65,18 @@ Surveyed on `feat/all-appointments-clean-on-118a2e2`. More than half of what the
 
 ## Six business questions to lock before the database is touched
 
-Five are answerable from what is already in production. One needs the owner.
+All six are settled. Five came from what is already in production; the commission basis was decided by the owner.
 
 | # | Question | Proposed answer | State |
 | --- | --- | --- | --- |
 | 1 | When is a Sold Deal created? | An authorised approver confirms the sale **and** the mandatory fields are complete — **not** the deposit alone | Answer proposed |
 | 2 | Is Deposit a condition or a status? | A **status** on one row of the payment schedule | Answer proposed |
-| 3 | What is commission calculated on? | `basis` must be stated per entry (Sale Price / Net Price) | **Owner must decide — what exactly is Net Price?** |
+| 3 | What is commission calculated on? | **Net Price = Sale Price − Discount − Promotion value**, no tax deducted. `basis` is still per entry, because the agency rate runs on Sale Price. | **Answered by the owner** |
 | 4 | What does Quota mean? | **Answered: Ownership Quota.** Use the live values in `bookings.quota_category` | Answer proposed |
 | 5 | One visit record or several? | `office_visits` is the source of truth; `visit_plans` stays | Answer proposed |
 | 6 | Where does Agency Last Visit come from? | `MAX(office_visits.visit_at, visit_checkins.checkin_at)` — **computed, never entered** | Answer proposed |
 
-**Question 3 must be answered before Phase 3 starts.** Phases 1 and 2 can proceed now.
+**All three phases are unblocked.** Question 3 is answered, so Phase 3 can be planned alongside Phases 1 and 2.
 
 ---
 
@@ -97,7 +97,7 @@ Five are answerable from what is already in production. One needs the owner.
 | --- | --- | --- | --- |
 | **1** Core Sales Architecture | Merge Holding / Reservation + Sub Status · status-change history · conversion wizard · basic contract | Low | A stage added in config plus three columns. People see the board columns change; every row of data is still there. |
 | **2** Financial | Payment plan master + snapshot · payment schedule · record payment · reminders | Medium | All new tables, nothing existing touched — but this is real money, so UAT with finance before it goes live. |
-| **3** Commission | Per-deal entries · approval chain · payment tracking | Medium | `agency_commissions` stays as it is and the old reports keep working. **Waits on question 3.** |
+| **3** Commission | Per-deal entries · approval chain · payment tracking · new `promotion_value` column | Medium | `agency_commissions` stays as it is and the old reports keep working. |
 | **4** Agency & Visit | New agency profile · central visit record · computed Last Visit · lightbox | Low | New columns on `office_visits`. `visit_plans` behaves exactly as before. |
 | **5** Cleanup | Hide Follow-up Board · fold Site Visit / Visit Summary into views · regroup menu · reports | **High** | This is what people see every day, so it goes last — and every folded route needs a redirect. |
 
@@ -248,6 +248,50 @@ A reminder must never fire twice. Enforce it with **a unique key in the database
 New tables `deal_commissions` + `deal_commission_events`. **`agency_commissions` stays untouched.**
 
 One deal can carry several entries: Seller · Closer · Agency · Agent · Referral
+
+### Net Price — decided by the owner
+
+```
+Net Price = Sale Price − Discount − Promotion value
+```
+
+**Tax is not deducted.** The owner named discount and promotion only. If VAT or withholding should
+come out of the basis, say so before this phase is coded.
+
+`basis` is still recorded per entry, because not every entry runs on Net Price:
+
+| Entry | Basis | Example |
+| --- | --- | --- |
+| Agency | Sale Price | 3,500,000 · 3% = **105,000** |
+| Seller | Net Price | 3,350,000 · 1% = **33,500** |
+| Closer | Net Price | 3,350,000 · 1% = **33,500** |
+| Agent | Agency commission | 105,000 · 20% = **21,000** |
+
+Worked from Sale Price 3,500,000 − discount 50,000 − promotion value 100,000 = **Net Price 3,350,000**.
+
+#### The formula needs one new column
+
+| Field | Today | Action |
+| --- | --- | --- |
+| `bookings.selling_price` | Float — the sale price | Use as is |
+| `bookings.discount` | Float, **already a baht amount** | Use as is |
+| `bookings.promotion` | **String — free text, carries no number** | Keep it, do not touch it |
+| `bookings.promotion_value` | **Does not exist** | **Add: Float, nullable** |
+
+`discount` can be trusted as an amount rather than a percentage: `deals.service.ts` already computes
+`value = sellingPrice − discount` in five places, so the deal value shown on the board is that
+subtraction today. The meaning is settled — do not reinterpret it.
+
+`promotion` stays exactly as it is, per the add-never-alter rule. The number goes in the new column.
+
+```sql
+ALTER TABLE "bookings" ADD COLUMN IF NOT EXISTS "promotion_value" DOUBLE PRECISION;
+UPDATE "bookings" SET "promotion_value" = 0 WHERE "promotion_value" IS NULL;
+```
+
+**A null `promotion_value` counts as 0, never as “skip the deal”.** Backfill the existing rows to 0
+and record which ones were assumed, so nobody later reads an old deal as having had no promotion
+when in fact nobody checked.
 
 ```
 Calculated → Pending Approval → Approved → Ready for Payment → Paid
@@ -433,7 +477,10 @@ done
 - Selecting an agent from a different agency → rejected on the server
 - An agency with 5 visits → opening the profile shows the newest visit date as Last Visit
 - Due 500,000, paid 300,000 → outstanding 200,000, status Partially Paid
-- basis 3,500,000, rate 3% → commission 105,000
+- Sale Price 3,500,000, rate 3% on Sale Price → commission 105,000
+- Sale Price 3,500,000, discount 50,000, promotion value 100,000, rate 1% on Net Price →
+  Net Price 3,350,000 and commission 33,500
+- A deal with `promotion_value` null → treated as 0, and the commission still calculates
 - A visit with 3 photos → clicking the photo pill opens the lightbox with all 3 reachable
 - Recording a payment above the amount due → rejected
 - Sales attempting to edit an approved commission → rejected at the API
@@ -489,10 +536,12 @@ To change one variable use `--update-env-vars` / `--update-secrets` (merge, not 
 
 ## Still open for the owner
 
-1. **Commission basis — what exactly is Net Price?** (sale price less discount? less promotion? less tax?)
-   Needed before Phase 3 starts.
-2. **What payment threshold makes commission calculable** — which milestone, and does it vary by project?
-3. **Is overpayment allowed?** If so, where does the excess go?
-4. **Can Sales see company-wide figures**, or only their own deals?
-5. **A customer who cancels after paying** — full refund, fee deducted, or forfeited?
+1. **Does promotion value include cashback and cash bonus?** `bookings.cashback` and
+   `bookings.cash_bonus` already hold numbers. If those are part of the promotion, they must go into
+   `promotion_value` **once** — counting them twice would understate the basis.
+2. **Should tax come out of the basis?** The current answer says no. Confirm, so it is on the record.
+3. **What payment threshold makes commission calculable** — which milestone, and does it vary by project?
+4. **Is overpayment allowed?** If so, where does the excess go?
+5. **Can Sales see company-wide figures**, or only their own deals?
+6. **A customer who cancels after paying** — full refund, fee deducted, or forfeited?
    A rule is needed before Refunded can be built.

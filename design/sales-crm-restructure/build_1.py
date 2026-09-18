@@ -128,9 +128,10 @@ Q = [
    "This keeps Booking, Contract, Down Payment, Installment and Transfer in one table",
    True),
   ("What is commission calculated on?",
-   "<code>basis</code> must be stated per entry (Sale Price or Net Price). One value for the whole system is wrong.",
-   "Today <code>bookings.commission_pct</code> holds a single value per deal, which cannot express several recipients",
-   False),
+   "<b>Answered: Net Price = Sale Price − Discount − Promotion value.</b> Tax is not deducted. "
+   "<code>basis</code> is still stated per entry, because the agency rate runs on Sale Price.",
+   "Needs a new <code>bookings.promotion_value</code> column — today <code>promotion</code> is free text and carries no number",
+   True),
   ("What does Quota mean?",
    "<b>Already answered: Ownership Quota.</b> Use the live values in <code>bookings.quota_category</code>",
    "Thai Quota · Thai Company · Foreign Quota · Sub-Ing-Sis · Lease-hold — real data exists, do not invent a new list",
@@ -154,7 +155,7 @@ for i, (q, a, why, settled) in enumerate(Q, 1):
 q_panel = panel(
     "SIX BUSINESS QUESTIONS THAT MUST BE LOCKED BEFORE THE DATABASE IS TOUCHED",
     body=table(["Question", "Proposed answer", "Why", "State"], qrows, [200, 330, None, 190]),
-    note="Five are answerable from what is already in production. Only the commission basis needs the owner to decide.",
+    note="All six are now settled. The commission basis was decided by the owner: Net Price = Sale Price − Discount − Promotion value, with no tax deducted.",
     grow=False)
 
 # -- 5) Build order ------------------------------------------------------
@@ -184,8 +185,9 @@ PHASES = [
     "Reminders before and after the due date"], 2,
    "All new tables, nothing existing touched — but this is real money, so UAT with finance before it goes live."),
   ("Phase 3", "Commission",
-   ["Per-deal commission entries", "Approval chain", "Payment tracking"], 2,
-   "New tables. agency_commissions stays exactly as it is and the old reports keep working."),
+   ["Per-deal commission entries", "Approval chain", "Payment tracking",
+    "New promotion_value column for the Net Price basis"], 2,
+   "New tables plus one column. agency_commissions stays exactly as it is and the old reports keep working."),
   ("Phase 4", "Agency & Visit",
    ["New agency profile", "Central visit record + visit type", "Computed Last Visit",
     "Photo lightbox"], 1,
