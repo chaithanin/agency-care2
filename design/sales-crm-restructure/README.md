@@ -4,6 +4,8 @@ Design canvas: https://claude.ai/artifact/SNAd42xy9r3icnxvxFfHhf
 
 Work order for the main project: [`BRIEF.md`](./BRIEF.md) — copy the whole file and hand it over.
 
+Open decisions, drafted with safe defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
+
 This requirement restructures Agency Care's sales side into **four core domains**, with one
 governing rule from the owner: **disturb the existing workflow as little as possible.**
 

@@ -37,6 +37,8 @@ Design canvas, 10 sheets — https://claude.ai/artifact/SNAd42xy9r3icnxvxFfHhf
 Source files: repo `chaithanin/agency-care2`,
 branch `claude/agency-care-test-project-zo163o`, folder `design/sales-crm-restructure/`
 
+Open decisions and their drafted defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
+
 **Start with `Main.dc.html`, then read `Migration.dc.html` immediately after.** Those two sheets
 carry the table of what already exists, the impact levels, and how to keep the impact small.
 
@@ -592,14 +594,18 @@ To change one variable use `--update-env-vars` / `--update-secrets` (merge, not 
 
 ## Still open for the owner
 
-1. **What payment threshold makes commission calculable** — which milestone, and does it vary by project?
-2. **Is overpayment allowed?** If so, where does the excess go?
-3. **Can Sales see company-wide figures**, or only their own deals?
-4. **A customer who cancels after paying** — full refund, fee deducted, or forfeited?
-   A rule is needed before Refunded can be built.
-5. **The three promotion types left as `null`** (`marketing_support`, `special_unit`, `custom`) —
-   these can be decided per promotion as they come up, but if there is a standing rule, say it now
-   and the migration can seed them too.
+**These are drafted, not blocking.** Each one has a draft answer and a safe default in
+[`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md) — build the draft, and fill the decision in there when the
+owner decides. Every default is the strict direction, so a later decision only relaxes a rule rather
+than having to undo data.
+
+| # | Question | Draft answer being built |
+| --- | --- | --- |
+| 1 | When does commission become calculable? | Down Payment fully paid, configurable per project |
+| 2 | Is overpayment allowed? | No — the server rejects it |
+| 3 | Can Sales see company-wide figures? | No — reuse the existing `visibleOr()` rule in `deals.service.ts` |
+| 4 | Customer cancels after paying | No automatic refund; Finance enters a reversal by hand |
+| 5 | The three promotion types left `null` | Ask once per promotion; nothing assumed |
 
 ### Decisions already recorded
 
