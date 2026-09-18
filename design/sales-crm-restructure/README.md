@@ -2,7 +2,9 @@
 
 Design canvas: https://claude.ai/artifact/SNAd42xy9r3icnxvxFfHhf
 
-Work order for the main project: [`BRIEF.md`](./BRIEF.md) — copy the whole file and hand it over.
+Message to hand the main project: [`COMMAND.md`](./COMMAND.md) — paste one phase at a time.
+
+The full requirement: [`BRIEF.md`](./BRIEF.md)
 
 Per-phase work orders, with the measured impact on the existing system:
 [`WORK_ORDERS.md`](./WORK_ORDERS.md)
