@@ -37,6 +37,8 @@ Design canvas, 10 sheets — https://claude.ai/artifact/SNAd42xy9r3icnxvxFfHhf
 Source files: repo `chaithanin/agency-care2`,
 branch `claude/agency-care-test-project-zo163o`, folder `design/sales-crm-restructure/`
 
+Per-phase work orders, with the measured impact on the existing system: [`WORK_ORDERS.md`](./WORK_ORDERS.md)
+
 Open decisions and their drafted defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
 
 **Start with `Main.dc.html`, then read `Migration.dc.html` immediately after.** Those two sheets
@@ -420,6 +422,11 @@ Download shown by permission and checked on the server.
 **Before hiding any menu entry, trace the route, the API, the permission, the widget on Home and the
 deep links in `in_app_notifications`** — it is not just deleting a line from `Layout.tsx`.
 
+Measured for the three folded routes (see [`WORK_ORDERS.md`](./WORK_ORDERS.md) Phase 5): no
+notification link points at any of them. The two live traps are the `?employeeId=` query parameter
+on the button in `EmployeeFilePage.tsx:168`, and `@Get('workflow-board')` in `visit.controller.ts:251`,
+which is an API endpoint that merely shares the name with the page.
+
 ### New menu — regrouped into the four domains without changing a route
 
 ```
@@ -520,7 +527,8 @@ done
 - [ ] Every report produces the same numbers as before, compared line by line
 - [ ] A link bookmarked as `?status=holding` still opens and still finds data
 - [ ] `/workflow-board` · `/site-visit-report` · `/visit-summary-report` still open, no 404
-- [ ] Deep links in `in_app_notifications` that point at folded pages still land correctly
+- [ ] The `?employeeId=` filter from `EmployeeFilePage` still works on the folded report
+- [ ] `@Get('workflow-board')` in `visit.controller.ts` still exists and still responds
 - [ ] `agency-mobile` calls the same API and still gets the same answer
 
 ### QA cases to write, including the failure paths

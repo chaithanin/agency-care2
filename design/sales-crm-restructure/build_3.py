@@ -3,7 +3,7 @@
 from tokens import *
 from shell import *
 
-W, H = 1660, 2180
+W, H = 1660, 3120
 
 before = f'''<div class="col" style="gap:8px;flex:1;min-width:0">
   <span class="cap mut">In production today — api/src/common/kanban-stages.ts</span>
@@ -70,6 +70,66 @@ merge = panel("MERGING HOLDING + RESERVATION — done in config, not by renaming
               note="deal_stages is already an admin-editable table and kanban-stages.ts is already the single "
                    "source of truth for the board. So this is one file plus two columns, not a new funnel.",
               grow=False)
+
+
+blast = panel("THE EXACT BLAST RADIUS — counted in the real codebase, not estimated",
+  body=(table(["File", "'holding'", "'reserve'", "What it does"], [
+    ("<code>api/src/common/report-status-stage.ts</code>", "4", "3",
+     "<b>The hinge.</b> Three maps that already translate between stage and sub status, both ways"),
+    ("<code>api/src/deals/deals.service.ts</code>", "2", "1",
+     "5 call sites — the board, the Lead Status report, and the drag-to-change-stage sync"),
+    ("<code>api/src/prisma/prisma.service.ts</code>", "1", "3", "The stage seed and the earlier remap"),
+    ("<code>api/src/booking/booking.service.ts</code>", "—", "3", "Booking defaults to <code>reserve</code>"),
+    ("<code>api/src/crm360/crm360.service.ts</code>", "1", "1", "Counts deals into report buckets"),
+    ("<code>api/src/report</code> · <code>task</code> · <code>insights</code> · <code>dashboard</code> · <code>mango</code>",
+     "5", "1", "One reference each"),
+    ("<code>web/src</code> — DealsPage · BookingPage · ReportsPage · MyVisitsPage · CustomerFormDialog · reportSort · saleReports",
+     "7", "2", "Display and sort order"),
+  ], [340, 90, 90, None]) +
+  note_box("ok", "21 references to <code>'holding'</code> and 15 to <code>'reserve'</code>, across 18 files. "
+                 "Most are one line. The work concentrates in a single file.")),
+  note="Counted with grep on feat/all-appointments-clean-on-118a2e2. Re-run the count before starting — "
+       "if it has moved, the branch has moved.",
+  grow=False)
+
+hinge = f'''<div class="card pad col grow" style="gap:13px;min-width:0;border-color:{ERROR}66">
+  <div class="row" style="gap:10px">{icon(I_WARN,17,ERROR)}
+    <h3 class="h6 grow">THE ONE CHANGE THAT CAN SILENTLY BREAK A REPORT</h3></div>
+  <span class="b2" style="color:{TXT2}">
+    <code>report-status-stage.ts</code> already keeps stage and sub status in sync both ways — which is
+    why this merge is small. But one of its functions takes the stage alone:</span>
+  <pre style="margin:0;background:{SURFACE};border:1px solid {DIVIDER};border-radius:13px;
+       padding:13px 15px;font-size:12.5px;line-height:1.7;color:{TXT2};overflow:auto"><code>// today
+export function bucketForStage(stage) {{ ... }}
+STAGE_TO_BUCKET = {{ holding: 'holding', reserve: 'reservation', ... }}
+
+// after the merge — the stage alone can no longer decide the column
+export function bucketForStage(stage, subStatus) {{ ... }}</code></pre>
+  <span class="b2" style="color:{TXT2}">The report type <code>ReportBucket</code> already lists
+  <code>'holding'</code> and <code>'reservation'</code> as <b style="color:{TXT}">separate columns</b>.
+  If the signature is not widened, both collapse into one and the Lead Status report quietly changes
+  its numbers — with no error anywhere.</span>
+  {note_box("error", "Four callers must be updated with it: deals.service.ts (lines 285 and 347), "
+                     "crm360.service.ts (line 165), and the two sync paths in "
+                     "customer-lead.service.ts and office-visit.service.ts.")}
+</div>'''
+
+drag = f'''<div class="card pad col" style="gap:12px;width:470px;flex-shrink:0">
+  <h3 class="sec">A CONSEQUENCE WORTH PLANNING FOR</h3>
+  <span class="b2" style="color:{TXT2}"><code>deals.service.ts:1239</code> calls
+  <code>reportStatusForStage(stage)</code> so that dragging a card updates the linked lead's status.</span>
+  <div class="col" style="gap:7px;background:{SURFACE};border:1px solid {DIVIDER};
+       border-radius:13px;padding:12px 14px">
+    <span class="cap mut">Today</span>
+    <span class="b2">drag onto Reservation → sub status becomes Reservation</span>
+    <span class="cap mut" style="margin-top:6px">After the merge</span>
+    <span class="b2">drag onto Holding / Reservation → <b style="color:{WARNING}">which one?</b></span>
+  </div>
+  {note_box("warn", "Dropping onto the merged column must open the Change Status modal and ask for the "
+                    "sub status. It must never pick one silently — that is exactly how the two get "
+                    "mixed up and the conversion figures stop meaning anything.")}
+  <span class="cap mut">The modal is already drawn on the Lead Management sheet.</span>
+</div>'''
 
 IMPACTS = [
  ("Kanban board /deals", "Holding and Reservation become one column", 2,
@@ -184,6 +244,8 @@ body = f'''<div class="col" style="gap:16px">
                   "Every choice here is reversible, and none of them forces anyone to change how they "
                   "work partway through.")}
   {merge}
+  {blast}
+  <div class="row" style="gap:16px;align-items:stretch">{hinge}{drag}</div>
   {impact_panel}
   {menu_panel}
   <div class="row" style="gap:16px;align-items:stretch">

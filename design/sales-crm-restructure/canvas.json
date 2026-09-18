@@ -9,118 +9,118 @@
       "title": "Read first — 4 domains · what exists · order · 8 guardrails"
     },
     {
+      "file": "Convert.dc.html",
+      "x": 0,
+      "y": 2680,
+      "w": 1600,
+      "h": 1760,
+      "title": "3 · Convert to Sold Deal"
+    },
+    {
+      "file": "Commission.dc.html",
+      "x": 0,
+      "y": 4660,
+      "w": 1560,
+      "h": 2320,
+      "title": "6 · Commission — Net Price locked"
+    },
+    {
+      "file": "Dashboard.dc.html",
+      "x": 0,
+      "y": 7200,
+      "w": 1620,
+      "h": 1620,
+      "title": "9 · Dashboard · Permissions · Design System"
+    },
+    {
       "file": "Migration.dc.html",
-      "x": 1840,
+      "x": 1980,
       "y": 0,
       "w": 1660,
-      "h": 2180,
-      "title": "Migration — least possible disturbance"
+      "h": 3120,
+      "title": "Migration — least disturbance + measured blast radius"
+    },
+    {
+      "file": "Deal.dc.html",
+      "x": 1980,
+      "y": 3340,
+      "w": 1600,
+      "h": 1620,
+      "title": "4 · Sold Deal"
+    },
+    {
+      "file": "Agency.dc.html",
+      "x": 1980,
+      "y": 5180,
+      "w": 1540,
+      "h": 1300,
+      "title": "7 · Agency"
     },
     {
       "file": "Lead.dc.html",
-      "x": 3580,
+      "x": 3860,
       "y": 0,
       "w": 1560,
       "h": 1900,
       "title": "1 · Lead Management"
     },
     {
-      "file": "Convert.dc.html",
-      "x": 0,
-      "y": 2560,
-      "w": 1600,
-      "h": 1760,
-      "title": "3 · Convert to Sold Deal"
-    },
-    {
-      "file": "Deal.dc.html",
-      "x": 1680,
-      "y": 2560,
-      "w": 1600,
-      "h": 1620,
-      "title": "4 · Sold Deal"
-    },
-    {
       "file": "Payment.dc.html",
-      "x": 3360,
-      "y": 2560,
+      "x": 3860,
+      "y": 2120,
       "w": 1620,
       "h": 1760,
       "title": "5 · Payment"
     },
     {
-      "file": "Commission.dc.html",
-      "x": 0,
-      "y": 4400,
-      "w": 1560,
-      "h": 2320,
-      "title": "6 · Commission — Net Price locked"
-    },
-    {
-      "file": "Agency.dc.html",
-      "x": 1640,
-      "y": 4400,
-      "w": 1540,
-      "h": 1300,
-      "title": "7 · Agency"
-    },
-    {
       "file": "Visit.dc.html",
-      "x": 3260,
-      "y": 4400,
+      "x": 3860,
+      "y": 4100,
       "w": 1620,
       "h": 1700,
       "title": "8 · Visit"
-    },
-    {
-      "file": "Dashboard.dc.html",
-      "x": 0,
-      "y": 6900,
-      "w": 1620,
-      "h": 1620,
-      "title": "9 · Dashboard · Permissions · Design System"
     }
   ],
   "annotations": [
     {
       "id": "note-entry",
       "x": 0,
-      "y": -240,
+      "y": -300,
       "w": 860,
       "text": "Sales CRM Restructure — Master UX/UI + Functional Architecture\nFour core domains: Lead · Sold Deal · Agency · Visit\nThe top-left sheet is the one to read first — what already exists, and the impact level of each change\nStatic mockups. The figures are illustrative; nothing is wired to an API."
     },
     {
       "id": "note-minimal",
-      "x": 1840,
-      "y": -240,
+      "x": 1980,
+      "y": -300,
       "w": 860,
       "text": "The rule that governs everything here — disturb the existing workflow as little as possible\nAdd columns and tables; never drop one or change what it means\nA folded page redirects, it is not deleted\nAnything the config tables already handle must not be hard-coded\nEvery release step must be reversible"
     },
     {
       "id": "note-order",
-      "x": 0,
-      "y": 2320,
+      "x": 1980,
+      "y": 6600,
       "w": 760,
       "text": "Build order set by the owner — do not reorder\nBusiness Rule → Data Model → Workflow / State → Information Architecture\n→ Wireframe → UI Design → API → Development → Migration → UAT\nNever start from Figma or the screens"
     },
     {
       "id": "note-existing",
-      "x": 3360,
-      "y": 4160,
+      "x": 3860,
+      "y": -300,
       "w": 800,
       "text": "Already in production — do not rebuild it\nbookings = the sold deal (closer · agency · quota · commission_pct)\ndeal_stages + kanban-stages.ts = a funnel editable from config\noffice_visits = the central visit · tasks = the task engine · deal_timeline = activity\naudit_logs = field change history"
     },
     {
       "id": "note-phase",
-      "x": 1760,
-      "y": 6900,
+      "x": 0,
+      "y": 8940,
       "w": 780,
       "text": "Five phases, one PR each\n1 Core Sales → 2 Financial → 3 Commission → 4 Agency & Visit → 5 Cleanup\nPhase 5 touches what people see every day, so it goes last"
     },
     {
       "id": "note-netprice",
-      "x": 1760,
-      "y": 7220,
+      "x": 3860,
+      "y": 5920,
       "w": 780,
       "text": "Commission basis — decided by the owner\nNet Price = Sale Price - Discount - Promotion value, with no tax deducted\nCashback and cash bonus both count, conditionally — the promotion master carries\na reduces_commission_basis flag and the deal stores the per-line breakdown\ndiscount is already a baht amount; promotion is free text, so promotion_value is new"
     }
