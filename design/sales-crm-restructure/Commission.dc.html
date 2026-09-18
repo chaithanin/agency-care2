@@ -39,7 +39,7 @@
   td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
 </style>
 </helmet>
-<div style="width:1560px;min-height:1900px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div style="width:1560px;min-height:2320px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
 <div class="col" style="padding:26px 30px;gap:18px">
   <div class="row" style="gap:12px;align-items:flex-start">
     <div class="col grow" style="gap:3px">
@@ -82,7 +82,7 @@
   <div class="row" style="gap:12px;align-items:stretch;flex-wrap:wrap">
     <div class="col" style="gap:5px;flex:1;min-width:210px">
       <span class="cap mut">Worked example</span>
-      <table><thead><tr><th style=width:180px>Line</th><th>THB</th></tr></thead><tbody><tr><td>Sale Price</td><td>3,500,000</td></tr><tr><td>less Discount</td><td><span style="color:#EF4444">− 50,000</span></td></tr><tr><td>less Promotion value</td><td><span style="color:#EF4444">− 100,000</span></td></tr><tr><td><b>Net Price</b></td><td><b style="color:#22C55E">3,350,000</b></td></tr></tbody></table>
+      <table><thead><tr><th style=width:180px>Line</th><th>THB</th></tr></thead><tbody><tr><td>Sale Price</td><td>3,500,000</td></tr><tr><td>less Discount</td><td><span style="color:#EF4444">− 50,000</span></td></tr><tr><td>less Promotion value</td><td><span style="color:#EF4444">− 100,000</span></td></tr><tr><td>&nbsp;&nbsp;cashback 60,000 + cash bonus 40,000</td><td>see breakdown</td></tr><tr><td><b>Net Price</b></td><td><b style="color:#22C55E">3,350,000</b></td></tr></tbody></table>
     </div>
     <div class="col" style="gap:5px;flex:1;min-width:210px">
       <span class="cap mut">What each entry is calculated on</span>
@@ -101,6 +101,31 @@
     that subtraction today, so the meaning is settled.</span>
   </div>
   <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">A null promotion_value counts as 0, never as “skip the deal”. Backfill the existing rows to 0 and record which ones were assumed, so nobody reads an old deal as having had no promotion when nobody checked.</span></div>
+</div></div>
+  <div class="row" style="gap:16px;align-items:stretch"><div class="card pad col grow" style="gap:13px;min-width:0">
+  <div class="row" style="gap:10px">
+    <h3 class="sec grow">PROMOTION VALUE IS A BREAKDOWN, NOT ONE NUMBER</h3>
+    <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">conditional</span></div>
+  <span class="b2" style="color:#CBD5E1">The owner's rule: cashback and cash bonus <b style="color:#F1F5F9">both
+  count, depending on the promotion's conditions</b>. So the deal stores which components went in and
+  which did not — never a single opaque figure nobody can check.</span>
+  <table><thead><tr><th style=width:220px>Component</th><th style=width:200px>Source</th><th style=width:100px>THB</th><th style=width:100px>In basis?</th><th>Why</th></tr></thead><tbody><tr><td>Cashback</td><td><code>bookings.cashback</code></td><td>60,000</td><td><span style="color:#22C55E;font-weight:700">yes</span></td><td>Reduces what the customer effectively pays</td></tr><tr><td>Cash bonus</td><td><code>bookings.cash_bonus</code></td><td>40,000</td><td><span style="color:#22C55E;font-weight:700">yes</span></td><td>Same — money back to the customer</td></tr><tr><td>Additional commission promo</td><td>promotion master</td><td>30,000</td><td><span style="color:#EF4444;font-weight:700">no</span></td><td>Adds commission, it does not cut the price — deducting it would count it twice</td></tr><tr><td><b>promotion_value</b></td><td><b>sum of the included lines</b></td><td><b>100,000</b></td><td></td><td></td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">A promotion of type <code>additional_commission</code> or <code>fixed_commission</code> must never reduce the basis. It changes the commission itself. Deducting it as well pays the same benefit out twice.</span></div>
+</div><div class="card pad col" style="gap:12px;width:520px;flex-shrink:0">
+  <h3 class="sec">HOW THE CONDITION IS DECIDED — a flag, not free text</h3>
+  <span class="cap mut">Today <code>Promotion.cashBonusCondition</code> is <code>@db.Text</code>.
+  No code can decide from prose, so the promotion master needs an explicit flag.</span>
+  <table><thead><tr><th style=width:250px>promotion_type</th><th>reduces_commission_basis</th></tr></thead><tbody><tr><td><code>cash_back</code> · <code>cash_bonus</code></td><td><span style="color:#22C55E;font-weight:700">true</span></td></tr><tr><td><code>discount</code> · <code>free_gift</code></td><td><span style="color:#22C55E;font-weight:700">true</span></td></tr><tr><td><code>additional_commission</code></td><td><span style="color:#EF4444;font-weight:700">false</span></td></tr><tr><td><code>fixed_commission</code></td><td><span style="color:#EF4444;font-weight:700">false</span></td></tr><tr><td><code>marketing_support</code> · <code>special_unit</code> · <code>custom</code></td><td><span style="color:#FBBF24;font-weight:700">null, ask once</span></td></tr></tbody></table>
+  <div class="col" style="gap:6px">
+    <span class="cap mut">New columns — additive, nothing altered</span>
+    <span class="cap" style="color:#CBD5E1">
+      <code>promotions.reduces_commission_basis</code> Boolean, nullable<br>
+      <code>agency_promotions.reduces_commission_basis</code> Boolean, nullable<br>
+      <code>bookings.promotion_value</code> Float, nullable<br>
+      <code>bookings.promotion_value_items</code> Json, the breakdown above</span>
+  </div>
+  <div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600"><b>null means nobody has decided yet, not false.</b> The wizard asks once, records who answered, and stores it on the deal. Treating null as false would quietly inflate every basis.</span></div>
+  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600"><b>promotion_value is a snapshot</b>, exactly like the payment plan. Never recompute it from cashback at read time — if someone edits cashback later, re-derive it explicitly and write an audit entry.</span></div>
 </div></div>
   <div class="row" style="gap:16px;align-items:stretch"><div class="card pad col grow" style="gap:13px;min-width:0">
   <h3 class="sec">WORKFLOW</h3>
@@ -150,7 +175,7 @@
   <div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600">Changing the sale price recalculates any commission still unapproved. Entries already approved must not change by themselves — issue an adjustment instead.</span></div>
 </div><div class="card pad col" style="gap:12px;width:480px;flex-shrink:0">
   <h3 class="sec">ACCEPTANCE — the arithmetic must hold in every case</h3>
-  <table><thead><tr><th style=width:250px>Case</th><th>Required result</th></tr></thead><tbody><tr><td>Sale Price 3,500,000 · rate 3%</td><td><b style="color:#22C55E">105,000</b></td></tr><tr><td>3,500,000 − 50,000 − 100,000 · rate 1%</td><td>Net <b>3,350,000</b> → <b style="color:#22C55E">33,500</b></td></tr><tr><td>promotion_value is null</td><td>Treated as <b>0</b>, never as skip</td></tr><tr><td>Due 500,000 · paid 300,000</td><td>Outstanding <b>200,000</b> · <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Partially Paid</span></td></tr><tr><td>Deal cancelled after commission approved</td><td>Issue a <span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Reversed</span> entry; never delete the original</td></tr></tbody></table>
+  <table><thead><tr><th style=width:250px>Case</th><th>Required result</th></tr></thead><tbody><tr><td>Sale Price 3,500,000 · rate 3%</td><td><b style="color:#22C55E">105,000</b></td></tr><tr><td>3,500,000 − 50,000 − 100,000 · rate 1%</td><td>Net <b>3,350,000</b> → <b style="color:#22C55E">33,500</b></td></tr><tr><td>promotion_value is null</td><td>Treated as <b>0</b>, never as skip</td></tr><tr><td>Promo type additional_commission</td><td><b style="color:#EF4444">Excluded</b> from the basis</td></tr><tr><td>reduces_commission_basis is null</td><td>Wizard asks once; <b>never</b> assumed false</td></tr><tr><td>Due 500,000 · paid 300,000</td><td>Outstanding <b>200,000</b> · <span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Partially Paid</span></td></tr><tr><td>Deal cancelled after commission approved</td><td>Issue a <span class="chip" style="color:#EF4444;background:rgba(239,68,68,.15)">Reversed</span> entry; never delete the original</td></tr></tbody></table>
   <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">Agree the rounding before writing code: round to two decimals per entry, then sum — not sum then round.</span></div>
 </div></div>
 </div>

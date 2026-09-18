@@ -284,14 +284,66 @@ subtraction today. The meaning is settled — do not reinterpret it.
 
 `promotion` stays exactly as it is, per the add-never-alter rule. The number goes in the new column.
 
+#### Promotion value is a breakdown, not one number
+
+The owner's rule: **cashback and cash bonus both count, depending on the promotion's conditions.**
+So the deal must record which components went in and which did not — never a single opaque figure.
+
+| Component | Source | THB | In basis? | Why |
+| --- | --- | --- | --- | --- |
+| Cashback | `bookings.cashback` | 60,000 | **yes** | Reduces what the customer effectively pays |
+| Cash bonus | `bookings.cash_bonus` | 40,000 | **yes** | Same — money back to the customer |
+| Additional-commission promo | promotion master | 30,000 | **no** | Adds commission, does not cut the price |
+| **`promotion_value`** | **sum of the included lines** | **100,000** | | |
+
+**A promotion of type `additional_commission` or `fixed_commission` must never reduce the basis.**
+It changes the commission itself; deducting it as well pays the same benefit out twice.
+
+#### The condition must be a flag, not free text
+
+`Promotion.cashBonusCondition` is `@db.Text` today. No code can decide from prose, so the promotion
+master needs an explicit flag.
+
+| `promotion_type` | `reduces_commission_basis` |
+| --- | --- |
+| `cash_back` · `cash_bonus` | true |
+| `discount` · `free_gift` | true |
+| `additional_commission` | false |
+| `fixed_commission` | false |
+| `marketing_support` · `special_unit` · `custom` | **null — ask once** |
+
+**`null` means nobody has decided yet, not false.** The wizard asks once, records who answered, and
+stores the answer on the deal. Treating null as false would quietly inflate every basis.
+
+**`promotion_value` is a snapshot**, exactly like the payment plan. Never recompute it from
+`cashback` at read time — if someone edits `cashback` later, re-derive it explicitly and write an
+audit entry.
+
+#### Migration — additive only
+
 ```sql
-ALTER TABLE "bookings" ADD COLUMN IF NOT EXISTS "promotion_value" DOUBLE PRECISION;
-UPDATE "bookings" SET "promotion_value" = 0 WHERE "promotion_value" IS NULL;
+ALTER TABLE "bookings"           ADD COLUMN IF NOT EXISTS "promotion_value" DOUBLE PRECISION;
+ALTER TABLE "bookings"           ADD COLUMN IF NOT EXISTS "promotion_value_items" JSONB;
+ALTER TABLE "promotions"         ADD COLUMN IF NOT EXISTS "reduces_commission_basis" BOOLEAN;
+ALTER TABLE "agency_promotions"  ADD COLUMN IF NOT EXISTS "reduces_commission_basis" BOOLEAN;
+
+-- Seed the flag from the promotion type. Everything else stays null on purpose.
+UPDATE "agency_promotions" SET "reduces_commission_basis" = true
+  WHERE "promotion_type" IN ('cash_back','cash_bonus') AND "reduces_commission_basis" IS NULL;
+UPDATE "agency_promotions" SET "reduces_commission_basis" = false
+  WHERE "promotion_type" IN ('additional_commission','fixed_commission')
+    AND "reduces_commission_basis" IS NULL;
+
+-- Existing deals: 0 with an explicit marker, so nobody mistakes an assumption for a checked figure.
+UPDATE "bookings"
+   SET "promotion_value" = 0,
+       "promotion_value_items" = '[{"source":"backfill","amount":0,"included":true,
+                                    "reason":"assumed at migration, never reviewed"}]'::jsonb
+ WHERE "promotion_value" IS NULL;
 ```
 
-**A null `promotion_value` counts as 0, never as “skip the deal”.** Backfill the existing rows to 0
-and record which ones were assumed, so nobody later reads an old deal as having had no promotion
-when in fact nobody checked.
+**A null `promotion_value` counts as 0, never as “skip the deal”.** The backfill marks which rows were
+assumed, so nobody later reads an old deal as having had no promotion when in fact nobody checked.
 
 ```
 Calculated → Pending Approval → Approved → Ready for Payment → Paid
@@ -481,6 +533,10 @@ done
 - Sale Price 3,500,000, discount 50,000, promotion value 100,000, rate 1% on Net Price →
   Net Price 3,350,000 and commission 33,500
 - A deal with `promotion_value` null → treated as 0, and the commission still calculates
+- A promotion of type `additional_commission` → **excluded** from the basis, not deducted
+- A promotion whose `reduces_commission_basis` is null → the wizard asks; it is **never** assumed false
+- Editing `cashback` after the deal exists → `promotion_value` does **not** move on its own;
+  re-deriving it writes an audit entry
 - A visit with 3 photos → clicking the photo pill opens the lightbox with all 3 reachable
 - Recording a payment above the amount due → rejected
 - Sales attempting to edit an approved commission → rejected at the API
@@ -536,12 +592,19 @@ To change one variable use `--update-env-vars` / `--update-secrets` (merge, not 
 
 ## Still open for the owner
 
-1. **Does promotion value include cashback and cash bonus?** `bookings.cashback` and
-   `bookings.cash_bonus` already hold numbers. If those are part of the promotion, they must go into
-   `promotion_value` **once** — counting them twice would understate the basis.
-2. **Should tax come out of the basis?** The current answer says no. Confirm, so it is on the record.
-3. **What payment threshold makes commission calculable** — which milestone, and does it vary by project?
-4. **Is overpayment allowed?** If so, where does the excess go?
-5. **Can Sales see company-wide figures**, or only their own deals?
-6. **A customer who cancels after paying** — full refund, fee deducted, or forfeited?
+1. **What payment threshold makes commission calculable** — which milestone, and does it vary by project?
+2. **Is overpayment allowed?** If so, where does the excess go?
+3. **Can Sales see company-wide figures**, or only their own deals?
+4. **A customer who cancels after paying** — full refund, fee deducted, or forfeited?
    A rule is needed before Refunded can be built.
+5. **The three promotion types left as `null`** (`marketing_support`, `special_unit`, `custom`) —
+   these can be decided per promotion as they come up, but if there is a standing rule, say it now
+   and the migration can seed them too.
+
+### Decisions already recorded
+
+- **Commission basis:** Net Price = Sale Price − Discount − Promotion value
+- **Tax:** not deducted from the basis
+- **Cashback and cash bonus:** both count toward promotion value, conditionally — resolved by the
+  `reduces_commission_basis` flag, with the per-deal breakdown stored on the deal
+- **Approach:** add columns, never alter existing ones

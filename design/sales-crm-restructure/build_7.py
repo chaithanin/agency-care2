@@ -3,7 +3,7 @@
 from tokens import *
 from shell import *
 
-W, H = 1560, 1900
+W, H = 1560, 2320
 
 summ = kpi_strip([("193,000", "Total Commission", TXT), ("105,000", "Approved", SUCCESS),
                   ("67,000", "Pending", WARNING), ("21,000", "On Hold", TXT2)])
@@ -49,6 +49,7 @@ net = f'''<div class="card pad col grow" style="gap:13px;min-width:0;border-colo
         ("Sale Price", "3,500,000"),
         ("less Discount", f'<span style="color:{ERROR}">− 50,000</span>'),
         ("less Promotion value", f'<span style="color:{ERROR}">− 100,000</span>'),
+        ("&nbsp;&nbsp;cashback 60,000 + cash bonus 40,000", "see breakdown"),
         ("<b>Net Price</b>", f'<b style="color:{SUCCESS}">3,350,000</b>'),
       ], [180, None])}
     </div>
@@ -89,6 +90,59 @@ cols_panel = f'''<div class="card pad col" style="gap:12px;width:520px;flex-shri
   {note_box("error", "A null promotion_value counts as 0, never as “skip the deal”. "
                      "Backfill the existing rows to 0 and record which ones were assumed, "
                      "so nobody reads an old deal as having had no promotion when nobody checked.")}
+</div>'''
+
+
+brk = f'''<div class="card pad col grow" style="gap:13px;min-width:0">
+  <div class="row" style="gap:10px">
+    <h3 class="sec grow">PROMOTION VALUE IS A BREAKDOWN, NOT ONE NUMBER</h3>
+    <span class="chip" style="color:{WARNING};background:rgba(251,191,36,.15)">conditional</span></div>
+  <span class="b2" style="color:{TXT2}">The owner's rule: cashback and cash bonus <b style="color:{TXT}">both
+  count, depending on the promotion's conditions</b>. So the deal stores which components went in and
+  which did not — never a single opaque figure nobody can check.</span>
+  {table(["Component", "Source", "THB", "In basis?", "Why"], [
+    ("Cashback", "<code>bookings.cashback</code>", "60,000",
+     f'<span style="color:{SUCCESS};font-weight:700">yes</span>',
+     "Reduces what the customer effectively pays"),
+    ("Cash bonus", "<code>bookings.cash_bonus</code>", "40,000",
+     f'<span style="color:{SUCCESS};font-weight:700">yes</span>',
+     "Same — money back to the customer"),
+    ("Additional commission promo", "promotion master", "30,000",
+     f'<span style="color:{ERROR};font-weight:700">no</span>',
+     "Adds commission, it does not cut the price — deducting it would count it twice"),
+    ("<b>promotion_value</b>", "<b>sum of the included lines</b>", "<b>100,000</b>", "", ""),
+  ], [220, 200, 100, 100, None])}
+  {note_box("error", "A promotion of type <code>additional_commission</code> or "
+                     "<code>fixed_commission</code> must never reduce the basis. It changes the "
+                     "commission itself. Deducting it as well pays the same benefit out twice.")}
+</div>'''
+
+rules = f'''<div class="card pad col" style="gap:12px;width:520px;flex-shrink:0">
+  <h3 class="sec">HOW THE CONDITION IS DECIDED — a flag, not free text</h3>
+  <span class="cap mut">Today <code>Promotion.cashBonusCondition</code> is <code>@db.Text</code>.
+  No code can decide from prose, so the promotion master needs an explicit flag.</span>
+  {table(["promotion_type", "reduces_commission_basis"], [
+    ("<code>cash_back</code> · <code>cash_bonus</code>", f'<span style="color:{SUCCESS};font-weight:700">true</span>'),
+    ("<code>discount</code> · <code>free_gift</code>", f'<span style="color:{SUCCESS};font-weight:700">true</span>'),
+    ("<code>additional_commission</code>", f'<span style="color:{ERROR};font-weight:700">false</span>'),
+    ("<code>fixed_commission</code>", f'<span style="color:{ERROR};font-weight:700">false</span>'),
+    ("<code>marketing_support</code> · <code>special_unit</code> · <code>custom</code>",
+     f'<span style="color:{WARNING};font-weight:700">null, ask once</span>'),
+  ], [250, None])}
+  <div class="col" style="gap:6px">
+    <span class="cap mut">New columns — additive, nothing altered</span>
+    <span class="cap" style="color:{TXT2}">
+      <code>promotions.reduces_commission_basis</code> Boolean, nullable<br>
+      <code>agency_promotions.reduces_commission_basis</code> Boolean, nullable<br>
+      <code>bookings.promotion_value</code> Float, nullable<br>
+      <code>bookings.promotion_value_items</code> Json, the breakdown above</span>
+  </div>
+  {note_box("warn", "<b>null means nobody has decided yet, not false.</b> The wizard asks once, "
+                    "records who answered, and stores it on the deal. Treating null as false would "
+                    "quietly inflate every basis.")}
+  {note_box("info", "<b>promotion_value is a snapshot</b>, exactly like the payment plan. "
+                    "Never recompute it from cashback at read time — if someone edits cashback later, "
+                    "re-derive it explicitly and write an audit entry.")}
 </div>'''
 
 wf = f'''<div class="card pad col grow" style="gap:13px;min-width:0">
@@ -145,6 +199,8 @@ calc = f'''<div class="card pad col" style="gap:12px;width:480px;flex-shrink:0">
     ("Sale Price 3,500,000 · rate 3%", f'<b style="color:{SUCCESS}">105,000</b>'),
     ("3,500,000 − 50,000 − 100,000 · rate 1%", f'Net <b>3,350,000</b> → <b style="color:{SUCCESS}">33,500</b>'),
     ("promotion_value is null", f'Treated as <b>0</b>, never as skip'),
+    ("Promo type additional_commission", f'<b style="color:{ERROR}">Excluded</b> from the basis'),
+    ("reduces_commission_basis is null", "Wizard asks once; <b>never</b> assumed false"),
     ("Due 500,000 · paid 300,000", f'Outstanding <b>200,000</b> · {flow_chip("Partially Paid")}'),
     ("Deal cancelled after commission approved", f'Issue a {flow_chip("Reversed")} entry; never delete the original'),
   ], [250, None])}
@@ -155,6 +211,7 @@ calc = f'''<div class="card pad col" style="gap:12px;width:480px;flex-shrink:0">
 body = f'''<div class="col" style="gap:16px">
   {tbl}
   <div class="row" style="gap:16px;align-items:stretch">{net}{cols_panel}</div>
+  <div class="row" style="gap:16px;align-items:stretch">{brk}{rules}</div>
   <div class="row" style="gap:16px;align-items:stretch">{wf}{perm}</div>
   <div class="row" style="gap:16px;align-items:stretch">{audit}{calc}</div>
 </div>'''

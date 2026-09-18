@@ -53,7 +53,7 @@
       "x": 0,
       "y": 4400,
       "w": 1560,
-      "h": 1900,
+      "h": 2320,
       "title": "6 · Commission — Net Price locked"
     },
     {
@@ -75,7 +75,7 @@
     {
       "file": "Dashboard.dc.html",
       "x": 0,
-      "y": 6480,
+      "y": 6900,
       "w": 1620,
       "h": 1620,
       "title": "9 · Dashboard · Permissions · Design System"
@@ -113,16 +113,16 @@
     {
       "id": "note-phase",
       "x": 1760,
-      "y": 6480,
+      "y": 6900,
       "w": 780,
       "text": "Five phases, one PR each\n1 Core Sales → 2 Financial → 3 Commission → 4 Agency & Visit → 5 Cleanup\nPhase 5 touches what people see every day, so it goes last"
     },
     {
       "id": "note-netprice",
       "x": 1760,
-      "y": 6800,
+      "y": 7220,
       "w": 780,
-      "text": "Commission basis — decided by the owner\nNet Price = Sale Price − Discount − Promotion value, with no tax deducted\nNeeds one new column: bookings.promotion_value (today promotion is free text)\ndiscount is already a baht amount — deals.service.ts subtracts it in five places"
+      "text": "Commission basis — decided by the owner\nNet Price = Sale Price - Discount - Promotion value, with no tax deducted\nCashback and cash bonus both count, conditionally — the promotion master carries\na reduces_commission_basis flag and the deal stores the per-line breakdown\ndiscount is already a baht amount; promotion is free text, so promotion_value is new"
     }
   ],
   "launch": {
