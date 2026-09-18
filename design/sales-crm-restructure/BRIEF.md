@@ -39,6 +39,9 @@ branch `claude/agency-care-test-project-zo163o`, folder `design/sales-crm-restru
 
 Per-phase work orders, with the measured impact on the existing system: [`WORK_ORDERS.md`](./WORK_ORDERS.md)
 
+What changes in production on deploy, and how far back each phase can be taken:
+[`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
+
 Open decisions and their drafted defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
 
 **Start with `Main.dc.html`, then read `Migration.dc.html` immediately after.** Those two sheets
@@ -555,6 +558,10 @@ done
 ## Deploying
 
 **Read [`design/PROJECT_RULES.md`](../PROJECT_RULES.md) in full before deploying.**
+
+**Read [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md) before the first traffic switch.** Phase 1 rewrites
+existing rows and is the one phase a container rollback does not undo; that file carries the
+recovery SQL.
 
 ```powershell
 .\deploy.ps1

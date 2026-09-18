@@ -7,6 +7,8 @@ Work order for the main project: [`BRIEF.md`](./BRIEF.md) — copy the whole fil
 Per-phase work orders, with the measured impact on the existing system:
 [`WORK_ORDERS.md`](./WORK_ORDERS.md)
 
+What changes in production on deploy: [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
+
 Open decisions, drafted with safe defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
 
 This requirement restructures Agency Care's sales side into **four core domains**, with one

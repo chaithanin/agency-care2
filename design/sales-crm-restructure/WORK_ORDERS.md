@@ -13,6 +13,7 @@ Common to all five:
 - Add columns, never alter existing ones. Keep every old route alive.
 - Clear the build caches before trusting a build.
 - **Do not deploy.** Open the PR and wait.
+- Deploy-time effects and rollback limits per phase: [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
 
 ---
 
