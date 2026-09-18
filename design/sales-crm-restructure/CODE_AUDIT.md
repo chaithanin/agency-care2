@@ -1,7 +1,17 @@
 # Code audit — bugs and data linkage in the live system
 
-Read against `chaithanin/agency-care`, branch `feat/all-appointments-clean-on-118a2e2`.
-Every item below was verified in the source; none is inferred from the design.
+Read against `chaithanin/agency-care`, branch `feat/all-appointments-clean-on-118a2e2`,
+**commit `ba63900`** — the branch the work orders say to start from. Every item was verified in the
+source on that commit; none is inferred from the design.
+
+> The first pass of this audit was read from `main` + PR #7 (`924aa70`). The two commits differ
+> substantially — `deals.service.ts` alone by 3,000 lines — so every finding and every line number was
+> re-checked against `ba63900`. All findings survived; several line numbers moved, and one UI file
+> cited in the first pass (`MyVisitsPage.tsx`) does not exist on this branch.
+
+**Six of these are already patched and verified:** see
+[`patches/0001-audit-safe-fixes.patch`](./patches/) — it applies cleanly, `prisma validate` passes,
+and the `tsc` error set is byte-identical to the pristine tree.
 
 Each finding says why it matters **for this restructure specifically**, because some of them decide
 how Phase 1 and Phase 3 have to be built.
@@ -55,12 +65,12 @@ const bookings = await this.prisma.booking.findMany({ orderBy: { createdAt: 'des
 No `where` at all. Soft-deleted deals (`deletedAt != null`) and legacy-imported deals
 (`dataScope: 'legacy'`) both appear in the activity feed. Everywhere else in the project these are
 filtered — `deals.service.ts` sets `deletedAt: null` at the top of every query function
-(lines 240, 416, 989, 1164) and adds `dataScope: { not: 'legacy' }`.
+(lines 191, 381, 979, 1173) and adds `dataScope: { not: 'legacy' }`.
 
 *Fix:* `where: { deletedAt: null, dataScope: { not: 'legacy' } }`.
 
 **H2 · The automation funnel counts every deal ever created**
-`api/src/automation/automation.service.ts:175, 186`
+`api/src/automation/automation.service.ts:198, 209`
 
 ```ts
 const bookingScope = empId ? { OR: [{ saleId: user.id }, …] } : {};
@@ -113,7 +123,7 @@ price list. There is no guard on the current status.
 decision, which is exactly the refund/cancellation policy left open in `OPEN_DECISIONS.md`.
 
 **M3 · Deleting a lead orphans its deals and visits**
-`api/src/customer-lead/customer-lead.service.ts:764`
+`api/src/customer-lead/customer-lead.service.ts:811`
 
 ```ts
 const deleted = await this.prisma.customerLead.delete({ where: { id } });
@@ -124,14 +134,14 @@ that no longer exists, and no FK stops it. The deal keeps rendering — `deals.s
 lead up separately and simply finds nothing — so this fails silently rather than loudly.
 
 Note the contrast: `Booking` has a proper soft delete (`deletedAt`, `deletedById`), and
-`agency.service.ts:143` refuses to delete an agency that still has deals. Leads have neither guard.
+`agency.service.ts:145` refuses to delete an agency that still has deals. Leads have neither guard.
 
 ### Low
 
 **L1 · A KPI count includes deleted deals** — `api/src/visit/visit-workflow.service.ts:447`,
 `booking.count({ where: { createdAt: range } })`.
 
-**L2 · `genBookingNo()` is not concurrency-safe** — `api/src/booking/booking.service.ts:69`
+**L2 · `genBookingNo()` is not concurrency-safe** — `api/src/booking/booking.service.ts:65`
 
 ```ts
 const count = await this.prisma.booking.count({ where: { bookingNo: { startsWith: prefix } } });
@@ -141,13 +151,12 @@ return `${prefix}-${p(count + 1)}`;
 Count-then-format. Two creates in the same millisecond produce the same number. `bookingNo` is
 `@unique`, so the result is a failed create rather than a duplicate — a bad error message, not
 corrupted data. **Relevant because the Sold Deal wizard continues this sequence.** The project
-already has the right pattern elsewhere: `PrSequence` (`schema.prisma:1410`) is a singleton row with
+already has the right pattern elsewhere: `PrSequence` (`schema.prisma:1415`) is a singleton row with
 `lastSeq`, incremented in a transaction.
 
-**L3 · The `reportStatus` schema comment is out of date** — `schema.prisma:2458` documents
+**L3 · The `reportStatus` schema comment is out of date** — `schema.prisma:2479` documents
 `holding|reservation|open|first_follow_up|second_follow_up|third_follow_up|missed`, but the UI also
-writes `fourth_follow_up`, `completed` and `cancelled` (`CustomerFormDialog.tsx:59`,
-`MyVisitsPage.tsx:68`, `DealsPage.tsx:51`). Anyone implementing Phase 1 from the comment will build
+writes `fourth_follow_up`, `completed` and `cancelled` (`CustomerFormDialog.tsx:64`). Anyone implementing Phase 1 from the comment will build
 the wrong value set.
 
 **L4 · A dead key with an asymmetric round trip** — `report-status-stage.ts:15` maps
@@ -164,8 +173,8 @@ Stated because a reviewer will trip over them:
 
 - **`deals.service.ts` soft-delete coverage is complete.** A crude grep suggests four queries miss
   `deletedAt`, but each one's `where` is initialised with `deletedAt: null` earlier in the function
-  (lines 240, 416, 989, 1164). Nothing to fix.
-- **`agency.service.ts:143` counting deleted deals as delete-blockers is conservative by design.**
+  (lines 191, 381, 979, 1173). Nothing to fix.
+- **`agency.service.ts:145` counting deleted deals as delete-blockers is conservative by design.**
   It refuses to delete an agency that has any deal history, including deleted ones. That is the safe
   direction; leave it.
 - **`crm360.service.ts:129` is correctly scoped** — `deletedAt: null, dataScope: { not: 'legacy' }`.
@@ -186,15 +195,14 @@ Stated because a reviewer will trip over them:
 
 ---
 
-## 5 · Suggested order, if these get fixed
+## 5 · Status
 
-None of them blocks the restructure. If they are picked up, this order costs least:
+| Finding | Status |
+| --- | --- |
+| H1, H2, M1, L1, L3, L4 | **Patched and verified** — [`patches/`](./patches/), ready to apply as its own small PR before Phase 1 |
+| H3 | **Folded into Phase 1** — the conversion wizard must set unit status; there is no existing path to correct. `WORK_ORDERS.md` Phase 1 carries it. |
+| M2 | **Waiting on a decision** — what a cancelled *sold* unit does. Same decision as `OPEN_DECISIONS.md` §4. |
+| M3 | **Waiting on a decision** — soft-delete leads like deals, or block the delete like agencies do. Both defensible. |
+| L2 | **Deliberately deferred** — swap `genBookingNo()` to the `PrSequence` pattern, best done just before the Sold Deal wizard starts issuing numbers faster. |
 
-1. **H1, H2, M1, L1** — four one-line `where` additions. Independent, and they make the new
-   dashboards reconcile with the board from the start.
-2. **L3, L4** — documentation and a dead key, free while Phase 1 is already editing those files.
-3. **H3** — becomes part of Phase 1 rather than a separate fix.
-4. **M2, M3** — need a policy decision first (what a cancelled sold unit does, whether leads should
-   soft-delete like deals do). Worth raising with the owner rather than patching.
-5. **L2** — swap `genBookingNo()` to the `PrSequence` pattern the project already uses. Best done
-   before the Sold Deal wizard starts issuing numbers at a higher rate.
+None of the open ones blocks the restructure.

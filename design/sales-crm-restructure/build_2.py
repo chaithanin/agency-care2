@@ -6,7 +6,7 @@ not as a redesign.
 from tokens import *
 from shell import *
 
-W, H = 3040, 2560
+W, H = 3040, 2620
 
 I_KANBAN = '<rect x="3" y="3" width="6" height="18" rx="1"></rect><rect x="10" y="3" width="6" height="13" rx="1"></rect><rect x="17" y="3" width="4" height="9" rx="1"></rect>'
 I_TABLE  = '<rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="3" y1="15" x2="21" y2="15"></line>'
@@ -67,46 +67,46 @@ P_HAR = mui_chip("HARMONIA")
 L_FO  = mui_chip("FO", "secondary")
 
 def cards_open():
-    return [mui_card("Lead A", "ABC Property · &#128100; John Tan", "open", (P_MGB,), "1 u", "3.20M"),
-            mui_card("Lead B", "XYZ Realty", "open", (mui_chip("LOVEIT"),), "1 u", "2.80M")]
+    return [mui_card("Lead A", "ABC Property · &#128100; John Tan", "open", (P_MGB,), "1 u", "฿3.20M"),
+            mui_card("Lead B", "XYZ Realty", "open", (mui_chip("LOVEIT"),), "1 u", "฿2.80M")]
 
 def cards_f1():
     return [mui_card("Lead D", "ABC Property", "first_follow_up", (mui_chip("LOVEIT"), L_FO),
-                     "1 u", "2.90M", follow="Next follow-up 24 Sep")]
+                     "1 u", "฿2.90M", follow="Next follow-up 24 Sep")]
 
 def cards_f4():
-    return [mui_card("Lead G", "XYZ Realty", "fourth_follow_up", (P_MGB,), "1 u", "3.10M")]
+    return [mui_card("Lead G", "XYZ Realty", "fourth_follow_up", (P_MGB,), "1 u", "฿3.10M")]
 
 def card_hold(sub_chip=None):
     ch = (P_HAR, sub_chip) if sub_chip else (P_HAR,)
     return mui_card("Anna Petrova", "ABC Property · &#128100; Linda Wong", "holding", ch,
-                    "1 u", "4.10M", follow="Next follow-up 22 Sep")
+                    "1 u", "฿4.10M", follow="Next follow-up 22 Sep")
 
 def card_resv(sub_chip=None):
     ch = (P_MGB, sub_chip) if sub_chip else (P_MGB,)
     return mui_card("David Wong", "ABC Property · &#128100; John Tan", "reservation", ch,
-                    "1 u", "3.50M", follow="Overdue 18 Sep", overdue=True)
+                    "1 u", "฿3.50M", follow="Overdue 18 Sep", overdue=True)
 
 def card_hold2(sub_chip=None):
     ch = (P_MGB, sub_chip) if sub_chip else (P_MGB,)
-    return mui_card("Lee Chen", "Direct", "holding", ch, "1 u", "2.60M")
+    return mui_card("Lee Chen", "Direct", "holding", ch, "1 u", "฿2.60M")
 
 # ── BEFORE ───────────────────────────────────────────────────────────
 before_cols = "".join([
-  mui_col("Open", 32, 34, "96.40M", cards_open()),
-  mui_col("1st Follow Up", 18, 19, "54.10M", cards_f1()),
-  mui_col("2nd Follow Up", 12, 12, "35.90M", []),
-  mui_col("3rd Follow Up", 9, 9, "27.20M", []),
-  mui_col("Holding", 14, 15, "44.80M", [card_hold(), card_hold2()]),
-  mui_col("4th Follow Up", 7, 7, "21.00M", cards_f4()),
-  mui_col("Reservation", 8, 8, "24.60M", [card_resv()]),
-  mui_col("Missed", 5, 5, "14.20M", []),
-  mui_col("Closed Deals", 11, 12, "38.50M", []),
-  mui_col("Cancelled", 3, 3, "8.40M", []),
+  mui_col("Open", 32, 34, "฿96.40M", cards_open()),
+  mui_col("1st Follow Up", 18, 19, "฿54.10M", cards_f1()),
+  mui_col("2nd Follow Up", 12, 12, "฿35.90M", []),
+  mui_col("3rd Follow Up", 9, 9, "฿27.20M", []),
+  mui_col("Holding", 14, 15, "฿44.80M", [card_hold(), card_hold2()]),
+  mui_col("4th Follow Up", 7, 7, "฿21.00M", cards_f4()),
+  mui_col("Reservation", 8, 8, "฿24.60M", [card_resv()]),
+  mui_col("Missed", 5, 5, "฿14.20M", []),
+  mui_col("Closed Deals", 11, 12, "฿38.50M", []),
+  mui_col("Cancelled", 3, 3, "฿8.40M", []),
 ])
 
 before = panel("THE PAGE TODAY — /deals",
-  right='<span class="cap mut">drawn from web/src/pages/DealsPage.tsx · money() renders 96.40M, with no currency symbol</span>',
+  right='<span class="cap mut">drawn from web/src/pages/DealsPage.tsx on feat/all-appointments-clean-on-118a2e2</span>',
   body=(f'{toolbar()}{filter_row()}'
         f'<div class="row" style="gap:20px;align-items:flex-start;margin-top:18px">{sidebar()}'
         f'<div class="row" style="gap:12px;align-items:flex-start;overflow:hidden">{before_cols}</div></div>'),
@@ -118,18 +118,18 @@ SUB_H = mui_chip("Holding", "new")
 SUB_R = mui_chip("Reservation", "new")
 
 after_cols = "".join([
-  mui_col("Open", 32, 34, "96.40M", cards_open()),
-  mui_col("1st Follow Up", 18, 19, "54.10M", cards_f1()),
-  mui_col("2nd Follow Up", 12, 12, "35.90M", []),
-  mui_col("3rd Follow Up", 9, 9, "27.20M", []),
-  mui_col("4th Follow Up", 7, 7, "21.00M", cards_f4()),
-  mui_col("Holding / Reservation", 22, 23, "69.40M",
+  mui_col("Open", 32, 34, "฿96.40M", cards_open()),
+  mui_col("1st Follow Up", 18, 19, "฿54.10M", cards_f1()),
+  mui_col("2nd Follow Up", 12, 12, "฿35.90M", []),
+  mui_col("3rd Follow Up", 9, 9, "฿27.20M", []),
+  mui_col("4th Follow Up", 7, 7, "฿21.00M", cards_f4()),
+  mui_col("Holding / Reservation", 22, 23, "฿69.40M",
           [card_resv(SUB_R), card_hold(SUB_H), card_hold2(SUB_H)],
           extra_chips=mui_hdr_chip("H 14") + mui_hdr_chip("R 8"),
           highlight=True, width=268),
-  mui_col("Missed", 5, 5, "14.20M", []),
-  mui_col("Closed Deals", 11, 12, "38.50M", []),
-  mui_col("Cancelled", 3, 3, "8.40M", []),
+  mui_col("Missed", 5, 5, "฿14.20M", []),
+  mui_col("Closed Deals", 11, 12, "฿38.50M", []),
+  mui_col("Cancelled", 3, 3, "฿8.40M", []),
 ])
 
 after = panel("AFTER PHASE 1 — the same page",
@@ -248,6 +248,10 @@ body = f'''<div class="col" style="gap:18px">
   {note_box("ok", "The brief for this sheet was: keep the page looking as close to the current one as "
                   "possible. So this is the real page, drawn from its own source, with the change "
                   "marked on it — not a redesign.")}
+  {note_box("info", "Money is rendered by <code>formatMoneyShort</code> "
+                    "(<code>web/src/utils/format.ts:30</code>): <code>฿3.50M</code> above a million, "
+                    "<code>฿54.0K</code> above a thousand, and an em dash for null. "
+                    "Read from branch <code>feat/all-appointments-clean-on-118a2e2</code>.")}
   {before}
   {after}
   {diff}

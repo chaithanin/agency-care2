@@ -67,11 +67,11 @@ Callers to update with it:
 
 | File | Line | What it does |
 | --- | --- | --- |
-| `api/src/deals/deals.service.ts` | 285, 347 | Board filter and the Lead Status report columns |
-| `api/src/deals/deals.service.ts` | 1239 | Syncs the lead's status when a card is dragged |
-| `api/src/deals/deals.service.ts` | 1376 | Maps a chosen report status back to a stage |
-| `api/src/crm360/crm360.service.ts` | 165 | Counts deals into report buckets |
-| `api/src/customer-lead/customer-lead.service.ts` | 723 | Status change from the lead side |
+| `api/src/deals/deals.service.ts` | 245, 312 | Board filter and the Lead Status report columns |
+| `api/src/deals/deals.service.ts` | 1250 | Syncs the lead's status when a card is dragged |
+| `api/src/deals/deals.service.ts` | 1408 | Maps a chosen report status back to a stage |
+| `api/src/crm360/crm360.service.ts` | 206, 242 | Counts deals into report buckets |
+| `api/src/customer-lead/customer-lead.service.ts` | 739 | Status change from the lead side |
 | `api/src/office-visit/office-visit.service.ts` | 28 | Status change from a visit |
 
 ### Schema — additive, and the order matters
@@ -106,7 +106,7 @@ Plus `lead_status_history` (`old_stage`, `old_sub_status`, `new_stage`, `new_sub
 | # | Change | Why it costs almost nothing |
 | --- | --- | --- |
 | 1 | `Holding` and `Reservation` become one column `Holding / Reservation`, keeping Reservation's colour `#FFA726` and Reservation's slot | The header already renders `col.color` and `col.label` from `deal_stages` — no component change |
-| 2 | Two counters in the column header: `H 14` and `R 8` | Reuses the white pill the header already uses for `Won` and `Lost` (`DealsPage.tsx:421`) |
+| 2 | Two counters in the column header: `H 14` and `R 8` | Reuses the white pill the header already uses for `Won` and `Lost` (`DealsPage.tsx:449`) |
 | 3 | One more chip on the card, in the existing project/label chip row | Same `height 18 · fontSize 10` chip — no new row, no change to card height |
 
 Unchanged: the title and every icon button, the Kanban/Table toggle, the whole left filter sidebar
@@ -118,8 +118,8 @@ and every other column.
 move one position right, past 4th Follow Up. The alternative is Holding's slot and grey `#78909C`,
 which moves fewer cards but leaves the column looking less advanced than Missed beside it.
 
-Note when writing test fixtures: `money()` in `DealsPage.tsx:89` renders `96.40M` / `54K`, with **no
-currency symbol**.
+Note when writing test fixtures: `money()` in `DealsPage.tsx:95` delegates to `formatMoneyShort` (`web/src/utils/format.ts:30`),
+which renders `฿3.50M` and `฿54.0K` — **with the baht sign**.
 
 ### Extra scope the audit found
 
@@ -132,8 +132,8 @@ That is new work inside Phase 1, not a refactor. See [`CODE_AUDIT.md`](./CODE_AU
 
 Two free cleanups while you are in these files:
 
-- `schema.prisma:2458` — the `reportStatus` comment omits `fourth_follow_up`, `completed` and
-  `cancelled`, which the UI does write. Take the value set from `DealsPage.tsx:51`, not the comment.
+- `schema.prisma:2479` — the `reportStatus` comment omits `fourth_follow_up`, `completed` and
+  `cancelled`, which the UI does write. Take the value set from `CustomerFormDialog.tsx:64`, not the comment.
 - `report-status-stage.ts:15` — `closed_deal` is written by no UI and round-trips to `completed`.
   Delete it rather than carry it through the merge.
 
@@ -352,9 +352,9 @@ The surface is small and fully enumerated:
 
 | Where | Line | What it is |
 | --- | --- | --- |
-| `web/src/App.tsx` | 194, 195, 229 | The three routes — **keep all three, redirect them** |
-| `web/src/components/Layout.tsx` | 235, 236, 243 | The three menu entries — hide these |
-| `web/src/pages/EmployeeFilePage.tsx` | 168 | **A button: `navigate('/site-visit-report?employeeId=' + emp.id)`** |
+| `web/src/App.tsx` | 207, 208, 247 | The three routes — **keep all three, redirect them** |
+| `web/src/components/Layout.tsx` | 241, 242, 249 | The three menu entries — hide these |
+| `web/src/pages/EmployeeFilePage.tsx` | 177 | **A button: `navigate('/site-visit-report?employeeId=' + emp.id)`** |
 | `api/src/visit/visit.controller.ts` | 251 | `@Get('workflow-board')` — **an API endpoint, not the page** |
 
 **Two traps, both easy to miss:**

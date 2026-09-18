@@ -1,0 +1,88 @@
+diff --git a/api/prisma/schema.prisma b/api/prisma/schema.prisma
+index ecbb79a..86c5749 100644
+--- a/api/prisma/schema.prisma
++++ b/api/prisma/schema.prisma
+@@ -2476,7 +2476,7 @@ model CustomerLead {
+   mobile                String?
+   email                 String?
+   nationalId            String?   @map("national_id") // บัตรประชาชน/เลขผู้เสียภาษี — ต้องไม่ซ้ำ (digits only)
+-  reportStatus          String?   @map("report_status") // Follow-up/Report Status ที่ Sales เลือก (holding|reservation|open|first_follow_up|second_follow_up|third_follow_up|missed)
++  reportStatus          String?   @map("report_status") // Follow-up/Report Status ที่ Sales เลือก (holding|reservation|open|first_follow_up|second_follow_up|third_follow_up|fourth_follow_up|missed|completed|cancelled)
+   // ── Lead Qualification (5 หัวข้อ) ──
+   qualBudget            String?   @map("qual_budget") // งบประมาณ
+   qualProject           String?   @map("qual_project") // โครงการที่สนใจ
+diff --git a/api/src/automation/automation.service.ts b/api/src/automation/automation.service.ts
+index 2200139..3e39d69 100644
+--- a/api/src/automation/automation.service.ts
++++ b/api/src/automation/automation.service.ts
+@@ -195,7 +195,11 @@ export class WorkflowService {
+     const leadWhere = (extra: Record<string, unknown> = {}) => ({ status: 'active', ...extra, ...(empId ? { ownerIds: { has: empId } } : {}) });
+     // WF14 pipeline funnel — lead lifecycle, role-scoped (managers see all)
+     const leadScope: Record<string, unknown> = empId ? { ownerIds: { has: empId } } : {};
+-    const bookingScope: Record<string, unknown> = empId ? { OR: [{ saleId: user.id }, { closerId: user.id }, { createdById: user.id }] } : {};
++    // ดีลที่ลบแล้ว + legacy ต้องไม่ถูกนับ ไม่งั้น funnel ไม่ตรงกับบอร์ดและรายงาน Lead Status
++    const bookingBase = { deletedAt: null, dataScope: { not: 'legacy' } };
++    const bookingScope: Record<string, unknown> = empId
++      ? { ...bookingBase, OR: [{ saleId: user.id }, { closerId: user.id }, { createdById: user.id }] }
++      : { ...bookingBase };
+     const [todayVisits, completedToday, todayFollowUp, overdueFollowUp, tomorrowFollowUp,
+       fLeads, fActive, fContacted, fDeals, fWon, fLost] = await Promise.all([
+       this.prisma.visitPlan.count({ where: planWhere({ planDate: { gte: today, lt: tmr } }) as never }),
+diff --git a/api/src/common/report-status-stage.ts b/api/src/common/report-status-stage.ts
+index 2b2faaa..054e93b 100644
+--- a/api/src/common/report-status-stage.ts
++++ b/api/src/common/report-status-stage.ts
+@@ -12,7 +12,6 @@ export const RS_TO_STAGE: Record<string, string> = {
+   third_follow_up: 'third_follow_up',
+   fourth_follow_up: 'fourth_follow_up',
+   missed: 'missed',
+-  closed_deal: 'completed',
+   completed: 'completed',
+   cancelled: 'cancelled',
+ };
+diff --git a/api/src/home/home.service.ts b/api/src/home/home.service.ts
+index 23a394d..41e3fdd 100644
+--- a/api/src/home/home.service.ts
++++ b/api/src/home/home.service.ts
+@@ -117,7 +117,11 @@ export class HomeService {
+ 
+     // bookings (จองห้อง) — เชื่อมข้อมูลจาก /bookings มาแสดงใน feed
+     if (!type || ['booking'].includes(type)) {
+-      const bookings = await this.prisma.booking.findMany({ orderBy: { createdAt: 'desc' }, take: 50 });
++      const bookings = await this.prisma.booking.findMany({
++        // ดีลที่ลบแล้ว + ข้อมูล legacy ที่ import เข้ามา ต้องไม่ขึ้น feed (ให้ตรงกับ /deals)
++        where: { deletedAt: null, dataScope: { not: 'legacy' } },
++        orderBy: { createdAt: 'desc' }, take: 50,
++      });
+       const agIds = [...new Set(bookings.map((b) => b.agencyId).filter(Boolean) as string[])];
+       const saleIds = [...new Set(bookings.map((b) => b.saleId).filter(Boolean) as string[])];
+       const [ags, sales] = await Promise.all([
+diff --git a/api/src/report/report.service.ts b/api/src/report/report.service.ts
+index dc4d27d..5428dc0 100644
+--- a/api/src/report/report.service.ts
++++ b/api/src/report/report.service.ts
+@@ -478,6 +478,9 @@ export class ReportService {
+     // Bookings (unit reservations recorded by sale) — must appear in the activity report
+     const bookings = await this.prisma.booking.findMany({
+       where: {
++        // ดีลที่ลบแล้ว + legacy ต้องไม่เข้ารายงาน (ให้ตรงกับ /deals และ crm360)
++        deletedAt: null,
++        dataScope: { not: 'legacy' },
+         OR: [
+           { bookingDate: { gte: fromD, lte: toD } },
+           { AND: [{ bookingDate: null }, { createdAt: { gte: fromD, lte: toD } }] },
+diff --git a/api/src/visit/visit-workflow.service.ts b/api/src/visit/visit-workflow.service.ts
+index f8a0ad9..70347a5 100644
+--- a/api/src/visit/visit-workflow.service.ts
++++ b/api/src/visit/visit-workflow.service.ts
+@@ -444,7 +444,9 @@ export class VisitWorkflowService {
+       this.prisma.followUpTask.findMany({ where: { createdAt: { gte: start, lte: end } }, select: { status: true, dueDate: true, doneAt: true } }).catch(() => []),
+       this.prisma.helpRequest.count({ where: { createdAt: { gte: start, lte: end } } }).catch(() => 0),
+       this.prisma.helpRequest.count({ where: { createdAt: { gte: start, lte: end }, escalatedAt: { not: null } } }).catch(() => 0),
+-      this.prisma.booking.count({ where: { createdAt: { gte: start, lte: end } } }).catch(() => 0),
++      this.prisma.booking.count({
++        where: { createdAt: { gte: start, lte: end }, deletedAt: null, dataScope: { not: 'legacy' } },
++      }).catch(() => 0),
+     ]);
+     const convPlanIds = new Set(convs.map((c) => c.visitPlanId));
+ 

@@ -69,7 +69,7 @@ UPDATE deal_stages SET is_active = false WHERE key IN ('holding','reserve');
 - The board merges two columns into one. The split stays visible in the column heading and on every
   card as a sub-status pill.
 - **Dragging a card onto the merged column now has to ask which sub status it is.** The old code
-  inferred it from the column; after the merge it cannot. `deals.service.ts:1239` calls
+  inferred it from the column; after the merge it cannot. `deals.service.ts:1250` calls
   `reportStatusForStage(stage)` to sync the linked lead — that path must open the Change Status modal
   instead of guessing.
 - The daily 08:05 digest (`deals.scheduler.ts`) derives its open stages from `deal_stages` at run
@@ -175,9 +175,9 @@ Routing and labels only. Nothing runs against the database.
 
 | Where | Line | On deploy |
 | --- | --- | --- |
-| `web/src/App.tsx` | 194, 195, 229 | The three routes stay and redirect |
-| `web/src/components/Layout.tsx` | 235, 236, 243 | Three menu entries hidden |
-| `web/src/pages/EmployeeFilePage.tsx` | 168 | **Navigates to `/site-visit-report?employeeId=…`** — the folded view must keep the query parameter or this button silently shows the wrong person's visits |
+| `web/src/App.tsx` | 207, 208, 247 | The three routes stay and redirect |
+| `web/src/components/Layout.tsx` | 241, 242, 249 | Three menu entries hidden |
+| `web/src/pages/EmployeeFilePage.tsx` | 177 | **Navigates to `/site-visit-report?employeeId=…`** — the folded view must keep the query parameter or this button silently shows the wrong person's visits |
 | `api/src/visit/visit.controller.ts` | 251 | `@Get('workflow-board')` is an **API endpoint** sharing the page's name. Do not remove it with the page. |
 
 Checked: no notification deep link points at any of the three folded routes — neither the stored

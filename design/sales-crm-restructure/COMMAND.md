@@ -5,6 +5,17 @@ the previous is in production.
 
 ---
 
+## Before Phase 1 — a small PR that is already written
+
+> Apply `design/sales-crm-restructure/patches/0001-audit-safe-fixes.patch` from repo
+> `chaithanin/agency-care2`, branch `claude/agency-care-test-project-zo163o`, onto a branch off
+> `feat/all-appointments-clean-on-118a2e2`, and open it as its own PR.
+>
+> Six fixes, six files, 17 insertions. Read `patches/README.md` first — it says what each one is, how
+> it was verified, and which audit findings were deliberately left out. Do not fold this into Phase 1.
+
+---
+
 ## Phase 1 — paste this
 
 > Sales CRM Restructure, Phase 1 of 5. Do not start any other phase.

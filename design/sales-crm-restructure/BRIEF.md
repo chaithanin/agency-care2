@@ -42,6 +42,9 @@ Per-phase work orders, with the measured impact on the existing system: [`WORK_O
 What changes in production on deploy, and how far back each phase can be taken:
 [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
 
+Six audit fixes already written and verified, to apply as a small PR **before Phase 1**:
+[`patches/`](./patches/)
+
 Bugs and data-linkage findings verified in the live code: [`CODE_AUDIT.md`](./CODE_AUDIT.md) —
 **read §4 before starting any phase.** One finding (the Kanban never updates unit status) is
 Phase 1 scope, not a separate fix.
@@ -431,7 +434,7 @@ deep links in `in_app_notifications`** — it is not just deleting a line from `
 
 Measured for the three folded routes (see [`WORK_ORDERS.md`](./WORK_ORDERS.md) Phase 5): no
 notification link points at any of them. The two live traps are the `?employeeId=` query parameter
-on the button in `EmployeeFilePage.tsx:168`, and `@Get('workflow-board')` in `visit.controller.ts:251`,
+on the button in `EmployeeFilePage.tsx:177`, and `@Get('workflow-board')` in `visit.controller.ts:251`,
 which is an API endpoint that merely shares the name with the page.
 
 ### New menu — regrouped into the four domains without changing a route
