@@ -11,6 +11,8 @@ Per-phase work orders, with the measured impact on the existing system:
 
 What changes in production on deploy: [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
 
+Bugs and data-linkage findings in the live system: [`CODE_AUDIT.md`](./CODE_AUDIT.md)
+
 Open decisions, drafted with safe defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
 
 This requirement restructures Agency Care's sales side into **four core domains**, with one

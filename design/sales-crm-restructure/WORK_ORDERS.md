@@ -14,6 +14,7 @@ Common to all five:
 - Clear the build caches before trusting a build.
 - **Do not deploy.** Open the PR and wait.
 - Deploy-time effects and rollback limits per phase: [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
+- Bugs and data-linkage findings that change a phase's scope: [`CODE_AUDIT.md`](./CODE_AUDIT.md) §4
 
 ---
 
@@ -119,6 +120,22 @@ which moves fewer cards but leaves the column looking less advanced than Missed 
 
 Note when writing test fixtures: `money()` in `DealsPage.tsx:89` renders `96.40M` / `54K`, with **no
 currency symbol**.
+
+### Extra scope the audit found
+
+`prisma.unit` appears **0 times** in `deals.service.ts`. Unit status is only maintained in the
+Booking module (`booking.service.ts:142`), and only when a `unitId` was supplied. A deal driven to
+Closed Deals entirely from `/deals` leaves its unit `available` forever.
+
+**So the conversion wizard has to set unit status itself — there is no existing path to reuse.**
+That is new work inside Phase 1, not a refactor. See [`CODE_AUDIT.md`](./CODE_AUDIT.md) H3.
+
+Two free cleanups while you are in these files:
+
+- `schema.prisma:2458` — the `reportStatus` comment omits `fourth_follow_up`, `completed` and
+  `cancelled`, which the UI does write. Take the value set from `DealsPage.tsx:51`, not the comment.
+- `report-status-stage.ts:15` — `closed_deal` is written by no UI and round-trips to `completed`.
+  Delete it rather than carry it through the merge.
 
 ### Also in this phase
 

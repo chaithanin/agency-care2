@@ -42,6 +42,10 @@ Per-phase work orders, with the measured impact on the existing system: [`WORK_O
 What changes in production on deploy, and how far back each phase can be taken:
 [`DEPLOY_IMPACT.md`](./DEPLOY_IMPACT.md)
 
+Bugs and data-linkage findings verified in the live code: [`CODE_AUDIT.md`](./CODE_AUDIT.md) —
+**read §4 before starting any phase.** One finding (the Kanban never updates unit status) is
+Phase 1 scope, not a separate fix.
+
 Open decisions and their drafted defaults: [`OPEN_DECISIONS.md`](./OPEN_DECISIONS.md)
 
 **Start with `Main.dc.html`, then read `Migration.dc.html` immediately after.** Those two sheets
