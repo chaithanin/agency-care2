@@ -39,259 +39,588 @@
   td{font-size:14px;padding:12px;border-bottom:1px solid #374151;vertical-align:middle}
 </style>
 </helmet>
-<div style="width:1560px;min-height:1900px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
+<div style="width:3040px;min-height:2560px;background:linear-gradient(135deg,#0F172A 0%,#111827 60%,#1F2937 100%);padding:0">
 <div class="col" style="padding:26px 30px;gap:18px">
   <div class="row" style="gap:12px;align-items:flex-start">
     <div class="col grow" style="gap:3px">
       <div class="row" style="gap:10px"><h1 class="h5">1 · Lead Management</h1><span class="chip" style="color:#A78BFA;background:rgba(167,139,250,.16)">Phase 1</span></div>
-      <p class="cap mut" style="margin:0">Pipeline view · lead detail · change status — funnel stage kept separate from sub status</p>
+      <p class="cap mut" style="margin:0">The existing Lead Status board, before and after Phase 1 - three visual changes, nothing else moves</p>
     </div>
   </div>
-  <div class="col" style="gap:16px">
+  <div class="col" style="gap:18px">
+  <div class="row" style="gap:10px;background:rgba(34,197,94,.08);border:1px solid #22C55E55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2 grow" style="color:#22C55E;font-weight:600">The brief for this sheet was: keep the page looking as close to the current one as possible. So this is the real page, drawn from its own source, with the change marked on it — not a redesign.</span></div>
   <div class="card pad col " style="gap:14px">
-  <div class="row" style="gap:12px"><h3 class="sec grow">LEADS — PIPELINE VIEW</h3><div class="row" style="gap:8px"><span class="chip" style="color:#F1F5F9;background:#1F2937">Pipeline</span><span class="chip" style="color:#6B7280">List</span><button class="btn sm">+ New Lead</button></div></div>
-  <p class="cap mut" style="margin:0">Holding and Reservation share one board column, but the split is still counted under the column heading and stays separable in every report.</p><div class="row" style="gap:9px;flex-wrap:wrap">
-  <div class="row fld" style="gap:8px;width:250px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.7" y2="16.7"></line></svg><span class="mut">Search lead / phone / unit</span></div>
-  <div class="row fld" style="gap:9px">Stage<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Sub Status<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Project<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Sales Owner<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Agency<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Lead Source<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="row fld" style="gap:9px">Next Follow-up<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-</div><div class="row" style="gap:16px;align-items:flex-start;overflow:hidden"><div class="col" style="gap:10px;width:232px;flex-shrink:0">
-  <div class="col" style="gap:2px">
-    <div class="row" style="gap:8px">
-      <span class="sec" style="color:#F1F5F9">NEW</span>
-      <span class="chip" style="color:#CBD5E1;background:#1F2937">32</span>
+  <div class="row" style="gap:12px"><h3 class="sec grow">THE PAGE TODAY — /deals</h3><span class="cap mut">drawn from web/src/pages/DealsPage.tsx · money() renders 96.40M, with no currency symbol</span></div>
+  <p class="cap mut" style="margin:0">Ten columns, in this order. Holding sits before 4th Follow Up; Reservation sits after it.</p><div class="row" style="gap:7px;align-items:center">
+  <h2 style="font-size:24px;font-weight:700;margin:0">Lead Status</h2>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="11" x2="12" y2="16"></line><circle cx="12" cy="8" r=".6" fill="currentColor"></circle></svg>
+  <div class="grow"></div>
+  <div class="row" style="border:1px solid #374151;border-radius:6px;overflow:hidden">
+    <div style="background:#1F2937;padding:5px 9px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F1F5F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="3" width="6" height="18" rx="1"></rect><rect x="10" y="3" width="6" height="13" rx="1"></rect><rect x="17" y="3" width="4" height="9" rx="1"></rect></svg></div>
+    <div style="padding:5px 9px;border-left:1px solid #374151"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg></div>
+  </div>
+  <div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-6"></path></svg></div><div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M21 12a9 9 0 1 1-3-6.7"></path><polyline points="21 4 21 10 15 10"></polyline></svg></div><div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 2.6 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H7a1.6 1.6 0 0 0 1-1.5V1a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V7a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path></svg></div><div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 10h-1.3A7 7 0 1 0 4 15"></path><polyline points="12 12 12 21"></polyline><polyline points="8 17 12 21 16 17"></polyline></svg></div>
+</div><div class="row" style="gap:11px;flex-wrap:wrap;align-items:center;margin-top:16px">
+  <div class="row" style="border:1px solid #374151;border-radius:6px;padding:7px 10px;
+       width:210px;gap:7px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.7" y2="16.7"></line></svg>
+    <span style="font-size:13px;color:#6B7280">Search name / deal no. / phone</span></div>
+  <div style="position:relative;width:180px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Agency</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:150px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Probability</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:150px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Deal Stage</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  
+  <div style="position:relative;width:120px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Date</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">Created</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:140px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">From</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden"></span></div>
+</div>
+  <div style="position:relative;width:140px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">To</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden"></span></div>
+</div>
+</div><div class="row" style="gap:20px;align-items:flex-start;margin-top:18px"><div class="col" style="width:196px;flex-shrink:0;gap:0;padding-right:16px;
+     border-right:1px solid #374151">
+  <div class="row" style="gap:8px;padding-bottom:6px">
+    <span style="font-size:13px;font-weight:700;color:#CBD5E1" class="grow">Filters</span>
+    <span style="font-size:12px;color:#60A5FA">Clear all</span>
+  </div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Salesperson</span><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;background:#1F2937;"><span style="font-size:12.5px;color:#F1F5F9">All</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">John Smith</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">Sarah Lee</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">May P.</span></div></div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Interested In</span><div class="row" style="gap:5px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">HARMONIA</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">LOVEIT</span></div></div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Labels</span><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;background:#1F2937;"><span style="font-size:12.5px;color:#F1F5F9">All</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#EC407A;flex-shrink:0"></span><span style="font-size:12.5px;color:#CBD5E1">FO</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#5C6BC0;flex-shrink:0"></span><span style="font-size:12.5px;color:#CBD5E1">TC</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#9CA3AF;flex-shrink:0"></span><span style="font-size:12.5px;color:#CBD5E1">No Labels</span></div></div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Next Action</span><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;background:#1F2937;"><span style="font-size:12.5px;color:#F1F5F9">All</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">Upcoming</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">Overdue</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">None</span></div></div>
+</div><div class="row" style="gap:12px;align-items:flex-start;overflow:hidden"><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#64748B;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Open</span>
     </div>
+    <div style="font-size:11px;opacity:.9">32 deals · 34 units · 96.40M</div>
   </div>
-  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead A</span>
-  <span class="cap mut">Marina Golden Bay</span>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead A</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property · &#128100; John Tan</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; open</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">3.20M</span>
+  </div>
   
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">Today</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+</div><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead B</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">XYZ Realty</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; open</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">LOVEIT</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">2.80M</span>
   </div>
-</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead B</span>
-  <span class="cap mut">LOVEIT @ Pattaya</span>
   
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">Today</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">May P.</span></div>
-  </div>
-</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead C</span>
-  <span class="cap mut">HARMONIA</span>
-  
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">1 day</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
-  </div>
 </div></div>
-</div><div class="col" style="gap:10px;width:232px;flex-shrink:0">
-  <div class="col" style="gap:2px">
-    <div class="row" style="gap:8px">
-      <span class="sec" style="color:#F1F5F9">CONTACTED</span>
-      <span class="chip" style="color:#CBD5E1;background:#1F2937">18</span>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#EC407A;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">1st Follow Up</span>
     </div>
+    <div style="font-size:11px;opacity:.9">18 deals · 19 units · 54.10M</div>
   </div>
-  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead D</span>
-  <span class="cap mut">LOVEIT @ Pattaya</span>
-  
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">2 days</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">Sarah L.</span></div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead D</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; first_follow_up</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">LOVEIT</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:transparent;color:#A78BFA;border:1px solid #A78BFA">FO</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">2.90M</span>
   </div>
-</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead E</span>
-  <span class="cap mut">Marina Golden Bay</span>
-  
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">3 days</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">May P.</span></div>
-  </div>
+  <div class="row" style="gap:4px;margin-top:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg><span style="font-size:10.5px;color:#CBD5E1">Next follow-up 24 Sep</span></div>
 </div></div>
-</div><div class="col" style="gap:10px;width:232px;flex-shrink:0">
-  <div class="col" style="gap:2px">
-    <div class="row" style="gap:8px">
-      <span class="sec" style="color:#F1F5F9">VISIT</span>
-      <span class="chip" style="color:#CBD5E1;background:#1F2937">12</span>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#AB47BC;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">2nd Follow Up</span>
     </div>
+    <div style="font-size:11px;opacity:.9">12 deals · 12 units · 35.90M</div>
   </div>
-  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead F</span>
-  <span class="cap mut">HARMONIA</span>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#7E57C2;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">3rd Follow Up</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">9 deals · 9 units · 27.20M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#78909C;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Holding</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">14 deals · 15 units · 44.80M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Anna Petrova</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property · &#128100; Linda Wong</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; holding</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">HARMONIA</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">4.10M</span>
+  </div>
+  <div class="row" style="gap:4px;margin-top:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg><span style="font-size:10.5px;color:#CBD5E1">Next follow-up 22 Sep</span></div>
+</div><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lee Chen</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Direct</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; holding</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">2.60M</span>
+  </div>
   
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">18 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+</div></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#5C6BC0;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">4th Follow Up</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">7 deals · 7 units · 21.00M</div>
   </div>
-</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lead G</span>
-  <span class="cap mut">Marina Golden Bay</span>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead G</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">XYZ Realty</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; fourth_follow_up</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">3.10M</span>
+  </div>
   
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">16 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">Sarah L.</span></div>
-  </div>
 </div></div>
-</div><div class="col" style="gap:10px;width:282px;flex-shrink:0">
-  <div class="col" style="gap:2px">
-    <div class="row" style="gap:8px">
-      <span class="sec" style="color:#F1F5F9">HOLDING / RESERVATION</span>
-      <span class="chip" style="color:#CBD5E1;background:#1F2937">22</span>
-    </div><p class="cap mut" style="margin:0">Holding 14 · Reservation 8</p>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#FFA726;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Reservation</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">8 deals · 8 units · 24.60M</div>
   </div>
-  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">David Wong</span>
-  <span class="cap mut">Marina Golden Bay · A2508</span>
-  <div class="row" style="gap:6px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Reservation</span></div>
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">18 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #EF4444;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">David Wong</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property · &#128100; John Tan</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; reservation</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">3.50M</span>
   </div>
-</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Anna Petrova</span>
-  <span class="cap mut">HARMONIA · B1204</span>
-  <div class="row" style="gap:6px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding</span></div>
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">17 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">Sarah L.</span></div>
-  </div>
-</div><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">Lee Chen</span>
-  <span class="cap mut">Marina Golden Bay · C0902</span>
-  <div class="row" style="gap:6px"><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding</span></div>
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">15 Sep</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">May P.</span></div>
-  </div>
+  <div class="row" style="gap:4px;margin-top:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg><span style="font-size:10.5px;color:#EF4444">Overdue 18 Sep</span></div>
 </div></div>
-</div><div class="col" style="gap:10px;width:232px;flex-shrink:0">
-  <div class="col" style="gap:2px">
-    <div class="row" style="gap:8px">
-      <span class="sec" style="color:#F1F5F9">SOLD DEAL</span>
-      <span class="chip" style="color:#CBD5E1;background:#1F2937">11</span>
-    </div><p class="cap mut" style="margin:0">Opens the Sold Deals page</p>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#8D6E63;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Missed</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">5 deals · 5 units · 14.20M</div>
   </div>
-  <div class="col" style="gap:9px"><div class="col" style="gap:7px;background:#1F2937;border:1px solid #374151;
-     border-radius:14px;padding:11px 13px">
-  <span class="b2" style="font-weight:600">SD-2026-000123</span>
-  <span class="cap mut">Marina Golden Bay · A2508</span>
-  <div class="row" style="gap:6px"><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">Active</span></div>
-  <div class="row" style="gap:10px;justify-content:space-between">
-    <span class="cap mut">3.50M THB</span><div class="row" style="gap:6px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><span class="cap mut">John S.</span></div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#2E7D32;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Closed Deals</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">11 deals · 12 units · 38.50M</div>
   </div>
-</div></div>
-</div></div><div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">A card carries only what is needed to decide quickly — customer, project, owner, lead age, next follow-up, sub status. Do not pack every field onto the card.</span></div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#B0593E;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Cancelled</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">3 deals · 3 units · 8.40M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div></div></div>
 </div>
   <div class="card pad col " style="gap:14px">
-  <div class="row" style="gap:12px"><h3 class="sec grow">LEAD DETAIL</h3></div>
-  <p class="cap mut" style="margin:0">One timeline that reads end to end matters more than a long row of tabs.</p><div class="row" style="gap:14px;align-items:flex-start">
-  <div class="col grow" style="gap:4px">
-    <span class="cap mut">Sales &nbsp;›&nbsp; Leads &nbsp;›&nbsp; David Wong</span>
-    <div class="row" style="gap:11px"><h2 class="h5">David Wong</h2><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Holding / Reservation</span><span class="chip" style="color:#FBBF24;background:rgba(251,191,36,.15)">Reservation</span></div>
-    <span class="cap mut">Marina Golden Bay · A2508 · lead age 34 days</span>
+  <div class="row" style="gap:12px"><h3 class="sec grow">AFTER PHASE 1 — the same page</h3><span class="chip" style="color:#22C55E;background:rgba(34,197,94,.14)">3 changes only</span></div>
+  <p class="cap mut" style="margin:0">Nine columns. Everything outlined in green is new; everything else is byte-for-byte the page above.</p><div class="row" style="gap:7px;align-items:center">
+  <h2 style="font-size:24px;font-weight:700;margin:0">Lead Status</h2>
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><line x1="12" y1="11" x2="12" y2="16"></line><circle cx="12" cy="8" r=".6" fill="currentColor"></circle></svg>
+  <div class="grow"></div>
+  <div class="row" style="border:1px solid #374151;border-radius:6px;overflow:hidden">
+    <div style="background:#1F2937;padding:5px 9px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F1F5F9" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="3" width="6" height="18" rx="1"></rect><rect x="10" y="3" width="6" height="13" rx="1"></rect><rect x="17" y="3" width="4" height="9" rx="1"></rect></svg></div>
+    <div style="padding:5px 9px;border-left:1px solid #374151"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><rect x="3" y="4" width="18" height="16" rx="2"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="3" y1="15" x2="21" y2="15"></line></svg></div>
   </div>
-  <div class="row" style="gap:9px">
-    <button class="btn out sm">Change Status</button>
-    <button class="btn sm">Convert to Sold Deal</button>
-  </div>
-</div><div class="row" style="gap:20px;align-items:flex-start"><div class="col grow" style="gap:16px;min-width:0">
-  <div class="row" style="gap:26px;border-bottom:1px solid #374151"><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#F1F5F9;border-bottom:2px solid #3B82F6">Overview</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Activities</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Visits</div><div style="padding:9px 2px;font-size:14px;font-weight:600;color:#6B7280;border-bottom:2px solid transparent">Documents</div></div>
-  <div class="col" style="gap:10px">
-  <div class="row" style="gap:10px"><h4 class="sec grow">CUSTOMER</h4></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Phone</span><span class="b2">+66 81 234 5678</span></div><div class="col" style="gap:2px"><span class="cap mut">Email</span><span class="b2">david.w@example.com</span></div><div class="col" style="gap:2px"><span class="cap mut">Nationality</span><span class="b2">Singapore</span></div><div class="col" style="gap:2px"><span class="cap mut">Source</span><span class="b2">Agency</span></div></div></div>
-  <div class="col" style="gap:10px">
-  <div class="row" style="gap:10px"><h4 class="sec grow">INTEREST</h4></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Project</span><span class="b2">Marina Golden Bay</span></div><div class="col" style="gap:2px"><span class="cap mut">Unit</span><span class="b2">A2508</span></div><div class="col" style="gap:2px"><span class="cap mut">Budget</span><span class="b2">3.0 – 3.8M THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Room Type</span><span class="b2">1 Bedroom · Sea View</span></div></div></div>
-  <div class="col" style="gap:10px">
-  <div class="row" style="gap:10px"><h4 class="sec grow">SALES</h4></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Sales Owner</span><span class="b2">John Smith</span></div><div class="col" style="gap:2px"><span class="cap mut">Agency</span><span class="b2">ABC Property</span></div><div class="col" style="gap:2px"><span class="cap mut">Agent</span><span class="b2">John Tan</span></div><div class="col" style="gap:2px"><span class="cap mut">Lead Source</span><span class="b2">Agency</span></div></div></div>
-  <div class="col" style="gap:10px">
-  <div class="row" style="gap:10px"><h4 class="sec grow">RESERVATION</h4></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Unit</span><span class="b2">A2508</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservation Date</span><span class="b2">18 Sep 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservation Amount</span><span class="b2">50,000 THB</span></div><div class="col" style="gap:2px"><span class="cap mut">Reservation Expiry</span><span class="b2">02 Oct 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Payment Plan</span><span class="b2">Plan A – Standard</span></div><div class="col" style="gap:2px"><span class="cap mut">Quota</span><span class="b2">Foreign Quota</span></div></div></div>
-  <div class="col" style="gap:10px">
-  <div class="row" style="gap:10px"><h4 class="sec grow">NEXT ACTION</h4><span class="chip" style="color:#60A5FA;background:rgba(59,130,246,.16)">created as a task automatically</span></div>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:13px 20px"><div class="col" style="gap:2px"><span class="cap mut">Follow-up Date</span><span class="b2">24 Sep 2026</span></div><div class="col" style="gap:2px"><span class="cap mut">Assigned To</span><span class="b2">John Smith</span></div><div class="col" style="gap:2px"><span class="cap mut">Task</span><span class="b2">Confirm documents and book the signing</span></div></div></div>
-</div><div class="col" style="gap:14px;width:330px;flex-shrink:0">
-  <div class="card pad col" style="gap:14px">
-    <h4 class="sec">ACTIVITY TIMELINE</h4>
-    <div class="col" style="gap:16px"><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
-  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
-       background:#22C55E;border:2px solid #111827"></div>
-  <div class="col" style="gap:1px">
-    <span class="cap mut">18 Sep · 14:30</span>
-    <span class="b2" style="font-weight:600">Reservation created</span><span class="cap mut">by John Smith · 50,000 THB</span>
-  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
-  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
-       background:#A78BFA;border:2px solid #111827"></div>
-  <div class="col" style="gap:1px">
-    <span class="cap mut">17 Sep · 11:15</span>
-    <span class="b2" style="font-weight:600">Site visit</span><span class="cap mut">Marina Golden Bay · 3 photos</span>
-  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
-  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
-       background:#3B82F6;border:2px solid #111827"></div>
-  <div class="col" style="gap:1px">
-    <span class="cap mut">15 Sep · 09:40</span>
-    <span class="b2" style="font-weight:600">WhatsApp contact</span><span class="cap mut">by John Smith</span>
-  </div></div><div style="position:relative;padding-left:22px"><div style="position:absolute;left:5px;top:16px;bottom:-16px;width:1px;background:#374151"></div>
-  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
-       background:#FBBF24;border:2px solid #111827"></div>
-  <div class="col" style="gap:1px">
-    <span class="cap mut">14 Sep · 16:02</span>
-    <span class="b2" style="font-weight:600">Status changed</span><span class="cap mut">Visit → Holding / Reservation</span>
-  </div></div><div style="position:relative;padding-left:22px">
-  <div style="position:absolute;left:0;top:5px;width:11px;height:11px;border-radius:999px;
-       background:#6B7280;border:2px solid #111827"></div>
-  <div class="col" style="gap:1px">
-    <span class="cap mut">14 Sep · 10:00</span>
-    <span class="b2" style="font-weight:600">Lead created</span><span class="cap mut">Source: ABC Property</span>
-  </div></div></div>
-  </div>
-  <div class="row" style="gap:10px;background:rgba(59,130,246,.10);border:1px solid #60A5FA55;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#60A5FA;font-weight:600">This timeline is a shared component reused on Lead, Sold Deal, Agency and Visit. It reads deal_timeline, which already exists — no new table.</span></div>
-</div></div>
+  <div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M4 20V10"></path><path d="M10 20V4"></path><path d="M16 20v-6"></path></svg></div><div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M21 12a9 9 0 1 1-3-6.7"></path><polyline points="21 4 21 10 15 10"></polyline></svg></div><div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-2.7 1.1V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 7 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0-1.1-2.7H1a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 2.6 7a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H7a1.6 1.6 0 0 0 1-1.5V1a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 2.7 1.1 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V7a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"></path></svg></div><div style="width:30px;height:30px;border-radius:999px;display:grid;place-items:center;flex-shrink:0"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M18 10h-1.3A7 7 0 1 0 4 15"></path><polyline points="12 12 12 21"></polyline><polyline points="8 17 12 21 16 17"></polyline></svg></div>
+</div><div class="row" style="gap:11px;flex-wrap:wrap;align-items:center;margin-top:16px">
+  <div class="row" style="border:1px solid #374151;border-radius:6px;padding:7px 10px;
+       width:210px;gap:7px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.7" y2="16.7"></line></svg>
+    <span style="font-size:13px;color:#6B7280">Search name / deal no. / phone</span></div>
+  <div style="position:relative;width:180px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Agency</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
 </div>
-  <div class="row" style="gap:16px;align-items:stretch">
-    <div class="col" style="gap:0;flex-shrink:0"><div class="card col" style="width:430px;gap:0;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.45)">
-  <div class="row pad" style="gap:12px;border-bottom:1px solid #374151;padding-bottom:14px">
-    <h3 class="h6 grow">Update Lead Status</h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+  <div style="position:relative;width:150px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Probability</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:150px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Deal Stage</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:140px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Sub Status</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">All</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:120px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Date</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">Created</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+  <div style="position:relative;width:140px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">From</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden"></span></div>
+</div>
+  <div style="position:relative;width:140px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">To</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden"></span></div>
+</div>
+</div><div class="row" style="gap:20px;align-items:flex-start;margin-top:18px"><div class="col" style="width:196px;flex-shrink:0;gap:0;padding-right:16px;
+     border-right:1px solid #374151">
+  <div class="row" style="gap:8px;padding-bottom:6px">
+    <span style="font-size:13px;font-weight:700;color:#CBD5E1" class="grow">Filters</span>
+    <span style="font-size:12px;color:#60A5FA">Clear all</span>
   </div>
-  <div class="col pad" style="gap:14px">
-  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Funnel Stage</p><div class="fld">Holding / Reservation</div></div>
-  <div class="col" style="gap:0">
-    <p class="lbl">Sub Status<span style="color:#EF4444">&nbsp;*</span></p>
-    <div class="col" style="gap:0;background:#1F2937;border:1px solid #374151;border-radius:12px;padding:8px 12px">
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Salesperson</span><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;background:#1F2937;"><span style="font-size:12.5px;color:#F1F5F9">All</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">John Smith</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">Sarah Lee</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">May P.</span></div></div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Interested In</span><div class="row" style="gap:5px;flex-wrap:wrap"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">HARMONIA</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">LOVEIT</span></div></div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Labels</span><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;background:#1F2937;"><span style="font-size:12.5px;color:#F1F5F9">All</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#EC407A;flex-shrink:0"></span><span style="font-size:12.5px;color:#CBD5E1">FO</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#5C6BC0;flex-shrink:0"></span><span style="font-size:12.5px;color:#CBD5E1">TC</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="width:8px;height:8px;border-radius:999px;background:#9CA3AF;flex-shrink:0"></span><span style="font-size:12.5px;color:#CBD5E1">No Labels</span></div></div>
+  <div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid #374151"><span style="font-size:11px;font-weight:700;color:#6B7280;letter-spacing:.04em">Next Action</span><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;background:#1F2937;"><span style="font-size:12.5px;color:#F1F5F9">All</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">Upcoming</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">Overdue</span></div><div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;"><span style="font-size:12.5px;color:#CBD5E1">None</span></div></div>
+</div><div class="row" style="gap:12px;align-items:flex-start;overflow:hidden"><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#64748B;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Open</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">32 deals · 34 units · 96.40M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead A</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property · &#128100; John Tan</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; open</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">3.20M</span>
+  </div>
+  
+</div><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead B</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">XYZ Realty</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; open</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">LOVEIT</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">2.80M</span>
+  </div>
+  
+</div></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#EC407A;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">1st Follow Up</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">18 deals · 19 units · 54.10M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead D</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; first_follow_up</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">LOVEIT</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:transparent;color:#A78BFA;border:1px solid #A78BFA">FO</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">2.90M</span>
+  </div>
+  <div class="row" style="gap:4px;margin-top:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg><span style="font-size:10.5px;color:#CBD5E1">Next follow-up 24 Sep</span></div>
+</div></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#AB47BC;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">2nd Follow Up</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">12 deals · 12 units · 35.90M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#7E57C2;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">3rd Follow Up</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">9 deals · 9 units · 27.20M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#5C6BC0;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">4th Follow Up</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">7 deals · 7 units · 21.00M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lead G</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">XYZ Realty</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; fourth_follow_up</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">3.10M</span>
+  </div>
+  
+</div></div>
+</div><div class="col" style="width:268px;flex-shrink:0;box-shadow:0 0 0 2px #22C55E;border-radius:9px;">
+  <div style="background:#FFA726;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Holding / Reservation</span><span style="display:inline-flex;align-items:center;height:16px;padding:0 6px;border-radius:999px;font-size:10px;background:rgba(255,255,255,.25);color:#fff">H 14</span><span style="display:inline-flex;align-items:center;height:16px;padding:0 6px;border-radius:999px;font-size:10px;background:rgba(255,255,255,.25);color:#fff">R 8</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">22 deals · 23 units · 69.40M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><div style="background:#111827;border:1px solid #EF4444;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">David Wong</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property · &#128100; John Tan</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; reservation</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#22C55E;color:#0F172A;border:1px solid #22C55E">Reservation</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">3.50M</span>
+  </div>
+  <div class="row" style="gap:4px;margin-top:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg><span style="font-size:10.5px;color:#EF4444">Overdue 18 Sep</span></div>
+</div><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Anna Petrova</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">ABC Property · &#128100; Linda Wong</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; holding</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">HARMONIA</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#22C55E;color:#0F172A;border:1px solid #22C55E">Holding</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">4.10M</span>
+  </div>
+  <div class="row" style="gap:4px;margin-top:4px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CBD5E1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><circle cx="12" cy="12" r="9"></circle><polyline points="12 7 12 12 15 14"></polyline></svg><span style="font-size:10.5px;color:#CBD5E1">Next follow-up 22 Sep</span></div>
+</div><div style="background:#111827;border:1px solid #374151;border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">Lee Chen</div>
+  <div style="font-size:11px;color:#CBD5E1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Direct</div>
+  <div style="margin-top:4px"><span style="display:inline-flex;align-items:center;height:20px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#38BDF8;color:#0F172A;border:1px solid #38BDF8">&#128279; holding</span></div>
+  <div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px"><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">Marina Golden Bay</span><span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#22C55E;color:#0F172A;border:1px solid #22C55E">Holding</span></div>
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row"><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:0px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">JS</div><div style="width:19px;height:19px;border-radius:999px;background:#1F2937;border:1.5px solid #111827;margin-left:-6px;display:grid;place-items:center;font-size:9px;color:#CBD5E1">SL</div></div><div class="grow"></div>
+    <span style="display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10px;line-height:1;background:#1F2937;color:#CBD5E1;border:1px solid #374151">1 u</span><span style="font-size:11px;font-weight:700;color:#CBD5E1">2.60M</span>
+  </div>
+  
+</div></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#8D6E63;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Missed</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">5 deals · 5 units · 14.20M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#2E7D32;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Closed Deals</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">11 deals · 12 units · 38.50M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div><div class="col" style="width:250px;flex-shrink:0;">
+  <div style="background:#B0593E;color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">Cancelled</span>
+    </div>
+    <div style="font-size:11px;opacity:.9">3 deals · 3 units · 8.40M</div>
+  </div>
+  <div style="background:#111827;border:1px solid #374151;border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px"><p class="cap" style="text-align:center;color:#6B7280;padding:16px 0;margin:0">Empty</p></div>
+</div></div></div>
+</div>
+  <div class="card pad col " style="gap:14px">
+  <div class="row" style="gap:12px"><h3 class="sec grow">THE ONLY THREE VISUAL CHANGES</h3></div>
+  <table><thead><tr><th style=width:40px>#</th><th style=width:210px>Change</th><th style=width:330px>What it is</th><th>Why it costs almost nothing</th></tr></thead><tbody><tr><td><b style="color:#22C55E">1</b></td><td><b>Two columns become one</b></td><td><span class="cap" style="color:#CBD5E1"><code>Holding</code> and <code>Reservation</code> become <code>Holding / Reservation</code>, keeping Reservation's colour <code>#FFA726</code> and Reservation's slot in the order</span></td><td><span class="cap mut">The column header already renders <code>col.color</code> and <code>col.label</code> from <code>deal_stages</code> — no component changes</span></td></tr><tr><td><b style="color:#22C55E">2</b></td><td><b>Two counters in the column header</b></td><td><span class="cap" style="color:#CBD5E1"><code>H 14</code> and <code>R 8</code>, in the same white pill the header already uses for <code>Won</code> and <code>Lost</code></span></td><td><span class="cap mut">Reuses the existing chip style at <code>DealsPage.tsx:421</code> — nothing new is designed</span></td></tr><tr><td><b style="color:#22C55E">3</b></td><td><b>One more chip on the card</b></td><td><span class="cap" style="color:#CBD5E1">The sub status joins the existing project / label chip row</span></td><td><span class="cap mut">Same <code>height 18 · fontSize 10</code> chip the projects and labels already use. No new row, no change to card height</span></td></tr></tbody></table><div class="row" style="gap:20px;align-items:flex-start;margin-top:6px"><div class="col grow" style="gap:8px;min-width:0"><span class="sec" style="color:#22C55E">UNCHANGED</span><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">Page title, the info tooltip, and every icon button</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">Kanban / Table toggle, Report, Refresh, Stage settings, Venio import</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">The whole left filter sidebar — Salesperson, Interested In, Labels, Next Action</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">Search, Agency, Probability, Deal Stage, Date, From, To</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">Column width, header height, card layout, card height</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">Drag and drop between columns</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">The orphan warning banner</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">The Table view</span></div><div class="row" style="gap:8px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#22C55E" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="20 6 9 17 4 12"></polyline></svg><span class="b2" style="color:#CBD5E1">Every other column: Open, 1st–4th Follow Up, Missed, Closed Deals, Cancelled</span></div></div><div class="col" style="width:420px;flex-shrink:0;gap:11px"><div class="row" style="gap:10px;background:rgba(251,191,36,.10);border:1px solid #FBBF2455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#FBBF24;font-weight:600"><b>One decision to confirm.</b> The merged column takes Reservation's colour and Reservation's position, so Holding cards move one slot to the right, past 4th Follow Up. The alternative is Holding's slot and grey <code>#78909C</code> — fewer cards move, but the column looks less advanced than Missed beside it.</span></div><div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">Dropping a card onto the merged column can no longer tell which sub status it is. It must open the modal below and ask — never pick one silently.</span></div></div></div>
+</div>
+  <div class="row" style="gap:18px;align-items:flex-start"><div class="col" style="width:430px;flex-shrink:0;background:#111827;
+     border:1px solid #374151;border-radius:10px;overflow:hidden;
+     box-shadow:0 24px 64px rgba(0,0,0,.5)">
+  <div style="padding:16px 20px 10px">
+    <span style="font-size:18px;font-weight:600">Update Lead Status</span>
+  </div>
+  <div class="col" style="gap:16px;padding:8px 20px 16px">
+    <div style="position:relative;width:388px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Funnel Stage</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">Holding / Reservation</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+    <div class="col" style="gap:0">
+      <span style="font-size:11px;color:#6B7280;margin-bottom:4px">Sub Status *</span>
       <div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:1.5px solid #374151;flex-shrink:0"></div><span class="b2" style="color:#CBD5E1">Holding</span><span class="cap mut">&nbsp;· no money down yet</span></div>
       <div class="row" style="gap:9px;padding:3px 0"><div style="width:16px;height:16px;border-radius:999px;border:5px solid #3B82F6;background:#111827;flex-shrink:0"></div><span class="b2" style="color:#F1F5F9">Reservation</span><span class="cap mut">&nbsp;· reservation fee paid</span></div>
     </div>
+    <div style="position:relative;width:388px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Effective Date</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">18 Sep 2026</span></div>
+</div>
+    <div style="position:relative;width:388px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Remark</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden"></span></div>
+</div>
+    <div class="col" style="gap:9px;background:rgba(251,191,36,.08);
+         border:1px solid #FBBF2444;border-radius:8px;padding:12px 14px">
+      <span style="font-size:11px;font-weight:700;color:#FBBF24">
+        Choosing Reservation makes these mandatory</span>
+      <div style="position:relative;width:356px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Unit *</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">A2508</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+      <div style="position:relative;width:356px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Reservation Date *</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">18 Sep 2026</span></div>
+</div>
+      <div style="position:relative;width:356px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Reservation Amount</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">50,000</span></div>
+</div>
+      <div style="position:relative;width:356px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:#111827;padding:0 4px;
+       font-size:10.5px;color:#6B7280">Payment Plan</div>
+  <div class="row" style="gap:6px;border:1px solid #374151;border-radius:6px;
+       padding:7px 10px;font-size:13px;color:#CBD5E1">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">Plan A - Standard</span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+</div>
+    </div>
   </div>
-  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Effective Date</p><div class="fld">18 Sep 2026</div></div>
-  <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Remark</p><div class="fld"><span class="mut">Why the status changed</span></div></div>
-  <div class="col" style="gap:9px;background:rgba(251,191,36,.08);border:1px solid #FBBF2444;
-       border-radius:13px;padding:12px 14px">
-    <div class="row" style="gap:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#FBBF24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg>
-      <span class="cap" style="color:#FBBF24;font-weight:700">Choosing Reservation makes these mandatory</span></div>
-    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Unit<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">A2508</div></div>
-    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reservation Date<span style="color:#EF4444">&nbsp;*</span></p><div class="fld">18 Sep 2026</div></div>
-    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reservation Amount</p><div class="fld">50,000</div></div>
-    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Reservation Expiry</p><div class="fld">02 Oct 2026</div></div>
-    <div class="col" style="gap:0;flex-grow:1;min-width:0"><p class="lbl">Payment Plan</p><div class="fld">Plan A – Standard</div></div>
-  </div></div>
-  <div class="row pad" style="gap:10px;justify-content:flex-end;border-top:1px solid #374151;padding-top:14px">
-    <button class="btn out sm">Cancel</button><button class="btn sm">Update Status</button>
+  <div class="row" style="gap:10px;justify-content:flex-end;padding:12px 20px 16px">
+    <span style="font-size:13px;font-weight:600;color:#CBD5E1;padding:6px 12px">CANCEL</span>
+    <span style="font-size:13px;font-weight:600;color:#60A5FA;padding:6px 12px">UPDATE STATUS</span>
+  </div>
+</div><div class="card pad col grow" style="gap:13px;min-width:0">
+  <h3 class="sec">WHAT THE MERGE MUST NOT COST</h3>
+  <table><thead><tr><th style=width:230px>Path</th><th style=width:130px>Count</th><th style=width:90px>Rate</th></tr></thead><tbody><tr><td>Visit &rarr; Holding</td><td>41 &rarr; 14</td><td><b style="color:#60A5FA">34%</b></td></tr><tr><td>Holding &rarr; Reservation</td><td>14 &rarr; 8</td><td><b style="color:#22C55E">57%</b></td></tr><tr><td>Holding &rarr; Lost</td><td>14 &rarr; 4</td><td><b style="color:#EF4444">29%</b></td></tr><tr><td>Reservation &rarr; Sold</td><td>8 &rarr; 5</td><td><b style="color:#22C55E">62%</b></td></tr><tr><td>Reservation &rarr; Cancelled</td><td>8 &rarr; 1</td><td><b style="color:#EF4444">13%</b></td></tr></tbody></table>
+  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">The board may show one column. The database must keep <code>sub_status</code> on every row, or this table cannot be produced at all.</span></div>
+  <div class="col" style="gap:6px">
+    <span class="cap mut">And the report keeps its two columns</span>
+    <span class="b2" style="color:#CBD5E1">The Lead Status report type <code>ReportBucket</code>
+    already lists <code>holding</code> and <code>reservation</code> separately.
+    <b style="color:#F1F5F9">Widen <code>bucketForStage()</code> to take the sub status</b>, or both
+    collapse into one and the numbers change with nothing on screen to say so.</span>
   </div>
 </div></div>
-    <div class="card pad col grow" style="gap:14px">
-  <h3 class="sec">CONVERSION THAT MUST STILL BE MEASURABLE AFTER THE MERGE</h3>
-  <table><thead><tr><th style=width:230px>Path</th><th style=width:130px>Count</th><th style=width:90px>Rate</th></tr></thead><tbody><tr><td>Visit → Holding</td><td>41 → 14</td><td><b style="color:#60A5FA">34%</b></td></tr><tr><td>Holding → Reservation</td><td>14 → 8</td><td><b style="color:#22C55E">57%</b></td></tr><tr><td>Holding → Lost</td><td>14 → 4</td><td><b style="color:#EF4444">29%</b></td></tr><tr><td>Reservation → Sold</td><td>8 → 5</td><td><b style="color:#22C55E">62%</b></td></tr><tr><td>Reservation → Cancelled</td><td>8 → 1</td><td><b style="color:#EF4444">13%</b></td></tr></tbody></table>
-  <div class="row" style="gap:10px;background:rgba(239,68,68,.10);border:1px solid #EF444455;border-radius:14px;padding:11px 14px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#EF4444" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" ><path d="M12 3 2 20h20L12 3z"></path><line x1="12" y1="10" x2="12" y2="14"></line><circle cx="12" cy="17.5" r=".6" fill="currentColor"></circle></svg><span class="b2 grow" style="color:#EF4444;font-weight:600">This is why the data must never be merged past the point of separation. The board may combine the columns; sub_status must stay on every row in the database.</span></div>
-  <div class="col" style="gap:7px">
-    <span class="cap mut">Fields required to produce this table</span>
-    <span class="b2" style="color:#CBD5E1">
-      <code>lead_status_history</code> holding old_stage · old_sub_status · new_stage · new_sub_status
-      · changed_at · changed_by · reason — <b>insert only, never update a past row</b></span>
-  </div>
-</div>
-  </div>
 </div>
 </div>
 </div>

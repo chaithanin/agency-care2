@@ -60,14 +60,14 @@
       "file": "Lead.dc.html",
       "x": 3860,
       "y": 0,
-      "w": 1560,
-      "h": 1900,
-      "title": "1 · Lead Management"
+      "w": 3040,
+      "h": 2560,
+      "title": "1 · Lead Management — before / after, same page"
     },
     {
       "file": "Payment.dc.html",
       "x": 3860,
-      "y": 2120,
+      "y": 2780,
       "w": 1620,
       "h": 1760,
       "title": "5 · Payment"
@@ -75,7 +75,7 @@
     {
       "file": "Visit.dc.html",
       "x": 3860,
-      "y": 4100,
+      "y": 4760,
       "w": 1620,
       "h": 1700,
       "title": "8 · Visit"
@@ -120,7 +120,7 @@
     {
       "id": "note-netprice",
       "x": 3860,
-      "y": 5920,
+      "y": 6580,
       "w": 780,
       "text": "Commission basis — decided by the owner\nNet Price = Sale Price - Discount - Promotion value, with no tax deducted\nCashback and cash bonus both count, conditionally — the promotion master carries\na reduces_commission_basis flag and the deal stores the per-line breakdown\ndiscount is already a baht amount; promotion is free text, so promotion_value is new"
     }

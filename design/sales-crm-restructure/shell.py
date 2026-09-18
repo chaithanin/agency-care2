@@ -189,3 +189,113 @@ def sect(title, body, right=""):
 def progress(pct, color=None, label=None):
     lab = f'<span class="cap mut" style="white-space:nowrap">{label}</span>' if label else ""
     return (f'<div class="row" style="gap:12px"><div class="grow">{bar(pct, color)}</div>{lab}</div>')
+
+
+# ── Components that mirror the real MUI page (web/src/pages/DealsPage.tsx) ──
+
+STAGE_COLOR = {
+  "Open": "#64748B", "1st Follow Up": "#EC407A", "2nd Follow Up": "#AB47BC",
+  "3rd Follow Up": "#7E57C2", "Holding": "#78909C", "4th Follow Up": "#5C6BC0",
+  "Reservation": "#FFA726", "Holding / Reservation": "#FFA726",
+  "Missed": "#8D6E63", "Closed Deals": "#2E7D32", "Cancelled": "#B0593E",
+}
+
+def mui_col(label, count, units, value, cards, color=None, extra_chips="",
+            highlight=False, width=250):
+    """One Kanban column, drawn as DealsPage renders it: solid colour header,
+    label + optional chips, then 'N deals · N units · money'."""
+    c = color or STAGE_COLOR[label]
+    ring = f"box-shadow:0 0 0 2px {SUCCESS};border-radius:9px;" if highlight else ""
+    body = "".join(cards) or (
+        f'<p class="cap" style="text-align:center;color:{TXT3};padding:16px 0;margin:0">Empty</p>')
+    return f'''<div class="col" style="width:{width}px;flex-shrink:0;{ring}">
+  <div style="background:{c};color:#fff;padding:6px 12px;border-radius:8px 8px 0 0">
+    <div class="row" style="gap:5px">
+      <span style="font-weight:700;font-size:13px;white-space:nowrap">{label}</span>{extra_chips}
+    </div>
+    <div style="font-size:11px;opacity:.9">{count} deals · {units} units · {value}</div>
+  </div>
+  <div style="background:{PAPER};border:1px solid {DIVIDER};border-top:none;
+       border-radius:0 0 8px 8px;min-height:100px;padding:6px">{body}</div>
+</div>'''
+
+def mui_hdr_chip(text):
+    return (f'<span style="display:inline-flex;align-items:center;height:16px;padding:0 6px;'
+            f'border-radius:999px;font-size:10px;background:rgba(255,255,255,.25);color:#fff">{text}</span>')
+
+def mui_chip(text, kind="default", h=18):
+    st = {
+      "default":  f"background:{SURFACE};color:{TXT2};border:1px solid {DIVIDER}",
+      "info":     f"background:{INFO};color:#0F172A;border:1px solid {INFO}",
+      "secondary":f"background:transparent;color:{SECOND};border:1px solid {SECOND}",
+      "new":      f"background:{SUCCESS};color:#0F172A;border:1px solid {SUCCESS}",
+    }[kind]
+    return (f'<span style="display:inline-flex;align-items:center;height:{h}px;padding:0 7px;'
+            f'border-radius:999px;font-size:10px;line-height:1;{st}">{text}</span>')
+
+def mui_card(name, agency=None, lead_chip="No lead", chips=(), units="1 u",
+             value=None, follow=None, overdue=False, avatars=2):
+    bc = ERROR if overdue else DIVIDER
+    ag = (f'<div style="font-size:11px;color:{TXT2};white-space:nowrap;overflow:hidden;'
+          f'text-overflow:ellipsis">{agency}</div>' if agency else "")
+    lc = (mui_chip(f"&#128279; {lead_chip}", "info", 20) if lead_chip != "No lead"
+          else mui_chip("No lead", "default", 20))
+    ch = ("".join(chips))
+    chrow = (f'<div class="row" style="gap:4px;flex-wrap:wrap;margin-top:4px">{ch}</div>' if ch else "")
+    av = "".join(
+      f'<div style="width:19px;height:19px;border-radius:999px;background:{SURFACE};'
+      f'border:1.5px solid {PAPER};margin-left:{-6 if i else 0}px;display:grid;place-items:center;'
+      f'font-size:9px;color:{TXT2}">{c}</div>' for i, c in enumerate(["JS", "SL"][:avatars]))
+    val = (f'<span style="font-size:11px;font-weight:700;color:{TXT2}">{value}</span>' if value else "")
+    fu = ""
+    if follow:
+        c = ERROR if overdue else TXT2
+        fu = (f'<div class="row" style="gap:4px;margin-top:4px">{icon(I_CLOCK,12,c)}'
+              f'<span style="font-size:10.5px;color:{c}">{follow}</span></div>')
+    return f'''<div style="background:{PAPER};border:1px solid {bc};border-radius:8px;
+     padding:9px 10px;margin-bottom:6px">
+  <div style="font-weight:600;font-size:13px;white-space:nowrap;overflow:hidden;
+       text-overflow:ellipsis">{name}</div>
+  {ag}
+  <div style="margin-top:4px">{lc}</div>
+  {chrow}
+  <div class="row" style="gap:5px;margin-top:6px">
+    <div class="row">{av}</div><div class="grow"></div>
+    {mui_chip(units)}{val}
+  </div>
+  {fu}
+</div>'''
+
+def mui_field(label, value, w=150, caret=True):
+    cv = icon(I_CHEV, 13, TXT3) if caret else ""
+    return f'''<div style="position:relative;width:{w}px;flex-shrink:0">
+  <div style="position:absolute;top:-7px;left:9px;background:{PAPER};padding:0 4px;
+       font-size:10.5px;color:{TXT3}">{label}</div>
+  <div class="row" style="gap:6px;border:1px solid {DIVIDER};border-radius:6px;
+       padding:7px 10px;font-size:13px;color:{TXT2}">
+    <span class="grow" style="white-space:nowrap;overflow:hidden">{value}</span>{cv}</div>
+</div>'''
+
+def mui_iconbtn(d, color=None):
+    return (f'<div style="width:30px;height:30px;border-radius:999px;display:grid;'
+            f'place-items:center;flex-shrink:0">{icon(d,17,color or TXT2)}</div>')
+
+def sidebar_section(title, rows):
+    body = "".join(rows)
+    return (f'<div class="col" style="gap:5px;padding:9px 0;border-bottom:1px solid {DIVIDER}">'
+            f'<span style="font-size:11px;font-weight:700;color:{TXT3};letter-spacing:.04em">{title}</span>'
+            f'{body}</div>')
+
+def sidebar_row(text, active=False, dot=None):
+    d = (f'<span style="width:8px;height:8px;border-radius:999px;background:{dot};'
+         f'flex-shrink:0"></span>' if dot else "")
+    bg = f"background:{SURFACE};" if active else ""
+    return (f'<div class="row" style="gap:7px;padding:4px 8px;border-radius:6px;{bg}">'
+            f'{d}<span style="font-size:12.5px;color:{TXT if active else TXT2}">{text}</span></div>')
+
+def alert(kind, text):
+    c = {"warn": WARNING, "error": ERROR, "info": PRIMARY_L, "ok": SUCCESS}[kind]
+    bg = {"warn": "rgba(251,191,36,.12)", "error": "rgba(239,68,68,.12)",
+          "info": "rgba(59,130,246,.12)", "ok": "rgba(34,197,94,.12)"}[kind]
+    return (f'<div class="row" style="gap:9px;background:{bg};border-radius:6px;padding:8px 13px">'
+            f'{icon(I_WARN,16,c)}<span style="font-size:13px;color:{c}">{text}</span></div>')

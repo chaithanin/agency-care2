@@ -97,6 +97,29 @@ tell which rows were Holding and which were Reservation, and no way to get it ba
 Plus `lead_status_history` (`old_stage`, `old_sub_status`, `new_stage`, `new_sub_status`,
 `changed_at`, `changed_by`, `reason`) — **insert only, never update a past row**.
 
+### The page must keep looking like itself
+
+`Lead.dc.html` draws the real `/deals` page from `web/src/pages/DealsPage.tsx`, before and after.
+**Three visual changes, nothing else moves.**
+
+| # | Change | Why it costs almost nothing |
+| --- | --- | --- |
+| 1 | `Holding` and `Reservation` become one column `Holding / Reservation`, keeping Reservation's colour `#FFA726` and Reservation's slot | The header already renders `col.color` and `col.label` from `deal_stages` — no component change |
+| 2 | Two counters in the column header: `H 14` and `R 8` | Reuses the white pill the header already uses for `Won` and `Lost` (`DealsPage.tsx:421`) |
+| 3 | One more chip on the card, in the existing project/label chip row | Same `height 18 · fontSize 10` chip — no new row, no change to card height |
+
+Unchanged: the title and every icon button, the Kanban/Table toggle, the whole left filter sidebar
+(Salesperson, Interested In, Labels, Next Action), Search / Agency / Probability / Deal Stage / Date /
+From / To, column width, card layout and height, drag and drop, the orphan banner, the Table view,
+and every other column.
+
+**One decision to confirm:** the merged column takes Reservation's colour and slot, so Holding cards
+move one position right, past 4th Follow Up. The alternative is Holding's slot and grey `#78909C`,
+which moves fewer cards but leaves the column looking less advanced than Missed beside it.
+
+Note when writing test fixtures: `money()` in `DealsPage.tsx:89` renders `96.40M` / `54K`, with **no
+currency symbol**.
+
 ### Also in this phase
 
 - `api/src/common/kanban-stages.ts` — replace the two entries with `holding_reservation`
